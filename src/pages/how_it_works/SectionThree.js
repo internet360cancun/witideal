@@ -140,79 +140,34 @@ const ThirdSection = () => {
   };
 
   return (
-    <div
-      className="view viewstyle text-left"
-      style={{
-        background: "linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        borderRadius: "0px 398px",
-      }}
-    >
-      <div className="container2" style={{ marginTop: 118 }}>
-        <section className="mt-5">
-          <div className="row align-items-center">
+    <div className="view viewstyle" style={{background: 'linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '0px 298px'}}>
+      <div className="container2" style={{marginTop: 0}}>
+        <section className="mt-1">
+          <div className="row align-items-center mt-5 mb-5">
             <div className="col-md-5 mb-5">
-              <h1 className="BannerTitle3">Más clientes</h1>
-              <p
-                className="text-center subview3"
-                style={{ color: "#ffffff", fontSize: 26, marginRight: 60 }}
-              >
-                <a style={{ color: "aqua" }}>
-                  <strong>+</strong>
-                </a>{" "}
-                leads
-                <a style={{ color: "aqua" }}>
-                  <strong>+</strong>
-                </a>{" "}
-                prospectos
-                <a style={{ color: "aqua" }}>
-                  <strong>+</strong>
-                </a>{" "}
-                amigos
+              <h1 className="BannerTitle3 text-right">Más clientes</h1>
+              <p className="text-right subview3" style={{color: '#ffffff', fontSize: 26}}>
+                <strong style={{color: 'aqua'}}> + </strong> leads
+                <strong style={{color: 'aqua'}}> + </strong> prospectos
+                <strong style={{color: 'aqua'}}> + </strong> amigos
               </p>
               <br />
               <br />
-              <ul
-                className="listview3"
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  fontSize: 32,
-                  fontWeight: 500,
-                  color: "#ffffff",
-                }}
-              >
+              <ul className="listview3 text-left" style={{listStyle: 'none', padding: 0, margin: 0, fontSize: 32, fontWeight: 500, color: '#ffffff'}}>
                 <li>
-                  <a style={{ color: "aqua" }}>
-                    <strong>+</strong>
-                  </a>{" "}
-                  Anuncios gratis
+                  <strong style={{color: 'aqua'}}> + </strong> Anuncios gratis
                 </li>
                 <li>
-                  <a style={{ color: "aqua" }}>
-                    <strong>+</strong>
-                  </a>{" "}
-                  Campañas en Facebook
+                  <strong style={{color: 'aqua'}}> + </strong> Campañas en Facebook
                 </li>
                 <li>
-                  <a style={{ color: "aqua" }}>
-                    <strong>+</strong>
-                  </a>{" "}
-                  Instagram
+                  <strong style={{color: 'aqua'}}> + </strong> Instagram
                 </li>
                 <li>
-                  <a style={{ color: "aqua" }}>
-                    <strong>+</strong>
-                  </a>{" "}
-                  Redes y grupos
+                  <strong style={{color: 'aqua'}}> + </strong> Redes y grupos
                 </li>
                 <li>
-                  <a style={{ color: "aqua" }}>
-                    <strong>+</strong>
-                  </a>{" "}
-                  Medios
+                  <strong style={{color: 'aqua'}}> + </strong> Medios
                 </li>
               </ul>
               <br />
@@ -224,9 +179,8 @@ const ThirdSection = () => {
                 Registrate
               </button>
             </div>
-
             <div className="col-md-6 mb-4 align-content-start imgtech">
-              <img src={masclientes} alt />
+              <img src={masclientes}/>
             </div>
           </div>
         </section>
@@ -267,6 +221,7 @@ const ThirdSection = () => {
         </Fade>
       </Modal>
     </div>
+
   );
 };
 

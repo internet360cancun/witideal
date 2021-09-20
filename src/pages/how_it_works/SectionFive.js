@@ -10,31 +10,23 @@ import camp from "../../assets/howitworks/card-icons/camp.png";
 
 const FifthSection = () => {
   return (
-    <div
-      className="view viewstyle5"
-      style={{
-        backgroundColor: "#ffffff",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
-      <div className="container2 pb-5" style={{ marginTop: 118 }}>
+    <div className="view viewstyle5" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+      <div className="container2 mb-5" style={{marginTop: 18}}>
         <section className="mt-5">
           <div className="row align-items-center text-center">
             <div className="col text-center col-md-12">
               <h1 className="BannerTitle2">
                 Anúnciate y <br />
-                <strong style={{ color: "#41b8f9" }}>
-                  ten más <br /> exposición
-                </strong>
+                <strong style={{color: '#41b8f9'}}>ten más <br />
+                  exposición</strong>
               </h1>
               <br />
             </div>
           </div>
           {/*  C A R D S*/}
           <div className="row">
-            <div className="col-12 col-lg-4 col-md-4 text-center mt-4 crd1">
-              <div className="card carddisplay" style={{ width: "100%" }}>
+            <div className="col text-center mt-4 crd1">
+              <div className="card carddisplay" style={{width: '100%'}}>
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
@@ -48,15 +40,16 @@ const FifthSection = () => {
                   <div className="row">
                     <div className="col">
                       <div className="textcards d-flex justify-content-center">
-                        Campañas en Facebook Ads / <br /> Instagram
+                        Campañas en Facebook Ads / <br />
+                        Instagram
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-4 col-md-4 text-center mt-4 crd2">
-              <div className="card carddisplay" style={{ width: "100%" }}>
+            <div className="col text-center mt-4 crd2">
+              <div className="card carddisplay" style={{width: '100%'}}>
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
@@ -74,8 +67,8 @@ const FifthSection = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-4 col-md-4 text-center mt-4 crd3">
-              <div className="card carddisplay" style={{ width: "100%" }}>
+            <div className="col text-center mt-4 crd3">
+              <div className="card carddisplay" style={{width: '100%'}}>
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
@@ -95,8 +88,8 @@ const FifthSection = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-lg-4 col-md-4 text-center mt-4 crd4">
-              <div className="card carddisplay" style={{ width: "100%" }}>
+            <div className="col text-center mt-4 crd4">
+              <div className="card carddisplay" style={{width: '100%'}}>
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
@@ -117,8 +110,8 @@ const FifthSection = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-4 col-md-4 text-center mt-4 crd5">
-              <div className="card carddisplay" style={{ width: "100%" }}>
+            <div className="col text-center mt-4 crd5">
+              <div className="card carddisplay" style={{width: '100%'}}>
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
@@ -136,8 +129,8 @@ const FifthSection = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-4 col-md-4 text-center mt-4 crd6">
-              <div className="card carddisplay" style={{ width: "100%" }}>
+            <div className="col text-center mt-4 crd6">
+              <div className="card carddisplay" style={{width: '100%'}}>
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
@@ -159,6 +152,7 @@ const FifthSection = () => {
         </section>
       </div>
     </div>
+
   );
 };
 

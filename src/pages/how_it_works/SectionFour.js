@@ -6,15 +6,8 @@ import vertical from "../../assets/howitworks/vertical-anuncio.png";
 
 const ForthSection = () => {
   return (
-    <div id="section4"
-      className="view viewstyle4"
-      style={{
-        backgroundColor: "#ffffff",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
-      <div className="container2" style={{ marginTop: 118 }}>
+    <div className="view viewstyle4" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+      <div className="container2" style={{marginTop: 118}}>
         <section className="mt-5">
           <div className="row align-items-center text-center">
             <div className="col text-center col-md-12">
@@ -22,8 +15,8 @@ const ForthSection = () => {
               <br />
               <div className="subtitulo4">
                 <p>
-                  En Witideal es{" "}
-                  <strong style={{ color: "#41b8f9" }}>gratis</strong> siempre.
+                  En Witideal es
+                  <strong style={{color: '#41b8f9'}}> gratis</strong> siempre.
                 </p>
               </div>
             </div>
