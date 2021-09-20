@@ -147,258 +147,232 @@ const SelccionarPaquete = () => {
 
   return (
     <>
-      <div className="container2">
-        {!user && userLoading && <h1>Cargando</h1>}
-        <section className="mt-2">
-          <div className="row">
-            <section className="mt-5">
-              <div className="row align-items-center text-center">
-                <div className="col text-center col-md-12">
-                  <div className="BannerTitle7">Selecciona tu paquete</div>
-                  <br />
+    <div className="container2">
+      {!user && userLoading && <h1>Cargando</h1>}
+      <section className="mt-5">
+        <div className="row">
+          <div className="col">
+            <div className="row d-flex justify-content-center">
+              <div className="col-xm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+                <div className="BannerTitle7">
+                  Selecciona tu paquete
                 </div>
               </div>
-              {/*  C A R D S*/}
-              <div className="row">
-                <div className="col text-center mt-4">
-                  <div className="megatitle">
-                    Plan <br />
-                    Risingstar
+            </div>
+            <div className="row d-flex justify-content-center">
+              <div className="col-xm-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                <div className="row">
+                  <div className="col">
+                    <div className="megatitle">
+                      Plan <br />
+                      Risingstar
+                    </div>
                   </div>
-                  <div className="card d-fex cardsd1" style={{ width: 'auto' }}>
-                    <div className="card-body cardcustom1">
-                      <div className="textcards">
-                        <div className="cardtitle">
-                          Paquete Básico
-                          <div className="subtitulo">(Anunciar Gratis)</div>
-                        </div>
-                        <div className="precio">
-                          $1,500 MXN
-                          <div className="subtitulo">
-                            (3 Propiedades destacadas)
-                          </div>
-                        </div>
+                </div>
+                <div className="card cardplanes">
+                  <div className="backcard1">
+                    <div className="contenidocard">
+                      <img className="imgcrd1" src={cardback} />
+                      <div className="titulo">Paquete Básico</div>
+                      <div className="subtitulo">(Anunciar Gratis)</div>
+                      <div className="precio">$1,500 MXN</div>
+                      <div className="subtitulo">(3 Propiedades destacadas)</div>
+                      <div className="lista">
                         <br />
-                        <div className="lista">
-                          <p>
-                            <strong style={{ color: 'aqua' }}>+</strong> Campaña
-                            de Facebook / Instagram Ads en la
-                            <a style={{ fontStyle: 'italic' }}>fanpage</a> de
-                            Witideal
-                          </p>
-                          <p>
-                            <strong style={{ color: 'aqua' }}>+</strong> Formato
-                            anuncio carrusel o post / potencial o mensajes (3
-                            propiedades)
-                          </p>
-                        </div>
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Campaña de Facebook
+                          / Instagram Ads en la fanpage de Witideal
+                        </p>
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Formato anuncio
+                          carrusel o post / potencial o mensajes (3 propiedades)
+                        </p>
                       </div>
-                      <div className="imgcardback1">
-                        <img src={cardback} alt />
-                      </div>
-
-                      {!user && !userLoading && (
-                        <button
-                          onClick={handleToggleRegister}
-                          className="btncontrata1"
-                        >
-                          Contratar
-                        </button>
-                      )}
-                      {user && !userLoading && (
-                        <button
-                          onClick={() =>
-                            createCheckoutSessionRisingStar(user.uid)
-                          }
-                          className="btncontrata1"
-                        >
-                          Contratar
-                        </button>
-                      )}
-                      <Modal
-                        aria-labelledby="register-modal"
-                        aria-describedby="register-form"
-                        className={classes.modal}
-                        open={openRegister}
-                        onClose={handleCloseRegister}
-                        closeAfterTransition
-                        BackdropComponent={Backdrop}
-                        BackdropProps={{
-                          timeout: 500,
-                        }}
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    {!user && !userLoading && (
+                      <button
+                        onClick={handleToggleRegister}
+                        className="btnplanes"
                       >
-                        <Fade in={openRegister}>
-                          <div className={classes.paper}>
-                            <CloseModal
-                              onClick={() => setOpenRegister(false)}
-                            />
+                        Contratar
+                      </button>
+                    )}
+                    {user && !userLoading && (
+                      <button
+                        onClick={() =>
+                          createCheckoutSessionRisingStar(user.uid)
+                        }
+                        className="btnplanes"
+                      >
+                        CONTRATAR
+                      </button>
+                    )}
+                    <Modal
+                      aria-labelledby="register-modal"
+                      aria-describedby="register-form"
+                      className={classes.modal}
+                      open={openRegister}
+                      onClose={handleCloseRegister}
+                      closeAfterTransition
+                      BackdropComponent={Backdrop}
+                      BackdropProps={{
+                        timeout: 500,
+                      }}
+                    >
+                      <Fade in={openRegister}>
+                        <div className={classes.paper}>
+                          <CloseModal
+                            onClick={() => setOpenRegister(false)}
+                          />
 
-                            <Paper elevation={0}>
-                              <Box p={{ md: 5, xs: 1 }}>
-                                <Grid
-                                  container
-                                  justifyContent="center"
-                                  alignItems="center"
-                                >
-                                  <Grid item xs={12} sm={10} lg={10}>
-                                    <Register
-                                      setComesFromLogin={setComesFromLogin}
-                                      comesFromLogin={comesFromLogin}
-                                      dismissModal={handleCloseRegister}
-                                      changeToLogIn={changeToLogIn}
-                                      federated={federated}
-                                      setFederated={setFederated}
-                                    />
-                                  </Grid>
+                          <Paper elevation={0}>
+                            <Box p={{ md: 5, xs: 1 }}>
+                              <Grid
+                                container
+                                justifyContent="center"
+                                alignItems="center"
+                              >
+                                <Grid item xs={12} sm={10} lg={10}>
+                                  <Register
+                                    setComesFromLogin={setComesFromLogin}
+                                    comesFromLogin={comesFromLogin}
+                                    dismissModal={handleCloseRegister}
+                                    changeToLogIn={changeToLogIn}
+                                    federated={federated}
+                                    setFederated={setFederated}
+                                  />
                                 </Grid>
-                              </Box>
-                            </Paper>
-                          </div>
-                        </Fade>
-                      </Modal>
-                    </div>
-                  </div>
-                </div>
-                <div className="col text-center mt-4">
-                  <div className="megatitle">
-                    Plan <br />
-                    Rockstar
-                  </div>
-                  <div
-                    className="card d-flex cardsd2"
-                    style={{ width: 'auto' }}
-                  >
-                    <div className="card-body cardcustom2">
-                      <div className="textcards">
-                        <div className="cardtitle">
-                          Paquete Plata
-                          <div className="subtitulo">(Anunciar Gratis)</div>
+                              </Grid>
+                            </Box>
+                          </Paper>
                         </div>
-                        <div className="precio">
-                          $1,990 MXN
-                          <div className="subtitulo">
-                            (5 Propiedades destacadas)
-                          </div>
-                        </div>
-                        <br />
-                        <div className="lista">
-                          <p>
-                            <strong style={{ color: 'aqua' }}>+</strong> Campaña
-                            de Facebook / Instagram Ads en la
-                            <a style={{ fontStyle: 'italic' }}>fanpage</a> de
-                            Witideal
-                          </p>
-                          <p>
-                            <strong style={{ color: 'aqua' }}>+</strong> Formato
-                            anuncio carrusel o post / potencial o mensajes (5
-                            propiedades)
-                          </p>
-                          <p>
-                            <strong style={{ color: 'aqua' }}>+</strong> Post en
-                            redes LUIS RAM / Remates y oportunidades en
-                            directorio de redes
-                          </p>
-                        </div>
-                      </div>
-                      <div className="imgcardback2">
-                        <img src={cardback} alt />
-                      </div>
-
-                      {!user && !userLoading && (
-                        <button
-                          onClick={handleToggleRegister}
-                          className="btncontrata2"
-                        >
-                          Contratar
-                        </button>
-                      )}
-                      {user && !userLoading && (
-                        <button
-                          onClick={() =>
-                            createCheckoutSessionRockStar(user.uid)
-                          }
-                          className="btncontrata2"
-                        >
-                          Contratar
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                <div className="col text-center mt-4">
-                  <div className="megatitle">
-                    Plan <br />
-                    Superstar
-                  </div>
-                  <div
-                    className="card d-flex cardsd3"
-                    style={{ width: 'auto' }}
-                  >
-                    <div className="card-body cardcustom3">
-                      <div className="textcards">
-                        <div className="cardtitle">
-                          Paquete Oro
-                          <div className="subtitulo">(Anunciar Gratis)</div>
-                        </div>
-                        <div className="precio">
-                          $2,500 MXN
-                          <div className="subtitulo">
-                            (Hasta 10 Propiedades destacadas)
-                          </div>
-                        </div>
-                        <br />
-                        <div className="lista">
-                          <p>
-                            <strong style={{ color: 'aqua' }}>+</strong> Campaña
-                            de Facebook / Instagram Ads en la
-                            <a style={{ fontStyle: 'italic' }}>fanpage</a> de
-                            Witideal
-                          </p>
-                          <p>
-                            <strong style={{ color: 'aqua' }}>+</strong> Formato
-                            anuncio carrusel o post / potencial o mensajes (10
-                            propiedades)
-                          </p>
-                          <p>
-                            <strong style={{ color: 'aqua' }}>+</strong> Post en
-                            redes LUIS RAM / Remates y oportunidades en
-                            directorio de redes
-                          </p>
-                          <p>
-                            + Mención en el programa de radio / Luis Ramírez
-                            Mundo Inmobiliario
-                          </p>
-                        </div>
-                      </div>
-                      <div className="imgcardback3">
-                        <img src={cardback} alt />
-                      </div>
-                      {!user && !userLoading && (
-                        <button
-                          onClick={handleToggleRegister}
-                          className="btncontrata3"
-                        >
-                          Contratar
-                        </button>
-                      )}
-                      {user && !userLoading && (
-                        <button
-                          onClick={() =>
-                            createCheckoutSessionSuperStar(user.uid)
-                          }
-                          className="btncontrata3"
-                        >
-                          Contratar
-                        </button>
-                      )}
-                    </div>
+                      </Fade>
+                    </Modal>
                   </div>
                 </div>
               </div>
-            </section>
+              <div className="col-xm-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                <div className="megatitle">
+                  Plan <br />
+                  Rockstar
+                </div>
+                <div className="card cardplanes">
+                  <div className="backcard2">
+                    <div className="contenidocard">
+                      <img className="imgcrd1" src={cardback}  />
+                      <div className="titulo">Paquete Plata</div>
+                      <div className="subtitulo">(Anunciar Gratis)</div>
+                      <div className="precio">$1,990 MXN</div>
+                      <div className="subtitulo">(5 Propiedades destacadas)</div>
+                      <div className="lista">
+                        <br />
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Campaña de Facebook
+                          / Instagram Ads en la fanpage de Witideal
+                        </p>
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Formato anuncio
+                          carrusel o post / potencial o mensajes (5 propiedades)
+                        </p>
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Post en redes LUIS
+                          RAM / Remates y oportunidades en directorio de redes
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    {!user && !userLoading && (
+                      <button
+                        onClick={handleToggleRegister}
+                        className="btnplanes"
+                      >
+                        Contratar
+                      </button>
+                    )}
+                    {user && !userLoading && (
+                      <button
+                        onClick={() =>
+                          createCheckoutSessionRockStar(user.uid)
+                        }
+                        className="btnplanes"
+                      >
+                        CONTRATAR
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="col-xm-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center">
+                <div className="megatitle">
+                  Plan <br />
+                  Superstar
+                </div>
+                <div className="card cardplanes">
+                  <div className="backcard3">
+                    <div className="contenidocard">
+                      <img className="imgcrd1" src={cardback} />
+                      <div className="titulo">Paquete Oro</div>
+                      <div className="subtitulo">(Anunciar Gratis)</div>
+                      <div className="precio">$2,500 MXN</div>
+                      <div className="subtitulo">(Hasta 10 propiedades destacadas)</div>
+                      <div className="lista">
+                        <br />
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Campaña de Facebook
+                          / Instagram Ads en la fanpage de Witideal
+                        </p>
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Formato anuncio
+                          carrusel o post / potencial o mensajes (10 propiedades)
+                        </p>
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Post en redes LUIS
+                          RAM / Remates y oportunidades en directorio de redes
+                        </p>
+                        <p>
+                          <strong style={{color: 'aqua'}}>+</strong> Mención en el
+                          programa de radio / Luis Ramírez Mundo Inmobiliario
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    {!user && !userLoading && (
+                      <button
+                        onClick={handleToggleRegister}
+                        className="btnplanes"
+                      >
+                        Contratar
+                      </button>
+                    )}
+                    {user && !userLoading && (
+                      <button
+                        onClick={() =>
+                          createCheckoutSessionSuperStar(user.uid)
+                        }
+                        className="btnplanes"
+                      >
+                        CONTRATAR
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+      <br /><br /><br /><br /><br /><br />
+    </div>
     </>
   );
 };
