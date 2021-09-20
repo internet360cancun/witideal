@@ -21,65 +21,65 @@ const SectionOne = () => {
   };
 
   return (
-  <div className="view customview1" style={{background: 'linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover !important'}}>
-    {/* Content */}
-    <div className="container" style={{marginTop: 40}}>
-      {/*Section: Primer view*/}
-      <section className="mt-5">
-        <div className="row text-center">
-          <div className="col col-sm-3 col-md-4">
-            <Link to="#section2" smooth={true} duration={750}
-              className="btn custombtn customcople1 waves-effect waves-light"
-            >
-              ¿Por qué utilizar Witideal?
-            </Link>
-          </div>
-          <div className="col col-sm-3 col-md-4">
-            <Link to="section4" smooth={true} duration={1000}
-              className="btn custombtn customcople2 waves-effect waves-light"
-            >
-              ¿Cuanto cuesta?
-            </Link>
-          </div>
-          <div className="col col-sm-4 col-md-4">
-            <Link to="section4" smooth={true} duration={1200}
-              className="btn custombtn customcople3 waves-effect waves-light"
-            >
-              ¿Cómo se ordenan los anuncios?
-            </Link>
-          </div>
-        </div>
-        <div className="row d-flex justify-content-left">
-          <div className="col-md-11 col-xl-6 mb-4">
-            <div className="BannerTitle text-left">
-              Conoce la nueva manera de anunciar inmuebles.
+    <div className="view customview1" style={{background: 'linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover !important'}}>
+      {/* Content */}
+      <div className="container" style={{marginTop: 40}}>
+        {/*Section: Primer view*/}
+        <section className="mt-5">
+          <div className="row text-center">
+            <div className="col col-sm-3 col-md-4">
+              <Link to="#section2" smooth={true} duration={750}
+                className="btn custombtn customcople1 waves-effect waves-light"
+              >
+                ¿Por qué utilizar Witideal?
+              </Link>
             </div>
-            <br />
-            <ModalVideo
-              channel="youtube"
-              autoplay
-              isOpen={isOpen}
-              videoId="qrsS5_oVB-w"
-              onClose={onClose}
-            />
-            <p className="btn custombtnindex" onClick={onOpen}>
-              <i className="fas fa-play mx-3" />
-              Ver video
-            </p>
-            <br />
-            <a className="triangulo-1" ><img src={t1} alt /></a>
-            <a className="triangulo-2" ><img src={t2} alt /></a>
-            <a className="triangulo-3" ><img src={t3} alt /></a>
+            <div className="col col-sm-3 col-md-4">
+              <Link to="section4" smooth={true} duration={1000}
+                className="btn custombtn customcople2 waves-effect waves-light"
+              >
+                ¿Cuanto cuesta?
+              </Link>
+            </div>
+            <div className="col col-sm-4 col-md-4">
+              <Link to="section4" smooth={true} duration={1200}
+                className="btn custombtn customcople3 waves-effect waves-light"
+              >
+                ¿Cómo se ordenan los anuncios?
+              </Link>
+            </div>
           </div>
-          <div className="col-md-6 mb-4">
-            <img className="first" src={vecw} alt />
-            <img className="second" src={vecb} alt />
-            <img className="third" src={mac} alt />
+          <div className="row d-flex justify-content-left">
+            <div className="col-md-11 col-xl-6 mb-4">
+              <div className="BannerTitle text-left">
+                Conoce la nueva manera de anunciar inmuebles.
+              </div>
+              <br />
+              <ModalVideo
+                channel="youtube"
+                autoplay
+                isOpen={isOpen}
+                videoId="qrsS5_oVB-w"
+                onClose={onClose}
+              />
+              <div className="btn custombtnindex" onClick={onOpen}>
+                <i className="fas fa-play mx-3" />
+                Ver video
+              </div>
+              <br />
+              <a className="triangulo-1" ><img src={t1} /></a>
+              <a className="triangulo-2" ><img src={t2} /></a>
+              <a className="triangulo-3" ><img src={t3} /></a>
+            </div>
+            <div className="col-md-6 mb-4">
+              <img className="first" src={vecw} alt />
+              <img className="second" src={vecb} alt />
+              <img className="third" src={mac} alt />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
-  </div>
 
   );
 };

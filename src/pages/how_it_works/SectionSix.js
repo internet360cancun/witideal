@@ -74,9 +74,7 @@ const SectionSix = () => {
           <div className="row">
             <div className="col">
               <div className="textbanner text-center">
-                Además menciones en el programa de
-                <strong style={{color: 'aqua'}}>RADIO +</strong> reconocido del
-                <strong style={{color: 'aqua'}}>GIRO</strong>
+                Además menciones en el programa de <strong style={{color: 'aqua'}}> RADIO +</strong> reconocido del <strong style={{color: 'aqua'}}> GIRO</strong>
               </div>
             </div>
           </div>

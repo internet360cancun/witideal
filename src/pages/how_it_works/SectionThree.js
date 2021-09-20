@@ -141,7 +141,7 @@ const ThirdSection = () => {
 
   return (
     <div className="view viewstyle" style={{background: 'linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '0px 298px'}}>
-      <div className="container2" style={{marginTop: 0}}>
+      <div className="container2" style={{marginTop: 118}}>
         <section className="mt-1">
           <div className="row align-items-center mt-5 mb-5">
             <div className="col-md-5 mb-5">

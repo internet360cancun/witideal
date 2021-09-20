@@ -12,11 +12,16 @@ const SectionTwo = () => {
   return (
     <div className="view viewstyle2" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
       {/* Content */}
-      <div className="container2 container2movil" style={{marginTop: 118}}>
-        {/*Section: Primer view*/}
+      <div className="container2" style={{marginTop: 118}}>
         <section className="mt-5">
-          <div className="row align-items-center">
-            <div className="col-md-6 mb-4 text-left">
+        <div className="imgs">
+            <img className="izq-1" src={i1}/>
+            <img className="izq-2" src={i2}/>
+            <img className="der-1" src={d1} />
+            <img className="der-2" src={d2} />
+          </div>
+          <div className="row">
+            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4 text-left">
               <h1 className="BannerTitle2">¿Por qué usar Witideal?</h1>
               <hr className="subwrite" />
               <br />
@@ -24,18 +29,16 @@ const SectionTwo = () => {
                 En Witideal publicar anuncios inmobiliarios es
               </p>
               <br />
-              <a className="gratis" href="#">GRATIS</a>
+              <div className="gratis">GRATIS</div>
               <img className="sign" src={free}/>
               <br />
-              <a className="btnlargo" href>Publica todos tus inmuebles</a>
+              <div className="btnlargo">Publica todos tus inmuebles</div>
               <div className="borderbtn">
                 <img src={pup}/>
               </div>
-              <img className="izq-1" src={i1}/>
-              <img className="izq-2" src={i2}/>
             </div>
             {/*CARDS*/}
-            <div className="col-md-6 mb-4">
+            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4 text-left">
               <div className="card align-content-center card1" style={{backgroundColor: '#e7e7e7'}}>
                 <img src={card1} className="card-img-top"/>
                 <div className="card-body text-center">
@@ -61,8 +64,6 @@ const SectionTwo = () => {
                   <br />
                 </div>
               </div>
-              <img className="der-1" src={d1} />
-              <img className="der-2" src={d2} />
             </div>
           </div>
         </section>
