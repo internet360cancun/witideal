@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <g id="calculatorIcon" transform="translate(-540 -3045)">
+    <g id="Elipse_159" data-name="Elipse 159" transform="translate(540 3045)" fill="#3f19f9" stroke="#fff" stroke-width="8">
+      <circle cx="40" cy="40" r="40" stroke="none"/>
+      <circle cx="40" cy="40" r="37" fill="none"/>
+    </g>
+    <g id="calculator" transform="translate(566 3067.934)">
+      <path id="Trazado_2454" data-name="Trazado 2454" d="M32.065,0H8.19A1.692,1.692,0,0,0,6.5,1.69V33.1a1.692,1.692,0,0,0,1.69,1.69H32.065a1.692,1.692,0,0,0,1.69-1.69V1.69A1.692,1.692,0,0,0,32.065,0Zm.53,33.1a.531.531,0,0,1-.53.53H8.19a.531.531,0,0,1-.53-.53V1.69a.531.531,0,0,1,.53-.53H32.065a.531.531,0,0,1,.53.53Z" transform="translate(-6.5)" fill="#fff"/>
+      <path id="Trazado_2455" data-name="Trazado 2455" d="M11.5,50.379h6.379V44H11.5Zm1.16-5.219h4.059v4.059H12.66Z" transform="translate(-8.6 -18.484)" fill="#fff"/>
+      <path id="Trazado_2456" data-name="Trazado 2456" d="M24.5,50.379h6.379V44H24.5Zm1.16-5.219h4.059v4.059H25.66Z" transform="translate(-14.062 -18.484)" fill="#fff"/>
+      <path id="Trazado_2457" data-name="Trazado 2457" d="M37.5,44.918h6.379V31H37.5ZM38.66,32.16h4.059v11.6H38.66Z" transform="translate(-19.523 -13.023)" fill="#fff"/>
+      <path id="Trazado_2458" data-name="Trazado 2458" d="M11.5,37.379h6.379V31H11.5Zm1.16-5.219h4.059v4.059H12.66Z" transform="translate(-8.6 -13.023)" fill="#fff"/>
+      <path id="Trazado_2459" data-name="Trazado 2459" d="M24.5,37.379h6.379V31H24.5Zm1.16-5.219h4.059v4.059H25.66Z" transform="translate(-14.062 -13.023)" fill="#fff"/>
+      <path id="Trazado_2460" data-name="Trazado 2460" d="M11.5,24.379h6.379V18H11.5Zm1.16-5.219h4.059v4.059H12.66Z" transform="translate(-8.6 -7.562)" fill="#fff"/>
+      <path id="Trazado_2461" data-name="Trazado 2461" d="M24.5,24.379h6.379V18H24.5Zm1.16-5.219h4.059v4.059H25.66Z" transform="translate(-14.062 -7.562)" fill="#fff"/>
+      <path id="Trazado_2462" data-name="Trazado 2462" d="M37.5,24.379h6.379V18H37.5Zm1.16-5.219h4.059v4.059H38.66Z" transform="translate(-19.523 -7.562)" fill="#fff"/>
+      <path id="Trazado_2463" data-name="Trazado 2463" d="M11.5,10.8H32.956V5H11.5ZM12.66,6.16H31.8V9.639H12.66Z" transform="translate(-8.6 -2.1)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

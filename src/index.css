@@ -1,0 +1,2187 @@
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.view {
+  height: 100%;
+}
+
+/*VISTA 1 --------------------------------------*/
+.custombtn {
+  background: #ffffff !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13) !important;
+  border-radius: 19px !important;
+  font-family: "Open Sans" !important;
+  font-style: normal !important;
+  font-weight: bold !important;
+  font-size: 19px !important;
+  line-height: 22px !important;
+  color: #3f19f9 !important;
+  padding: 10px !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  text-transform: none !important;
+  margin: 0.375rem;
+  z-index: 4;
+}
+
+.custombtn :hover {
+  background-color: #3f19f9 !important;
+  color: #ffffff !important;
+}
+
+.custombtnindex {
+  background: #ffffff !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13) !important;
+  border-radius: 26.5px !important;
+  font-family: Open Sans !important;
+  font-style: normal !important;
+  font-weight: bold !important;
+  font-size: 26px !important;
+  line-height: 22px !important;
+  color: #3f19f9 !important;
+  padding: 15px !important;
+  padding-left: 25px !important;
+  padding-right: 40px !important;
+  text-transform: none !important;
+}
+
+.custombtnindex3 {
+  background: #ffffff !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13) !important;
+  border-radius: 26.5px !important;
+  font-family: Open Sans !important;
+  font-style: normal !important;
+  font-weight: bold !important;
+  font-size: 26px !important;
+  line-height: 22px !important;
+  color: #3f19f9 !important;
+  padding: 15px !important;
+  padding-left: 25px !important;
+  padding-right: 40px !important;
+  text-transform: none !important;
+}
+
+.BannerTitle {
+  font-family: "Open Sans", "sans serif";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 82px;
+  line-height: 88px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.first {
+  position: absolute;
+  left: 30%;
+  top: -40px;
+  z-index: 1 !important;
+  width: 100%;
+}
+.second {
+  position: absolute !important;
+  left: 27%;
+  top: -46px;
+  z-index: 2 !important;
+  width: 100%;
+}
+.third {
+  position: absolute !important;
+  left: 1.5%;
+  top: -180px;
+  z-index: 3 !important;
+  width: 125%;
+}
+
+.triangulo-1 {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 100%;
+}
+.triangulo-2 {
+  position: absolute;
+  z-index: 2;
+  top: 98.5%;
+  left: 100%;
+}
+.triangulo-3 {
+  position: absolute;
+  z-index: 3;
+  top: 95.5%;
+  left: 100%;
+}
+
+/*VISTA 2 --------------------------------------*/
+.custom-container2 {
+  max-height: 700px;
+}
+
+.BannerTitle2 {
+  font-family: "Open Sans" !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 460% !important;
+  line-height: 78px !important;
+  color: #3f19f9;
+}
+
+.parrafo1 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 107.68%;
+  color: #868686;
+  width: 345px;
+}
+
+.gratis {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 63.28px;
+  color: #41b8f9;
+}
+
+.sign {
+  top: -25px;
+  width: 42%;
+}
+
+.subwrite {
+  position: absolute;
+  background-color: #3f19f9;
+  width: 18.5%;
+  height: 1px;
+  left: 3%;
+  top: 15vh;
+}
+
+.btnlargo {
+  position: absolute;
+  top: 53.6%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 27.4157px;
+  color: #1e0e6f;
+  background-color: none;
+}
+
+.borderbtn {
+  position: absolute;
+  left: -58%;
+  top: 54vh;
+}
+
+.card1 {
+  position: absolute;
+  border-color: #868686;
+  background-color: #41b8f9;
+  top: -200px;
+  left: 25%;
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06) !important;
+  z-index: 3;
+  width: 65%;
+}
+
+.card2 {
+  position: absolute;
+  border-color: #868686;
+  background-color: #41b8f9;
+  top: -52%;
+  left: 32%;
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06) !important;
+  z-index: 2;
+  width: 65%;
+}
+
+.card3 {
+  position: absolute;
+  border-color: #868686;
+  background-color: #41b8f9;
+  top: -59%;
+  left: 39%;
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06) !important;
+  z-index: 1;
+  width: 65%;
+}
+
+.cardbtn {
+  background: #32ffd2;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 13.4006px 6.2536px rgba(50, 255, 210, 0.25);
+  border-radius: 38.415px;
+}
+
+.izq-1 {
+  position: relative;
+  top: -500px;
+  left: -55%;
+  z-index: 2;
+}
+
+.izq-2 {
+  position: relative;
+  top: -500px;
+  left: -60%;
+  z-index: 1;
+}
+
+.der-1 {
+  position: relative;
+  left: 136%;
+  top: 30px;
+  z-index: 1;
+}
+
+.der-2 {
+  position: relative;
+  left: 131%;
+  top: -350px;
+  z-index: 1;
+}
+
+/*VISTA 3 --------------------------------------*/
+.BannerTitle3 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 68px !important;
+  color: #ffffff;
+}
+
+.color-primary {
+  color: #007bff !important;
+}
+
+/*view 3 esta estileado en index*/
+
+/*VISTA 4 --------------------------------------*/
+.cardimg {
+  position: relative;
+  width: 10% !important;
+}
+
+.vertical {
+  display: none;
+}
+
+.subtitulo4 {
+  color: grey;
+  font-size: 250%;
+  font-weight: 600;
+}
+
+.textcards {
+  font-size: 18px;
+  color: #515151;
+  line-height: 2.3vh;
+}
+
+.txtmod {
+  margin-top: 1.5vh;
+  margin-bottom: 1vh;
+}
+
+.txtmod3 {
+  margin-bottom: 1.2vh;
+}
+
+.txtmod4 {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+/*VISTA 5 --------------------------------------*/
+/*vista 5 estileada en index*/
+.brandsstyle {
+  display: flex;
+}
+
+.brandsstylemobile {
+  display: none;
+}
+
+/*VISTA 6 --------------------------------------*/
+.BannerTitle5 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 58px !important;
+  color: #ffffff;
+}
+
+.brandsstyle {
+  margin-top: 10%;
+}
+
+.bannerbajo {
+  margin-top: 120px;
+  margin-bottom: 0%;
+  background: linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%);
+}
+
+.textbanner {
+  position: relative;
+  font-family: "Open Sans";
+  font-size: 58px;
+  color: white;
+  font-weight: 600;
+  top: -210px;
+}
+
+/*VISTA 7 --------------------------------------*/
+.BannerTitle7 {
+  font-family: "Open Sans" !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 460% !important;
+  line-height: 78px !important;
+  color: #3f19f9;
+}
+
+.megatitle {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 107.68%;
+  text-align: center;
+  color: #128dfe;
+  margin-bottom: 5%;
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 3.8vh;
+  line-height: 139.18%;
+  color: #ffffff;
+}
+
+.subtitulo {
+  font-weight: bold;
+  font-size: 2vh;
+  line-height: 139.18%;
+  color: white;
+}
+
+.card-body {
+  max-height: 1000px;
+}
+
+.cardcustom1 {
+  background: linear-gradient(
+    180deg,
+    #41b8f9 26.72%,
+    #32ffd2 126.06%
+  ) !important;
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 19.6542px !important;
+  /* height: 670px; */
+}
+
+.cardcustom2 {
+  background: linear-gradient(180deg, #41b8f9 0%, #3f19f9 126.06%);
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06);
+  border-radius: 19.6542px;
+  /* height: 670px; */
+}
+
+.cardcustom3 {
+  background: linear-gradient(180deg, #3f19f9 0%, #17056b 126.06%);
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06);
+  border-radius: 19.6542px;
+  /* height: 670px; */
+}
+
+.cardtitle {
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 49px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.cardsubtitle {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 139.18%;
+  color: white;
+}
+
+.precio {
+  font-size: 30px;
+  font-weight: 600;
+  color: #32ffd2;
+  margin-top: 10px;
+}
+
+.lista {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 139.18%;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.imgcardback1 {
+  position: relative;
+  top: -430px;
+  right: -25px;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  z-index: 3;
+}
+
+.imgcardback2 {
+  position: relative;
+  top: -545px;
+  right: -25px;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  z-index: 3;
+}
+
+.imgcardback3 {
+  position: relative;
+  top: -665px;
+  right: -25px;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  z-index: 3;
+}
+
+.btncontrata1 {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06);
+  border: none;
+  padding: 10px 38px 10px 38px;
+  border-radius: 26.5px;
+  font-weight: bold;
+  font-size: 22.3158px;
+  line-height: 30px;
+  color: #3f19f9;
+  top: 7.5vh;
+}
+
+.btncontrata2 {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06);
+  border: none;
+  padding: 10px 38px 10px 38px;
+  border-radius: 26.5px;
+  font-weight: bold;
+  font-size: 22.3158px;
+  line-height: 30px;
+  color: #3f19f9;
+  top: -5vh;
+}
+.btncontrata3 {
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06);
+  border: none;
+  padding: 10px 38px 10px 38px;
+  border-radius: 26.5px;
+  font-weight: bold;
+  font-size: 22.3158px;
+  line-height: 30px;
+  color: #3f19f9;
+  top: -17vh;
+}
+
+/*VISTA 8 final --------------------------------------*/
+.BannerTitle8 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 58px !important;
+  color: #41b8f9;
+}
+
+/* --- --- CAROUSEL --- --- */
+
+/*------------------------------------------------------------------------*/
+
+/*responsive general ajustes*/
+@media (max-width: 800px) {
+  .custombtnindex {
+    position: relative;
+    font-size: 14px !important;
+    top: 0 !important;
+    left: 0px !important;
+    z-index: 5;
+  }
+
+  .custombtn {
+    z-index: 5;
+  }
+
+  .triangulo-1 .triangulo-2 .triangulo-3 {
+    display: none !important;
+  }
+}
+
+/*tablets*/
+@media (min-width: 1100px) {
+  .customcople2 {
+    left: -8vw;
+  }
+  .customcople3 {
+    left: -15vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .BannerTitle {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    font-size: 11vw;
+    line-height: 10vw;
+  }
+
+  .first {
+    width: 60vw;
+    top: -10vw;
+    left: 36vw;
+    overflow: hidden;
+  }
+  .second {
+    width: 60vw;
+    top: -11vw;
+    left: 37vw;
+    overflow: hidden;
+  }
+  .third {
+    width: 75vw;
+    top: -19vw;
+    left: 23vw;
+    overflow: hidden;
+  }
+  .triangulo-1,
+  .triangulo-2,
+  .triangulo-3 {
+    display: none;
+  }
+}
+
+/*Iphone 11 (6.1) viewport(414 x 896)*/
+@media (max-width: 420px) {
+  .custombtn {
+    font-size: 70% !important;
+    padding: 8px !important;
+    margin: 0;
+    margin-top: -20px !important;
+  }
+
+  .customcople1 {
+    position: relative;
+    width: 180px;
+    left: 0px;
+    margin-bottom: 10px !important;
+  }
+
+  .customcople2 {
+    position: relative;
+    width: 120px;
+    left: 5px;
+    top: -11% !important;
+  }
+
+  .customcople3 {
+    position: relative;
+    width: 220px;
+    left: 0px;
+    margin-top: 10px !important;
+  }
+
+  .BannerTitle {
+    position: relative;
+    font-size: 260% !important;
+    line-height: 40px !important;
+    padding-top: 10px;
+  }
+
+  .custombtnindex {
+    position: absolute;
+    top: 60% !important;
+    font-size: 80% !important;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding: 1% !important;
+    padding-right: 5% !important;
+  }
+
+  /*mac*/
+  .third {
+    position: relative;
+    width: 100%;
+    top: -45%;
+    left: 1%;
+  }
+
+  /*blue*/
+  .second {
+    position: relative;
+    width: 85%;
+    margin-top: -14%;
+    left: 16%;
+  }
+
+  /*white*/
+  .first {
+    position: relative;
+    width: 88%;
+    margin-top: -13%;
+    left: 17%;
+  }
+}
+
+@media (max-height: 900px) {
+  /*mac*/
+  .third {
+    margin-top: 16vh;
+  }
+
+  /*blue*/
+  .second {
+    margin-top: 4vh;
+  }
+
+  /*white*/
+  .first {
+    margin-top: 4vh;
+  }
+
+  .BannerTitle {
+    position: relative;
+    font-size: 5vh !important;
+    line-height: 6vh !important;
+    top: auto;
+  }
+
+  .custombtnindex {
+    top: 26vh !important;
+  }
+}
+
+@media (max-height: 820px) {
+  /*mac*/
+  .third {
+    margin-top: 0vh;
+  }
+}
+
+@media (max-height: 740px) {
+  /*mac*/
+  .third {
+    margin-top: 1vh;
+  }
+
+  /*blue*/
+  .second {
+    margin-top: -6vh;
+  }
+
+  /*white*/
+  .first {
+    margin-top: -6vh;
+  }
+
+  .custombtnindex {
+    top: 20vh !important;
+  }
+}
+
+@media (max-height: 670px) {
+  /*mac*/
+  .third {
+    margin-top: 0vh;
+  }
+}
+
+/*Iphone 6/7/8 (5.5) viewport(375 x 667)*/
+@media (max-width: 380px) {
+  .custombtn {
+    font-size: 12px !important;
+    padding: 8px !important;
+    text-transform: none !important;
+    margin: 0;
+    margin-top: -20px !important;
+  }
+
+  .customcople1 {
+    position: relative;
+    width: 180px;
+    left: 0px;
+    margin-bottom: 10px !important;
+  }
+
+  .customcople2 {
+    position: relative;
+    width: 120px;
+    left: 5px;
+    top: -11% !important;
+  }
+
+  .customcople3 {
+    position: relative;
+    width: 220px;
+    left: 0px;
+    margin-top: 10px !important;
+  }
+
+  .BannerTitle {
+    position: relative;
+    font-size: 32px !important;
+    line-height: 40px !important;
+    padding-top: 10px;
+  }
+
+  .custombtnindex {
+    position: absolute;
+    top: 55% !important;
+    font-size: 80% !important;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding: 1% !important;
+    padding-right: 5% !important;
+  }
+
+  /*mac*/
+  .third {
+    position: relative;
+    width: 100%;
+    top: -45%;
+    left: 1%;
+  }
+
+  /*blue*/
+  .second {
+    position: relative;
+    width: 85%;
+    margin-top: -14%;
+    left: 16%;
+  }
+
+  /*white*/
+  .first {
+    position: relative;
+    width: 88%;
+    margin-top: -13%;
+    left: 17%;
+  }
+
+  .customview1 {
+    width: auto;
+    height: auto;
+    margin: 0%;
+  }
+}
+
+/*Iphone 6/7/8 (5.5) viewport(375 x 667)*/
+@media (max-width: 320px) {
+  .custombtn {
+    font-size: 12px !important;
+    padding: 2px !important;
+    text-transform: none !important;
+    margin: 0;
+  }
+
+  .customcople1 {
+    position: absolute;
+    left: 2vw;
+  }
+
+  .customcople2 {
+    position: absolute;
+    left: 28vw;
+    top: 0vh !important;
+  }
+
+  .customcople3 {
+    position: absolute;
+    left: -50vw;
+  }
+
+  .BannerTitle {
+    position: absolute;
+    font-size: 28px !important;
+    line-height: 30px !important;
+    padding-top: 10vh;
+  }
+
+  .custombtnindex {
+    position: absolute;
+    top: 30vh !important;
+  }
+
+  /*mac*/
+  .third {
+    position: relative;
+    width: 65%;
+    top: -3vh;
+    left: 35vw;
+  }
+
+  /*blue*/
+  .second {
+    position: relative;
+    width: 54%;
+    top: 9vh;
+    left: 48vw;
+  }
+
+  /*white*/
+  .first {
+    position: relative;
+    width: 58%;
+    top: 9vh;
+    left: 45vw;
+  }
+
+  .customview1 {
+    width: auto;
+    height: 90vh;
+  }
+}
+
+/*RESPONSIVE DE 2DO VIEW*/
+/*Iphone 11 (6.1) viewport(414 x 896)*/
+@media (max-width: 420px) {
+  .BannerTitle2 {
+    font-size: 250% !important;
+    line-height: 45px !important;
+    text-align: center;
+    margin-top: -100px !important;
+  }
+
+  .subwrite {
+    top: -15px;
+    left: 40%;
+  }
+
+  .parrafo1 {
+    text-align: center;
+    width: auto;
+    font-size: 5vw;
+  }
+
+  .gratis {
+    position: relative;
+    font-size: 10vw;
+    left: 30%;
+    top: -40px;
+  }
+
+  .sign {
+    top: -55px !important;
+    left: 30%;
+  }
+
+  .card1 {
+    position: absolute;
+    width: 37%;
+    height: 55%;
+    top: -140%;
+    left: 110px;
+  }
+
+  .card2 {
+    position: absolute;
+    width: 37%;
+    height: 55%;
+    top: -143%;
+    left: 120px;
+  }
+
+  .card3 {
+    position: absolute;
+    width: 37%;
+    height: 55%;
+    top: -146%;
+    left: 130px;
+  }
+
+  .card-title {
+    font-size: 130% !important;
+    top: 60%;
+    left: 20% !important;
+  }
+
+  .card-text {
+    font-size: 70% !important;
+    top: 70% !important;
+    left: 15%;
+  }
+
+  .cardbtn {
+    position: absolute;
+    font-size: 70%;
+    margin: 0%;
+    padding: 5%;
+    left: 8%;
+    top: 80%;
+    color: white;
+  }
+
+  .btnlargo {
+    font-size: 18px;
+    top: 62%;
+  }
+
+  .borderbtn {
+    position: absolute;
+    left: -120%;
+    top: 59%;
+  }
+}
+
+@media (max-height: 900px) {
+  .gratis {
+    font-size: 6.5vh;
+    left: 20vw;
+    top: -4vh;
+  }
+  .card1 {
+    width: 50%;
+    height: 70%;
+    left: 22vw;
+  }
+  .card2 {
+    width: 50%;
+    height: 70%;
+    left: 24.5vw;
+  }
+  .card3 {
+    width: 50%;
+    height: 70%;
+    left: 26.5vw;
+  }
+  .card-title {
+    left: 9vw !important;
+    font-size: 3.5vh !important;
+    top: 23vh;
+  }
+  .card-text {
+    top: 27vh !important;
+    left: 14vw;
+  }
+  .cardbtn {
+    left: 10vw;
+    top: 29.5vh;
+  }
+  .btnlargo {
+    top: 70vh;
+  }
+  .borderbtn {
+    top: 67.5vh;
+  }
+}
+
+@media (max-height: 810px) {
+  .gratis {
+    font-size: 6.5vh;
+    left: 20vw;
+    top: -4vh;
+  }
+  .card1 {
+    width: 50%;
+    height: 70%;
+    left: 22vw;
+  }
+  .card2 {
+    width: 50%;
+    height: 70%;
+    left: 24.5vw;
+  }
+  .card3 {
+    width: 50%;
+    height: 70%;
+    left: 26.5vw;
+  }
+  .card-title {
+    left: 9vw !important;
+    font-size: 3.5vh !important;
+    top: 23vh;
+  }
+  .card-text {
+    top: 27vh !important;
+    left: 14vw;
+  }
+  .cardbtn {
+    left: 10vw;
+    top: 29.5vh;
+  }
+  .btnlargo {
+    top: 70vh;
+  }
+  .borderbtn {
+    top: 67.5vh;
+  }
+}
+
+@media (max-height: 740px) {
+  .gratis {
+    font-size: 6.5vh;
+    left: 25vw;
+    top: -4vh;
+  }
+  .card1 {
+    width: 45%;
+    height: 65%;
+    left: 25vw;
+  }
+  .card2 {
+    width: 45%;
+    height: 65%;
+    left: 28vw;
+  }
+  .card3 {
+    width: 45%;
+    height: 65%;
+    left: 30vw;
+  }
+  .card-title {
+    left: 9vw !important;
+    font-size: 3.5vh !important;
+    top: 25vh;
+  }
+  .card-text {
+    top: 29vh !important;
+    left: 11vw;
+  }
+  .cardbtn {
+    left: 8vw;
+    top: 33.5vh;
+  }
+  .btnlargo {
+    top: 72vh;
+  }
+  .borderbtn {
+    top: 69vh;
+  }
+}
+
+@media (max-width: 991px) {
+  .cardplanes {
+    height: auto;
+  }
+  .megatitle {
+    margin-top: 5vh;
+  }
+}
+
+@media (max-width: 575px) {
+  .BannerTitle7 {
+    font-size: 6vh !important;
+    line-height: 5vh !important;
+  }
+  .cardplanes {
+    width: 95%;
+    margin-left: 2.5vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .cardplanes {
+    width: 95%;
+    margin-left: 2.5vw;
+    height: auto;
+  }
+}
+
+@media (max-height: 620px) {
+  .gratis {
+    font-size: 9vw !important;
+    left: 33% !important;
+    top: -40px;
+  }
+
+  .card1 {
+    height: 50% !important;
+  }
+
+  .card2 {
+    height: 50% !important;
+  }
+
+  .card3 {
+    height: 50% !important;
+  }
+
+  .btnlargo {
+    top: 68vh !important;
+  }
+  .borderbtn {
+    top: 64vh !important;
+  }
+}
+
+/*Iphone 6/7/8 (5.5) viewport(375 x 667)*/
+@media (max-width: 380px) {
+  .BannerTitle2 {
+    font-size: 210% !important;
+    line-height: 38px !important;
+    text-align: center;
+    margin-top: -100px !important;
+  }
+
+  .subwrite {
+    top: -35px;
+    left: 40%;
+  }
+
+  .parrafo1 {
+    text-align: center;
+    width: auto;
+    font-size: 4.5vw;
+  }
+
+  .gratis {
+    position: relative;
+    font-size: 10vw;
+    left: 30%;
+    top: -40px;
+  }
+
+  .sign {
+    top: -55px !important;
+    left: 30%;
+  }
+
+  .card1 {
+    position: absolute;
+    width: 37%;
+    height: 55%;
+    top: -140%;
+    left: 110px;
+  }
+
+  .card2 {
+    position: absolute;
+    width: 37%;
+    height: 55%;
+    top: -143%;
+    left: 120px;
+  }
+
+  .card3 {
+    position: absolute;
+    width: 37%;
+    height: 55%;
+    top: -146%;
+    left: 130px;
+  }
+
+  .card-title {
+    font-size: 130% !important;
+    top: 60%;
+    left: 20% !important;
+  }
+
+  .card-text {
+    font-size: 70% !important;
+    top: 70% !important;
+    left: 15%;
+  }
+
+  .cardbtn {
+    position: absolute;
+    font-size: 70%;
+    margin: 0%;
+    padding: 5%;
+    left: 8%;
+    top: 80%;
+    color: white;
+  }
+
+  .btnlargo {
+    font-size: 18px;
+    top: 58%;
+  }
+
+  .borderbtn {
+    position: absolute;
+    width: 20% !important;
+    left: -133%;
+    top: 55%;
+  }
+}
+
+@media (max-width: 320px) {
+  .BannerTitle2 {
+    font-size: 130% !important;
+  }
+
+  .subwrite {
+    display: none;
+  }
+
+  .parrafo1 {
+    position: relative;
+    font-size: 4vw;
+    top: -5vh !important;
+  }
+
+  .gratis {
+    position: relative;
+    font-size: 10vw;
+    left: 30%;
+    top: -13vh;
+  }
+
+  .sign {
+    top: -16vh !important;
+    left: 30%;
+  }
+
+  .card1 {
+    position: absolute;
+    width: 48%;
+    height: 56.5% !important;
+    top: -150%;
+    left: 80px;
+  }
+
+  .card2 {
+    position: absolute;
+    width: 48%;
+    height: 56.5% !important;
+    top: -152%;
+    left: 90px;
+  }
+
+  .card3 {
+    position: absolute;
+    width: 48%;
+    height: 56.5% !important;
+    top: -154%;
+    left: 100px;
+  }
+
+  .card-title {
+    font-size: 130% !important;
+    top: 60%;
+    left: 22% !important;
+  }
+
+  .card-text {
+    font-size: 70% !important;
+    top: 70% !important;
+    left: 19%;
+  }
+
+  .cardbtn {
+    position: absolute;
+    font-size: 70%;
+    margin: 0%;
+    padding: 5%;
+    left: 12% !important;
+    top: 80%;
+    color: white;
+  }
+
+  .btnlargo {
+    font-size: 18px;
+    top: 55vh !important;
+  }
+
+  .borderbtn {
+    position: absolute;
+    width: 20% !important;
+    left: -153%;
+    top: 51vh !important;
+  }
+}
+
+@media (max-height: 480px) {
+  .gratis {
+    font-size: 9vw !important;
+    left: 33% !important;
+    top: -60px;
+  }
+
+  .card1 {
+    height: 48% !important;
+  }
+
+  .card2 {
+    height: 48% !important;
+  }
+
+  .card3 {
+    height: 48% !important;
+  }
+
+  .btnlargo {
+    top: 58vh !important;
+  }
+  .borderbtn {
+    top: 53vh !important;
+  }
+
+  .card-title {
+    top: 31vh;
+  }
+  .card-text {
+    top: 36vh !important;
+  }
+  .cardbtn {
+    top: 40vh;
+    left: 12vw !important;
+    font-size: 1.5vh;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+}
+
+/*RESPONSIVE DE 3er VIEW*/
+/*Iphone 11 (6.1) viewport(414 x 896)*/
+@media (max-width: 420px) {
+  .viewstyle {
+    border-radius: 0px 118px !important;
+  }
+
+  .viewstyle-custombtnindex {
+    left: -50%;
+  }
+
+  .BannerTitle3 {
+    position: relative;
+    top: -70px;
+    font-size: 35px !important;
+    left: 20%;
+  }
+
+  .subview3 {
+    position: relative;
+    top: -80px;
+    font-size: 12px !important;
+    left: 13%;
+  }
+
+  .listview3 {
+    position: relative;
+    top: -120px;
+    font-size: 20px !important;
+    left: 60px;
+  }
+
+  .custombtnindex3 {
+    position: absolute;
+    text-align: center;
+    font-size: 18px !important;
+    padding: 5px 30px 5px 30px !important;
+    top: 60% !important;
+    left: 15%;
+    z-index: 2;
+  }
+
+  .imgtech {
+    position: relative;
+    width: 5% !important;
+    left: -30%;
+    top: -200px;
+  }
+}
+
+/*Iphone 6/7/8 (5.5) viewport(375 x 667)*/
+@media (max-width: 380px) {
+  .viewstyle {
+    border-radius: 0px 118px !important;
+  }
+
+  .viewstyle-custombtnindex {
+    left: -50%;
+  }
+  .BannerTitle3 {
+    position: relative;
+    top: -70px;
+    font-size: 35px !important;
+    left: 20%;
+  }
+
+  .subview3 {
+    position: relative;
+    top: -80px;
+    font-size: 12px !important;
+    left: 13%;
+  }
+
+  .listview3 {
+    position: relative;
+    top: -120px;
+    font-size: 20px !important;
+    left: 60px;
+  }
+
+  .custombtnindex3 {
+    position: absolute;
+    text-align: center;
+    font-size: 18px !important;
+    padding: 5px 30px 5px 30px !important;
+    top: 60% !important;
+    left: 15%;
+    z-index: 2;
+  }
+
+  .imgtech {
+    position: relative;
+    width: 5% !important;
+    left: -30%;
+    top: -200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .viewstyle {
+    border-radius: 0px 118px !important;
+    height: 100vh;
+  }
+
+  .viewstyle-custombtnindex {
+    left: -50%;
+  }
+
+  .subview3 {
+    position: relative;
+    top: -80px;
+    font-size: 12px !important;
+    left: 27%;
+  }
+
+  .listview3 {
+    position: relative;
+    top: -120px;
+    font-size: 20px !important;
+    left: 10px;
+  }
+
+  .custombtnindex3 {
+    position: absolute;
+    text-align: center;
+    font-size: 18px !important;
+    padding: 5px 30px 5px 30px !important;
+    top: 60% !important;
+    left: 5%;
+    z-index: 2;
+  }
+
+  .imgtech {
+    position: absolute;
+    width: 5% !important;
+    left: -30%;
+    top: 25vh;
+  }
+}
+/*RESPONSIVE DE 4to VIEW*/
+/*Iphone 11 (6.1) viewport(414 x 896)*/
+@media (max-width: 420px) {
+  .viewstyle4 {
+    height: 180%;
+  }
+
+  .filafull {
+    display: none;
+  }
+
+  .vertical {
+    /* position: absolute;*/
+    display: flex;
+    width: auto;
+  }
+
+  .subtitulo4 {
+    position: absolute;
+    font-size: 120%;
+    font-weight: 600;
+    top: -50%;
+    left: 20%;
+    text-align: center;
+  }
+}
+
+@media (max-height: 900px) {
+  .viewstyle4 {
+    height: 145%;
+  }
+}
+
+@media (max-height: 750px) {
+  .viewstyle4 {
+    height: 175%;
+  }
+}
+
+/*Iphone 6/7/8 (5.5) viewport(375 x 667)*/
+@media (max-width: 380px) {
+  .viewstyle4 {
+    height: 175%;
+  }
+
+  .filafull {
+    display: none;
+  }
+
+  .vertical {
+    /* position: absolute; */
+    display: flex;
+    width: auto;
+  }
+
+  .subtitulo4 {
+    position: absolute;
+    font-size: 120%;
+    font-weight: 600;
+    top: -280% !important;
+    left: 20%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 320px) {
+  .viewstyle4 {
+    height: 175%;
+  }
+
+  .filafull {
+    display: none;
+  }
+
+  .vertical {
+    /* position: absolute; */
+    display: flex;
+    width: auto;
+  }
+
+  .subtitulo4 {
+    position: absolute;
+    font-size: 110%;
+    font-weight: 600;
+    top: -9vh !important;
+    left: 15vw;
+    text-align: center;
+  }
+}
+
+@media (max-height: 480px) {
+  .viewstyle4 {
+    height: 210vh;
+  }
+}
+/*RESPONSIVE DE 5to VIEW*/
+/*Iphone 11 (6.1) viewport(414 x 896)*/
+@media (max-width: 420px) {
+  .viewstyle5 {
+    height: 200%;
+  }
+
+  .carddisplay {
+    height: 150%;
+  }
+
+  .crd1 {
+    /* position: absolute; */
+    height: 8%;
+    top: 11%;
+    text-align: center;
+  }
+
+  .crd2 {
+    /* position: absolute; */
+    top: 25%;
+    height: 8%;
+  }
+  .crd3 {
+    /* position: absolute; */
+    top: 39%;
+    height: 8%;
+  }
+  .crd4 {
+    /* position: absolute; */
+    top: 53%;
+    height: 8%;
+  }
+  .crd5 {
+    /* position: absolute; */
+    top: 67%;
+    height: 8%;
+  }
+  .crd6 {
+    /* position: absolute; */
+    top: 81%;
+    height: 8%;
+  }
+
+  .txtmod {
+    margin-top: 0vh;
+  }
+}
+
+/*Iphone 6/7/8 (5.5) viewport(375 x 667)*/
+@media (max-width: 380px) {
+  .crd1 img {
+    width: 65%;
+  }
+  .crd1 img {
+    width: 65%;
+  }
+  .crd2 img {
+    width: 65%;
+  }
+  .crd3 img {
+    width: 65%;
+  }
+  .crd4 img {
+    width: 65%;
+  }
+  .crd5 img {
+    width: 65%;
+  }
+  .crd6 img {
+    width: 65%;
+  }
+
+  .textcards {
+    font-size: 2.5vh;
+  }
+}
+
+@media (max-height: 480px) {
+  .crd1 img {
+    width: 55%;
+  }
+  .crd2 img {
+    width: 55%;
+  }
+  .crd3 img {
+    width: 55%;
+  }
+  .crd4 img {
+    width: 55%;
+  }
+  .crd5 img {
+    width: 55%;
+  }
+  .crd6 img {
+    width: 55%;
+  }
+
+  .textcards {
+    font-size: 2.5vh;
+    margin-bottom: 0vh;
+    margin-top: -2vh;
+  }
+  .txtmod4 {
+    margin-top: 1.5px;
+  }
+}
+/*RESPONSIVE DE 5to VIEW*/
+
+@media (max-width: 700px) {
+  .brandsstyle {
+    display: none !important;
+  }
+}
+
+/*Iphone 11 (6.1) viewport(414 x 896)*/
+@media (max-width: 420px) {
+  .viewstyle6 {
+    height: auto;
+  }
+
+  .BannerTitle5 {
+    position: relative;
+    top: -1vh;
+    font-size: 6vw !important;
+  }
+
+  .textbanner {
+    font-size: 2vh;
+    top: -8vh;
+  }
+
+  .imgradio {
+    width: 150%;
+    height: 10vh !important;
+    top: 0vh;
+  }
+
+  .bannerbajo {
+    position: relative;
+    height: 10vh;
+    top: -0vh !important;
+  }
+
+  .brandsstyle {
+    display: none;
+  }
+
+  .brandsstylemobile {
+    display: flex;
+  }
+
+  .containerdp5 {
+    margin-top: 18px !important;
+  }
+
+  .brand1 {
+    width: 70%;
+    margin-bottom: 20%;
+  }
+}
+
+@media (max-height: 620px) {
+  .bannerbajo {
+    top: 0vh !important;
+    height: 8vh !important;
+  }
+  .textbanner {
+    font-size: 2vh !important;
+  }
+}
+
+/*Iphone 6/7/8 (5.5) viewport(375 x 667)*/
+@media (max-width: 380px) {
+  .viewstyle6 {
+    height: auto;
+  }
+
+  .BannerTitle5 {
+    position: relative;
+    top: -1vh;
+    font-size: 6vw !important;
+  }
+
+  .textbanner {
+    font-size: 2vh;
+    top: -8vh;
+  }
+
+  .imgradio {
+    width: 150%;
+    height: 10vh !important;
+    top: 0vh;
+  }
+
+  .bannerbajo {
+    position: relative;
+    height: 10vh;
+    top: -0vh !important;
+  }
+
+  .brandsstyle {
+    display: none;
+  }
+
+  .brandsstylemobile {
+    display: flex;
+  }
+
+  .containerdp5 {
+    margin-top: 18px !important;
+  }
+
+  .brand1 {
+    width: 70%;
+    margin-bottom: 5%;
+  }
+}
+/*RESPONSIVE DE 5to VIEW*/
+/*Iphone 11 (6.1) viewport(414 x 896)*/
+
+@media (max-width: 420px), screen and (max-height: 900px) {
+  .BannerTitle7 {
+    font-size: 5.5vh !important;
+    line-height: 4vh !important;
+  }
+
+  .cardsd1 {
+    position: relative;
+    /* margin-left: 5vw;
+    margin-right: 5vw; */
+    margin-bottom: 5vh;
+    box-shadow: none;
+  }
+  .imgcardback1 {
+    left: 4.8vw;
+  }
+  /* .cardcustom1 {
+    height: 50vh;
+  } */
+  .btncontrata1 {
+    top: -25vh;
+  }
+
+  .cardsd2 {
+    position: relative;
+    /* margin-left: 5vw;
+    margin-right: 5vw; */
+    margin-bottom: 5vh;
+    box-shadow: none;
+  }
+  .imgcardback2 {
+    left: 4.8vw;
+  }
+  /* .cardcustom2 {
+    height: 63vh;
+  } */
+  .btncontrata2 {
+    top: -25vh;
+  }
+
+  .card3unique {
+    top: 60vh;
+  }
+
+  .cardsd3 {
+    position: relative;
+    /* margin-left: 5vw;
+    margin-right: 5vw; */
+    margin-bottom: 5vh;
+    box-shadow: none;
+  }
+  .imgcardback3 {
+    left: 4.8vw;
+  }
+  /* .cardcustom3 {
+    height: 75vh;
+  } */
+  .btncontrata3 {
+    top: -20vh;
+  }
+
+  .BannerTitle8 {
+    position: relative;
+    top: 60vh;
+    font-size: 10vw !important;
+  }
+
+  .sliderback {
+    top: 60vh;
+  }
+}
+
+@media screen and (max-width: 390px), screen and (max-height: 900px) {
+  .cardsd1 {
+    /* margin-left: 5vw;
+    margin-right: 5vw; */
+    margin-bottom: 5vh;
+  }
+
+  .imgcardback1 {
+    margin-top: 6vh;
+    left: 6vw;
+  }
+  /* .cardcustom1 {
+    height: 62vh;
+  } */
+  .btncontrata1 {
+    top: -12.5vh;
+  }
+
+  .imgcardback2 {
+    margin-top: 6vh;
+    left: 6vw;
+  }
+  /* .cardcustom2 {
+    height: 80vh;
+  } */
+  .btncontrata2 {
+    top: -8vh;
+  }
+
+  .card3unique {
+    top: 75vh;
+  }
+
+  .imgcardback3 {
+    margin-top: 6.5vh;
+    left: 6vw;
+  }
+  /* .cardcustom3 {
+    height: 98vh;
+  } */
+  .btncontrata3 {
+    top: -4vh;
+  }
+
+  .BannerTitle8 {
+    position: relative;
+    top: 65vh;
+    font-size: 10vw;
+  }
+
+  .sliderback {
+    top: 65vh;
+  }
+}
+
+@media screen and (max-width: 380px), screen and (max-height: 670px) {
+  .cardsd1 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+  }
+
+  .imgcardback1 {
+    margin-top: 8vh;
+    left: 6vw;
+  }
+  /* .cardcustom1 {
+    height: 70vh;
+  } */
+
+  .imgcardback2 {
+    margin-top: 6vh;
+    left: 6vw;
+  }
+  /* .cardcustom2 {
+    height: 65h;
+  } */
+
+  .card3unique {
+    top: 60vh;
+  }
+
+  .imgcardback3 {
+    margin-top: 6.5vh;
+    left: 6vw;
+  }
+  /* .cardcustom3 {
+    height: 82vh;
+  } */
+
+  .BannerTitle8 {
+    position: relative;
+    top: 65vh;
+    font-size: 10vw;
+  }
+
+  .sliderback {
+    top: 65vh;
+  }
+}
+
+@media screen and (max-width: 360px) and (max-height: 800px) {
+  .cardsd1 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+  }
+
+  .imgcardback1 {
+    margin-top: 0vh;
+    left: 6vw;
+  }
+  /* .cardcustom1 {
+    height: 55vh;
+  } */
+
+  .imgcardback2 {
+    margin-top: -4vh;
+    left: 6vw;
+  }
+  /* .cardcustom2 {
+    height: 75vh;
+  } */
+
+  .card3unique {
+    top: 70vh;
+  }
+
+  .imgcardback3 {
+    margin-top: -6.5vh;
+    left: 6vw;
+  }
+  /* .cardcustom3 {
+    height: 92vh;
+  } */
+
+  .BannerTitle8 {
+    position: relative;
+    top: 65vh;
+    font-size: 10vw;
+  }
+
+  .sliderback {
+    top: 65vh;
+  }
+}
+
+@media screen and (max-width: 360px), screen and (max-height: 650px) {
+  .cardsd1 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+  }
+
+  .imgcardback1 {
+    margin-top: 0vh;
+    left: 6vw;
+  }
+  /* .cardcustom1 {
+    height: 70vh;
+  } */
+
+  .imgcardback2 {
+    margin-top: -4vh;
+    left: 6vw;
+  }
+  /* .cardcustom2 {
+    height: 92vh;
+  } */
+
+  .card3unique {
+    top: 85vh;
+  }
+
+  .imgcardback3 {
+    margin-top: -6.5vh;
+    left: 6vw;
+  }
+  /* .cardcustom3 {
+    height: 115vh;
+  } */
+
+  .BannerTitle8 {
+    position: relative;
+    top: 80vh;
+    font-size: 10vw;
+  }
+
+  .sliderback {
+    top: 75vh;
+  }
+}
+
+@media screen and (max-width: 320px), screen and (max-height: 600px) {
+  .cardsd1 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+  }
+
+  /* .cardcustom1 {
+    height: 85vh;
+  } */
+  .imgcardback1 {
+    margin-top: -3.5vh;
+    left: 6vw;
+  }
+
+  .imgcardback2 {
+    margin-top: -9.5vh;
+    left: 6vw;
+  }
+  /* .cardcustom2 {
+    height: 108vh;
+  } */
+
+  .card3unique {
+    top: 100vh;
+  }
+
+  .imgcardback3 {
+    margin-top: -19vh;
+    left: 6vw;
+  }
+  /* .cardcustom3 {
+    height: 140vh;
+  } */
+  .btncontrata3 {
+    top: -12vh;
+  }
+
+  .BannerTitle8 {
+    top: 90vh;
+    font-size: 10vw !important;
+  }
+
+  .sliderback {
+    top: 90vh;
+  }
+}
+
+@media (max-height: 480px) {
+  .lista {
+    font-size: 4.2vh;
+  }
+  .cardsubtitle {
+    margin-top: 2vh;
+  }
+
+  .imgcardback1 {
+    margin-top: 18vh;
+    left: 6vw;
+  }
+  .btncontrata1 {
+    top: -46vh;
+  }
+
+  .imgcardback2 {
+    margin-top: 21vh;
+    left: 6vw;
+  }
+  /* .cardcustom2 {
+    height: 108vh;
+  } */
+  .btncontrata2 {
+    top: -46vh;
+  }
+
+  .card3unique {
+    top: 100vh;
+  }
+
+  .imgcardback3 {
+    margin-top: 20vh;
+    left: 6vw;
+  }
+  /* .cardcustom3 {
+    height: 140vh;
+  } */
+  .btncontrata3 {
+    top: -40vh;
+  }
+
+  .BannerTitle8 {
+    top: 90vh;
+    font-size: 10vw !important;
+  }
+
+  .sliderback {
+    top: 90vh;
+  }
+}
+@media (max-width: 450px) {
+  .cardsd1 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  .cardsd2 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  .cardsd3 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}

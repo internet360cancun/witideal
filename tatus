@@ -1,0 +1,700 @@
+[33m4003db2[m[33m ([m[1;36mHEAD -> [m[1;32marmando[m[33m, [m[1;31morigin/armando[m[33m)[m [fix] radio options fixed at advance filters
+[33m878eeee[m [fix] remove some spageti code
+[33m463c1c2[m [fix] Pictures gallery fixed
+[33m5ba4b35[m [fix] favorites references
+[33me4dd65f[m Merge branch 'Staging' of github.com:Witideal/Witideal-Web into armando
+[33m6c50479[m[33m ([m[1;31morigin/Staging[m[33m, [m[1;32mStaging[m[33m)[m Merge branch 'Cristian' of github.com:Witideal/Witideal-Web into Staging
+[33mb8ff0ee[m Merge branch 'Staging' of github.com:Witideal/Witideal-Web into armando
+[33m9719992[m [FIX] add tickets if not exist
+[33m9dbc151[m [FIX] inputs overflow fixed
+[33m9cc07e4[m [UPD] buttons for close advance filters and quicksearch added
+[33mc316f33[m[33m ([m[1;32mmatch[m[33m)[m [UPD] summary seach added
+[33md0467e1[m [FIX] descrition at specific data list removed
+[33m7abd016[m [MERGE]
+[33m87ef2f4[m [FIX] nitifcation icon changed
+[33m91b86b5[m [FIX] fotter & open pay iframe removed
+[33m7080c62[m [Alternative image at property detail added ]
+[33m2b808cd[m [UPD] added images alternative at multimedia
+[33mca53724[m[33m ([m[1;32mshare[m[33m)[m [fix] url to share has been fixed,
+[33m59c65df[m[33m ([m[1;32marmando-research[m[33m)[m [HOTFIX]
+[33mfe6b73d[m [UPD] quick search and advance filters ready, it has been rewrited
+[33md68c2e1[m [UPD]
+[33m309845b[m [FIX] erors at specific data component has been fixed
+[33m692990f[m[33m ([m[1;31morigin/Cristian[m[33m, [m[1;32mCristian[m[33m)[m [fix] added context phone number ternary to witicoins post
+[33m65e7ffc[m [mrg]
+[33mebc7639[m [research is finished ]
+[33maecdefb[m [UPD] finished images
+[33mfbde696[m [UPD] color counter and constrols at gallery images has been changed
+[33m5a49a95[m [fix] hotfix error sections
+[33mfe727be[m [FIX] loader at buy witicoins
+[33mdab71cc[m [UPD] position images has been fixed
+[33mfabb820[m [MERGE]
+[33m8de8279[m [UPD] garelly
+[33m418868c[m [upd] double search button in header is removed
+[33m68a722d[m [UPD] color textfield and switch in promo form location
+[33m51202e0[m [UPD] order myproperty has been fixed
+[33m162b60d[m [UPD] alert at promoform fixed
+[33mdadd3e3[m [UPD] UI multimedia has been fixed
+[33m5c5fc06[m [upd] ordered pictures finished
+[33m724034d[m[33m ([m[1;32marmandotest[m[33m)[m [UPD]
+[33m2691f5b[m[33m ([m[1;31morigin/armandotest[m[33m)[m [UPD] reordered images
+[33m66a1e88[m testing changes
+[33m026b52e[m Merge branch 'Staging' of github.com:Witideal/Witideal-Web into armando
+[33mc19178b[m [UPD] latest update for reorder pictures
+[33m8395d3d[m [UPD] color change the button hover. Color change in components with textField
+[33m0172dd6[m [UPD] reorder images added and fix error on favorite
+[33mcdcee87[m [BUILD] 27/03/2020
+[33md38df42[m [upd]
+[33mf8e3378[m [UPD]
+[33md6289c9[m Merge branch 'Caro' into Staging
+[33m6c6aa8f[m[33m ([m[1;31morigin/rodrigo[m[33m)[m [BUILD] 26/03/2020
+[33m1c7529f[m [UPD]
+[33md620a21[m [FIX] error in pay property has been fixed
+[33mbf67399[m [FIX] error edit my property has been fixed
+[33mbbcb8cb[m Merge branch 'Staging' of github.com:Witideal/Witideal-Web into armando
+[33m151f5dc[m [UPD] alert before leave form
+[33mc17b22d[m [BUILD]
+[33m1f1b6a1[m [FIX] Interested Card has been rewrited for perfomance and UI
+[33m51c7d94[m [merge]
+[33mbac93b5[m [UPD] color input text
+[33mb2c0c2a[m [UPD]
+[33mb444ea5[m [UPD] add UI my properties filter and empty
+[33m3a21f9b[m [MRG] with Staging
+[33m6eeacc6[m [UPD] UI for empty notification added
+[33m34260d3[m Merge branch 'armando' of github.com:Witideal/Witideal-Web into armando
+[33m35f9ca4[m [FIX] favorites and contacteds has been changed position
+[33m2960d72[m [MRG] with Staging
+[33mb01ec3d[m [fix] favorites has been rewrited
+[33m83e1ef5[m [UPD] color checkbox and radio buttons
+[33m37bd193[m [BUILD]
+[33mda9cc43[m [fix] favorites error change get to onSnap litener
+[33m023f84d[m [FIX] change method for user change to promoter
+[33m2e0bacc[m [UPD] modal alert content centered
+[33mb470097[m [FIX] theme position
+[33m6e4b269[m [UPD] checkbox color
+[33mff961fe[m [UPD]
+[33m92cd87e[m [ADD] button for change user to promotor
+[33maa698fa[m [UPD] button restore password and property detail
+[33m9cbd6d8[m [UPD] text in buttons
+[33mad3fd57[m [UPD] color change on buttons and stepper
+[33m770ec93[m [FIX] notification icon changed
+[33m209300f[m [ADD] photo gallery at property detail
+[33mc89eef2[m [UPD] filter tags working fine
+[33m704ce4c[m [UPD] when adding new filters update weights in search properties
+[33med764d6[m [BUILD] Caro
+[33m50f1866[m [BUILD] merge Caro
+[33m9c96532[m Merge branch 'armando' into Staging
+[33m94b8433[m Merge branch 'Staging' of https://github.com/Witideal/Witideal-Web into caro
+[33mcf28bbc[m [UPD] buttons colors
+[33mdf13266[m [UPD] notification message empty items
+[33mfd2c595[m [FIX]
+[33ma800fb9[m [FIX] color select and butons at my properties filter fixed
+[33m5d78c5b[m [fix] image position at my contacts
+[33m20e8d3e[m [ADD] number contacts at myproperties
+[33mdd8e534[m [mrg]
+[33m0ed6bae[m [ADD] notification added
+[33m4d1f19e[m Merge branch 'armando' into Staging
+[33m15e024f[m [BUILD]
+[33m3178ccb[m [UPD] added line is removed in detail specific data as it breaks other things
+[33mbb71e66[m [UPD] button Property detail specific data
+[33mccb558d[m [UPD] alert JS global alert component
+[33m5cf3d81[m [UPD] added to render specific data line function to exclude data containing ocons and prevent duplication
+[33mdab5bd5[m Merge branch 'Staging' of https://github.com/Witideal/Witideal-Web into caro
+[33m4c28c52[m [FIX] color modal
+[33m0d15f33[m [UPD] login permissions
+[33mc7635f1[m [UPD] change UI on update profile and
+[33m8689177[m [MRG]
+[33m414e00c[m [BUILD]
+[33m325b1f7[m Merge branch 'Staging' of https://github.com/Witideal/Witideal-Web into caro
+[33m9151212[m Merge branch 'armando' into Staging
+[33m1a7ea4a[m [UPD] recalculate weights when searching properties
+[33m478e8f9[m Merge branch 'armando' of github.com:Witideal/Witideal-Web into armando
+[33md4f97e6[m [ADD] edit profile promoter and user
+[33m0bf15c5[m [UPD] change the sizes of buttons in user form
+[33mb322a53[m [UPD] background color is changed on buttons
+[33mebc27d3[m [UPD] title names in header menu
+[33mcf9575b[m [UPD] Landing return landing to previous state
+[33m36e1102[m [UPD] change styles to keep landing text fixed
+[33m3a2e5ab[m Merge branch 'Staging' of https://github.com/Witideal/Witideal-Web into caro
+[33m66351c6[m [BUILD]
+[33m15ff720[m [ADD] billData
+[33m16ce4bf[m [BUILD]
+[33me302dad[m [UPD] button on profile added
+[33mecc44f4[m [UPD]space that affected bank auction is corrected
+[33m71af50b[m [FIX] error
+[33mcc200ff[m Merge branch 'Staging' of github.com:Witideal/Witideal-Web into armando
+[33m0d7c797[m Merge branch 'caro' of https://github.com/Witideal/Witideal-Web into caro
+[33m7e53edc[m [UPD] change in space between advanced filters component and user form elements
+[33m604e9b0[m [UPD] type of numer to show
+[33m48279ac[m Merge branch 'Staging' of https://github.com/Witideal/Witideal-Web into caro
+[33mcd8522d[m [ADD] my payments
+[33m49f912a[m [UPD] stroke in input Search bar and Stepper padding
+[33m6e539c4[m [BUILD]
+[33madc5069[m [UPD] limit card payment up to 6000 pesos
+[33ma1531a9[m [UPD] openpay object change
+[33me4e87ae[m Merge branch 'Staging' of https://github.com/Witideal/Witideal-Web into caro
+[33m5d2edee[m [UPD] color Button Restore password
+[33mdab3a31[m [ADD] Firebase config
+[33m625ab73[m Merge branch 'caro' of https://github.com/Witideal/Witideal-Web into caro
+[33m86b7ff5[m Merge branch 'armando' into Staging
+[33m3142e37[m [UPD] background transparent created
+[33ma1ddf55[m Merge branch 'armando' of https://github.com/Witideal/Witideal-Web into armando
+[33md9bcd2b[m Merge branch 'armando' into Staging
+[33m010ef54[m Merge branch 'Cristian' into Staging
+[33m69410d5[m Merge branch 'armando' into Staging
+[33mfa6340f[m Merge branch 'Staging' of https://github.com/Witideal/Witideal-Web into caro
+[33m501c64d[m Merge branch 'Staging' of https://github.com/Witideal/Witideal-Web into armando
+[33m5a55ad4[m [UPD] myProperties filter
+[33m8244956[m [FIX]css styling
+[33mae858e7[m [upd] addweights now points to specificData
+[33mab30bec[m [FIX] css fixes
+[33m372c2fe[m Merge remote-tracking branch 'origin/rodrigo' into Cristian
+[33mab8ec47[m [FIX] wight calc working fine, instead of setting as max 75% coincidence
+[33m66f48de[m [FIX] when searching properties, it does not search twice
+[33m8b80891[m [upd]CredentialEx annon usr no longer posts uid
+[33m012b2cd[m[33m ([m[1;31morigin/Landing[m[33m)[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m788467f[m [UPD] css styling in properties list
+[33m6ee1559[m [FIX] fix firebase function
+[33m3163c76[m [UPD] height correction of principal containar in my profile
+[33m5e23524[m UPDATE myProperties filter
+[33m7a04d98[m [UPDATE]
+[33mcaaf390[m [UPDATE]
+[33m11dd271[m [FIX] footer text
+[33m2203f28[m [FIX] specific data input fixes and warning modal working fine
+[33m5f60d14[m [UPD]
+[33m2b3d154[m [add] api file for request to api
+[33m0d2b239[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mb870769[m [UPD] success and error modal in restore password
+[33me72cdd1[m[33m ([m[1;32mLanding[m[33m)[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mfaedfcd[m [UPD] inputs stop function
+[33mf780be4[m [UPD] pay property
+[33m2040742[m [UPD]
+[33m604b7aa[m [UPD] searchbar now  looks for sublocality too
+[33m62a7968[m [UPD]
+[33m98c64d4[m ContactList
+[33m5681033[m [FIX] box in promo form location
+[33mf822eaf[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m413ace3[m [FIX] delete of facebook button
+[33m4d5e781[m [FIX] merge
+[33mcd7cdf9[m [upd]
+[33mb428c80[m [UPD]  contacs
+[33m2939265[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mb087fd7[m [UPD] Grid in my profile
+[33m6829cb9[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m224d446[m [FIX] social media log in dismiss, when sesstate=true
+[33md934d8b[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mb3a96c1[m [UPD] button my movements in my profile
+[33m5bb9d62[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mc2eeb6b[m [UPD] functionality in register component
+[33me4c8719[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf544a5d[m [fix]typo banksale
+[33m4811b73[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m9e1e285[m [UPD] my profile and promo form location inputs
+[33m416c115[m [upd]new search query
+[33m3b320ed[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m2be03e3[m [UPD] in usefirebasetool use setQuery instead of hardSetQuery
+[33m5056903[m [UPD]
+[33m01ced87[m [UPD] delete properties
+[33ma2f8756[m [UPD] delete property
+[33mf3cc490[m [merge]
+[33m0fc7a86[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m0c9077d[m [FIX] when changing 1 value without changing images, make dismiss to success
+[33m7f9e776[m [UPD] footer and my profile
+[33m636f636[m [upd] recaptcha
+[33m88d3e0d[m [add] UpdObj to uft
+[33m5653678[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m1075d9f[m [UPD] WIP recapcha
+[33m6d03485[m [FIX] mail stays fixed in register
+[33m3c14bb3[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m176875f[m [FIX] when uploading only 1 photo in extras, working fine
+[33mf16f2a7[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m879e103[m [ADD] master authdatacontest
+[33mebaaf2b[m [add] auth info to sesContext
+[33mba60b09[m [UPD]
+[33m98c5e45[m [UPD] contacteds and favorites ready
+[33mfa690d5[m [add] gitnore
+[33m0e14e19[m [FIX] functionality in upload property
+[33mf1010b5[m [FIX] promoFormGeneralData when changin betwen habitational or comercial, change the property type
+[33m5013e49[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m50a955e[m [UPD] style in succesful upload of property
+[33m025dc7a[m [UPD] share button in my property card
+[33me5962e6[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf8142b4[m [UPD] Update Contacteds UI
+[33m85e17e1[m [FIX] dropzone limit image uploading
+[33me94d8dd[m [MRG]
+[33m8c12ad0[m [FIX] dropzone limit image uploading
+[33m2258277[m [UPD] Contacteds
+[33m04063fd[m [UPD] My contacteds
+[33m01e8100[m [FIX] useFirebaseTools
+[33mfaf7ed9[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m853abad[m [UPD]
+[33m70f1373[m [UPD] save
+[33mf0c9190[m [UPD] save
+[33mdcee316[m [UPD] SAVE CONTACTEDS
+[33m396995f[m [ADD] UPDATE permissions
+[33ma68026d[m [MRG]
+[33m6d0a867[m [UPD] styling and functionality in upload property
+[33mf70dd77[m [UPD] contacteds and favorites page
+[33m0d7b7f3[m [fix] credEx and added error to parser
+[33m571c06e[m [UPD] Liked properties with pagination
+[33ma52203c[m [UPD] favorites and Contacteds
+[33m2872d86[m [UPDATE] FAVORITES AND CONTACTEDS
+[33m17beff2[m [UPD] change in the construction of the URL in property detail
+[33m097daa6[m [merge]
+[33m327b1e9[m [ADD] pginate my Properties
+[33m0a89b9f[m [ADD] paginate my Properties
+[33m5736da2[m [FIX] address stops loading in failure
+[33mfc00d61[m [FIX] reset uid in second charge
+[33mc973803[m [FIX] functions dismiss in loader and loader in location
+[33m139bf6a[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m0fa5448[m [FIX] styling fixes
+[33m3be5aa6[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m2f8c120[m [UPD] avatar in header and my profile
+[33m6299b9e[m [UPD] refactor in firebasetools functions and some fixes in upload-update property with images.
+[33m8861c73[m [fix] credential ex variables
+[33m9b1e490[m [FIX] variable names in usefirebasetools
+[33m0b5b4bc[m [UPD] refactor UsefirebaseTools ownedProperties
+[33ma088f0a[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m37aebe4[m [UPD] Favorites Ready
+[33m31923f5[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m344f6e5[m [UPD] my profile
+[33mc29db36[m [upd]gitnore
+[33ma78c0b2[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mce9a621[m [FIX] dropzone component
+[33m03d48d9[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mbae5962[m [UPD] favorites fix name
+[33m75dcd24[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mb400d47[m [UPD] Responsive my profile and package selecter
+[33m4775f4c[m [UPD] Myfavorites controller
+[33m4505426[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m4d0d61c[m [UPD] My favorites
+[33m70c34f8[m [fix] set and del fav
+[33m1c1c5a2[m [ADD] getpaginatedusercontacts to firebasetools
+[33m621ae7d[m [UPD] myfavorites changed ext jsx into js
+[33mf6a4fd3[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m8191017[m [UPD] Myfavorites
+[33m3353cae[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m932ef8b[m [UPD] MyFavorites
+[33m500fe68[m [FIX] getFavProps getget
+[33m53072e3[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mb858840[m [ADD] favorites
+[33m7a9bedc[m [FIX] getFavProps getget
+[33mb443518[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m29e3208[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m5474c44[m [UPD] Route of icons is changed in  specific data icons and my profile movements button is added
+[33m0b9584f[m [add] getpaginateduserprops to firebasetools
+[33m7410faa[m [UPD] MOVEMENTS add date
+[33m397edd5[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m682512e[m [UPD] movements
+[33m02b4e4f[m [merge]
+[33m5683698[m [UPD] text desarollo instead of logo in development
+[33m2d4782e[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m9b81394[m [UPD] movements
+[33m17121c1[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m5377d86[m [UPD] label of stepper
+[33m20bc670[m [UPD] label of stepper promo form
+[33m1a43dbb[m [UPD] movements
+[33meda609a[m [FIX] conditional rendering in specific data when the section does not have any input to be rendered
+[33m2008fff[m [UPD] property card CSS
+[33m226d8bf[m [UPD] styling in properties list rendering
+[33mf9fb84c[m '[UPD]'
+[33mf607270[m 'mov'
+[33m44e935d[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mea72a62[m [add] moviments
+[33m283430b[m [UPD] moviments card
+[33m2b28f33[m [ADD] MovimentsCard
+[33m9b40727[m [add] gitignore
+[33m40c43bb[m [fix] name and mail autofill
+[33mfa9f75b[m [UPD] new error code and register fix
+[33md6698dc[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m50fa320[m [ADD] pagination
+[33m40448d0[m [ADD] verifycode
+[33mf0ff340[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33me5ef830[m [UPD] advanced filters
+[33m6d11c64[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m5e0e7b5[m [ADD]error parser
+[33m4c076d1[m [UPD] rute close sessionon landing and button close to slider properties
+[33m7240743[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m5da77ff[m [UPD] property detail css
+[33m3842446[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m0fbf271[m [ADD]profile pic to photo on user reg
+[33m4812306[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf28c714[m [FIX] css in promoFormSummary
+[33m36f43d6[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m8a42738[m [ADD] property edit
+[33m428e179[m [FIX]
+[33m502b82f[m [FIX] undefined object in specific data
+[33mecd53a6[m [MRG]
+[33m1b0aac6[m [UPD] specific data icons and css in promoform summary
+[33m5b8b659[m [MRG]
+[33m22b6a1b[m [FIX] minor fixes
+[33m16e20b2[m [UPD] Specific data icons
+[33mf5cf8ad[m [FIX] searchbar now gets admin23 based on sublocality, WIP update property
+[33m5ea041e[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m1ca35ff[m [UPD] arrays and objects to upload images in firebase
+[33m371f831[m [fix] typos in stringsjs
+[33m34a4bf0[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m3dee810[m [UPD] error handling in buyWiticoins component
+[33m83ef85e[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mfe0dfc4[m [ADD] Component Slider properties
+[33m5d82601[m [UPD] buy witicoins payment methods
+[33me95f379[m [UPD] loader and validations in payment methods
+[33mebc5b79[m [UPD] payment methods available
+[33m1cac4ab[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m40ec8fe[m [FIX] Performance and code refactor in dropeZone component
+[33mc66a8d0[m [ADD] Contact list
+[33m7c7cd52[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mfd19635[m [FIX] when adding more files, keep previous files
+[33me59bd52[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m4fb86da[m [UPD] Property card
+[33m3c56c57[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf7f6b2c[m [UPD]share button in myProperties List
+[33md747ce4[m [ADD] delProperty uploadprofilepic getInterestedUsrs observer of witicoins and freeups phone to context
+[33m422e3c7[m [UPD] property card
+[33m9dcb0ed[m [UPD] myProperty card
+[33me8b21b2[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mfc0c3eb[m [UPD] my properties
+[33m2dca309[m [ADD] toggleEnable property on UseFirebasetools
+[33m89c046c[m [UPD] total of img to be uploaded
+[33m96b2b25[m [upd] edit my prop pases the property
+[33m5db1e2c[m [MRG]
+[33m14bb02e[m [UPD] photo upload
+[33mca03a34[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m6aa6102[m [UPD] calculate price in buyWiticoins.js
+[33m802c9f7[m [UPD] Menu options are added in My properties card
+[33made5ed0[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mabfb7e9[m [ADD] file My properties card
+[33m8849ed4[m [UPD] verify modal styles
+[33mc33b21f[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m3cacf02[m [ADD]first visualization of properties, missing css styles
+[33maa1641c[m [UPD] merge strings.js
+[33m5d92231[m [UPD] icons in strings.js
+[33mc1b0afd[m [MRG]merge
+[33m913cd57[m [FIX] upload principal photo in root
+[33me189b01[m [FIX] Specific data textfield type number, avoid negative numbers
+[33mf886b6a[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf3eb3e0[m [UPD] Icons of Strings
+[33m310d3ff[m [ADD] setFav, getFav, delFav
+[33mc3fafb5[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m5e44642[m [ADD] firebaseTools.setFav
+[33m0880360[m [UPD] specific data icon card
+[33m92d5709[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m218e4dc[m [ADD] Object for specific data icons is added and component
+[33m5465258[m [ADD] own prop verif
+[33m003ba91[m [FIX] property description working fine in sumarry
+[33mde92ca9[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33me3257ce[m [FIX] property detail in summary, catch if specific data is empty
+[33md704bc4[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33md606d81[m [UPD] finished getuserproperties and validation to sharedCom/promoter
+[33m938531d[m [UPD] input data <locationInBuilding>
+[33m77d36e4[m [FIX] validations in location
+[33maedd4ef[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33ma277e77[m [FIX] Upload Summary styling
+[33mc5ac7ab[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mfe0e3a8[m [UPD]register now shows error modal, fbtools get properties WIP
+[33m3e8fce6[m [FIX] specific data memory saving to move forward and backward working
+[33m13d2e1d[m [FIX] delete some console logs
+[33m7193160[m [UPD] merge
+[33m2c2e3a1[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m102e5bb[m [FIX] standarization of data in specific data
+[33m43e8f42[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf0e2f00[m [ADD] mailandPAss phone verif and credential exchange
+[33me945189[m [FIX] styles in landing
+[33mc968594[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mbc0b26e[m [UPD]  background correction in alert modal
+[33m9fb8f7d[m [UPD] lat lng outside latLng
+[33m88b4c2f[m [UPD] data standarization with android model
+[33m4383bab[m [ADD] component added My favorites list. Change hover in buttons find property and advertise property
+[33m36efd70[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m641c034[m [UPD] Master to reload user and register to dismiss
+[33m438544f[m [UPD] data standarization with android model
+[33ma6dc66a[m [UPD] data standarization with android model
+[33m42d05bf[m [UPD] data standarization with android model
+[33m37ffba2[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m7f496c3[m [UPD] register as promoter
+[33m4f4f252[m [ADD] My properties component is added and routes is created. Changes in landing text
+[33m34bc8e7[m [ADD] My properties component is added and route is created. Changes in landing text
+[33m7b30616[m [UPD] dismiss Modal in Login when login is success
+[33mf775c3b[m [FIX] Error p tag in My Profile
+[33m5e8d12a[m [ADD] federated register WIP ---REPLACE VERYMODAL
+[33mf53288a[m [UPD] my properties card and contact list whit props
+[33m31fba24[m [fix] rfc company name
+[33m62f126c[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf66693b[m [ADD] Logo animation component and the Snackbar background color of de warning modal component is changed
+[33m1f28e8e[m [upd] name+lastname to displayname fbregister
+[33m3fa7e59[m [ADD] register acount WIP
+[33m5a6afc0[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m0c7462a[m [UPD] Error modal in register
+[33m90860fd[m [UPD]  merge
+[33m4cc8e1d[m [ADD] Error modal in login
+[33m1e733ee[m [UPD] close modal when recovering password
+[33m50e2743[m [MERGE]
+[33md6176ae[m [UPD] dismiss in login and register
+[33m6da06aa[m [UPD] images fullwidth in dropzone
+[33m6d06c80[m [UPD] dropzone full width
+[33mda82039[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mb5def97[m [UPD] thumbComponent big image
+[33mb43d68d[m [UPD] login modal functionality WIP
+[33m94b49ba[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m0c7f5b9[m [UPD] add warning snackbar in upload properties
+[33mf2f3f06[m [UPD] refactor references from stage to production
+[33mb4af5c5[m [FIX] background performance
+[33mca17e7f[m [FIX] landing responsiveness
+[33m117a45f[m [FIX] landing responsiveness
+[33m8498905[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf751369[m [FIX] component segmentation in propertyDetail.js
+[33m47a5257[m [add] enviroment constant
+[33m9ccee94[m [ADD] List Contact
+[33m161b73c[m [ADD] My properties card
+[33m727c81e[m [FIX] thirdP in Values working, missing QA errors
+[33m16cead3[m [FIX] register error in input value
+[33m5464312[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mc6c268b[m [UPD] Add route search properties,  changes for responsive property list
+[33mf4c70dd[m [UPD] merge
+[33m90ee1f5[m [ADD] loader in promoForm summary, missing how many imgs have been already uploaded
+[33mcb90620[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mfd9809c[m [UPD] correction in responsive cards
+[33maf552dd[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m7c5203d[m [FIX] upload properties css
+[33m1a3b0df[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mefca8f1[m [UPD] padding modification on landing and route search properties added
+[33m7d28482[m [UPD] Remover login clgs
+[33mb98cfda[m [FIX] Upload poroperty responsiveness
+[33mee18520[m [FIX] Upload poroperty responsiveness
+[33me1403a1[m [UPD] error correction in modal
+[33mc1ceb1c[m [ADD] Error modal and Success modal
+[33m72c32cc[m [ADD]  Information modal and border are added to warning modal
+[33me80f95b[m [UPD] Change of general modal name to modal warning, already functional
+[33m4fc9810[m  [ADD] Genaral responsive modal is added
+[33m4931935[m [UPD] merge payment
+[33mce863a1[m [ADD] payment posting to endpoint
+[33m1de45e9[m [UPD] Responsive My profile
+[33m09f6e0c[m [UPD] update Buy witicoins, responsive howItWorks
+[33m5e3888e[m [ADD] useOpenpay hook
+[33m59e29ae[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m2a47dd1[m [UPD] buy witicoins section
+[33mb70c3df[m [UPD] Responsive in Buy witicoins and how it works modifying credit calc
+[33m8942074[m [UPD] update my profile text
+[33m0513330[m [UPD] how it works with final text,merged
+[33m9876956[m [UPD] how it works with final text
+[33m23acf4c[m [UPD] update My Profile
+[33me23241d[m [ADD] First part of My Profile
+[33m3fdd646[m [ADD] First part of My Profile
+[33m324931f[m [ADD] Witicoins section
+[33m170b16b[m [ADD] Witicoins section
+[33m4673c71[m [UPD] responsive with changes
+[33mbf46864[m [UPD] Responsive how it works
+[33m6da8788[m [UPD] merge
+[33mb10eb50[m [UPD] how it works section, text with correct copies. Missing badges,simultaor and packages
+[33m0d80229[m [UPD] test background is remove
+[33mdbc9d2b[m [UPD] Responsive Location data, Specific data and multimedia
+[33me7da59e[m [UPD] merge
+[33m950961b[m [FIX] specific data in upload property is working correctly
+[33mc1cf3d9[m [UPD] Responsive PromoFormGeneralData
+[33m2600c3d[m [UPD] Search path is added and league styles are changed
+[33mcb9d320[m [UPD] grid system in promo form for responsive design
+[33m9e450e8[m [ADD] second and third section in how it works
+[33m40b484d[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m1d153f0[m [UPD] how it works section
+[33m7b0b33c[m [UPD] Text changes to restore password, login and register. Footer routes and login are linked.
+[33mbb763dc[m [ADD] how it works section
+[33m1c40598[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mb9b8f12[m [ADD] principalphoto validator
+[33me39a443[m [Add] location input validators
+[33mfdd8f83[m [fix] tooltip now clears after a valid price
+[33m9fe3a05[m [add] Price blur validation
+[33mde93f95[m [ADD] Promo form step validator
+[33m2e2caa8[m [UPD] improvement of the upload property component
+[33m05259ae[m [UPD] Responsive Landing
+[33m2eedc68[m [UPD] userForm add currency and homologized with android version
+[33m73a4763[m [UPD] userForm add currency and homologized with android version
+[33mf50af78[m [UPD] error elimination of the function rendered by footerLegalsComponent is corrected
+[33m17d0525[m [UPD] SCRIPT.JS Full Standarized with android, ready to be used by IoS
+[33me00d52d[m [UPD] SCRIPT.JS Full Standarized with android, ready to be used by IoS
+[33m673233f[m [UPD] Facebook logo and spaces in Login and Register are modified
+[33m49e5cf9[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m9c1689b[m [UPD] styling in 404
+[33m5f0c894[m [UPD] upgraded router pkg, app routing enhaced + merge
+[33m5121f61[m [UPD] upgraded router pkg, app routing enhaced
+[33m01bddf1[m [UPD] changes in facebook logo, google and background image. Responsive, footer and header
+[33m07fdd86[m [UPD] changes in facebook logo, google and background image. Responsive, footer and header
+[33md26e1d6[m [FIX] register posting in authenticity and firebase firestore
+[33mb55557b[m [UPD] styling and icons in property details
+[33me31ef0c[m [FIX] property detail can render images that have spaces in the path by converting them to %20
+[33m31a8e84[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m9dd843a[m [FIX] string.js normalized with android data
+[33m163c87b[m [UPD] styling propertylist
+[33m0201c08[m [updt] error correction in footer
+[33m42ab377[m [upd]
+[33mf34041f[m [ADD] lottery working complete
+[33ma86a829[m [UPD] lottery implemented, missing keys to sort by lottery
+[33m0122d7f[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m6065a7f[m [UPD] lottery implemented, missing keys to sort by lottery
+[33m862918f[m [UPD] useffect on master
+[33m8b4f3be[m [ADD] Localstorgae + Context
+[33m710d815[m [upd] Responsive components footer
+[33m16b1fcc[m [UPD] addWeight implemented
+[33m706484a[m [UPD] merge log In changes
+[33m463c57d[m [UPD] routing and context
+[33m047b61d[m [UPD] routing and context
+[33mdc57a45[m [UPD] routing and context
+[33m0ae9c3c[m [ADD] weight method working in properties list
+[33mcc55923[m [upd] Responsive inputs Register and Login
+[33meaccfc1[m [upd] responsive inputs Register and Login
+[33m1f6e9b6[m [UPD] get nav agent
+[33me4b505a[m [UPD] scrolltop and fixed car to menu in propertyDetail
+[33m67e792b[m [UPD] scrolltop and fixed car to menu in propertyDetail
+[33mcb9934a[m [upd] Responsive header
+[33mc23709c[m [upd] Responsive header and landing
+[33m6e4c22f[m [UPD] installation in local client for developing
+[33mf01b574[m [UPD] header update
+[33m7857612[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mdbfcb8f[m [UPD] ImageGrid in Property Detail
+[33m290b632[m [ADD] Login Routing WIP
+[33ma5a2ec1[m [ADD] Property Detail with URL params
+[33m6b10a75[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33me59cc16[m [ADD] Property Detail with URL params
+[33m13f2b7f[m [UPD] finished getProperties fn on useFirebaseTools
+[33m7f51e81[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mc31162b[m [UPD] Responsive design in Landing.js
+[33m295155c[m [upd] Promoformlocation street and number inputs now modify the global state
+[33mdf8ad1b[m [UPD] some responsive fixes
+[33m8b6f6f2[m [ADD] properties list, and properties card with advance filters controls
+[33m9834d2d[m [ADD] skeleton and propertiesList
+[33mf479cea[m [UPD] save object to search in userform.js
+[33mbbdbe85[m [UPD] Merge promo form
+[33mddc7226[m [FIX] Image max photo working
+[33m224a268[m [FIX] promoter tooltip text
+[33m268235d[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mf96f0a0[m [upd] Context cleanup+ isPromoter + RegComp
+[33me5813a5[m [FIX] scrollTop in upload properties form
+[33m4689670[m [upd] uploaddate added to property data
+[33m33baf88[m [UPD] header.js with user, promoter and without login
+[33meeb3bd7[m [UPD] header.js with user, promoter and without login
+[33m037194e[m [UPD] new google map library
+[33md95a935[m [FIX] landing searchPropertyObject
+[33mfa4792d[m [FIX] landing searchPropertyObject
+[33m1385d03[m [ADD] Static map to promosumary
+[33m92ff5ac[m [upd] uId useeffect
+[33m6919788[m [add] WIP getProperties function firebasetools hook
+[33m082181e[m [UPD] object sending to firebase
+[33m0298882[m [UPD] Upload properties in Firebase working, missing complete summary
+[33m0be89e7[m [ADD] Upload object and images to Firebase
+[33m8ab6439[m [FIX] change to english all variable names in object to be posted
+[33mc5c176e[m [FIX] change to english all variable names in object to be posted
+[33m344fb52[m [merge]
+[33mb9c1516[m [UPD] Stringsjs and Gmaps Homologations
+[33m839e668[m [FIX] promodata object
+[33m88657cf[m [FIX] change upload property object to be compatible with Android object
+[33m50d36ce[m [FIX] change upload property object to be compatible with Android object
+[33mc5c3df3[m [ADD] Promo summary]
+[33ma308182[m [UPD] Carga de inmuebles con mapa funcionando en resumen
+[33m363210d[m [UPD] Promo form saving specific, general and location data
+[33m6aceea7[m [ADD] Object to save Promo Form
+[33mf42d110[m [FIX] Multitoggle Component
+[33mc5b66b9[m [UPD] preview with image modal
+[33m33e1190[m [UPD]Protected Routing
+[33m57780d7[m [UPD] Protected Routing
+[33m2b8e492[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m754553f[m [ADD] data transfer from log to reg
+[33m3ebde58[m [UPD] Protected Routing
+[33m86f7686[m [UPD] merge
+[33m39a9c0f[m [UPD] protected route 4 promoform
+[33md9be88d[m [UPD] Protected Routing
+[33mf399a45[m [ADD]context+some warnings cleaning
+[33m28c8ce2[m [UPD] Error, never trust this commit
+[33mbd16592[m [ADD] Upload realstate
+[33m839fc65[m [ADD] SessionStatus, Capcha skel in fbtoolshook
+[33mf425a51[m [ADD] Specific Form, missing components. Only numbers,text and checkbox
+[33mefd619c[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m518eb19[m [ADD] Register post + first validate mail
+[33mb54362a[m [UPD] pull merge
+[33m76481ca[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mc8522eb[m [ADD]Register validate
+[33m979738f[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mb2b76d8[m [ADD] Upload Properties
+[33m01f5447[m [FIX] double click login bug
+[33me33df4d[m [FIX] routes
+[33m96be5ee[m [FIX] Log In, Error Validation
+[33mdf0afb3[m [UPD] response error handling
+[33m63d3c41[m [ADD] protected route
+[33mb15c592[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m5be4488[m [UPD] login validation finished
+[33m58e34e2[m [ADD] Verification email
+[33m694d87f[m [ADD] validation hook alpha
+[33m38a52e5[m [UPD] login merge
+[33m126bbc3[m [ADD] Merge
+[33ma413331[m [ADD] Mail Validation and Restore Password
+[33m919e692[m [ADD] normal login
+[33m9d7c9a6[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m0cf0f9d[m [ADD] normal login
+[33m9577a7b[m [UPD] form design
+[33m3b7f3f5[m [UPD] Facebook LogIn
+[33me4b6f3d[m [UPD] Finished FB login
+[33mf6dd291[m [UPD] Log In form, css
+[33md663500[m [ADD] fb login
+[33mf66bfbe[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33mc6bd908[m [ADD]funct to autocomplete on formuser
+[33m12292a5[m [UPD] strings.js SA array to obj
+[33m837a91e[m [UPD] Strings.js now has spec attribs for upload
+[33mb289488[m [FIX] File fix, children of Component
+[33mfa3bf8d[m [ADD] Log In and Register
+[33mc33001f[m [FIX] MATERIAL UI in Landing Form
+[33m4db785d[m [Fix] Form with material, missing advanced filters
+[33md65ec73[m [FIX] Material UI Form
+[33mcab8c03[m [FIX] Material UI first implementation
+[33m467224c[m [UPD] Advance Filters working
+[33mafc6b54[m [ADD] advance filters
+[33mefda200[m [add] axios request alpha and merge
+[33me0d6c69[m [UPD] footer branding style
+[33m69a04b0[m [Add] json submit and merge
+[33m9a8f6a2[m [UPD] Branding Styles
+[33m06ae418[m [UPD] Branding Styles
+[33m54ac666[m [UPD] new branding styles
+[33m02b24a7[m [UPD] new branding styles
+[33ma0a755d[m [UPD] merge
+[33m7438937[m [UPD] landing form apply branding style
+[33md4277f3[m [UPD] new branding styles
+[33mf2d941f[m [ADD] file with arrays and objects
+[33m3edf6d1[m [FIX] Form fix div to input in components
+[33maa8c8b9[m [Add] autocomplete map test comp
+[33m6b37c48[m [ADD] map component
+[33md97e6b7[m [ADD] Landing Promoter with side nav bar
+[33m7ecb393[m [ADD] Routing
+[33md9d5b5b[m [FIX] empty search on autocomplete bug
+[33mc7ffef7[m [ADD] Routes
+[33mfc37198[m [ADD] Routes
+[33m85984ac[m [ADD] autocomplete input
+[33m4ee4c91[m [UPD] user form style edit
+[33m17e1d99[m [UPD] Form as one card, some styles missing
+[33mc6ef42d[m [UPD] form user new desing, missing CSS
+[33m23d0fc8[m [UPD] dynamic checkbox
+[33mb7d99e9[m [UPD] form user gender
+[33m22ced6d[m [UPD] dynamic checkbox
+[33mdb0fc30[m [UPD] form user
+[33m495a267[m [UPD] User Form update
+[33m34d7b10[m [UPD]Form Component
+[33m18665f0[m [UPD] Form Component
+[33m56fe6ea[m [UPD]merge
+[33m77a4ffc[m [DEL] body.tsx
+[33m6c4eac7[m [UPD] css styling body
+[33m6ba0f2e[m [UPD] css styling for header/footer
+[33mb733321[m [Add] V1 landing page finished
+[33m61623c5[m [Upd]Slideselector component
+[33mc42c5e8[m[33m ([m[1;31morigin/Releases[m[33m)[m [Del] typescript
+[33m5db38c0[m [Add]first part of slideselector
+[33m4a36a98[m [
+[33m277ad75[m Merge branch 'Landing' of https://github.com/Witideal/Witideal-Web into Landing
+[33m82af323[m [Upd] Body, Search into comp, form into comps[Add]Search,Buttons components
+[33mdbd6933[m [FIX] Merge class fix]
+[33m98c563a[m [Add] Body component
+[33m35549bb[m [UPD] modification in the css and reduction of the number of lines in footer and header component
+[33m3f18c29[m [Add] footer component
+[33m66473b4[m [upd] Header component
+[33m8834926[m [Add] Header component
+[33m7b9670f[m [Del].vscode
+[33m6c7fcc7[m Merge branch 'master' of https://github.com/Witideal/Witideal-Web
+[33me18be38[m Update .gitignore
+[33m39ef2b4[m [Add] vscode gitignored,bootstrap+JQ+Popper
+[33m59ef307[m [Add] React App init
+[33mfe8b8d8[m Initial commit

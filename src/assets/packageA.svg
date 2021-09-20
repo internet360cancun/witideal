@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="440" height="451" viewBox="0 0 440 451">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.489" y1="0.5" x2="0.029" y2="-0.043" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3f19f9"/>
+      <stop offset="1" stop-color="#32ffd2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="0.977" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#32ffd2"/>
+      <stop offset="1" stop-color="#41b8f9"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_1789" data-name="Rectángulo 1789" width="440" height="451" rx="11" transform="translate(-0.276 -0.011)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="packageA" transform="translate(0.276 0.011)">
+    <rect id="Rectángulo_1788" data-name="Rectángulo 1788" width="440" height="451" rx="11" transform="translate(-0.276 -0.011)" fill="url(#linear-gradient-2)"/>
+    <g id="packageA-2" data-name="packageA" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <g id="Grupo_1477" data-name="Grupo 1477" transform="translate(272.304 -52.325)" opacity="0.6" style="isolation: isolate">
+        <g id="Grupo_1476" data-name="Grupo 1476" transform="translate(0 0)">
+          <g id="Grupo_1475" data-name="Grupo 1475">
+            <g id="Grupo_1474" data-name="Grupo 1474">
+              <g id="Grupo_1473" data-name="Grupo 1473">
+                <g id="Grupo_1468" data-name="Grupo 1468" transform="translate(19.32 19.459)">
+                  <line id="Línea_106" data-name="Línea 106" x1="12.922" y2="12.922" transform="translate(0 128.342)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_107" data-name="Línea 107" x1="12.921" y2="12.921" transform="translate(128.342)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_108" data-name="Línea 108" x1="12.917" y2="12.917" transform="translate(20.384 148.731)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_109" data-name="Línea 109" x1="12.92" y2="12.92" transform="translate(148.729 20.385)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </g>
+                <g id="Grupo_1469" data-name="Grupo 1469" transform="translate(17.265 0.943)">
+                  <path id="Trazado_2782" data-name="Trazado 2782" d="M667.215,398.283v17.776a82.9,82.9,0,0,0,0,163.126v17.7" transform="translate(-599.134 -398.283)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <path id="Trazado_2783" data-name="Trazado 2783" d="M623.64,398.283v17.776a82.9,82.9,0,0,1-.334,163.187v17.643" transform="translate(-525.961 -398.283)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </g>
+                <g id="Grupo_1470" data-name="Grupo 1470" transform="translate(41.559 65.169)">
+                  <path id="Trazado_2784" data-name="Trazado 2784" d="M646.379,416.607l-27.977,0a13.215,13.215,0,0,0-11.445,19.822l25.827,44.73a13.215,13.215,0,0,0,22.887,0l8.083-14,0-.008,8.09,14.007a13.215,13.215,0,0,0,22.891,0l25.811-44.738A13.213,13.213,0,0,0,709.1,416.6l-27.748,0" transform="translate(-605.167 -407.051)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <path id="Trazado_2785" data-name="Trazado 2785" d="M617.47,444.411a19.995,19.995,0,1,1,34.562,0l-17.281,29.926Z" transform="translate(-576.166 -414.231)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <circle id="Elipse_185" data-name="Elipse 185" cx="6.537" cy="6.537" r="6.537" transform="translate(52.048 13.469)" stroke-width="2" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </g>
+                <ellipse id="Elipse_148" data-name="Elipse 148" cx="100.5" cy="100" rx="100.5" ry="100" transform="translate(0.42 0.314)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <g id="Grupo_1471" data-name="Grupo 1471" transform="translate(19.32 19.459)">
+                  <line id="Línea_110" data-name="Línea 110" x2="12.922" y2="12.922" transform="translate(128.342 148.726)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_111" data-name="Línea 111" x2="12.921" y2="12.921" transform="translate(0 20.385)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_112" data-name="Línea 112" x2="12.917" y2="12.917" transform="translate(148.732 128.347)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_113" data-name="Línea 113" x2="12.92" y2="12.92" transform="translate(20.384)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </g>
+                <g id="Grupo_1472" data-name="Grupo 1472" transform="translate(0.255 85.869)">
+                  <line id="Línea_114" data-name="Línea 114" x2="18.274" transform="translate(181.504 28.828)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_115" data-name="Línea 115" x2="18.274" transform="translate(0 28.828)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_116" data-name="Línea 116" x2="18.267" transform="translate(181.511)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_117" data-name="Línea 117" x2="18.271" stroke-width="2" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

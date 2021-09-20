@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="439" height="449" viewBox="0 0 439 449">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.489" y1="0.5" x2="0.029" y2="-0.043" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3f19f9"/>
+      <stop offset="1" stop-color="#32ffd2"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_1435" data-name="Rectángulo 1435" width="439" height="449" rx="11" transform="translate(-0.069 0.281)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="PackageD" transform="translate(0.069 -0.281)">
+    <rect id="Rectángulo_1434" data-name="Rectángulo 1434" width="439" height="449" rx="11" transform="translate(-0.069 0.281)" fill="#1e0e6f"/>
+    <g id="Enmascarar_grupo_4" data-name="Enmascarar grupo 4" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <g id="Grupo_1188" data-name="Grupo 1188" transform="translate(263.761 -43.782)" opacity="0.3" style="isolation: isolate">
+        <g id="Grupo_1187" data-name="Grupo 1187" transform="translate(0 0)">
+          <g id="Grupo_1186" data-name="Grupo 1186">
+            <g id="Grupo_1185" data-name="Grupo 1185" transform="translate(0)">
+              <g id="Grupo_1184" data-name="Grupo 1184">
+                <g id="Grupo_1179" data-name="Grupo 1179" transform="translate(20.434 19.52)">
+                  <line id="Línea_81" data-name="Línea 81" x1="12.781" y2="12.781" transform="translate(0 126.943)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_82" data-name="Línea 82" x1="12.781" y2="12.781" transform="translate(126.944)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_83" data-name="Línea 83" x1="12.776" y2="12.776" transform="translate(20.162 147.111)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_84" data-name="Línea 84" x1="12.779" y2="12.779" transform="translate(147.108 20.163)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </g>
+                <g id="Grupo_1180" data-name="Grupo 1180" transform="translate(18.402 1.207)">
+                  <path id="Trazado_2691" data-name="Trazado 2691" d="M666.473,398.283v17.582a81.995,81.995,0,0,0,0,161.349v17.51" transform="translate(-599.134 -398.283)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <path id="Trazado_2692" data-name="Trazado 2692" d="M623.636,398.283v17.582a81.995,81.995,0,0,1-.33,161.408v17.451" transform="translate(-527.021 -398.283)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </g>
+                <g id="Grupo_1181" data-name="Grupo 1181" transform="translate(42.431 64.732)">
+                  <path id="Trazado_2693" data-name="Trazado 2693" d="M645.93,416.607l-27.673,0a13.071,13.071,0,0,0-11.321,19.606l25.545,44.243a13.071,13.071,0,0,0,22.638,0l7.995-13.846,0-.008,8,13.854a13.071,13.071,0,0,0,22.641,0l25.53-44.251a13.07,13.07,0,0,0-11.325-19.6l-27.445,0" transform="translate(-605.167 -407.155)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <path id="Trazado_2694" data-name="Trazado 2694" d="M617.441,444.082a19.777,19.777,0,1,1,34.186,0l-17.093,29.6Z" transform="translate(-576.586 -414.231)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <circle id="Elipse_167" data-name="Elipse 167" cx="6.466" cy="6.466" r="6.466" transform="translate(51.481 13.322)" stroke-width="2" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </g>
+                <ellipse id="Elipse_148" data-name="Elipse 148" cx="99" cy="99.5" rx="99" ry="99.5" transform="translate(0.17 0.063)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                <g id="Grupo_1182" data-name="Grupo 1182" transform="translate(20.434 19.52)">
+                  <line id="Línea_85" data-name="Línea 85" x2="12.781" y2="12.781" transform="translate(126.944 147.106)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_86" data-name="Línea 86" x2="12.781" y2="12.781" transform="translate(0 20.163)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_87" data-name="Línea 87" x2="12.776" y2="12.776" transform="translate(147.111 126.948)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_88" data-name="Línea 88" x2="12.779" y2="12.779" transform="translate(20.162)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </g>
+                <g id="Grupo_1183" data-name="Grupo 1183" transform="translate(1.577 85.207)">
+                  <line id="Línea_89" data-name="Línea 89" x2="18.075" transform="translate(179.526 28.514)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_90" data-name="Línea 90" x2="18.075" transform="translate(0 28.514)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_91" data-name="Línea 91" x2="18.068" transform="translate(179.533)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  <line id="Línea_92" data-name="Línea 92" x2="18.072" stroke-width="2" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

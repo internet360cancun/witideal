@@ -1,0 +1,74 @@
+#addon-wrapping{
+    background-color: transparent;
+} 
+#inpSearch{
+    font-size: 20px;
+}
+
+.form-control{
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: 1px solid #41B8F9;
+    color: #41B8F9;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    font-size: 20px;
+    padding: 10px 0;
+    outline: none;
+}
+
+@media (max-width:600px) {
+    .form-control{
+        padding: 7px;
+        font-size: 14px;
+    }
+}
+
+.form-control:hover{
+    border: 1px solid #3f19f9;
+}
+
+
+.search_engine{
+    border: #bdbdbd;
+    border-style: solid;
+    padding: 15px 0;
+    height: 57px;
+    font-size: 25px;
+    text-align: center;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    list-style: 'none';
+}
+
+.search_engine:focus{
+    border-bottom: 3px #555;
+}
+
+/* Geosuggest autocomplete css classes */
+
+.geosuggest__suggests--hidden {
+    max-height: 0;
+    overflow: hidden;
+    border-width: 0;
+  }
+
+.geosuggest__item{
+    list-style: none;
+    padding: 3px 0;
+}
+
+.geosuggest__item:hover{
+    background:#41B8F9;
+    color:white;
+    cursor: pointer;
+}
+
+  .geosuggest__item--active {
+    background: #267dc0;
+    color: #fff;
+  }
+  .form-group {
+    padding-top: 5px;
+  }
