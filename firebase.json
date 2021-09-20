@@ -1,5 +1,5 @@
 {
-  "hosting": [{
+  "hosting": {
     "public": "build",
     "ignore": [
       "firebase.json",
@@ -7,30 +7,10 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  {
-    "public": "build",
-    "target":"production",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "/sitemap.xml",
-        "function": "onSitemapRequest"
-      },
       {
         "source": "**",
         "destination": "/index.html"
       }
     ]
   }
-  ]
 }
