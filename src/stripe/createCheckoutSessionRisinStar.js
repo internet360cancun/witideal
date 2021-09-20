@@ -9,7 +9,7 @@ export const createCheckoutSessionRisingStar = async (uid) => {
     .doc(uid)
     .collection('checkout_sessions')
     .add({
-      price: 'price_1JaVruCGqe3RvXVDoku6IgQA',
+      price: 'price_1JbcZhJpPaML8RxiDW9S80yg',
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
@@ -24,7 +24,7 @@ export const createCheckoutSessionRisingStar = async (uid) => {
     }
     if (sessionId) {
       const stripe = await loadStripe(
-        'pk_test_51JaTznCGqe3RvXVDQxhEnjQ1bLyso24Cy7whGP7B39Y2a8qCZEsEHEtCi1zxSfx0XbWiAUfqW10HbeCiyg4phaTy00Qu5iDasP'
+        'pk_live_51Ja6PiJpPaML8Rxi0JndAK0EKei9nQMTnZLdpJgDu5CdYkI2QypECjL7qkuas6xZARVyqb5jZjvUjosjgb4ij9qN00BV1oZUj8'
       );
       stripe.redirectToCheckout({ sessionId });
     }

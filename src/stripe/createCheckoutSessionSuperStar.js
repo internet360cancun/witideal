@@ -1,14 +1,14 @@
-import firebase from "firebase/compat/app";
-import { loadStripe } from "@stripe/stripe-js";
+import firebase from 'firebase/compat/app';
+import { loadStripe } from '@stripe/stripe-js';
 
 export const createCheckoutSessionSuperStar = async (uid) => {
   const firestore = firebase.firestore();
   const docRef = await firestore
-    .collection("users")
+    .collection('users')
     .doc(uid)
-    .collection("checkout_sessions")
+    .collection('checkout_sessions')
     .add({
-      price: "price_1Jakt5CGqe3RvXVDhRewcWgr",
+      price: 'price_1JbcapJpPaML8Rxixvobd0EO',
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
@@ -22,7 +22,7 @@ export const createCheckoutSessionSuperStar = async (uid) => {
     }
     if (sessionId) {
       const stripe = await loadStripe(
-        "pk_test_51JaTznCGqe3RvXVDQxhEnjQ1bLyso24Cy7whGP7B39Y2a8qCZEsEHEtCi1zxSfx0XbWiAUfqW10HbeCiyg4phaTy00Qu5iDasP"
+        'pk_live_51Ja6PiJpPaML8Rxi0JndAK0EKei9nQMTnZLdpJgDu5CdYkI2QypECjL7qkuas6xZARVyqb5jZjvUjosjgb4ij9qN00BV1oZUj8'
       );
       stripe.redirectToCheckout({ sessionId });
     }
