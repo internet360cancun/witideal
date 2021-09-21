@@ -26,10 +26,10 @@ const FifthSection = () => {
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
-                      <img src={face} alt />
+                      <img src={face}  />
                     </div>
                     <div className="img-card mt-2 d-flex justify-content-center">
-                      <img src={insta} alt />
+                      <img src={insta}  />
                     </div>
                   </div>
                   <br />
@@ -49,7 +49,7 @@ const FifthSection = () => {
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
-                      <img src={linkedin} alt />
+                      <img src={linkedin}  />
                     </div>
                   </div>
                   <br />
@@ -68,7 +68,7 @@ const FifthSection = () => {
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
-                      <img src={ads} alt />
+                      <img src={ads}  />
                     </div>
                   </div>
                   <br />
@@ -89,10 +89,10 @@ const FifthSection = () => {
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
-                      <img src={mailchimp} alt />
+                      <img src={mailchimp}  />
                     </div>
                     <div className="img-card mt-2 d-flex justify-content-center">
-                      <img src={whats} alt />
+                      <img src={whats}  />
                     </div>
                   </div>
                   <div className="row">
@@ -111,7 +111,7 @@ const FifthSection = () => {
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
-                      <img src={manychat} alt />
+                      <img src={manychat}  />
                     </div>
                   </div>
                   <br />
@@ -130,7 +130,7 @@ const FifthSection = () => {
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <div className="img-card mt-2 d-flex justify-content-center">
-                      <img src={camp} alt />
+                      <img src={camp}  />
                     </div>
                   </div>
                   <br />

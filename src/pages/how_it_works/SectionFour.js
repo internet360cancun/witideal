@@ -23,19 +23,19 @@ const ForthSection = () => {
           </div>
           <div className="row align-content-md-between filafull">
             <div className="col text-center d-flex align-items-stretch">
-              <img src={izquierda} alt width="100%" />
+              <img src={izquierda}  width="100%" />
             </div>
             <div className="col text-center d-flex align-items-stretch">
-              <img src={centro} alt width="100%" />
+              <img src={centro}  width="100%" />
             </div>
             <div className="col text-center d-flex align-items-stretch">
-              <img src={derecha} alt width="100%" />
+              <img src={derecha}  width="100%" />
             </div>
           </div>
           <div className="row align-content-md-between">
             <div className="col align-items-center">
               <div className="vertical">
-                <img src={vertical} alt width="100%" />
+                <img src={vertical}  width="100%" />
               </div>
             </div>
           </div>
