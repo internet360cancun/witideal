@@ -1,47 +1,69 @@
-import React, { useContext, useEffect, useState } from 'react';
-import firebase from 'firebase/compat/app';
-import { Grid, Paper, Box, makeStyles } from '@material-ui/core';
-import DestacadosSwipe from './DestacadosSwipe';
-import useFirebaseTools from '../../Hooks/useFirebaseTools';
-import sessionContext from '../../contexts/sessionContext';
-import { useParams } from 'react-router';
+import React, { useState, useEffect } from "react";
+import firebase from "firebase/compat/app";
+import { Grid, Paper, Box, makeStyles } from "@material-ui/core";
+import DestacadosSwipe from "./DestacadosSwipe";
 
 const useStyles = makeStyles((theme) => ({
   paperRoot: {
-    backgroundColor: '#Faf9df',
-    height: '305px',
+    backgroundColor: "#Faf9df",
+    height: "305px",
   },
 }));
 
-const Destacados = (props) => {
+const Destacados = ({ pId }) => {
   const db = firebase.firestore();
-
-  const { uId } = useContext(sessionContext);
   const classes = useStyles();
+  const [allDestacados, setAllDestacados] = useState([]);
+
+  console.log(pId, "propsorposprospor");
+
+  const getRandomDest = () => {
+    db.collection("destProperties")
+      .get()
+      .then((querySnapshot) => {
+        const documents = querySnapshot.docs.map((doc) => {
+          doc.data().destProperties.forEach((element) => {
+            element.get().then((snap) => {
+              setAllDestacados((oldArray) => [...oldArray, {id: snap.id,  ...snap.data()}]);
+            });
+          });
+        });
+      });
+  };
+
+  useEffect(() => {
+    getRandomDest();
+  }, []);
+
+console.log('alldestacados',allDestacados)
 
   return (
-    <Grid
-      style={{ width: '100%', margin: 'auto' }}
-      container
-      justifyContent="center"
-      alignItems="center"
-      spacing={1}
-    >
-      <Grid item xs={12} lg={11}>
-        <Paper className={classes.paperRoot} elevation={3}>
-          <Box p={3}>
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="stretch"
-              spacing={2}
-            >
-              <DestacadosSwipe />
-            </Grid>
-          </Box>
-        </Paper>
-      </Grid>
-    </Grid>
+    <>
+      {allDestacados.length > 0 && (
+        <Grid
+          style={{ width: "100%", margin: "auto" }}
+          container
+          justifyContent="center"
+          alignItems="center"
+          spacing={1}
+        >
+          <Grid item xs={12} lg={11}>
+            <Paper className={classes.paperRoot} elevation={3}>
+              <Box p={3}>
+                <Grid
+                  container
+                  justifyContent="center"
+                  alignItems="stretch"
+                  spacing={2}
+                >
+                  <DestacadosSwipe allDestacados={allDestacados} />
+                </Grid>
+              </Box>
+            </Paper>
+          </Grid>
+        </Grid>
+      )}
+    </>
   );
 };
 

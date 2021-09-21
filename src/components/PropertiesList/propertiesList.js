@@ -73,7 +73,6 @@ export const PropertiesList = (props) => {
     );
   }
 
-  console.log('paramsFiltered', paramsFiltered);
 
   const initialState = props.location.state || {};
   const [form, setFormState] = useState({
@@ -92,6 +91,7 @@ export const PropertiesList = (props) => {
   const { getProperties } = useFirebaseTools();
   const [height, setHeight] = useState(100);
   const [itemsRendered, setItemsRendered] = useState([]);
+
 
   // update state and state from location
   const setForm = (newState) => {
@@ -302,7 +302,8 @@ export const PropertiesList = (props) => {
         setFilters={setForm}
       />
       <Container h={height}>
-        {/* <Destacados  /> */}
+        
+        <Destacados />
 
         <Grid
           style={{ width: '100%', margin: 'auto' }}

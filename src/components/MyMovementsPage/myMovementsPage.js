@@ -1,37 +1,38 @@
-import React, { useContext, useEffect, useState } from 'react';
-import firebase from 'firebase/compat/app';
+import React, { useContext, useEffect, useState } from "react";
+import firebase from "firebase/compat/app";
 import {
   Box,
   Typography,
   Grid,
   IconButton,
   makeStyles,
-} from '@material-ui/core';
-import SesContext from '../../contexts/sessionContext';
-import { styled } from '@material-ui/styles';
-import Head from '../head';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import NumberFormat from 'react-number-format';
-import { Link } from 'react-router-dom';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import { propertyType_es, action_es } from '../../assets/Strings';
-import { useRole } from '../../Hooks/useRole';
+} from "@material-ui/core";
+import SesContext from "../../contexts/sessionContext";
+import { styled } from "@material-ui/styles";
+import Head from "../head";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import NumberFormat from "react-number-format";
+import { Link } from "react-router-dom";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import { propertyType_es, action_es } from "../../assets/Strings";
+import { useRole } from "../../Hooks/useRole";
+import urlTranslator from "../../helpers/urlTranslator";
 
-const wdPurpleSubtitle = '#1E0E6F';
-const wdWhiteBackground = '#FFFFFF';
-const wdBlueBackground = '#3F19F9';
+const wdPurpleSubtitle = "#1E0E6F";
+const wdWhiteBackground = "#FFFFFF";
+const wdBlueBackground = "#3F19F9";
 
-const wdRegularBlue = '#1E0E6F';
+const wdRegularBlue = "#1E0E6F";
 
 const Title = styled(Typography)({
   color: wdRegularBlue,
 });
 
 const Page = styled(Box)({
-  minHeight: '70vh',
+  minHeight: "70vh",
 });
 
 const useStyles = makeStyles({
@@ -40,7 +41,7 @@ const useStyles = makeStyles({
     fontWeight: 700,
   },
   link: {
-    textDecoration: 'none',
+    textDecoration: "none",
     color: wdPurpleSubtitle,
   },
   coincidenceType: {
@@ -48,19 +49,19 @@ const useStyles = makeStyles({
     fontWeight: 700,
   },
   coincidenceWrapper: {
-    backgroundColor: '#efeaf7',
+    backgroundColor: "#efeaf7",
   },
   textWrapper: {
     height: 100,
-    width: '100%',
-    overflow: 'hidden',
+    width: "100%",
+    overflow: "hidden",
   },
   area: {
-    position: 'relative',
-    height: '100%',
+    position: "relative",
+    height: "100%",
   },
   icon: {
-    position: 'absolute',
+    position: "absolute",
     top: 15,
     right: 15,
     backgroundColor: wdWhiteBackground,
@@ -68,7 +69,7 @@ const useStyles = makeStyles({
     zIndex: 1,
   },
   iconBlue: {
-    position: 'absolute',
+    position: "absolute",
     top: 15,
     right: 15,
     backgroundColor: wdBlueBackground,
@@ -85,13 +86,7 @@ const useStyles = makeStyles({
 
 const MyMovements = () => {
   const db = firebase.firestore();
-  const getSpecificSearchProperty = (action, gender, pId) => {
-    const propertyRef = db.doc(
-      `production/witideal/genders/${gender}/${action}/${pId}`
-    );
-    return propertyRef.get();
-  };
-  
+
   const context = useContext(SesContext);
   const classes = useStyles();
   const [destacados, setDestacados] = useState([]);
@@ -100,7 +95,7 @@ const MyMovements = () => {
   useEffect(() => {
     const getDest = async (uId) => {
       try {
-        if (subscription === 'risingStar') {
+        if (subscription === "risingStar") {
         }
         const docSnap = await db
           .doc(`production/Users/${uId}/properties/`)
@@ -108,12 +103,15 @@ const MyMovements = () => {
           .then((snapshot) => {
             snapshot.data().destProperties.forEach((element) => {
               element.get().then((snap) => {
-                setDestacados((oldArray) => [...oldArray, snap.data()]);
+                setDestacados((oldArray) => [
+                  ...oldArray,
+                  { id: snap.id, ...snap.data() },
+                ]);
               });
             });
           });
       } catch (error) {
-        console.log('error', error);
+        console.log("error", error);
         return undefined;
       }
     };
@@ -121,8 +119,6 @@ const MyMovements = () => {
     getDest(context.uId);
   }, []);
   console.log(destacados);
-
-
 
   return (
     <Page paddingTop={10}>
@@ -136,9 +132,9 @@ const MyMovements = () => {
 
             {destacados.length > 0 &&
             destacados &&
-            subscription.role === 'risingStar'
+            subscription.role === "risingStar"
               ? destacados.slice(0, 3).map((properties) => (
-                  <div key={properties._id} className="py-3">
+                  <div key={properties.id} className="py-3">
                     <Card className={classes.area}>
                       <Grid item className={classes.icon}>
                         <IconButton>
@@ -147,7 +143,7 @@ const MyMovements = () => {
                       </Grid>
                       <Link
                         className={classes.link}
-                        to={`/propiedad/${properties.propertyType}/${properties.action}/${properties.uid}`}
+                        to={`/propiedad/${urlTranslator(properties.propertyType)}/${urlTranslator(properties.action)}/${properties.id}`}
                         target="_blank"
                       >
                         <CardActionArea>
@@ -174,9 +170,9 @@ const MyMovements = () => {
                                   <Grid item xs={12}>
                                     <NumberFormat
                                       value={properties.price}
-                                      displayType={'text'}
+                                      displayType={"text"}
                                       thousandSeparator={true}
-                                      prefix={'$ '}
+                                      prefix={"$ "}
                                       suffix={` ${properties.currency}`}
                                       renderText={(value) => (
                                         <Typography
@@ -185,7 +181,7 @@ const MyMovements = () => {
                                           align="center"
                                           className={classes.subtitleText}
                                         >
-                                          {value}{' '}
+                                          {value}{" "}
                                         </Typography>
                                       )}
                                     />
@@ -196,7 +192,7 @@ const MyMovements = () => {
                                       align="center"
                                       variant="subtitle1"
                                     >
-                                      {propertyType_es[properties.propertyType]}{' '}
+                                      {propertyType_es[properties.propertyType]}{" "}
                                       para {action_es[properties.action]}
                                     </Typography>
                                   </Grid>
@@ -218,7 +214,7 @@ const MyMovements = () => {
 
             {destacados.length > 0 &&
             destacados &&
-            subscription.role === 'rockStar'
+            subscription.role === "rockStar"
               ? destacados.slice(0, 5).map((properties) => (
                   <div key={properties._id} className="py-3">
                     <Card className={classes.area}>
@@ -252,9 +248,9 @@ const MyMovements = () => {
                                   <Grid item xs={12}>
                                     <NumberFormat
                                       value={properties.price}
-                                      displayType={'text'}
+                                      displayType={"text"}
                                       thousandSeparator={true}
-                                      prefix={'$ '}
+                                      prefix={"$ "}
                                       suffix={` ${properties.currency}`}
                                       renderText={(value) => (
                                         <Typography
@@ -263,7 +259,7 @@ const MyMovements = () => {
                                           align="center"
                                           className={classes.subtitleText}
                                         >
-                                          {value}{' '}
+                                          {value}{" "}
                                         </Typography>
                                       )}
                                     />
@@ -274,7 +270,7 @@ const MyMovements = () => {
                                       align="center"
                                       variant="subtitle1"
                                     >
-                                      {propertyType_es[properties.propertyType]}{' '}
+                                      {propertyType_es[properties.propertyType]}{" "}
                                       para {action_es[properties.action]}
                                     </Typography>
                                   </Grid>
@@ -296,7 +292,7 @@ const MyMovements = () => {
 
             {destacados.length > 0 &&
             destacados &&
-            subscription.role === 'superStar'
+            subscription.role === "superStar"
               ? destacados.slice(0, 3).map((properties) => (
                   <div key={properties._id} className="py-3">
                     <Card className={classes.area}>
@@ -330,9 +326,9 @@ const MyMovements = () => {
                                   <Grid item xs={12}>
                                     <NumberFormat
                                       value={properties.price}
-                                      displayType={'text'}
+                                      displayType={"text"}
                                       thousandSeparator={true}
-                                      prefix={'$ '}
+                                      prefix={"$ "}
                                       suffix={` ${properties.currency}`}
                                       renderText={(value) => (
                                         <Typography
@@ -341,7 +337,7 @@ const MyMovements = () => {
                                           align="center"
                                           className={classes.subtitleText}
                                         >
-                                          {value}{' '}
+                                          {value}{" "}
                                         </Typography>
                                       )}
                                     />
@@ -352,7 +348,7 @@ const MyMovements = () => {
                                       align="center"
                                       variant="subtitle1"
                                     >
-                                      {propertyType_es[properties.propertyType]}{' '}
+                                      {propertyType_es[properties.propertyType]}{" "}
                                       para {action_es[properties.action]}
                                     </Typography>
                                   </Grid>

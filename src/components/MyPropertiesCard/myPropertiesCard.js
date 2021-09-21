@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
-import { makeStyles, styled } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import { propertyType_es } from '../../assets/Strings';
+import React, { useState, useContext } from "react";
+import { makeStyles, styled } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import { propertyType_es } from "../../assets/Strings";
 import {
   Typography,
   Grid,
@@ -16,80 +16,80 @@ import {
   Menu,
   MenuItem,
   CircularProgress,
-} from '@material-ui/core';
-import NumberFormat from 'react-number-format';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { useHistory } from 'react-router-dom';
-import { UPLOAD } from '../../constants/routes';
-import useFirebaseTools from '../../Hooks/useFirebaseTools';
-import { Link } from 'react-router-dom';
-import SesContext from '../../contexts/sessionContext';
-import copy from 'copy-to-clipboard';
-import { setAlert } from '../Alert/alert';
-import urlTranslator from '../../helpers/urlTranslator';
-import { useRole } from '../../Hooks/useRole';
+} from "@material-ui/core";
+import NumberFormat from "react-number-format";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { useHistory } from "react-router-dom";
+import { UPLOAD } from "../../constants/routes";
+import useFirebaseTools from "../../Hooks/useFirebaseTools";
+import { Link } from "react-router-dom";
+import SesContext from "../../contexts/sessionContext";
+import copy from "copy-to-clipboard";
+import { setAlert } from "../Alert/alert";
+import urlTranslator from "../../helpers/urlTranslator";
+import { useRole } from "../../Hooks/useRole";
 
-const wdRegularBlue = '#3F19F9';
-const wdGeneralText = '#160A53';
+const wdRegularBlue = "#3F19F9";
+const wdGeneralText = "#160A53";
 
-const LoadingContent = styled('div')({
-  height: '100%',
-  minHeight: '400px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+const LoadingContent = styled("div")({
+  height: "100%",
+  minHeight: "400px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 });
 
 const useStyles = makeStyles((theme) => ({
   card_loading: {
-    display: '',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
+    display: "",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
   },
   card: {
-    textAlign: 'left',
+    textAlign: "left",
     borderRadius: 10,
-    height: '100%',
-    boxSizing: 'border-box',
+    height: "100%",
+    boxSizing: "border-box",
   },
   hamBtn: {
     top: 0,
-    float: 'right',
-    position: 'relative',
+    float: "right",
+    position: "relative",
     width: 50,
     height: 50,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 50,
   },
   media: {
     height: 350,
-    '@media (min-width: 960px)': {
+    "@media (min-width: 960px)": {
       height: 370,
     },
   },
   link: {
-    textDecoration: 'none',
+    textDecoration: "none",
   },
   regularBlueButton: {
     backgroundColor: wdRegularBlue,
-    color: 'white',
+    color: "white",
     borderRadius: 100,
-    textTransform: 'capitalize',
-    '&:hover': {
-      cursor: 'pointer',
-      backgroundColor: '#1E0E6F',
+    textTransform: "capitalize",
+    "&:hover": {
+      cursor: "pointer",
+      backgroundColor: "#1E0E6F",
     },
   },
   outlineButton: {
-    border: '1px solid #41B8F9',
+    border: "1px solid #41B8F9",
     color: wdRegularBlue,
     borderRadius: 100,
-    fontSize: '.8rem',
-    textTransform: 'capitalize',
+    fontSize: ".8rem",
+    textTransform: "capitalize",
   },
   errorText: {
-    color: 'red',
+    color: "red",
     fontWeight: 700,
   },
 
@@ -107,31 +107,31 @@ const useStyles = makeStyles((theme) => ({
   },
 
   link: {
-    textDecorationLine: 'none',
-    cursor: 'pointer',
-    '&:hover': {
-      color: 'transparent',
+    textDecorationLine: "none",
+    cursor: "pointer",
+    "&:hover": {
+      color: "transparent",
     },
   },
   containerText: {
     height: 360,
-    [theme.breakpoints.down('sm')]: {
-      height: 'auto',
+    [theme.breakpoints.down("sm")]: {
+      height: "auto",
     },
-    '@media (min-width: 960px)': {
+    "@media (min-width: 960px)": {
       height: 390,
     },
   },
   principal: {
     height: 360,
-    [theme.breakpoints.down('sm')]: {
-      height: 'auto',
+    [theme.breakpoints.down("sm")]: {
+      height: "auto",
     },
-    [theme.breakpoints.up('md')]: {
-      '& .MuiCardContent-root': {
+    [theme.breakpoints.up("md")]: {
+      "& .MuiCardContent-root": {
         padding: 0,
       },
-      '@media (min-width: 960px)': {
+      "@media (min-width: 960px)": {
         height: 390,
       },
     },
@@ -139,8 +139,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const action_es = {
-  buy: 'Vender',
-  rent: 'Rentar',
+  buy: "Vender",
+  rent: "Rentar",
 };
 
 /*
@@ -153,24 +153,29 @@ location: property location
 
 export function MyPropertyCard(props) {
   const propsData = props.properData;
-  console.log(propsData, 'propsdata');
+  console.log(propsData, "propsdata");
   const classes = useStyles();
-  const { toggleEnable, setDest } = useFirebaseTools();
+  const { toggleEnable, setDest, setDest2 } = useFirebaseTools();
   const context = useContext(SesContext);
   const { subscription } = useRole();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   let d =
-    propsData.uploadDate !== undefined ? propsData.uploadDate.toDate() : '';
+    propsData.uploadDate !== undefined ? propsData.uploadDate.toDate() : "";
   let options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   };
-  const uploadDate = d.toLocaleDateString('es-mx', options);
+  const uploadDate = d.toLocaleDateString("es-mx", options);
 
   let history = useHistory();
+
+  const handledestacados = (pId, gender, action, uId) => {
+    setDest(pId, gender, action, uId);
+    setDest2(pId, gender, action);
+  };
 
   // user decides the value (1 or 0) for isEnabled
   const [isEnabled, setIsEnabled] = useState(
@@ -186,9 +191,9 @@ export function MyPropertyCard(props) {
     );
     setAlert(
       null,
-      ' ',
-      'El link del inmueble se ha copiado al portapapeles',
-      'info'
+      " ",
+      "El link del inmueble se ha copiado al portapapeles",
+      "info"
     );
     setAnchorEl(null);
   };
@@ -229,7 +234,7 @@ export function MyPropertyCard(props) {
   };
 
   const showMessageContacts = () => {
-    if (!props.properData.interestedCount) return 'Ver Contacto';
+    if (!props.properData.interestedCount) return "Ver Contacto";
     if (props.properData.interestedCount === 1)
       return `Ver Contacto (${props.properData.interestedCount})`;
     return `Ver Contactos (${props.properData.interestedCount})`;
@@ -373,7 +378,7 @@ export function MyPropertyCard(props) {
                   size="medium"
                   fullWidth
                   onClick={() =>
-                    setDest(
+                    handledestacados(
                       propsData._id,
                       propsData.propertyType,
                       propsData.action,
@@ -415,7 +420,7 @@ export function MyPropertyCard(props) {
               Anuncio inactivo por falta de witicoins
             </Typography>
             <Typography className={classes.errorText} variant="subtitle2">
-              {' '}
+              {" "}
               Te sugerimos recargar tus witicoins para que tus clientes puedan
               seguir viendo tus anuncios.
             </Typography>
@@ -428,7 +433,7 @@ export function MyPropertyCard(props) {
               Anuncio Inactivo
             </Typography>
             <Typography className={classes.generalTextBold} variant="subtitle2">
-              {' '}
+              {" "}
               Si deseas activar este anuncio, sólo presiona el boton "Activar
               Anuncio".
             </Typography>
@@ -516,11 +521,11 @@ export function MyPropertyCard(props) {
             to={`/propiedad/${
               urlTranslator(propsData.propertyType) !== undefined
                 ? urlTranslator(propsData.propertyType)
-                : ''
+                : ""
             }/${
               urlTranslator(propsData.action) !== undefined
                 ? urlTranslator(propsData.action)
-                : ''
+                : ""
             }/${props.properData._id}`}
             target="_blank"
           >
@@ -533,7 +538,7 @@ export function MyPropertyCard(props) {
                   image={
                     propsData.principalPhotoPath !== undefined
                       ? propsData.principalPhotoPath
-                      : 'https://drogaspoliticacultura.net/wp-content/uploads/2017/09/placeholder-user.jpg'
+                      : "https://drogaspoliticacultura.net/wp-content/uploads/2017/09/placeholder-user.jpg"
                   }
                   title="Foto del Inmueble"
                 />
@@ -548,8 +553,8 @@ export function MyPropertyCard(props) {
                             propsData.price !== undefined ? propsData.price : 0
                           }
                           thousandSeparator={true}
-                          displayType={'text'}
-                          prefix={'$'}
+                          displayType={"text"}
+                          prefix={"$"}
                           suffix={` ${propsData.currency}`}
                           renderText={(value) => (
                             <Typography
@@ -603,7 +608,7 @@ export function MyPropertyCard(props) {
                             action_es[
                               propsData.action !== undefined
                                 ? propsData.action
-                                : 'buy'
+                                : "buy"
                             ]
                           }
                         </Typography>
@@ -618,10 +623,10 @@ export function MyPropertyCard(props) {
                           className={classes.generalText}
                           variant="h6"
                         >
-                          {propsData.route !== undefined ? propsData.route : ''}{' '}
+                          {propsData.route !== undefined ? propsData.route : ""}{" "}
                           {propsData.street_number !== undefined
                             ? propsData.street_number
-                            : ''}
+                            : ""}
                         </Typography>
                       </Grid>
                       <Grid item xs={12}>
@@ -636,14 +641,14 @@ export function MyPropertyCard(props) {
                           variant="body1"
                         >
                           {propsData.sublocality_level_1 !== undefined
-                            ? propsData.sublocality_level_1 + ','
-                            : ''}{' '}
+                            ? propsData.sublocality_level_1 + ","
+                            : ""}{" "}
                           {propsData.administrative_area_level_2_3 !== undefined
-                            ? propsData.administrative_area_level_2_3 + ','
-                            : ''}{' '}
+                            ? propsData.administrative_area_level_2_3 + ","
+                            : ""}{" "}
                           {propsData.administrative_area_level_1 !== undefined
                             ? propsData.administrative_area_level_1
-                            : ''}
+                            : ""}
                         </Typography>
                       </Grid>
                       <Divider />
