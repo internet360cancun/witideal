@@ -10,12 +10,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Destacados = ({ pId }) => {
+const Destacados = () => {
   const db = firebase.firestore();
   const classes = useStyles();
   const [allDestacados, setAllDestacados] = useState([]);
 
-  console.log(pId, "propsorposprospor");
 
   const getRandomDest = () => {
     db.collection("destProperties")

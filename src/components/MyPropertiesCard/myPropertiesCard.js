@@ -68,9 +68,6 @@ const useStyles = makeStyles((theme) => ({
       height: 370,
     },
   },
-  link: {
-    textDecoration: "none",
-  },
   regularBlueButton: {
     backgroundColor: wdRegularBlue,
     color: "white",

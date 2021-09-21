@@ -117,7 +117,6 @@ export const MyProperties = () => {
     noMore: false,
     itemsForPage: 6,
     filter: initilFilters,
-    loading: true,
   });
 
   const updateFilter = (newFilter) => {
