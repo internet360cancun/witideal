@@ -524,8 +524,11 @@ body .no-padding {
 /*añadidos por px en medias queries divididos dentro.*/
 
 /*tablets*/
-@media (min-width: 1100px) {
+@media (max-width: 1400px) {
   /*PRIMER VIEW*/
+  .BannerTitle{
+    font-size: 1vh;
+  }
   .customcople2 {
     left: -8vw;
   }
@@ -622,12 +625,9 @@ body .no-padding {
     display: none !important;
   }
   .btnlargo{
-    font-size: 2.5vh;
-    margin-top: 0vh;
-  }
-  .borderbtn{
-    left: -35vh;
-    margin-top: 7.5vh;
+    font-size: 3vh;
+    top: 68vh;
+    left: -50vh;
   }
 
   .card1, .card2, .card3{
@@ -881,13 +881,7 @@ body .no-padding {
     position: absolute;
     font-size: 18px;
     top: 60vh !important;
-    left: 2vh;
-  }
-
-  .borderbtn {
-    position: absolute;
-    left: -110%;
-    top: 67.2vh;
+    left: -55vh;
   }
 
   /*TERCER VIEW*/
@@ -1207,14 +1201,10 @@ body .no-padding {
     position: absolute;
     font-size: 18px;
     top: 60vh !important;
-    left: 2vh;
+    left: -55vh;
   }
 
-  .borderbtn {
-    position: absolute;
-    left: -120%;
-    top: -150vh;
-  }
+  
 
   /*TERCER VIEW*/
   .viewstyle {
@@ -1366,6 +1356,10 @@ body .no-padding {
   }
 }
 
+
+
+
+
 @media (max-height: 900px) {
   /*PRIMER VIEW*/
   /*mac*/
@@ -1428,9 +1422,6 @@ body .no-padding {
   .btnlargo {
     top: 70vh;
   }
-  .borderbtn {
-    top: 67.5vh;
-  }
 
   /*cuarto view*/
   .viewstyle4 {
@@ -1486,7 +1477,6 @@ body .no-padding {
     top: 67.5vh;
   }
 }
-
 
 
 @media (max-height: 760px) {
@@ -1681,6 +1671,8 @@ body .no-padding {
     margin-top: 1.5px;
   }
 }
+
+
 
 /*Iphone 6/7/8 (5.5) viewport(375 x 667)*/
 @media (max-width: 380px) {
