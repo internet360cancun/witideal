@@ -178,9 +178,9 @@ export function PropertyCard(props) {
             title="Imagen de la Propiedad"
           ></CardMedia>
           <CardContent className={classes.cardContent}>
-            <Grid container justify="center" alignItems="center" spacing={2}>
+            <Grid container justifyContent="center" alignItems="center" spacing={2}>
               <Grid item xs={12} md={7}>
-                <Grid container justify="center" alignItems="center">
+                <Grid container justifyContent="center" alignItems="center">
                   <Grid item xs={12}>
                     <NumberFormat
                       value={props.properData.price}

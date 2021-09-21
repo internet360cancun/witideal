@@ -34,7 +34,6 @@ const statesDiccionary = {
 };
 
 const stateNameTranslator = (name) => {
-  console.log('stateNameTranslator', name);
   if (statesDiccionary[name]) return statesDiccionary[name];
   for (const keyname in statesDiccionary) {
     const completename = statesDiccionary[keyname];

@@ -13,6 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { Link } from "react-router-dom";
+import urlTranslator from "../../helpers/urlTranslator";
 
 const wdPurpleSubtitle = "#1E0E6F";
 const wdWhiteBackground = "#FFFFFF";
@@ -47,11 +48,9 @@ const useStyles = makeStyles({
     boxSizing: "border-box",
     height: "70%",
     width: "100%",
-    '@media(max-width:1805px)':{
-      height:'67%'
+    "@media(max-width:1805px)": {
+      height: "67%",
     },
-  
-   
   },
 
   cardContent: {
@@ -86,19 +85,21 @@ const useStyles = makeStyles({
   iconLikeWhite: {
     color: wdWhiteBackground,
   },
-  img:{
+  img: {
     height: 150,
-    '@media(max-width:1872px)':{
-      height:125
+    "@media(max-width:1872px)": {
+      height: 125,
     },
-    '@media(max-width:1805px)':{
-      height:120
+    "@media(max-width:1805px)": {
+      height: 120,
     },
-  }
+  },
 });
 
-const DestacadosCard = () => {
+const DestacadosCard = ({ destacado }) => {
   const classes = useStyles();
+
+  console.log(destacado);
 
   return (
     <Card className={classes.area}>
@@ -114,15 +115,23 @@ const DestacadosCard = () => {
             <FavoriteIcon fontSize="small" className={classes.iconLikeWhite} />
           </IconButton>
         </Grid>
-        <Link className={classes.link} to="/" target="_blank">
+        <Link
+          className={classes.link}
+          to={`/propiedad/${urlTranslator(
+            destacado.propertyType
+          )}/${urlTranslator(destacado.action)}/${destacado.id}`}
+          target="_blank"
+        >
           <CardMedia
             component="img"
             alt="Imagen de la Propiedad"
             className={classes.img}
-            image=
-            "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/witideal%2FAD6LUP9cV4cQiVmbqbv32hTgMNp1%2F1GUPPh9iVD2JX2MLBxOO%2Fthumb%401100_98809_WhatsApp%20Image%202021-02-16%20at%2011.35.59%20AM%20(1).jpeg?alt=media"
+            image={
+              destacado
+                ? destacado.principalPhotoPath
+                : "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/witideal%2FAD6LUP9cV4cQiVmbqbv32hTgMNp1%2F1GUPPh9iVD2JX2MLBxOO%2Fthumb%401100_98809_WhatsApp%20Image%202021-02-16%20at%2011.35.59%20AM%20(1).jpeg?alt=media"
+            }
             title="Imagen de la Propiedad"
-       
           ></CardMedia>
           <CardContent className={classes.cardContent}>
             <Grid
@@ -138,14 +147,14 @@ const DestacadosCard = () => {
                     align="center"
                     variant="caption"
                   >
-                    Precio
+                    ${destacado.price} {destacado.currency}
                   </Typography>
                 </Grid>
               </Grid>
               <Grid item xs={12} md={4}></Grid>
               <Grid item xs={12}>
                 <Typography variant="body1" align="center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatum adipisci perferendis molestias praesentium dolorem ratione cupiditate doloremque accusantium veritatis!
+                  {destacado.locality}
                 </Typography>
               </Grid>
             </Grid>

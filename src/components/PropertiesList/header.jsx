@@ -66,7 +66,6 @@ const Header = (props) => {
   // delete items with no value
   filters = filters.filter(item => !!item.value)
   filters = filters.filter(item => item.label !== 'landUse')
-  console.log('filtersfiltersfilters', filters)
 
   
   const deleteTagFromForm = label => {

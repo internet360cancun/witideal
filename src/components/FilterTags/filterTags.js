@@ -122,7 +122,7 @@ export function FilterTags(props) {
   return (
     <div className={classes.root}>
       <MuiThemeProvider theme={theme}>
-        <Grid container justify='center' alignItems='center' spacing={0}>
+        <Grid container justifyContent='center' alignItems='center' spacing={0}>
           <Hidden lgUp>
             <Scroollable item xs={12}>
               {Array.isArray(props.tags) && props.tags.map((data, index)  => (
