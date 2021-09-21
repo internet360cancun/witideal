@@ -15,11 +15,7 @@ const FifthSection = () => {
         <section className="mt-5">
           <div className="row align-items-center text-center">
             <div className="col text-center col-md-12">
-              <h1 className="BannerTitle2">
-                Anúnciate y <br />
-                <strong style={{color: '#41b8f9'}}>ten más <br />
-                  exposición</strong>
-              </h1>
+              <div className="BannerTitlecards"> Anúnciate y <br /> <strong style={{color: '#41b8f9'}}>ten más <br /> exposición</strong></div>
               <br />
             </div>
           </div>

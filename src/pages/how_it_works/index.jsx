@@ -46,7 +46,7 @@ const HowItWorks = (props) => {
       <SectionSix />
     
       <SelccionarPaquete />
-      {/* <SectionEight /> */}
+      <SectionEight />
       <div className="py-5"></div>
       {/* <Cover /> */}
       {/* <WhyToUse /> */}

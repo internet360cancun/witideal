@@ -142,8 +142,6 @@ body,
 
 /*VISTA 2 --------------------------------------*/
 
-.viewstyle2{
-}
 .BannerTitle2 {
   font-family: "Open Sans" !important;
   font-style: normal !important;
@@ -320,13 +318,15 @@ body,
 }
 
 /*VISTA 5 --------------------------------------*/
-.brandsstyle {
-  display: flex;
+.BannerTitlecards{
+  position: relative;
+  font-size: 6vh;
+  line-height: 6vh;
+  
+  font-weight: 700;
+  color: #3F19F9;
 }
 
-.brandsstylemobile {
-  display: none;
-}
 
 /*VISTA 6 --------------------------------------*/
 .BannerTitle5 {
@@ -339,6 +339,14 @@ body,
 
 .brandsstyle {
   margin-top: 10%;
+}
+
+.brandsstyle {
+  display: flex;
+}
+
+.brandsstylemobile {
+  display: none;
 }
 
 .bannerbajo {
@@ -675,7 +683,7 @@ body .no-padding {
   .third {
     position: relative;
     width: 100%;
-    top: -45%;
+    top: -5vh;
     left: 1%;
   }
   /*blue*/
@@ -748,7 +756,7 @@ body .no-padding {
     position: absolute;
     width: 37%;
     height: 38vh !important;
-    top: -10vh;
+    top: -9vh;
     left: 110px;
   }
 
@@ -756,7 +764,7 @@ body .no-padding {
     position: absolute;
     width: 37%;
     height: 38vh !important;
-    top: -12vh;
+    top: -11vh;
     left: 120px;
   }
 
@@ -764,20 +772,22 @@ body .no-padding {
     position: absolute;
     width: 37%;
     height: 38vh !important;
-    top: -14vh;
+    top: -13vh;
     left: 130px;
   }
 
   .card-title {
-    font-size: 130% !important;
-    top: 60%;
+    position: absolute !important;
+    font-size: 1vh !important;
+    top: 5vh;
     left: 20% !important;
   }
 
   .card-text {
-    font-size: 70% !important;
-    top: 70% !important;
-    left: 15%;
+    position: absolute !important;
+    font-size: 1.5vh !important;
+    top: 0vh !important;
+    left: 0;
   }
 
   .cardbtn {
@@ -786,7 +796,7 @@ body .no-padding {
     margin: 0%;
     padding: 5%;
     left: 8%;
-    top: 80%;
+    top: 32vh !important;
     color: white;
   }
 
@@ -847,7 +857,7 @@ body .no-padding {
 
   /*CUARTO VIEW*/
   .viewstyle4 {
-    height: 180%;
+    height: 170vh !important;
   }
   .filafull {
     display: none;
@@ -867,15 +877,22 @@ body .no-padding {
   }
 
   /*QUINTO VIEW*/
+  .BannerTitlecards{
+    position: relative;
+    font-size: 5vh;
+    line-height: 5vh;
+    top: -6vh !important;
+    font-weight: 700;
+  }
   .viewstyle5 {
-    height: 200%;
+    height: 180vh !important;
   }
   .carddisplay {
-    height: 150%;
+    height: 150% !important;
   }
   .crd1 {
     position: absolute;
-    height: 8%;
+    height: 8.2%;
     top: 11%;
     text-align: center;
   }
@@ -892,7 +909,7 @@ body .no-padding {
   .crd4 {
     position: absolute;
     top: 53%;
-    height: 8%;
+    height: 8.2%;
   }
   .crd5 {
     position: absolute;
@@ -1286,7 +1303,7 @@ body .no-padding {
     top: 55% !important;
     font-size: 80% !important;
     margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 6vh;
     padding: 1% !important;
     padding-right: 5% !important;
   }
@@ -1294,21 +1311,21 @@ body .no-padding {
   .third {
     position: relative;
     width: 100%;
-    top: -45%;
+    top: -10vh;
     left: 1%;
   }
   /*blue*/
   .second {
     position: relative;
     width: 85%;
-    margin-top: -14%;
+    top: 0vh;
     left: 16%;
   }
   /*white*/
   .first {
     position: relative;
     width: 88%;
-    margin-top: -13%;
+    top: 1vh;
     left: 17%;
   }
   .customview1 {
@@ -1347,21 +1364,21 @@ body .no-padding {
     position: absolute;
     width: 37%;
     height: 55%;
-    top: -140%;
+    top: -10vh;
     left: 110px;
   }
   .card2 {
     position: absolute;
     width: 37%;
     height: 55%;
-    top: -143%;
+    top: -12vh;
     left: 120px;
   }
   .card3 {
     position: absolute;
     width: 37%;
     height: 55%;
-    top: -146%;
+    top: -14vh;
     left: 130px;
   }
   .card-title {
@@ -1391,7 +1408,7 @@ body .no-padding {
     position: absolute;
     width: 20% !important;
     left: -133%;
-    top: 55%;
+    top: 66vh;
   }
 
   /*TERCER VIEW*/
@@ -1405,19 +1422,19 @@ body .no-padding {
     position: relative;
     top: -70px;
     font-size: 35px !important;
-    left: 20%;
+    left: -5%;
   }
   .subview3 {
     position: relative;
     top: -80px;
     font-size: 12px !important;
-    left: 13%;
+    left: -5%;
   }
   .listview3 {
     position: relative;
     top: -120px;
     font-size: 20px !important;
-    left: 60px;
+    left: 5vh;
   }
   .custombtnindex3 {
     position: absolute;
@@ -1556,21 +1573,21 @@ body .no-padding {
   .third {
     position: relative;
     width: 65%;
-    top: -3vh;
+    top: 20vh;
     left: 35vw;
   }
   /*blue*/
   .second {
     position: relative;
     width: 54%;
-    top: 9vh;
+    top: 30vh;
     left: 48vw;
   }
   /*white*/
   .first {
     position: relative;
     width: 58%;
-    top: 9vh;
+    top: 30vh;
     left: 45vw;
   }
   .customview1 {
@@ -1580,7 +1597,7 @@ body .no-padding {
 
   /*SEGUNDO VIEW*/
   .viewstyle2 {
-    height: 90vh;
+    height: 120vh !important;
   }
   .BannerTitle2 {
     font-size: 130% !important;
@@ -1606,32 +1623,32 @@ body .no-padding {
   .card1 {
     position: absolute;
     width: 48%;
-    height: 56.5% !important;
-    top: -150%;
+    height: 51vh !important;
+    top: -15vh !important;
     left: 80px;
   }
   .card2 {
     position: absolute;
     width: 48%;
-    height: 56.5% !important;
-    top: -152%;
+    height: 51vh !important;
+    top: -17vh !important;
     left: 90px;
   }
   .card3 {
     position: absolute;
     width: 48%;
-    height: 56.5% !important;
-    top: -154%;
+    height: 51vh !important;
+    top: -19vh !important;
     left: 100px;
   }
   .card-title {
     font-size: 130% !important;
-    top: 60%;
+    top: 62%;
     left: 22% !important;
   }
   .card-text {
     font-size: 70% !important;
-    top: 70% !important;
+    top: 74% !important;
     left: 19%;
   }
   .cardbtn {
@@ -1640,33 +1657,36 @@ body .no-padding {
     margin: 0%;
     padding: 5%;
     left: 12% !important;
-    top: 80%;
+    top: 43.5vh !important;
     color: white;
   }
   .btnlargo {
     font-size: 18px;
-    top: 55vh !important;
+    top: 65vh !important;
   }
   .borderbtn {
     position: absolute;
     width: 20% !important;
     left: -153%;
-    top: 51vh !important;
+    top: 70vh !important;
   }
 
   /*TERCER VIEW*/
   .viewstyle {
-    border-radius: 0px 118px !important;
+    border-radius: 0px 78px !important;
     height: 100vh;
   }
   .viewstyle-custombtnindex {
     left: -50%;
   }
+  .BannerTitle3{
+    left: -5%;
+  }
   .subview3 {
     position: relative;
     top: -80px;
     font-size: 12px !important;
-    left: 27%;
+    left: -5%;
   }
   .listview3 {
     position: relative;
