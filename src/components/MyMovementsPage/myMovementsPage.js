@@ -121,9 +121,12 @@ const MyMovements = () => {
     getDest(context.uId);
   }, []);
   console.log(destacados);
+
+
+
   return (
     <Page paddingTop={10}>
-      <Head title="Mis movimientos" />
+      <Head title="Mis Destacados" />
       <Grid container justifyContent="center" alignItems="center">
         <Grid className="py-3" item xs={12} lg={4}>
           <Box p={5}>
