@@ -144,7 +144,7 @@ const ThirdSection = () => {
       <div className="container2" style={{marginTop: 118}}>
         <section className="mt-1">
           <div className="row align-items-center mt-5 mb-5">
-            <div className="col-md-5 mb-5">
+            <div className="col-sm-6 col-md-12 col-lg-6 mb-5">
               <h1 className="BannerTitle3 text-right">Más clientes</h1>
               <p className="text-right subview3" style={{color: '#ffffff', fontSize: 26}}>
                 <strong style={{color: 'aqua'}}> + </strong> leads

@@ -98,7 +98,7 @@ const FifthSection = () => {
                   <div className="row">
                     <div className="col">
                       <div className="textcards txtmod4 d-flex justify-content-center">
-                        Envíos de Mailings / Camp <br />
+                        Envíos de Mailings / Camp 
                         WhatsApps (Mailchimp y WhatsApp)
                       </div>
                     </div>
