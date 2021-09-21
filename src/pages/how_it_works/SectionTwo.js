@@ -1,6 +1,5 @@
 import React from "react";
 import card1 from "../../assets/howitworks/card1.png";
-import pup from "../../assets/howitworks/pup.png";
 import i1 from "../../assets/howitworks/i-1.png";
 import i2 from "../../assets/howitworks/i-2.png";
 import d1 from "../../assets/howitworks/d-1.png";
@@ -33,9 +32,6 @@ const SectionTwo = () => {
               <img className="sign" src={free}/>
               <br />
               <div className="btnlargo">Publica todos tus inmuebles</div>
-              <div className="borderbtn">
-                <img src={pup}/>
-              </div>
             </div>
             {/*CARDS*/}
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4 text-left">

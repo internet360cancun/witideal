@@ -142,6 +142,9 @@ body,
 
 /*VISTA 2 --------------------------------------*/
 
+.viewstyle2{
+  height: 95vh;
+}
 .BannerTitle2 {
   font-family: "Open Sans" !important;
   font-style: normal !important;
@@ -185,20 +188,21 @@ body,
 }
 
 .btnlargo {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  position: absolute;
+  text-align: right;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
   font-size: 3vh;
   color: #1E0E6F;
   background-color: none;
-}
-
-.borderbtn {
-  position: absolute;
-  left: -18vw;
-  top: 56vh;
+  border: 3.75px solid #3F19F9;
+  box-sizing: border-box;
+  border-radius: 43px;
+  padding: 1vh 5vh 1vh 5vh;
+  width: 100vh;
+  left: -50vh;
+  top: 60vh;
 }
 
 .card1 {
@@ -210,7 +214,7 @@ body,
   box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06) !important;
   z-index: 3;
   width: 55%;
-  height: 78%;
+  height: 55vh;
 }
 
 .card2 {
@@ -222,7 +226,7 @@ body,
   box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06) !important;
   z-index: 2;
   width: 55%;
-  height: 78%;
+  height: 55vh;
 }
 
 .card3 {
@@ -234,7 +238,7 @@ body,
   box-shadow: 0px 0px 17.8674px 8.93372px rgba(0, 0, 0, 0.06) !important;
   z-index: 1;
   width: 55%;
-  height: 78%;
+  height: 55vh;
 }
 
 .cardbtn {
@@ -515,24 +519,6 @@ body .no-padding {
 /*------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------*/
 
-/*responsive general ajustes*/
-@media (max-width: 800px) {
-  .custombtnindex {
-    position: relative;
-    font-size: 14px !important;
-    top: 0 !important;
-    left: 0px !important;
-    z-index: 5;
-  }
-
-  .custombtn {
-    z-index: 5;
-  }
-
-  .triangulo-1 .triangulo-2 .triangulo-3 {
-    display: none !important;
-  }
-}
 
 /*AJUSTES RESPOSNIVOS DEL 1 AL 8*/
 /*añadidos por px en medias queries divididos dentro.*/
@@ -608,6 +594,98 @@ body .no-padding {
 }
 
 @media (max-width: 991px) {
+  /*PRIMER VIEW*/
+  .custombtn{
+    font-size: 1.5vh !important;
+    z-index: 5;
+  }
+  .customcople2{
+    padding-top: 2.2vh !important;
+    padding-bottom: 2.2vh !important;
+  }
+  .custombtnindex {
+    position: relative;
+    font-size: 3vh !important;
+    margin-left: -35vh;
+    z-index: 5;
+  }
+  .triangulo-1 .triangulo-2 .triangulo-3 {
+    display: none !important;
+  }
+
+  /*SEGUNDO VIEW*/
+  .BannerTitle2{
+    margin-top: -5vh;
+    font-size: 8vh !important;
+  }
+  .izq-1, .izq-2{
+    display: none !important;
+  }
+  .btnlargo{
+    font-size: 2.5vh;
+    margin-top: 0vh;
+  }
+  .borderbtn{
+    left: -35vh;
+    margin-top: 7.5vh;
+  }
+
+  .card1, .card2, .card3{
+    height: 35vh;
+  }
+  .card-title{
+    font-size: 3vh;
+  }
+  .cardbtn{
+    position: relative;
+    font-size: 1vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    top: -3.5vh;
+  }
+  .der-2{
+    top: 43vh;
+  }
+  .der-1{
+    top: 72vh;
+    right: 5vh;
+  }
+
+  /*TERCER VIEW*/
+  .viewstyle{
+    border-radius: 0px 190px !important;
+    height: 115vh;
+  }
+  .BannerTitle3{
+    margin-right: 10vh;
+  }
+  .subview3{
+    margin-right: 10vh;
+  }
+  .listview3{
+    margin-left: 5vh !important;
+  }
+  .imgtech{
+    top: -15vh;
+  }
+  .custombtnindex3{
+    position: absolute;
+    left: 5vh;
+    z-index: 4;
+  }
+  
+
+  /*QUINTO VIEW*/
+  .carddisplay{
+    height: 24vh;
+  }
+  
+  /*SECTO VIEW*/
+  .textbanner{
+    font-size: 5vh;
+    line-height: 6vh;
+  }
+
   /*SEPTIMO VIEW*/
   .cardplanes {
     height: auto;
@@ -615,6 +693,7 @@ body .no-padding {
   .megatitle {
     margin-top: 5vh;
   }
+  
 }
 
 @media (max-width: 700px) {
@@ -1181,7 +1260,7 @@ body .no-padding {
 
   /*CUARTO VIEW*/
   .viewstyle4 {
-    height: 170vh !important;
+    height: 180vh !important;
   }
   .filafull {
     display: none;
@@ -1408,10 +1487,24 @@ body .no-padding {
   }
 }
 
-@media (max-height: 750px) {
+
+
+@media (max-height: 760px) {
+  
+  /*3er view*/
+  .custombtnindex3{
+    margin-top: 10vh;
+  }
+
+
   /*cuarto view*/
   .viewstyle4 {
-    height: 175%;
+    height: 190vh !important;
+  }
+
+  /*quinto view*/
+  .viewstyle5 {
+    height: 200vh !important;
   }
 }
 
@@ -1728,12 +1821,7 @@ body .no-padding {
   .btnlargo {
     font-size: 18px;
     margin-top: 11vh;
-  }
-  .borderbtn {
-    position: absolute;
-    width: 20% !important;
-    left: -133%;
-    top: 67.5vh;
+    left: -50vh;
   }
 
   /*TERCER VIEW*/
@@ -1779,7 +1867,7 @@ body .no-padding {
 
   /*CUARTO VIEW*/
   .viewstyle4 {
-    height: 175%;
+    height: 190vh !important;
   }
   .filafull {
     display: none;
@@ -1988,13 +2076,9 @@ body .no-padding {
   .btnlargo {
     font-size: 18px;
     top: 65vh !important;
+    left: -35vh;
   }
-  .borderbtn {
-    position: absolute;
-    width: 20% !important;
-    left: -153%;
-    top: 70vh !important;
-  }
+  
 
   /*TERCER VIEW*/
   .viewstyle {
