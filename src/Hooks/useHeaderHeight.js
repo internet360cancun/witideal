@@ -8,7 +8,6 @@ const useHeaderHeight = () => {
     try {
       const element = document.getElementById('headerHeight')
       const currentHeight = element.offsetHeight
-      console.log('element', element, currentHeight)
       if (height !== currentHeight) setHeight(currentHeight)
     } catch (error) {
       console.log('useHeaderHeightError', error)

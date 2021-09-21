@@ -32,7 +32,6 @@ export function Master() {
   useEffect(() => {
     
     const unsuscribe = firebase.auth().onIdTokenChanged (async user => {
-      console.log('useruseruser', user)
         try {
           if (user) {
 

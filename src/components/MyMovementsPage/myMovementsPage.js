@@ -110,6 +110,7 @@ const MyMovements = () => {
               });
             });
           });
+        return docSnap;
       } catch (error) {
         console.log("error", error);
         return undefined;
@@ -117,7 +118,7 @@ const MyMovements = () => {
     };
 
     getDest(context.uId);
-  }, []);
+  }, [context.uId, db, subscription]);
   console.log(destacados);
 
   return (
@@ -143,7 +144,11 @@ const MyMovements = () => {
                       </Grid>
                       <Link
                         className={classes.link}
-                        to={`/propiedad/${urlTranslator(properties.propertyType)}/${urlTranslator(properties.action)}/${properties.id}`}
+                        to={`/propiedad/${urlTranslator(
+                          properties.propertyType
+                        )}/${urlTranslator(properties.action)}/${
+                          properties.id
+                        }`}
                         target="_blank"
                       >
                         <CardActionArea>

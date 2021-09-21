@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography, Paper, Box, Button, makeStyles, Hidden } from '@material-ui/core';
 
 const wdDarkBlue = '#1E0E6F';
-const wdRegularBlue = '#303f9f';
+// const wdRegularBlue = '#303f9f';
 
 const useStyles = makeStyles({
   title: {
@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     fontWeight: 700
   },
   subtitle: {
-    color: wdRegularBlue,
+    // color: wdRegularBlue,
     fontWeight: 700,
     color:"#3F19F9"
   },

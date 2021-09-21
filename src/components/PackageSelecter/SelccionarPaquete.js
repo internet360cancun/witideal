@@ -172,7 +172,7 @@ const SelccionarPaquete = () => {
                 <div className="card cardplanes">
                   <div className="backcard1">
                     <div className="contenidocard">
-                      <img className="imgcrd1" src={cardback} />
+                      <img className="imgcrd1" src={cardback} alt={""} />
                       <div className="titulo">Paquete Básico</div>
                       <div className="subtitulo">(Anunciar Gratis)</div>
                       <div className="precio">$1,500 MXN</div>

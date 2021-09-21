@@ -144,7 +144,6 @@ export const MyProfile = () => {
 
   const context = useContext(SesContext);
   const classes = useStyle();
-  const db = firebase.firestore();
 
   const [wallet, setwallet] = useState({ witicoins: 0 });
   const [isModalActive, setModalActive] = useState(false); // editProfile
