@@ -637,6 +637,331 @@ body .no-padding {
   }
 }
 
+@media (max-width: 430px) {
+  /*PRIMER VIEW*/
+  .custombtn {
+    font-size: 78% !important;
+    padding: 8px !important;
+    margin: 0;
+    margin-top: -20px !important;
+  }
+  .customcople1 {
+    position: relative;
+    width: 180px;
+    left: 0px;
+    margin-bottom: 10px !important;
+  }
+  .customcople2 {
+    position: relative;
+    width: 120px;
+    left: 5px;
+    top: -11% !important;
+  }
+  .customcople3 {
+    position: relative;
+    width: 220px;
+    left: 0px;
+    margin-top: 10px !important;
+  }
+  .BannerTitle {
+    position: relative;
+    font-size: 260% !important;
+    line-height: 40px !important;
+    padding-top: 10px;
+  }
+  .custombtnindex {
+    position: absolute;
+    top: 22vh !important;
+    font-size: 80% !important;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding: 1% !important;
+    padding-right: 5% !important;
+  }
+  /*mac*/
+  .third {
+    position: relative;
+    width: 100%;
+    top: -10vh;
+    left: 1%;
+  }
+  /*blue*/
+  .second {
+    position: relative;
+    width: 85%;
+    top: -5vh;
+    left: 16%;
+  }
+  /*white*/
+  .first {
+    position: relative;
+    width: 88%;
+    top: -3vh;
+    left: 17%;
+  }
+
+  /*SEGUNDO VIEW*/
+  .viewstyle2{
+    height: 100vh !important;
+  }
+  .izq-1{
+    width: 10%;
+    top: 15vh;
+  }
+  .izq-2{
+    width: 25%;
+    top: 30vh;
+  }
+  .der-1{
+    width: 10%;
+    top: 30vh;
+  }
+  .der-2{
+    width: 20%;
+    top: 5vh;
+  }
+  .BannerTitle2 {
+    
+    font-size: 250% !important;
+    line-height: 45px !important;
+    text-align: center;
+    margin-top: -100px !important;
+  }
+
+  .subwrite {
+    top: -15px;
+    left: 40%;
+  }
+
+  .parrafo1 {
+    text-align: center !important;
+    width: auto;
+    font-size: 5vw;
+  }
+
+  .gratis {
+    position: relative;
+    font-size: 10vw;
+    left: 30%;
+    top: -40px;
+  }
+
+  .sign {
+    top: -55px !important;
+    left: 30%;
+  }
+
+  .card1 {
+    position: absolute;
+    width: 37%;
+    height: 38vh !important;
+    top: -9vh;
+    left: 110px;
+  }
+
+  .card2 {
+    position: absolute;
+    width: 37%;
+    height: 38vh !important;
+    top: -11vh;
+    left: 120px;
+  }
+
+  .card3 {
+    position: absolute;
+    width: 37%;
+    height: 38vh !important;
+    top: -13vh;
+    left: 130px;
+  }
+
+  .card-title {
+    position: absolute !important;
+    font-size: 1vh !important;
+    top: 5vh;
+    left: 20% !important;
+  }
+
+  .card-text {
+    position: absolute !important;
+    font-size: 1.5vh !important;
+    top: 0vh !important;
+    left: 0;
+  }
+
+  .cardbtn {
+    position: absolute;
+    font-size: 70%;
+    margin: 0%;
+    padding: 5%;
+    left: 8%;
+    top: 32vh !important;
+    color: white;
+  }
+
+  .btnlargo {
+    position: absolute;
+    font-size: 18px;
+    top: 60vh !important;
+    left: 2vh;
+  }
+
+  .borderbtn {
+    position: absolute;
+    left: -120%;
+    top: -150vh;
+  }
+
+  /*TERCER VIEW*/
+  .viewstyle {
+    border-radius: 0px 118px !important;
+    height: 120vh;
+  }
+  .viewstyle-custombtnindex {
+    left: -50%;
+  }
+  .BannerTitle3 {
+    position: relative;
+    top: -5vh;
+    font-size: 39px !important;
+    left: -10%;
+  }
+  .subview3 {
+    position: relative;
+    top: -6vh;
+    font-size: 2vh !important;
+    left: -10%;
+  }
+  .listview3 {
+    position: relative;
+    top: -10vh;
+    font-size: 26px !important;
+    left: 2vh;
+  }
+  .custombtnindex3 {
+    position: absolute;
+    text-align: center;
+    font-size: 18px !important;
+    padding: 5px 30px 5px 30px !important;
+    top: 40vh !important;
+    left: 2vh;
+    z-index: 2;
+  }
+  .imgtech {
+    position: relative;
+    width: 7% !important;
+    left: -30%;
+    top: -20vh;
+  }
+
+  /*CUARTO VIEW*/
+  .viewstyle4 {
+    height: 170vh !important;
+  }
+  .filafull {
+    display: none;
+  }
+  .vertical {
+    position: absolute;
+    display: flex;
+    width: auto;
+  }
+  .subtitulo4 {
+    position: absolute;
+    font-size: 120%;
+    font-weight: 600;
+    top: -50%;
+    left: 20%;
+    text-align: center;
+  }
+
+  /*QUINTO VIEW*/
+  .BannerTitlecards{
+    position: relative;
+    font-size: 5vh;
+    line-height: 5vh;
+    top: -6vh !important;
+    font-weight: 700;
+  }
+  .viewstyle5 {
+    height: 180vh !important;
+  }
+  .carddisplay {
+    height: 150% !important;
+  }
+  .crd1 {
+    position: absolute;
+    height: 8.2%;
+    top: 11%;
+    text-align: center;
+  }
+  .crd2 {
+    position: absolute;
+    top: 25%;
+    height: 8%;
+  }
+  .crd3 {
+    position: absolute;
+    top: 39%;
+    height: 8%;
+  }
+  .crd4 {
+    position: absolute;
+    top: 53%;
+    height: 8.2%;
+  }
+  .crd5 {
+    position: absolute;
+    top: 67%;
+    height: 8%;
+  }
+  .crd6 {
+    position: absolute;
+    top: 81%;
+    height: 8%;
+  }
+  .txtmod {
+    margin-top: 0vh;
+  }
+
+  /*sexto view*/
+  .viewstyle6 {
+    height: auto;
+  }
+  .BannerTitle5 {
+    position: relative;
+    top: -1vh;
+    font-size: 6vw !important;
+  }
+  .textbanner {
+    font-size: 2vh;
+    top: -8vh;
+  }
+  .imgradio {
+    width: 150%;
+    height: 10vh !important;
+    top: 0vh;
+  }
+  .bannerbajo {
+    position: relative;
+    height: 10vh;
+    top: -0vh !important;
+  }
+  .brandsstyle {
+    display: none;
+  }
+  .brandsstylemobile {
+    display: flex;
+  }
+  .containerdp5 {
+    margin-top: 18px !important;
+  }
+  .brand1 {
+    width: 70%;
+    margin-bottom: 20%;
+  }
+}
+
 /*Iphone 11 (6.1) viewport(414 x 896)*/
 @media (max-width: 420px) {
   /*PRIMER VIEW*/
@@ -967,7 +1292,7 @@ body .no-padding {
   /*PRIMER VIEW*/
   /*mac*/
   .third {
-    margin-top: 16vh;
+    margin-top: 0vh;
   }
 
   /*blue*/
