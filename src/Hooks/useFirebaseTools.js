@@ -855,6 +855,25 @@ function useFirebaseTools() {
     }
   };
 
+//Obtiene todos los destacados de todos los usuarios
+const setDest2 = async (pId, gender, action) => {
+  try {
+    const docRef = db.doc(`destProperties/${pId}`);
+    const propDocRef = db.doc(
+      `production/witideal/genders/${gender}/${action}/${pId}`
+    );
+    return await docRef.set(
+      {
+        destProperties: firebase.firestore.FieldValue.arrayUnion(propDocRef),
+      },
+      { merge: true }
+    );
+  } catch (error) {
+    console.log('error', error);
+    return errorParser(error);
+  }
+};
+
   //get Fav properties uses uId to retrieve an array of propertyDocumentReferences
   const getDest = async (uId) => {
     try {
@@ -1187,6 +1206,7 @@ function useFirebaseTools() {
     isMyFavorite,
     getFavs,
     setDest,
+    setDest2,
     nLog,
     setFav,
     getDest,
