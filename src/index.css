@@ -1219,19 +1219,19 @@ body .no-padding {
     position: relative;
     top: -5vh;
     font-size: 39px !important;
-    left: -10%;
+    margin-right: 0;
   }
   .subview3 {
     position: relative;
     top: -6vh;
     font-size: 2vh !important;
-    left: -10%;
+    margin-right: 0;
   }
   .listview3 {
     position: relative;
     top: -10vh;
     font-size: 26px !important;
-    left: 2vh;
+    margin-left: 0 !important;
   }
   .custombtnindex3 {
     position: absolute;
@@ -1247,6 +1247,9 @@ body .no-padding {
     width: 7% !important;
     left: -30%;
     top: -20vh;
+  }
+  .custombtnindex3{
+    margin-top: -0vh;
   }
 
   /*CUARTO VIEW*/
@@ -1329,8 +1332,11 @@ body .no-padding {
     font-size: 6vw !important;
   }
   .textbanner {
+    margin: 0 !important;
+    padding: 0 !important;
     font-size: 2vh;
     top: -8vh;
+    line-height: 3vh;
   }
   .imgradio {
     width: 150%;
@@ -1356,8 +1362,6 @@ body .no-padding {
     margin-bottom: 20%;
   }
 }
-
-
 
 
 
@@ -1410,10 +1414,10 @@ body .no-padding {
   .card-title {
     left: 9vw !important;
     font-size: 3.5vh !important;
-    top: 23vh;
+    top: 24vh;
   }
   .card-text {
-    top: 27vh !important;
+    top: 28vh !important;
     left: 14vw;
   }
   .cardbtn {
@@ -1421,7 +1425,7 @@ body .no-padding {
     top: 29.5vh;
   }
   .btnlargo {
-    top: 70vh;
+    top: 74vh !important;
   }
 
   /*cuarto view*/
