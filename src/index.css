@@ -56,6 +56,8 @@ body,
   color: #ffffff !important;
 }
 
+
+
 .custombtnindex {
   position: absolute;
   background: #ffffff !important;
@@ -2300,4 +2302,13 @@ body .no-padding {
     line-height: 9vh;
   }
 
+}
+
+@media (min-width: 1220px) {
+  .customcople2 {
+    left: -8vw;
+  }
+  .customcople3 {
+    left: -15vw;
+  }
 }
