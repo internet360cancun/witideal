@@ -20,42 +20,64 @@ const SectionEight = () => {
       <Swiper loop={true} autoplay={true}>
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
-            <img src={vive} alt="" />
+            <a href="https://www.vivedelasrentas.com/" target="_blank">
+              <img src={vive} alt="" />
+            </a>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
-            <img src={remax} alt="" />
+            <a href="https://remax.com.mx/" target="_blank">
+              <img src={remax} alt="" />
+            </a>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
+            <a href="https://legalglobalconsulting.com/lgc/" target="_blank">
+
             <img src={lgc} alt="" />
+            </a>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
+            <a href="https://www.calmena.mx/" target="_blank">
+
             <img src={calmena} alt="" />
+            </a>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
+            <a href="https://crediconsulting.com/" target="_blank">
+
             <img src={crediconsulting} alt="" />
+            </a>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
+            <a href="https://www.lgcrealestateschool.mx/" target="_blank">
+
             <img src={lgcres} alt="" />
+            </a>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
+            <a href="http://mundoinmobiliario.tv/" target="_blank">
+
             <img src={mundoinmobiliario} alt="" />
+            </a>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
+            <a href="https://www.rematecasas.mx/" target="_blank">
+
             <img src={remate} alt="" />
+            </a>
           </div>
         </SwiperSlide>
       </Swiper>
