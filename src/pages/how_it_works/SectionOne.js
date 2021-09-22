@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import ModalVideo from "react-modal-video";
-import { Link } from "react-scroll";
 
 import t1 from "../../assets/howitworks/t1.png";
 import t2 from "../../assets/howitworks/t2.png";
@@ -74,7 +72,7 @@ const SectionOne = () => {
               />
               <div className="btn custombtnindex" onClick={onOpen}>
                 <i className="fas fa-play mx-3" />
-                Ver video
+                Ver vídeo
               </div>
               <br />
               <a className="triangulo-1">

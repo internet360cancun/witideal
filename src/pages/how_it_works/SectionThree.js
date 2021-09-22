@@ -176,7 +176,7 @@ const ThirdSection = () => {
                 onClick={handleToggleRegister}
                 className="btn color-primary custombtnindex3 waves-effect waves-light"
               >
-                Registrate
+                Regístrate
               </button>
             </div>
             <div className="col-md-6 mb-4 align-content-start imgtech">

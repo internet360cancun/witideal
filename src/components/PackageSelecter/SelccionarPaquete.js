@@ -198,7 +198,7 @@ const SelccionarPaquete = () => {
                         onClick={handleToggleRegister}
                         className="btnplanes"
                       >
-                        Contratar
+                        CONTRATAR
                       </button>
                     )}
                     {user && !userLoading && (
@@ -293,7 +293,7 @@ const SelccionarPaquete = () => {
                         onClick={handleToggleRegister}
                         className="btnplanes"
                       >
-                        Contratar
+                        CONTRATAR
                       </button>
                     )}
                     {user && !userLoading && (
@@ -351,7 +351,7 @@ const SelccionarPaquete = () => {
                         onClick={handleToggleRegister}
                         className="btnplanes"
                       >
-                        Contratar
+                        CONTRATAR
                       </button>
                     )}
                     {user && !userLoading && (
