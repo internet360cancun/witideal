@@ -785,10 +785,12 @@ body .no-padding {
     height: 100vh !important;
   }
   .izq-1{
+    display:flex;
     width: 10%;
     top: 15vh;
   }
   .izq-2{
+    display:flex;
     width: 25%;
     top: 30vh;
   }
@@ -1104,10 +1106,12 @@ body .no-padding {
     height: 100vh !important;
   }
   .izq-1{
+    display: flex !important;
     width: 10%;
     top: 15vh;
   }
   .izq-2{
+    display: flex !important;
     width: 25%;
     top: 30vh;
   }
@@ -1129,7 +1133,7 @@ body .no-padding {
 
   .subwrite {
     top: -15px;
-    left: 40%;
+    margin-left: 1.5vh;
   }
 
   .parrafo1 {
@@ -1269,7 +1273,7 @@ body .no-padding {
     font-size: 120%;
     font-weight: 600;
     top: -50%;
-    left: 20%;
+    left: 6vh !important;
     text-align: center;
   }
 
