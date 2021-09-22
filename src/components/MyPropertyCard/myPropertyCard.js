@@ -71,7 +71,7 @@ export default function MyPropertyCard(props) {
   return (
     <React.Fragment>
       <Card className={classes.card}>
-        <Link className={classes.link} target="_blank">
+        <Link className={classes.link} >
           <CardActionArea>
             <Grid container alignItems="center">
               <Grid item xs={12} md={6}>

@@ -89,7 +89,7 @@ function FavoriteCard(props) {
             {isFavorite ? <FavoriteIcon className={classes.iconLikeWhite} /> : <FavoriteBorderIcon className={classes.iconLike} />}
           </IconButton>
         </Grid>
-        <Link className={classes.link} to={`/propiedad/${urlTranslator(props.properData.propertyType)}/${urlTranslator(props.properData.action)}/${props.properData._id}`} target='_blank'>
+        <Link className={classes.link} to={`/propiedad/${urlTranslator(props.properData.propertyType)}/${urlTranslator(props.properData.action)}/${props.properData._id}`} >
           <CardActionArea>
             <CardMedia
               component="img"

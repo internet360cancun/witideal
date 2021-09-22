@@ -524,7 +524,7 @@ export function MyPropertyCard(props) {
                 ? urlTranslator(propsData.action)
                 : ""
             }/${props.properData._id}`}
-            target="_blank"
+            
           >
             <Grid container className={classes.principal} alignItems="stretch">
               <Grid item xs={12} md={6}>

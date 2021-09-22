@@ -149,7 +149,6 @@ const MyMovements = () => {
                         )}/${urlTranslator(properties.action)}/${
                           properties.id
                         }`}
-                        target="_blank"
                       >
                         <CardActionArea>
                           <CardMedia
@@ -228,7 +227,7 @@ const MyMovements = () => {
                           <FavoriteBorderIcon className={classes.iconLike} />
                         </IconButton>
                       </Grid>
-                      <Link className={classes.link} to={`/`} target="_blank">
+                      <Link className={classes.link} to={`/`} >
                         <CardActionArea>
                           <CardMedia
                             component="img"
@@ -306,7 +305,7 @@ const MyMovements = () => {
                           <FavoriteBorderIcon className={classes.iconLike} />
                         </IconButton>
                       </Grid>
-                      <Link className={classes.link} to={`/`} target="_blank">
+                      <Link className={classes.link} to={`/`}>
                         <CardActionArea>
                           <CardMedia
                             component="img"
