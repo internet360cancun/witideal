@@ -7,7 +7,7 @@ import radio from "../../assets/howitworks/radio-back.png";
 
 const SectionSix = () => {
   return (
-    <div className="view viewstyle6" style={{background: 'linear-gradient(254.35deg, #3f19f9 8.47%, #41b8f9 94.38%)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+    <div className="view viewstyle6" id="section6" style={{background: 'linear-gradient(254.35deg, #3f19f9 8.47%, #41b8f9 94.38%)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
       <div className="container2 containerdp5" style={{marginTop: 118}}>
         <section className="mt-5">
           <div className="row align-items-center text-center">

@@ -10,7 +10,7 @@ import camp from "../../assets/howitworks/card-icons/camp.png";
 
 const FifthSection = () => {
   return (
-    <div className="view viewstyle5" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+    <div className="view viewstyle5" id="section5" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
       <div className="container2 mb-5" style={{marginTop: 18}}>
         <section className="mt-5">
           <div className="row align-items-center text-center">

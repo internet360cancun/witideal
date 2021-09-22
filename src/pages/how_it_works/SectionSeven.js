@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import cardback from "../../assets/howitworks/card-back.png";
 
 const SectionSeven = () => {

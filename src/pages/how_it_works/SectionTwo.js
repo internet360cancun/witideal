@@ -9,7 +9,7 @@ import free from "../../assets/howitworks/free.png";
 
 const SectionTwo = () => {
   return (
-    <div className="view viewstyle2" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+    <div className="view viewstyle2" id="section2" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
       {/* Content */}
       <div className="container2" style={{marginTop: 118}}>
         <section className="mt-5">

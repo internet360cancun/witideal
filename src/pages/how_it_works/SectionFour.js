@@ -6,7 +6,7 @@ import vertical from "../../assets/howitworks/vertical-anuncio.png";
 
 const ForthSection = () => {
   return (
-    <div className="view viewstyle4" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+    <div className="view viewstyle4" id="section4" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
       <div className="container2" style={{marginTop: 118}}>
         <section className="mt-5">
           <div className="row align-items-center text-center">

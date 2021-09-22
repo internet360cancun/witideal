@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import firebase from "firebase/compat/app";
+import React, { useState } from "react";
 
 import ModalVideo from "react-modal-video";
 import { Link } from "react-scroll";
@@ -12,8 +11,6 @@ import vecb from "../../assets/howitworks/vecb.png";
 import mac from "../../assets/howitworks/mac.png";
 
 const SectionOne = () => {
-
-
   const [isOpen, setIsOpen] = useState(false);
 
   const onClose = () => {
@@ -38,34 +35,28 @@ const SectionOne = () => {
         <section className="mt-5">
           <div className="row text-center">
             <div className="col col-sm-3 col-md-4">
-              <Link
-                to="#section2"
-                smooth={true}
-                duration={750}
+              <a
+                href="#section2"
                 className="btn custombtn customcople1 waves-effect waves-light"
               >
                 ¿Por qué utilizar Witideal?
-              </Link>
+              </a>
             </div>
             <div className="col col-sm-3 col-md-4">
-              <Link
-                to="section4"
-                smooth={true}
-                duration={1000}
+              <a
+                href="#section4"
                 className="btn custombtn customcople2 waves-effect waves-light"
               >
                 ¿Cuanto cuesta?
-              </Link>
+              </a>
             </div>
             <div className="col col-sm-4 col-md-4">
-              <Link
-                to="section4"
-                smooth={true}
-                duration={1200}
+              <a
+                href="#section7"
                 className="btn custombtn customcople3 waves-effect waves-light"
               >
                 ¿Cómo se ordenan los anuncios?
-              </Link>
+              </a>
             </div>
           </div>
           <div className="row d-flex justify-content-left">
@@ -97,9 +88,9 @@ const SectionOne = () => {
               </a>
             </div>
             <div className="col-md-6 mb-4">
-              <img className="first" src={vecw}  />
-              <img className="second" src={vecb}  />
-              <img className="third" src={mac}  />
+              <img className="first" src={vecw} />
+              <img className="second" src={vecb} />
+              <img className="third" src={mac} />
             </div>
           </div>
         </section>

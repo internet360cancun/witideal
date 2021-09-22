@@ -10,7 +10,7 @@ SwiperCore.use([Autoplay]);
 
 const SectionEight = () => {
   return (
-    <div className="container2">
+    <div className="container2" id="section8">
       <div className="BannerTitle8">Nuestros Aliados</div>
       <Swiper loop={true} autoplay={true} >
         <SwiperSlide>
