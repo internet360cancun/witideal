@@ -1,68 +1,79 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, Fragment, useMemo } from 'react';
-import { Box, Grid, Paper } from '@material-ui/core';
-import Skeleton from './skeleton';
-import { styled } from '@material-ui/core/styles';
-import { addWeight } from '../../functions/addWeights';
-import { applyLotteryToAll, splitArray } from '../../functions/lottery';
-import { PropertyCard } from '../PropertyCard/propertyCard';
-import AdvanceFilters from './advanceFilters';
-import QuickSearch from './quickSearch';
-import useFirebaseTools from '../../Hooks/useFirebaseTools';
-import EmptyProperties from '../../assets/specificDataIcons/emptyPropety.svg';
-import Header from './header';
-import paginate from '../../helpers/paginate';
-import { useParams, Redirect } from 'react-router-dom';
-import makeUrl from '../../helpers/makeurl';
-import urlTranslator from '../../helpers/urlTranslator';
-import Head from '../head';
-import stateNameTranlator from '../../helpers/stateNameTranslator';
-import Destacados from './Destacados';
+import React, {
+  useState,
+  useEffect,
+  Fragment,
+  useMemo,
+  useContext,
+} from "react";
+import { Box, Grid, Paper } from "@material-ui/core";
+import Skeleton from "./skeleton";
+import { styled } from "@material-ui/core/styles";
+import { addWeight } from "../../functions/addWeights";
+import { applyLotteryToAll, splitArray } from "../../functions/lottery";
+import { PropertyCard } from "../PropertyCard/propertyCard";
+import AdvanceFilters from "./advanceFilters";
+import QuickSearch from "./quickSearch";
+import useFirebaseTools from "../../Hooks/useFirebaseTools";
+import EmptyProperties from "../../assets/specificDataIcons/emptyPropety.svg";
+import Header from "./header";
+import paginate from "../../helpers/paginate";
+import { useParams, Redirect } from "react-router-dom";
+import makeUrl from "../../helpers/makeurl";
+import urlTranslator from "../../helpers/urlTranslator";
+import Head from "../head";
+import stateNameTranlator from "../../helpers/stateNameTranslator";
+import Destacados from "./Destacados";
+import sessionContext from "../../contexts/sessionContext";
 
 const Container = styled(Box)({
-  backgroundColor: '#F9F7FC',
-  minHeight: '60vh',
+  backgroundColor: "#F9F7FC",
+  minHeight: "60vh",
   paddingTop: (props) => props.h + 70,
-  paddingBottom: '30px',
-  '@media (max-width:960px)': {
+  paddingBottom: "30px",
+  "@media (max-width:960px)": {
     paddingTop: (props) => props.h + 55,
   },
 });
 
-const EmptyMessageContainer = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  minHeight: '60vh',
-  color: '#e2ddfe',
-  fontWeight: 'bold',
-  fontSize: '1.1em',
+const EmptyMessageContainer = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  minHeight: "60vh",
+  color: "#e2ddfe",
+  fontWeight: "bold",
+  fontSize: "1.1em",
 });
 
-const Picture = styled('img')({
-  width: '110px',
-  marginBottom: '50px',
+const Picture = styled("img")({
+  width: "110px",
+  marginBottom: "50px",
 });
 
-const Place = styled('div')(({ theme }) => ({
+const Place = styled("div")(({ theme }) => ({
   color: theme.colors.blue_black,
-  fontWeight: 'bold',
-  textAlign: 'left',
-  fontSize: '1.2em',
+  fontWeight: "bold",
+  textAlign: "left",
+  fontSize: "1.2em",
 }));
 
 const defaultValues = {
-  currency: 'MXN',
+  currency: "MXN",
 };
 
 export const PropertiesList = (props) => {
+  const { match } = props;
+  const { firebase } = useFirebaseTools();
+  const db = firebase.firestore();
   const params = useParams();
+  const { uId } = useContext(sessionContext);
   var paramsFiltered = {};
   Object.keys(params).forEach((keyname) => {
     if (!!params[keyname])
       paramsFiltered[keyname] = urlTranslator(
-        params[keyname].toString().replace(/-/g, ' ')
+        params[keyname].toString().replace(/-/g, " ")
       );
   });
 
@@ -72,7 +83,6 @@ export const PropertiesList = (props) => {
       paramsFiltered.administrative_area_level_1
     );
   }
-
 
   const initialState = props.location.state || {};
   const [form, setFormState] = useState({
@@ -91,11 +101,32 @@ export const PropertiesList = (props) => {
   const { getProperties } = useFirebaseTools();
   const [height, setHeight] = useState(100);
   const [itemsRendered, setItemsRendered] = useState([]);
+  const [allDestacados, setAllDestacados] = useState([]);
+  
+  const getRandomDest = () => {
+    db.collection("destProperties")
+      .get()
+      .then((querySnapshot) => {
+        const documents = querySnapshot.docs.map((doc) => {
+          doc.data().destProperties.forEach((element) => {
+            element.get().then((snap) => {
+              setAllDestacados((oldArray) => [
+                ...oldArray,
+                { id: snap.id, ...snap.data() },
+              ]);
+            });
+          });
+        });
+      });
+  };
 
+  useEffect(() => {
+    getRandomDest();
+  }, []);
 
   // update state and state from location
   const setForm = (newState) => {
-    if (props.location.state || JSON.stringify(paramsFiltered) !== '{}') {
+    if (props.location.state || JSON.stringify(paramsFiltered) !== "{}") {
       setFormState(newState);
       const url = makeUrl(newState);
       props.history.replace(`/propiedades/${url}`, { ...newState });
@@ -106,7 +137,7 @@ export const PropertiesList = (props) => {
   useEffect(() => {
     if (form.minArea && form.maxArea) {
       const new_form = { ...form };
-      if (form.propertyType !== 'terrain')
+      if (form.propertyType !== "terrain")
         new_form.m2Build = [form.minArea, form.maxArea];
       else new_form.m2Terrain = [form.minArea, form.maxArea];
       setForm(new_form);
@@ -196,8 +227,8 @@ export const PropertiesList = (props) => {
   useEffect(() => {
     if (propertiesArray.length > 0) {
       addWeight(propertiesArray, form);
-      propertiesArray.sort(sortByProperty('coincidence'));
-      setPropertiesSplitedArrays(splitArray(propertiesArray, 'coincidence'));
+      propertiesArray.sort(sortByProperty("coincidence"));
+      setPropertiesSplitedArrays(splitArray(propertiesArray, "coincidence"));
     }
   }, [propertiesArray]);
 
@@ -218,8 +249,8 @@ export const PropertiesList = (props) => {
     window.scrollTo(0, 0);
     if (propertiesArray.length > 0) {
       addWeight(propertiesArray, form);
-      propertiesArray.sort(sortByProperty('coincidence'));
-      setPropertiesSplitedArrays(splitArray(propertiesArray, 'coincidence'));
+      propertiesArray.sort(sortByProperty("coincidence"));
+      setPropertiesSplitedArrays(splitArray(propertiesArray, "coincidence"));
     }
   }, [form]);
 
@@ -237,7 +268,7 @@ export const PropertiesList = (props) => {
     function handleScroll() {
       const scrolled = window.scrollY;
       const viewportHeight = window.innerHeight;
-      const fullHeight = document.getElementById('root').clientHeight;
+      const fullHeight = document.getElementById("root").clientHeight;
       if (scrolled + viewportHeight + 500 < fullHeight) return false;
       if (itemsRendered.length >= propertiesSortedByLottery.length)
         return false;
@@ -248,11 +279,11 @@ export const PropertiesList = (props) => {
         updating = false;
       }, 1000);
     }
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [itemsRendered, propertiesSortedByLottery]);
 
-  if (JSON.stringify(paramsFiltered) === '{}' && !props.location.state) {
+  if (JSON.stringify(paramsFiltered) === "{}" && !props.location.state) {
     return <Redirect to="/error-404" />;
   }
 
@@ -263,21 +294,21 @@ export const PropertiesList = (props) => {
       if (params.sublocality_level_1) {
         title = `${title} ${params.sublocality_level_1
           .toString()
-          .replace(/-/g, ' ')}, `;
+          .replace(/-/g, " ")}, `;
       }
       if (params.administrative_area_level_2_3) {
         title = `${title} ${params.administrative_area_level_2_3
           .toString()
-          .replace(/-/g, ' ')}, `;
+          .replace(/-/g, " ")}, `;
       }
       if (params.administrative_area_level_1) {
         title = `${title} ${params.administrative_area_level_1
           .toString()
-          .replace(/-/g, ' ')}`;
+          .replace(/-/g, " ")}`;
       }
       return title;
     } catch (error) {
-      return 'Resultados de busqueda';
+      return "Resultados de busqueda";
     }
   };
 
@@ -302,11 +333,12 @@ export const PropertiesList = (props) => {
         setFilters={setForm}
       />
       <Container h={height}>
-        
-        <Destacados />
+        {allDestacados.length > 0 &&  (
+          <> {<Destacados allDestacados={allDestacados} match={match} />}</>
+        )}
 
         <Grid
-          style={{ width: '100%', margin: 'auto' }}
+          style={{ width: "100%", margin: "auto" }}
           container
           justifyContent="center"
           alignItems="center"
@@ -341,7 +373,7 @@ export const PropertiesList = (props) => {
                             `${form.administrative_area_level_2_3} ,`}
                           {form.administrative_area_level_1 &&
                             `${form.administrative_area_level_1} ,`}
-                          {form.country || ''}
+                          {form.country || ""}
                         </Place>
                       </Grid>
                       {itemsRendered.map((properData) => (

@@ -49,13 +49,11 @@ export const raffle = (lottery) => {
 }
 
 export const applyLotteryToAll = (arrayOfArrays) => {
-    console.log('array of arrays',arrayOfArrays);
     let sortedByLottery = [];
     arrayOfArrays.forEach((element) => {
         //console.log("Aplicada:", raffle(generateLottery(element)));
         //console.log('indexRaffle',index)
         sortedByLottery = raffle(generateLottery(element))
-        console.log('sortedByLottery',sortedByLottery)
     });
     winners = []
     return sortedByLottery

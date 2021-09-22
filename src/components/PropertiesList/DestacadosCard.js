@@ -41,20 +41,20 @@ const useStyles = makeStyles({
     height: 100,
     width: "100%",
     overflow: "hidden",
+    
   },
   area: {
     position: "relative",
     minHeight: 220,
     boxSizing: "border-box",
-    height: "70%",
+    height: "100%",
     width: "100%",
-    "@media(max-width:1805px)": {
-      height: "67%",
-    },
+    paddingBottom:10
   },
 
   cardContent: {
-    minHeight: 100,
+    maxHeight: 100,
+    
   },
   icon: {
     position: "absolute",
@@ -86,20 +86,12 @@ const useStyles = makeStyles({
     color: wdWhiteBackground,
   },
   img: {
-    height: 150,
-    "@media(max-width:1872px)": {
-      height: 125,
-    },
-    "@media(max-width:1805px)": {
-      height: 120,
-    },
+    height: 170,
   },
 });
 
 const DestacadosCard = ({ destacado }) => {
   const classes = useStyles();
-
-  console.log(destacado);
 
   return (
     <Card className={classes.area}>
@@ -111,9 +103,9 @@ const DestacadosCard = ({ destacado }) => {
         </Grid>
 
         <Grid item className={classes.iconBlue}>
-          <IconButton size="small">
+          {/* <IconButton size="small">
             <FavoriteIcon fontSize="small" className={classes.iconLikeWhite} />
-          </IconButton>
+          </IconButton> */}
         </Grid>
         <Link
           className={classes.link}
@@ -140,21 +132,40 @@ const DestacadosCard = ({ destacado }) => {
               alignItems="center"
               spacing={2}
             >
-              <Grid item xs={12} md={7}>
-                <Grid container justifyContent="center" alignItems="center">
-                  <Typography
-                    className={classes.subtitleText}
-                    align="center"
-                    variant="caption"
-                  >
-                    ${destacado.price} {destacado.currency}
-                  </Typography>
-                </Grid>
-              </Grid>
-              <Grid item xs={12} md={4}></Grid>
+              <Typography
+                className={classes.subtitleText}
+                align="center"
+                variant="caption"
+              >
+                ${destacado.price} {destacado.currency}
+              </Typography>
+
               <Grid item xs={12}>
                 <Typography variant="body1" align="center">
                   {destacado.locality}
+                </Typography>
+                <Typography variant="body1" align="center">
+                  {destacado.route !== undefined ? destacado.route : ""}{" "}
+                  {destacado.street_number !== undefined
+                    ? destacado.street_number
+                    : ""}{" "}
+                  {destacado.int_number !== undefined
+                    ? destacado.int_number
+                    : ""}
+                  ,{" "}
+                  {destacado.sublocality_level_1 !== undefined
+                    ? destacado.sublocality_level_1
+                    : ""}
+                  ,{" "}
+                  {destacado.administrative_area_level_2_3 !== undefined
+                    ? destacado.administrative_area_level_2_3
+                    : ""}
+                  ,{" "}
+                  
+                  .{" "}
+                  {destacado.administrative_area_level_1 !== undefined
+                    ? destacado.administrative_area_level_1
+                    : ""}
                 </Typography>
               </Grid>
             </Grid>
