@@ -46,11 +46,8 @@ const useStyles = makeStyles({
     position: "relative",
     minHeight: 220,
     boxSizing: "border-box",
-    height: "70%",
+    height: "100%",
     width: "100%",
-    "@media(max-width:1805px)": {
-      height: "67%",
-    },
   },
 
   cardContent: {
@@ -86,13 +83,7 @@ const useStyles = makeStyles({
     color: wdWhiteBackground,
   },
   img: {
-    height: 150,
-    "@media(max-width:1872px)": {
-      height: 125,
-    },
-    "@media(max-width:1805px)": {
-      height: 120,
-    },
+    height: 170,
   },
 });
 
