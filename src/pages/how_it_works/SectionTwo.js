@@ -13,7 +13,7 @@ const SectionTwo = () => {
       {/* Content */}
       <div className="container2" style={{marginTop: 118}}>
         <section className="mt-5">
-        <div className="imgs">
+          <div className="imgs">
             <img className="izq-1" src={i1}/>
             <img className="izq-2" src={i2}/>
             <img className="der-1" src={d1} />
