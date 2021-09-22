@@ -164,7 +164,7 @@ export function PropertyCard(props) {
           to={`/propiedad/${urlTranslator(props.propertyType)}/${urlTranslator(
             props.action
           )}/${createSlugUrl()}/${props.properData.pId}`}
-          target="_blank"
+          
         >
           <CardMedia
             component="img"

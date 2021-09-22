@@ -112,7 +112,7 @@ const DestacadosCard = ({ destacado }) => {
           to={`/propiedad/${urlTranslator(
             destacado.propertyType
           )}/${urlTranslator(destacado.action)}/${destacado.id}`}
-          target="_blank"
+          
         >
           <CardMedia
             component="img"
