@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Destacados = ({ allDestacados }) => {
+const Destacados = ({ allDestacados,match }) => {
   const classes = useStyles();
 
   console.log("alldestacados", allDestacados);
@@ -32,7 +32,7 @@ const Destacados = ({ allDestacados }) => {
               alignItems="stretch"
               spacing={2}
             >
-              <DestacadosSwipe allDestacados={allDestacados} />
+              <DestacadosSwipe allDestacados={allDestacados} match={match} />
             </Grid>
           </Box>
         </Paper>

@@ -3,18 +3,45 @@ import { Grid } from "@material-ui/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import DestacadosCard from "./DestacadosCard";
-import { useMediaQuery } from "react-responsive";
 
-const DestacadosSwipe = ({ allDestacados }) => {
-  const isDestkop = useMediaQuery({ query: "(min-width: 1224px)" });
-  const isPhone = useMediaQuery({ query: "(min-width: 320px)" });
+const DestacadosSwipe = ({ allDestacados, match }) => {
+  const randomDestacado = (array) => {
+    let i = array.length - 1;
+    for (; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
+
+  const random = randomDestacado(allDestacados);
+
+  const filtroDestacados = match.params.administrative_area_level_1;
+  const limite = filtroDestacados.length
+  const nuevoFiltroDestacado = filtroDestacados.split("-", limite);
+  
   return (
     <>
-      <Swiper spaceBetween={10} slidesPerView={2}>
-        {allDestacados &&
-          allDestacados.map((destacado) => (
-            <Grid item xs={12} sm={6} md={4} xl={1}>
-              <SwiperSlide key={destacado.lat}>
+      <Swiper
+        spaceBetween={10}
+        breakpoints={{
+          320: { width: 300, slidesPerView: 1 },
+          360: { width: 360, slidesPerView: 1.5 },
+          460: { width: 500, slidesPerView: 2 },
+          560: { width: 600, slidesPerView: 2.5 },
+          680: { width: 650, slidesPerView: 3 },
+          850: { width: 720, slidesPerView: 3.5 },
+          1000: { width: 820, slidesPerView: 4 },
+          1200: { width: 1100, slidesPerView: 5 },
+          1500: { width: 1400, slidesPerView: 6.5 },
+        }}
+      >
+        {random &&
+          random.map((destacado) => (
+            <Grid key={destacado.id} item xs={12} sm={6} md={4} xl={1}>
+              <SwiperSlide >
                 <DestacadosCard destacado={destacado} />
               </SwiperSlide>
             </Grid>

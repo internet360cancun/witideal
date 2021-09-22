@@ -64,6 +64,8 @@ const defaultValues = {
 };
 
 export const PropertiesList = (props) => {
+  
+  const {match} = props
   const { firebase } = useFirebaseTools();
   const db = firebase.firestore();
   const params = useParams();
@@ -333,7 +335,7 @@ export const PropertiesList = (props) => {
       />
       <Container h={height}>
         {allDestacados.length > 0 && (
-          <> {<Destacados allDestacados={allDestacados} />}</>
+          <> {<Destacados allDestacados={allDestacados} match={match} />}</>
         )}
 
         <Grid
