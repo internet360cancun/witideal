@@ -1034,7 +1034,6 @@ const setDest2 = async (pId, gender, action) => {
         adminarea1,
         notBankSale
       );
-      console.log('query de búsqueda', query);
       let result = await query.get();
       if (result.size === 0) {
         query = setQuery(

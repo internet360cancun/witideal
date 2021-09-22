@@ -64,8 +64,7 @@ const defaultValues = {
 };
 
 export const PropertiesList = (props) => {
-  
-  const {match} = props
+  const { match } = props;
   const { firebase } = useFirebaseTools();
   const db = firebase.firestore();
   const params = useParams();
@@ -103,7 +102,7 @@ export const PropertiesList = (props) => {
   const [height, setHeight] = useState(100);
   const [itemsRendered, setItemsRendered] = useState([]);
   const [allDestacados, setAllDestacados] = useState([]);
-
+  
   const getRandomDest = () => {
     db.collection("destProperties")
       .get()
@@ -334,7 +333,7 @@ export const PropertiesList = (props) => {
         setFilters={setForm}
       />
       <Container h={height}>
-        {allDestacados.length > 0 && (
+        {allDestacados.length > 0 &&  (
           <> {<Destacados allDestacados={allDestacados} match={match} />}</>
         )}
 
