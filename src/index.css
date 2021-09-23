@@ -202,10 +202,10 @@ body,
   border: 3.75px solid #3F19F9;
   box-sizing: border-box;
   border-radius: 43px;
-  padding: 1vh 5vh 1vh 5vh;
+  padding: 1vh 6vh 1vh 5vh;
   width: 100vh;
   left: -50vh;
-  top: 60vh;
+  top: 65vh;
 }
 
 .card1 {
@@ -537,6 +537,7 @@ body .no-padding {
     font-size: 11vw;
     line-height: 10vw;
   }
+
   .first {
     width: 60vw;
     top: -10vw;
@@ -584,7 +585,7 @@ body .no-padding {
   }
   .btnlargo {
     top: 90vw;
-    left: 0vw;
+    margin-left: 0vh;
   }
 }
 
@@ -826,24 +827,24 @@ body .no-padding {
   .card1 {
     position: absolute;
     width: 48%;
-    height: 35vh;
-    top: -4vh;
+    height: 40vh !important;
+    top: -8vh;
     left: 110px;
   }
 
   .card2 {
     position: absolute;
     width: 48%;
-    height: 35vh;
-    top: -6vh;
+    height: 40vh !important;
+    top: -10vh;
     left: 120px;
   }
 
   .card3 {
     position: absolute;
     width: 48%;
-    height: 35vh;
-    top: -8vh;
+    height: 40vh !important;
+    top: -12vh;
     left: 130px;
   }
 
@@ -867,14 +868,14 @@ body .no-padding {
     margin: 0%;
     padding: 5%;
     left: 4.5vh;
-    top: 30vh !important;
+    top: 34.5vh !important;
     color: white;
   }
 
   .btnlargo {
     position: absolute;
     font-size: 18px;
-    top: 60vh !important;
+    top: 75vh !important;
     left: -55vh;
   }
 
@@ -1027,6 +1028,8 @@ body .no-padding {
     margin-bottom: 20%;
   }
 }
+
+
 
 /*Iphone 11 (6.1) viewport(414 x 896)*/
 @media (max-width: 420px) {
@@ -1264,7 +1267,7 @@ body .no-padding {
     font-size: 120%;
     font-weight: 600;
     top: -50%;
-    left: 6vh !important;
+    margin-left: -1.5vh;
     text-align: center;
   }
 
@@ -1420,7 +1423,9 @@ body .no-padding {
     top: 29.5vh;
   }
   .btnlargo {
-    top: 74vh !important;
+    position: absolute;
+    box-sizing: border-box;
+    top: 73vh !important;
   }
 
   /*cuarto view*/
@@ -1439,7 +1444,7 @@ body .no-padding {
   /*SEGUNDO VIEW*/
   .gratis {
     font-size: 6.5vh;
-    left: 20vw;
+    left: 25vw;
     top: -4vh;
   }
   .card1 {
@@ -1458,26 +1463,22 @@ body .no-padding {
     left: 26.5vw;
   }
   .card-title {
-    left: 9vw !important;
+    left: 11vw !important;
     font-size: 3.5vh !important;
-    top: 23vh;
+    top: 28vh;
   }
   .card-text {
-    top: 27vh !important;
+    top: 32vh !important;
     left: 14vw;
   }
   .cardbtn {
     left: 10vw;
-    top: 29.5vh;
+    top: 33vh;
   }
   .btnlargo {
-    top: 70vh;
-  }
-  .borderbtn {
-    top: 67.5vh;
+    top: 40vh;
   }
 }
-
 
 @media (max-height: 760px) {
   
@@ -1551,12 +1552,9 @@ body .no-padding {
     top: 32vh;
   }
   .btnlargo {
-    margin-top: 13.5vh;
-    
+    margin-top: 0vh;    
   }
-  .borderbtn {
-    top: 70vh;
-  }
+
 }
 
 @media (max-height: 670px) {
@@ -1577,20 +1575,18 @@ body .no-padding {
     top: -40px;
   }
   .card1 {
-    height: 50% !important;
+    height: 38vh !important;
   }
   .card2 {
-    height: 50% !important;
+    height: 38vh !important;
   }
   .card3 {
-    height: 50% !important;
+    height: 38vh !important;
   }
   .btnlargo {
     top: 68vh !important;
   }
-  .borderbtn {
-    top: 64vh !important;
-  }
+  
 
   /*SEXTO VIEW*/
   .bannerbajo {
@@ -1812,7 +1808,7 @@ body .no-padding {
   }
   .btnlargo {
     font-size: 18px;
-    margin-top: 11vh;
+    margin-top: 0vh;
     left: -50vh;
   }
 
@@ -2067,7 +2063,7 @@ body .no-padding {
   }
   .btnlargo {
     font-size: 18px;
-    top: 65vh !important;
+    top: 76vh !important;
     left: -35vh;
   }
   
@@ -2210,6 +2206,7 @@ body .no-padding {
   }
 }
 
+
 /*macbook*/
 @media (min-width: 1020px) and (max-height: 800px){
   /*PRIMER VIEW*/
@@ -2218,6 +2215,10 @@ body .no-padding {
     margin-left: 7vh;
     line-height: 6vw !important;
   }
+  .second{
+    margin-top: 1vh;
+  }
+
   .customcople2 {
     left: -8vw;
   }
@@ -2312,3 +2313,4 @@ body .no-padding {
     left: -15vw;
   }
 }
+
