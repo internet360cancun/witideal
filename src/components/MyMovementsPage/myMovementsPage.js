@@ -91,13 +91,9 @@ const MyMovements = () => {
   const classes = useStyles();
   const [destacados, setDestacados] = useState([]);
   const { subscription } = useRole();
-  const [subs, setSubs] = useState(true)
   // const [cancelSubscriptsion, setCancelSubscriptsion] = useState();
 
-  // const today = Date.now() / 1000;
-
-
-
+  // const today = Date.now();
 
   useEffect(() => {
     const getDest = async (uId) => {
@@ -112,7 +108,6 @@ const MyMovements = () => {
                   ...oldArray,
                   { id: snap.id, ...snap.data() },
                 ]);
-             
               });
             });
           });
@@ -126,10 +121,6 @@ const MyMovements = () => {
     getDest(context.uId);
   }, [context.uId, db, subscription]);
 
-  if (subs){
-    setDestacados([])
-  }
-
   // useEffect(() => {
   //   const getSubscription = (uId) => {
   //     try {
@@ -139,7 +130,6 @@ const MyMovements = () => {
   //         .then((snapshot) => {
   //           snapshot.docs.forEach((doc) => {
   //             setCancelSubscriptsion(doc.data().current_period_end.seconds);
-           
   //           });
   //         });
   //     } catch (error) {
@@ -148,9 +138,7 @@ const MyMovements = () => {
   //   };
 
   //   getSubscription(context.uId);
-  // }, [context.uId]);
-
-
+  // }, []);
 
   return (
     <Page paddingTop={10}>

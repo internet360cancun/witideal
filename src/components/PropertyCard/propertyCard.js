@@ -163,8 +163,7 @@ export function PropertyCard(props) {
           className={classes.link}
           to={`/propiedad/${urlTranslator(props.propertyType)}/${urlTranslator(
             props.action
-          )}/${createSlugUrl()}/${props.properData.pId}`}
-          
+          )}/${props.properData.pId}`}
         >
           <CardMedia
             component="img"
@@ -178,7 +177,12 @@ export function PropertyCard(props) {
             title="Imagen de la Propiedad"
           ></CardMedia>
           <CardContent className={classes.cardContent}>
-            <Grid container justifyContent="center" alignItems="center" spacing={2}>
+            <Grid
+              container
+              justifyContent="center"
+              alignItems="center"
+              spacing={2}
+            >
               <Grid item xs={12} md={7}>
                 <Grid container justifyContent="center" alignItems="center">
                   <Grid item xs={12}>
@@ -300,4 +304,3 @@ export function PropertyCard(props) {
     </Card>
   );
 }
-
