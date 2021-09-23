@@ -62,7 +62,7 @@ export function Footer() {
               <Left>
                 <Contact>contacto@witideal.com</Contact>
                 <Contact>55 1971 3247(soporte)</Contact>
-                <Contact>800 (ventas)</Contact>
+                <Contact>800 905 0911 (ventas)</Contact>
                 <SocialContainer>
                   <a
                     href="https://www.facebook.com/Witideal-100558841331747/"

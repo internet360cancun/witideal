@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 const Destacados = ({ allDestacados,match }) => {
   const classes = useStyles();
 
+  const [cancelSubscription, setCancelSubscription] = useState(true)
   console.log("alldestacados", allDestacados);
 
   return (
@@ -32,7 +33,9 @@ const Destacados = ({ allDestacados,match }) => {
               alignItems="stretch"
               spacing={2}
             >
+              {!cancelSubscription &&
               <DestacadosSwipe allDestacados={allDestacados} match={match} />
+              }
             </Grid>
           </Box>
         </Paper>

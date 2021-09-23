@@ -103,6 +103,7 @@ export const PropertiesList = (props) => {
   const [itemsRendered, setItemsRendered] = useState([]);
   const [allDestacados, setAllDestacados] = useState([]);
   
+  
   const getRandomDest = () => {
     db.collection("destProperties")
       .get()
