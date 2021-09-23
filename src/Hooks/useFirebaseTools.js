@@ -1,35 +1,35 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-import 'firebase/compat/storage';
-import { enviroment } from '../constants/globalConstraints';
-import { errorParser } from '../functions/errorParser';
-import { useState } from 'react';
-import { dollarValue } from '../assets/Strings';
-import constExchangeCredentials from '../helpers/const_exchange_credentials';
-import analytics from 'react-ga';
-import { isProduction } from '../constants/globalConstraints';
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import "firebase/compat/storage";
+import { enviroment } from "../constants/globalConstraints";
+import { errorParser } from "../functions/errorParser";
+import { useState } from "react";
+import { dollarValue } from "../assets/Strings";
+import constExchangeCredentials from "../helpers/const_exchange_credentials";
+import analytics from "react-ga";
+import { isProduction } from "../constants/globalConstraints";
 
-const axios = require('axios');
+const axios = require("axios");
 
 const firebaseConfig =
-  enviroment === 'production'
+  enviroment === "production"
     ? {
-        apiKey: 'AIzaSyCVzD2DnsLYxkD5sNF_IOSF24h5r6JiR9o',
-        authDomain: 'witideal-b1f99.firebaseapp.com',
-        databaseURL: 'https://witideal-b1f99.firebaseio.com',
-        projectId: 'witideal-b1f99',
-        storageBucket: 'witideal-b1f99.appspot.com',
+        apiKey: "AIzaSyCVzD2DnsLYxkD5sNF_IOSF24h5r6JiR9o",
+        authDomain: "witideal-b1f99.firebaseapp.com",
+        databaseURL: "https://witideal-b1f99.firebaseio.com",
+        projectId: "witideal-b1f99",
+        storageBucket: "witideal-b1f99.appspot.com",
       }
     : {
-        apiKey: 'AIzaSyB_HmbrEBAP9ZZp880VkGZyyNvaLAW_nPY',
-        authDomain: 'witideal-develop.firebaseapp.com',
-        databaseURL: 'https://witideal-develop.firebaseio.com',
-        projectId: 'witideal-develop',
-        storageBucket: 'witideal-develop.appspot.com',
+        apiKey: "AIzaSyB_HmbrEBAP9ZZp880VkGZyyNvaLAW_nPY",
+        authDomain: "witideal-develop.firebaseapp.com",
+        databaseURL: "https://witideal-develop.firebaseio.com",
+        projectId: "witideal-develop",
+        storageBucket: "witideal-develop.appspot.com",
       };
 firebase.initializeApp(firebaseConfig);
-firebase.auth().languageCode = 'es_419';
+firebase.auth().languageCode = "es_419";
 const db = firebase.firestore();
 const storage = firebase.storage();
 const storageRef = storage.ref();
@@ -49,10 +49,10 @@ function useFirebaseTools() {
         .signInWithEmailAndPassword(email, pass);
       let Snapshot = await firebase
         .firestore()
-        .collection('production')
-        .doc('Users')
+        .collection("production")
+        .doc("Users")
         .collection(firebase.auth().currentUser.uid)
-        .doc('generalInfo')
+        .doc("generalInfo")
         .get();
       if (Snapshot.exists) {
         if (Snapshot.data().isRegisterComplete) {
@@ -71,8 +71,8 @@ function useFirebaseTools() {
   const gLog = async () => {
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
-      provider.addScope('profile');
-      provider.addScope('email');
+      provider.addScope("profile");
+      provider.addScope("email");
       await firebase
         .auth()
         .setPersistence(firebase.auth.Auth.Persistence.LOCAL);
@@ -80,10 +80,10 @@ function useFirebaseTools() {
 
       let Snapshot = await firebase
         .firestore()
-        .collection('production')
-        .doc('Users')
+        .collection("production")
+        .doc("Users")
         .collection(firebase.auth().currentUser.uid)
-        .doc('generalInfo')
+        .doc("generalInfo")
         .get();
 
       if (Snapshot.exists) {
@@ -105,7 +105,7 @@ function useFirebaseTools() {
   const fLog = async () => {
     try {
       var provider = new firebase.auth.FacebookAuthProvider();
-      provider.addScope('email');
+      provider.addScope("email");
       await firebase
         .auth()
         .setPersistence(firebase.auth.Auth.Persistence.LOCAL);
@@ -119,12 +119,12 @@ function useFirebaseTools() {
       //setUId(firebase.auth().currentUser.uid)
       let Snapshot = await firebase
         .firestore()
-        .collection('production')
-        .doc('Users')
+        .collection("production")
+        .doc("Users")
         .collection(firebase.auth().currentUser.uid)
-        .doc('generalInfo')
+        .doc("generalInfo")
         .get();
-      console.log('Snapshot.data()', Snapshot.data());
+      console.log("Snapshot.data()", Snapshot.data());
       if (Snapshot.exists) {
         if (Snapshot.data().isRegisterComplete) {
           return { isRegisterComplete: true };
@@ -147,7 +147,7 @@ function useFirebaseTools() {
       .signOut()
       .then(function () {
         // Sign-out successful.
-        console.log('loggedOut');
+        console.log("loggedOut");
       })
       .catch(function (error) {
         // An error happened.
@@ -172,13 +172,13 @@ function useFirebaseTools() {
 
   const linkPhone = (phonenoprefix) => {
     let phone = `+52${phonenoprefix}`;
-    console.log('recaptchaVerifier', recaptchaVerifier);
+    console.log("recaptchaVerifier", recaptchaVerifier);
     if (recaptchaVerifier === undefined) {
-      let captchaVerifier = new firebase.auth.RecaptchaVerifier('capcha', {
-        size: 'invisible',
+      let captchaVerifier = new firebase.auth.RecaptchaVerifier("capcha", {
+        size: "invisible",
         callback: function (response) {
           // reCAPTCHA solved, allow signInWithPhoneNumber.
-          console.log('response', response);
+          console.log("response", response);
           setrecaptchaVerifier(captchaVerifier);
         },
       });
@@ -192,7 +192,7 @@ function useFirebaseTools() {
         })
         .catch(function (error) {
           // Handle Errors here.
-          console.log('error in linking', error);
+          console.log("error in linking", error);
           return errorParser(error);
         });
     } else {
@@ -206,7 +206,7 @@ function useFirebaseTools() {
         })
         .catch(function (error) {
           // Handle Errors here.
-          console.log('error in linking', error);
+          console.log("error in linking", error);
           return errorParser(error);
         });
     }
@@ -215,7 +215,7 @@ function useFirebaseTools() {
   const registerFirestoreUsr = async (uid, obj) => {
     try {
       await db.doc(`production/Users/${uid}/generalInfo`).set(obj);
-      return { status: 'Exito' };
+      return { status: "Exito" };
     } catch (error) {
       return errorParser(error);
     }
@@ -232,17 +232,17 @@ function useFirebaseTools() {
   ) => {
     try {
       let urlep = `https://us-central1-witideal-${
-        enviroment === 'production' ? 'b1f99' : 'develop'
+        enviroment === "production" ? "b1f99" : "develop"
       }.cloudfunctions.net/chargeUpdate`;
-      console.log('oldPropertyData', oldPropertyData);
+      console.log("oldPropertyData", oldPropertyData);
       //transform oldPropertyData into the new one by merging the new photo fields
       delete oldPropertyData.photos;
       oldPropertyData.photos = {}; //hard reset
       let avoidPFP = false;
-      console.log('cleanformatedProperData', oldPropertyData);
+      console.log("cleanformatedProperData", oldPropertyData);
       //get the section arrays into the old data
       Object.keys(remainingImages).forEach((key) => {
-        if (key === 'principalPhotoPath') {
+        if (key === "principalPhotoPath") {
           avoidPFP = true; //pfp not edited no need to upload paps
         } else {
           oldPropertyData.photos[key] = remainingImages[key];
@@ -257,13 +257,13 @@ function useFirebaseTools() {
       setObjUpd(() => true);
       //charge for the update?
       if (!oldPropertyData.isPaid) {
-        console.log('charge the update');
+        console.log("charge the update");
         axios
           .post(urlep, obj)
           .then((res) => {
             //do we upload principal foto?
             if (avoidPFP) {
-              console.log('Avoided PFP');
+              console.log("Avoided PFP");
               if (Object.keys(photoSections).length > 0) {
                 uploadSecondaryImages(photoSections, propId, uId);
               } else {
@@ -271,26 +271,26 @@ function useFirebaseTools() {
               }
             } else {
               let photoArray = Object.entries(
-                photoSections['principalPhotoPath']
+                photoSections["principalPhotoPath"]
               );
-              console.log('photoArray', photoArray);
+              console.log("photoArray", photoArray);
               let photoname = photoArray[0][0];
-              console.log('photoname', photoname);
-              let photo = photoSections['principalPhotoPath'][photoname];
-              console.log('photo', photo);
+              console.log("photoname", photoname);
+              let photo = photoSections["principalPhotoPath"][photoname];
+              console.log("photo", photo);
               let path = `witideal/${uId}/${propId}/${photoname}`,
                 uploadTask = storageRef.child(path).put(photo);
               //observer
               let unsub = uploadTask.on(
-                'state_changed',
+                "state_changed",
                 (snapshotImg) => {
                   let progress =
                     (snapshotImg.bytesTransferred / snapshotImg.totalBytes) *
                     100;
-                  return console.log('progress', progress);
+                  return console.log("progress", progress);
                 },
                 (error) => {
-                  console.log('error', error);
+                  console.log("error", error);
                   setloadedImages([
                     ...loadedImages,
                     { name: photoname, completed: false },
@@ -303,7 +303,7 @@ function useFirebaseTools() {
                     { name: photo.name, completed: true },
                   ]);
                   let route = `https://firebasestorage.googleapis.com/v0/b/witideal-${
-                    enviroment === 'production' ? 'b1f99' : 'develop'
+                    enviroment === "production" ? "b1f99" : "develop"
                   }.appspot.com/o/witideal%2F${uId}%2F${propId}%2Fthumb%401100_${
                     uploadTask.snapshot.metadata.name
                   }?alt=media`;
@@ -314,7 +314,7 @@ function useFirebaseTools() {
                       principalPhotoPath: route,
                     })
                     .then(() => {
-                      delete photoSections['principalPhotoPath'];
+                      delete photoSections["principalPhotoPath"];
                       uploadSecondaryImages(photoSections, propId, uId);
                       return unsub();
                     })
@@ -326,37 +326,37 @@ function useFirebaseTools() {
             }
           })
           .catch((err) => {
-            console.log('err', err);
+            console.log("err", err);
             return errorParser(err);
           });
       } else {
         //do we upload principal foto?
         if (avoidPFP) {
-          console.log('Avoided PFP');
+          console.log("Avoided PFP");
           if (Object.keys(photoSections).length > 0) {
             uploadSecondaryImages(photoSections, propId, uId);
           } else {
             setOpen(false);
           }
         } else {
-          let photoArray = Object.entries(photoSections['principalPhotoPath']);
-          console.log('photoArray', photoArray);
+          let photoArray = Object.entries(photoSections["principalPhotoPath"]);
+          console.log("photoArray", photoArray);
           let photoname = photoArray[0][0];
-          console.log('photoname', photoname);
-          let photo = photoSections['principalPhotoPath'][photoname];
-          console.log('photo', photo);
+          console.log("photoname", photoname);
+          let photo = photoSections["principalPhotoPath"][photoname];
+          console.log("photo", photo);
           let path = `witideal/${uId}/${propId}/${photoname}`,
             uploadTask = storageRef.child(path).put(photo);
           //observer
           let unsub = uploadTask.on(
-            'state_changed',
+            "state_changed",
             (snapshotImg) => {
               let progress =
                 (snapshotImg.bytesTransferred / snapshotImg.totalBytes) * 100;
-              return console.log('progress', progress);
+              return console.log("progress", progress);
             },
             (error) => {
-              console.log('error', error);
+              console.log("error", error);
               setloadedImages([
                 ...loadedImages,
                 { name: photoname, completed: false },
@@ -369,7 +369,7 @@ function useFirebaseTools() {
                 { name: photo.name, completed: true },
               ]);
               let route = `https://firebasestorage.googleapis.com/v0/b/witideal-${
-                enviroment === 'production' ? 'b1f99' : 'develop'
+                enviroment === "production" ? "b1f99" : "develop"
               }.appspot.com/o/witideal%2F${uId}%2F${propId}%2Fthumb%401100_${
                 uploadTask.snapshot.metadata.name
               }?alt=media`;
@@ -380,7 +380,7 @@ function useFirebaseTools() {
                   principalPhotoPath: route,
                 })
                 .then(() => {
-                  delete photoSections['principalPhotoPath'];
+                  delete photoSections["principalPhotoPath"];
                   uploadSecondaryImages(photoSections, propId, uId);
                   return unsub();
                 })
@@ -395,11 +395,11 @@ function useFirebaseTools() {
       urlsToRemove.forEach((url) => {
         let fileRef = storage.refFromURL(url);
         return fileRef.delete().catch((err) => {
-          return console.log('err', err);
+          return console.log("err", err);
         });
       });
     } catch (error) {
-      console.log('error updateprop', error);
+      console.log("error updateprop", error);
       return errorParser(error);
     }
   };
@@ -414,24 +414,24 @@ function useFirebaseTools() {
         propId = snapshot.id;
 
       //uploading principal photo
-      let photoArray = Object.entries(photoSections['principalPhotoPath']);
-      console.log('photoArray', photoArray);
+      let photoArray = Object.entries(photoSections["principalPhotoPath"]);
+      console.log("photoArray", photoArray);
       let photoname = photoArray[0][0];
-      console.log('photoname', photoname);
-      let photo = photoSections['principalPhotoPath'][photoname];
-      console.log('photo', photo);
+      console.log("photoname", photoname);
+      let photo = photoSections["principalPhotoPath"][photoname];
+      console.log("photo", photo);
       let path = `witideal/${uId}/${propId}/${photoname}`,
         uploadTask = storageRef.child(path).put(photo);
       //observer
       let unsub = uploadTask.on(
-        'state_changed',
+        "state_changed",
         (snapshotImg) => {
           let progress =
             (snapshotImg.bytesTransferred / snapshotImg.totalBytes) * 100;
-          return console.log('progress', progress);
+          return console.log("progress", progress);
         },
         (error) => {
-          console.log('error', error);
+          console.log("error", error);
           setloadedImages([
             ...loadedImages,
             { name: photoname, completed: false },
@@ -444,7 +444,7 @@ function useFirebaseTools() {
             { name: photo.name, completed: true },
           ]);
           let route = `https://firebasestorage.googleapis.com/v0/b/witideal-${
-            enviroment === 'production' ? 'b1f99' : 'develop'
+            enviroment === "production" ? "b1f99" : "develop"
           }.appspot.com/o/witideal%2F${uId}%2F${propId}%2Fthumb%401100_${
             uploadTask.snapshot.metadata.name
           }?alt=media`;
@@ -453,7 +453,7 @@ function useFirebaseTools() {
               principalPhotoPath: route,
             })
             .then(() => {
-              delete photoSections['principalPhotoPath'];
+              delete photoSections["principalPhotoPath"];
               uploadSecondaryImages(photoSections, propId, uId);
               return unsub();
             })
@@ -463,7 +463,7 @@ function useFirebaseTools() {
         }
       );
     } catch (error) {
-      console.log('error uploadprop', error);
+      console.log("error uploadprop", error);
       return errorParser(error);
     }
   };
@@ -474,19 +474,19 @@ function useFirebaseTools() {
       let path = `witideal/${uId}/${file.name}`,
         snapshotImg = storageRef.child(path).put(file),
         unsub = snapshotImg.on(
-          'state_changed',
+          "state_changed",
           (snapshotImg) => {
             let progress =
               (snapshotImg.bytesTransferred / snapshotImg.totalBytes) * 100;
-            return console.log('progress', progress);
+            return console.log("progress", progress);
           },
           (error) => {
-            console.log('error', error);
+            console.log("error", error);
             return errorParser(error);
           },
           () => {
             let route = `https://firebasestorage.googleapis.com/v0/b/witideal-${
-              enviroment === 'production' ? 'b1f99' : 'develop'
+              enviroment === "production" ? "b1f99" : "develop"
             }.appspot.com/o/witideal%2F${uId}%2Fthumb%401100_${
               snapshotImg.snapshot.metadata.name
             }?alt=media`;
@@ -494,7 +494,7 @@ function useFirebaseTools() {
               .set({ photo: route }, { merge: true })
               .then(() => {
                 unsub();
-                return { status: 'Éxito' };
+                return { status: "Éxito" };
               })
               .catch((err) => {
                 return errorParser(err);
@@ -516,14 +516,14 @@ function useFirebaseTools() {
         let path = `witideal/${uId}/${propId}/${section}/${imageFile.name}`;
         let snapshotImg = storageRef.child(path).put(imageFile);
         let unsub = snapshotImg.on(
-          'state_changed',
+          "state_changed",
           (snapshotImg) => {
             let progress =
               (snapshotImg.bytesTransferred / snapshotImg.totalBytes) * 100;
-            return console.log('progress', progress);
+            return console.log("progress", progress);
           },
           (error) => {
-            console.log('error', error);
+            console.log("error", error);
             setloadedImages([
               ...loadedImages,
               { name: imageFile.name, completed: false },
@@ -532,11 +532,11 @@ function useFirebaseTools() {
           //success
           () => {
             let returnedSectionParts =
-              snapshotImg.snapshot.ref.location.path.split('/');
+              snapshotImg.snapshot.ref.location.path.split("/");
             let newSection =
               returnedSectionParts[returnedSectionParts.length - 2];
             let route = `https://firebasestorage.googleapis.com/v0/b/witideal-${
-              enviroment === 'production' ? 'b1f99' : 'develop'
+              enviroment === "production" ? "b1f99" : "develop"
             }.appspot.com/o/witideal%2F${uId}%2F${propId}%2F${newSection}%2Fthumb%401100_${
               snapshotImg.snapshot.metadata.name
             }?alt=media`;
@@ -569,10 +569,10 @@ function useFirebaseTools() {
       await db
         .doc(`production/Users/${uId}/properties/ownedProperties/${propId}`)
         .update({ isEnabled: enabled });
-      console.log('ocurrio');
-      return { status: 'Éxito' };
+      console.log("ocurrio");
+      return { status: "Éxito" };
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -597,7 +597,7 @@ function useFirebaseTools() {
     priceMxn
   ) => {
     console.log(
-      'params exchange credemtial *******',
+      "params exchange credemtial *******",
       uId,
       promoter,
       propId,
@@ -611,14 +611,14 @@ function useFirebaseTools() {
     try {
       if (uId === promId) {
         //if he clicks his own prop send him to ownedprop modal
-        return { sendTo: 'ownedProperty' };
+        return { sendTo: "ownedProperty" };
       }
       const propertyDoc = await db
         .doc(`production/witideal/genders/${gender}/${action}/${propId}`)
         .get(); //get property docsnapshot
-      const shares = await propertyDoc.get('sharesCom');
+      const shares = await propertyDoc.get("sharesCom");
       if (promoter && !shares) {
-        return { sendTo: 'notShared' };
+        return { sendTo: "notShared" };
       }
       await db
         .doc(
@@ -631,21 +631,21 @@ function useFirebaseTools() {
       if (isProduction) {
         analytics.event({
           category: promId,
-          action: 'consumption of witicoins',
-          label: 'exchange credentials',
+          action: "consumption of witicoins",
+          label: "exchange credentials",
           value: constExchangeCredentials(priceMxn, action),
         });
         analytics.event({
           category: uId,
-          action: 'user interested property',
-          label: 'get credentials',
+          action: "user interested property",
+          label: "get credentials",
           value: constExchangeCredentials(priceMxn, action),
         });
         console.log(constExchangeCredentials(priceMxn, action));
       }
       return promoDoc.data();
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -656,10 +656,10 @@ function useFirebaseTools() {
       let properties = await db
         .collection(`production/Users/${uId}/properties/ownedProperties`)
         .get();
-      console.log('properties', properties);
+      console.log("properties", properties);
       return properties;
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -676,32 +676,32 @@ function useFirebaseTools() {
         `production/Users/${uId}/properties/ownedProperties`
       );
       if (!filterObj.action) {
-        query = query.where('action', '==', filterObj.action);
+        query = query.where("action", "==", filterObj.action);
       }
       if (!filterObj.propertyType) {
-        query = query.where('propertyType', '==', filterObj.propertyType);
+        query = query.where("propertyType", "==", filterObj.propertyType);
       }
       if (filterObj.isEnabled !== null && filterObj.isEnabled !== undefined) {
-        query = query.where('isEnabled', '==', filterObj.isEnabled);
+        query = query.where("isEnabled", "==", filterObj.isEnabled);
       }
       if (filterObj.isPaid !== null && filterObj.isPaid !== undefined) {
-        query = query.where('isPaid', '==', filterObj.isPaid);
+        query = query.where("isPaid", "==", filterObj.isPaid);
       }
 
-      query = query.where('priceMxn', '>=', filterObj.priceMxnMin);
+      query = query.where("priceMxn", ">=", filterObj.priceMxnMin);
 
       if (
         filterObj.priceMxnMax !== null &&
         filterObj.priceMxnMax !== undefined &&
         filterObj.priceMxnMax > filterObj.priceMxnMin
       ) {
-        query = query.where('priceMxn', '<=', filterObj.priceMxnMax);
+        query = query.where("priceMxn", "<=", filterObj.priceMxnMax);
         money = true;
       }
 
-      query = query.orderBy('priceMxn', 'desc');
-      query = query.orderBy('uploadDate', 'desc');
-      console.log('query:', query);
+      query = query.orderBy("priceMxn", "desc");
+      query = query.orderBy("uploadDate", "desc");
+      console.log("query:", query);
 
       if (lastDoc !== null || lastDoc !== undefined) {
         query = query.startAfter(lastDoc);
@@ -709,11 +709,11 @@ function useFirebaseTools() {
 
       query = query.limit(limit);
       let properties = await query.get();
-      console.log('properties', properties);
+      console.log("properties", properties);
       let newLastDoc = properties.docs[properties.docs.length - 1];
       return { properties: properties.docs, lastDoc: newLastDoc };
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -727,27 +727,27 @@ function useFirebaseTools() {
   ) => {
     console.log(limit);
     // if (filterObj.priceMxnMin === null) filterObj = {...filterObj, priceMxnMin: 0}
-    console.log('uId,lastDoc,filterObj,limit', uId, lastDoc, filterObj, limit);
+    console.log("uId,lastDoc,filterObj,limit", uId, lastDoc, filterObj, limit);
     try {
       //Adding Filters
       let query = db.collection(
         `production/Users/${uId}/properties/ownedProperties`
       );
       if (filterObj.action) {
-        console.log('action');
-        query = query.where('action', '==', filterObj.action);
+        console.log("action");
+        query = query.where("action", "==", filterObj.action);
       }
       if (filterObj.propertyType) {
-        query = query.where('propertyType', '==', filterObj.propertyType);
-        console.log('propertuType');
+        query = query.where("propertyType", "==", filterObj.propertyType);
+        console.log("propertuType");
       }
       if (filterObj.isEnabled !== null && filterObj.isEnabled !== undefined) {
-        query = query.where('isEnabled', '==', filterObj.isEnabled);
-        console.log('isenable');
+        query = query.where("isEnabled", "==", filterObj.isEnabled);
+        console.log("isenable");
       }
       if (filterObj.isPaid !== null && filterObj.isPaid !== undefined) {
-        query = query.where('isPaid', '==', filterObj.isPaid);
-        console.log('isPaid');
+        query = query.where("isPaid", "==", filterObj.isPaid);
+        console.log("isPaid");
       }
       // if (filterObj.priceMxnMax) {
       //     query = query.where('priceMxn', '<=', filterObj.priceMxnMax)
@@ -760,44 +760,44 @@ function useFirebaseTools() {
       // }
 
       if (filterObj.priceMxnMin) {
-        query = query.where('priceMxn', '>=', filterObj.priceMxnMin);
-        console.log('Entre en if price');
+        query = query.where("priceMxn", ">=", filterObj.priceMxnMin);
+        console.log("Entre en if price");
       }
       if (filterObj.priceMxnMax) {
-        console.log('Entre en if maxprice');
+        console.log("Entre en if maxprice");
         if (filterObj.priceMxnMin) {
-          console.log('entre en el if max min');
+          console.log("entre en el if max min");
           if (filterObj.priceMxnMax > filterObj.priceMxnMin) {
-            console.log('entre en el if max mayor que min');
-            query = query.where('priceMxn', '<=', filterObj.priceMxnMax);
+            console.log("entre en el if max mayor que min");
+            query = query.where("priceMxn", "<=", filterObj.priceMxnMax);
           }
         } else {
-          console.log('entre en el if max sin min');
-          query = query.where('priceMxn', '<=', filterObj.priceMxnMax);
+          console.log("entre en el if max sin min");
+          query = query.where("priceMxn", "<=", filterObj.priceMxnMax);
         }
       }
 
       if (lastDoc !== null && lastDoc !== undefined) {
-        console.log('entre en el if last doc');
+        console.log("entre en el if last doc");
         query = query
-          .orderBy('priceMxn', 'desc')
-          .orderBy('uploadDate', 'desc')
+          .orderBy("priceMxn", "desc")
+          .orderBy("uploadDate", "desc")
           .limit(limit)
           .startAfter(lastDoc);
       } else {
-        console.log('entre en el else last doc');
+        console.log("entre en el else last doc");
         query = query
-          .orderBy('priceMxn', 'desc')
-          .orderBy('uploadDate', 'desc')
+          .orderBy("priceMxn", "desc")
+          .orderBy("uploadDate", "desc")
           .limit(limit);
       }
 
-      console.log('----------', query);
+      console.log("----------", query);
       let properties = await query.get();
       let newLastDoc = properties.docs[properties.docs.length - 1];
       return { properties: properties, lastDoc: newLastDoc };
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       errorParser(error);
       return { properties: null, lastDoc: null };
     }
@@ -814,11 +814,11 @@ function useFirebaseTools() {
       }
       query = query.limit(limit);
       let contacts = await query.get();
-      console.log('contacts', contacts);
+      console.log("contacts", contacts);
       let newLastDoc = contacts.docs[contacts.docs.length - 1];
       return { contacts: contacts.docs, lastDoc: newLastDoc };
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -829,10 +829,10 @@ function useFirebaseTools() {
       let contacts = await db
         .collection(`production/Users/${uId}/properties/InterestedUsers`)
         .get();
-      console.log('contacts', contacts);
+      console.log("contacts", contacts);
       return contacts;
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -850,29 +850,29 @@ function useFirebaseTools() {
         { merge: true }
       );
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
 
-//Obtiene todos los destacados de todos los usuarios
-const setDest2 = async (pId, gender, action) => {
-  try {
-    const docRef = db.doc(`destProperties/${pId}`);
-    const propDocRef = db.doc(
-      `production/witideal/genders/${gender}/${action}/${pId}`
-    );
-    return await docRef.set(
-      {
-        destProperties: firebase.firestore.FieldValue.arrayUnion(propDocRef),
-      },
-      { merge: true }
-    );
-  } catch (error) {
-    console.log('error', error);
-    return errorParser(error);
-  }
-};
+  //Obtiene todos los destacados de todos los usuarios
+  const setDest2 = async (pId, gender, action) => {
+    try {
+      const docRef = db.doc(`destProperties/${pId}`);
+      const propDocRef = db.doc(
+        `production/witideal/genders/${gender}/${action}/${pId}`
+      );
+      return await docRef.set(
+        {
+          destProperties: firebase.firestore.FieldValue.arrayUnion(propDocRef),
+        },
+        { merge: true }
+      );
+    } catch (error) {
+      console.log("error", error);
+      return errorParser(error);
+    }
+  };
 
   //get Fav properties uses uId to retrieve an array of propertyDocumentReferences
   const getDest = async (uId) => {
@@ -884,12 +884,12 @@ const setDest2 = async (pId, gender, action) => {
           let temp2 = snapshot.data();
           temp2.destProperties.forEach((element) => {
             element.get().then((snap) => {
-              console.log(snap.data().action, 'snap.data');
+              console.log(snap.data().action, "snap.data");
             });
           });
         });
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       errorParser(error);
       return undefined;
     }
@@ -907,10 +907,46 @@ const setDest2 = async (pId, gender, action) => {
         { merge: true }
       );
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
+
+  const deleteDest = async (pId,gender,action,uId) => {
+    try {
+      const docRef = db.doc(`production/Users/${uId}/properties/`);
+      const propDocRef = db.doc(
+        `production/witideal/genders/${gender}/${action}/${pId}`
+      );
+      return await docRef.set(
+        {
+          favProperties: firebase.firestore.FieldValue.arrayRemove(propDocRef),
+        },
+        { merge: true }
+      );
+    } catch (error) {
+      console.log("error", error);
+      return errorParser(error);
+    }
+  };
+
+  const deleteDest2 = async(pId,gender,action) => {
+    try {
+      const docRef = db.doc(`destProperties/${pId}`);
+      const propDocRef = db.doc(
+        `production/witideal/genders/${gender}/${action}/${pId}`
+      );
+      return await docRef.set(
+        {
+          destProperties: firebase.firestore.FieldValue.arrayRemove(propDocRef),
+        },
+        { merge: true }
+      );
+    } catch (error) {
+      console.log("error", error);
+      return errorParser(error);
+    }
+  }
 
   //Remove property from fav
   // deprecated do not use
@@ -927,7 +963,7 @@ const setDest2 = async (pId, gender, action) => {
         { merge: true }
       );
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -936,9 +972,9 @@ const setDest2 = async (pId, gender, action) => {
   const getFavs = async (uId) => {
     try {
       const docSnap = await db.doc(`production/Users/${uId}/properties/`).get();
-      return docSnap.get('favProperties');
+      return docSnap.get("favProperties");
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       errorParser(error);
       return undefined;
     }
@@ -988,7 +1024,7 @@ const setDest2 = async (pId, gender, action) => {
         adminarea1,
         notBankSale
       );
-      console.log('query de búsqueda', query);
+      console.log("query de búsqueda", query);
       let result = await query.get();
       if (result.size === 0) {
         query = setQuery(
@@ -1007,7 +1043,7 @@ const setDest2 = async (pId, gender, action) => {
         return result;
       }
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
     }
   };
 
@@ -1052,7 +1088,7 @@ const setDest2 = async (pId, gender, action) => {
         return result;
       }
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
     }
   };
 
@@ -1062,7 +1098,6 @@ const setDest2 = async (pId, gender, action) => {
 
   //Delete property
   const delProp = async (uId, pId) => {
-    console.log('props', uId, pId);
     try {
       const propertyRef = db.doc(
         `production/Users/${uId}/properties/ownedProperties/${pId}`
@@ -1129,33 +1164,33 @@ const setDest2 = async (pId, gender, action) => {
   ) => {
     // calculate mxn price if currency is USD
     var minPriceMxn =
-      !!minPrice && currency === 'USD' ? minPrice * dollarValue : minPrice;
+      !!minPrice && currency === "USD" ? minPrice * dollarValue : minPrice;
     var maxPriceMxn =
-      !!maxPrice && currency === 'USD' ? maxPrice * dollarValue : maxPrice;
+      !!maxPrice && currency === "USD" ? maxPrice * dollarValue : maxPrice;
 
     let query = db
       .collection(`production/witideal/genders/${gender}/${action}`)
-      .where('isActive', '==', true)
-      .where('isEnabled', '==', true);
+      .where("isActive", "==", true)
+      .where("isEnabled", "==", true);
     if (!isNullOrEmpty(administrative_area_level_1))
       query = query.where(
-        'administrative_area_level_1',
-        '==',
+        "administrative_area_level_1",
+        "==",
         administrative_area_level_1
       );
     if (!isNullOrEmpty(sublocality_level_1)) {
-      query = query.where('sublocality_level_1', '==', sublocality_level_1);
+      query = query.where("sublocality_level_1", "==", sublocality_level_1);
     } else {
       if (!isNullOrEmpty(administrative_area_level_2_3))
         query = query.where(
-          'administrative_area_level_2_3',
-          '==',
+          "administrative_area_level_2_3",
+          "==",
           administrative_area_level_2_3
         );
     }
-    if (notBankSale) query = query.where('bankSale', '==', !notBankSale);
-    if (minPriceMxn > 0) query = query.where('priceMxn', '>=', minPriceMxn);
-    if (maxPriceMxn) query = query.where('priceMxn', '<=', maxPriceMxn);
+    if (notBankSale) query = query.where("bankSale", "==", !notBankSale);
+    if (minPriceMxn > 0) query = query.where("priceMxn", ">=", minPriceMxn);
+    if (maxPriceMxn) query = query.where("priceMxn", "<=", maxPriceMxn);
     return query;
   };
 
@@ -1166,7 +1201,7 @@ const setDest2 = async (pId, gender, action) => {
         .get();
       return await moviments;
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -1176,11 +1211,11 @@ const setDest2 = async (pId, gender, action) => {
       const docSnap = await db
         .doc(`production/Users/${userId}/properties/`)
         .get();
-      const favs = docSnap.get('favProperties');
+      const favs = docSnap.get("favProperties");
       const idFavs = favs.map((f) => f.id);
       return idFavs.includes(propertyId);
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -1196,7 +1231,7 @@ const setDest2 = async (pId, gender, action) => {
       const newLastDoc = properties.docs[properties.docs.length - 1];
       return { items: properties, latestItem: newLastDoc };
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
       return errorParser(error);
     }
   };
@@ -1209,6 +1244,8 @@ const setDest2 = async (pId, gender, action) => {
     nLog,
     setFav,
     getDest,
+    deleteDest,
+    deleteDest2,
     delFav,
     setProfPic,
     delProp,

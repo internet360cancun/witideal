@@ -91,12 +91,17 @@ const MyMovements = () => {
   const classes = useStyles();
   const [destacados, setDestacados] = useState([]);
   const { subscription } = useRole();
+  const [subs, setSubs] = useState(true)
+  // const [cancelSubscriptsion, setCancelSubscriptsion] = useState();
+
+  // const today = Date.now() / 1000;
+
+
+
 
   useEffect(() => {
     const getDest = async (uId) => {
       try {
-        if (subscription === "risingStar") {
-        }
         const docSnap = await db
           .doc(`production/Users/${uId}/properties/`)
           .get()
@@ -107,6 +112,7 @@ const MyMovements = () => {
                   ...oldArray,
                   { id: snap.id, ...snap.data() },
                 ]);
+             
               });
             });
           });
@@ -119,7 +125,32 @@ const MyMovements = () => {
 
     getDest(context.uId);
   }, [context.uId, db, subscription]);
-  console.log(destacados);
+
+  if (subs){
+    setDestacados([])
+  }
+
+  // useEffect(() => {
+  //   const getSubscription = (uId) => {
+  //     try {
+  //       const docSnap = db
+  //         .collection(`users/${uId}/subscriptions/`)
+  //         .get()
+  //         .then((snapshot) => {
+  //           snapshot.docs.forEach((doc) => {
+  //             setCancelSubscriptsion(doc.data().current_period_end.seconds);
+           
+  //           });
+  //         });
+  //     } catch (error) {
+  //       console.log(error, "Error en la subscripción");
+  //     }
+  //   };
+
+  //   getSubscription(context.uId);
+  // }, [context.uId]);
+
+
 
   return (
     <Page paddingTop={10}>
@@ -227,7 +258,7 @@ const MyMovements = () => {
                           <FavoriteBorderIcon className={classes.iconLike} />
                         </IconButton>
                       </Grid>
-                      <Link className={classes.link} to={`/`} >
+                      <Link className={classes.link} to={`/`}>
                         <CardActionArea>
                           <CardMedia
                             component="img"
