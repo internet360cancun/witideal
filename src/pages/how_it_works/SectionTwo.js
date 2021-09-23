@@ -34,7 +34,7 @@ const SectionTwo = () => {
               <div className="btnlargo">Publica todos tus inmuebles</div>
             </div>
             {/*CARDS*/}
-            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4 text-left">
+            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6  text-left">
               <div className="card align-content-center card1" style={{backgroundColor: '#e7e7e7'}}>
                 <img src={card1} className="card-img-top"/>
                 <div className="card-body text-center">
