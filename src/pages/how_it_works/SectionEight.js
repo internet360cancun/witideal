@@ -24,7 +24,7 @@ const SectionEight = () => {
         breakpoints={{
           576: { width: 576, slidesPerView: 2 },
           768: { width: 768, slidesPerView: 2 },
-          992: { width: 992, slidesPerView: 3 },
+          992: { width: 900, slidesPerView: 3 },
           1200: { width: 1200, slidesPerView: 4 },
         }}
       >
