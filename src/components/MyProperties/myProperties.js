@@ -114,8 +114,8 @@ export const MyProperties = () => {
     items: [],
     loading: true,
     latestItem: null,
-    noMore: false,
-    itemsForPage: 6,
+    noMore: true,
+    itemsForPage: 1000,
     filter: initilFilters,
   });
 
