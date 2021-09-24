@@ -32,6 +32,7 @@ const SectionSeven = () => {
                       <div classname="subtitulo">(Anunciar Gratis)</div>
                       <div classname="precio">$1,500 MXN</div>
                       <div classname="subtitulo">(3 Propiedades destacadas)</div>
+                      <div classname="subtitulo">(Vigencia de 30 dias)</div>
                       <div classname="lista">
                         <br />
                         <p>
@@ -65,6 +66,7 @@ const SectionSeven = () => {
                       <div classname="subtitulo">(Anunciar Gratis)</div>
                       <div classname="precio">$1,990 MXN</div>
                       <div classname="subtitulo">(5 Propiedades destacadas)</div>
+                      <div classname="subtitulo">(Vigencia de 30 dias)</div>
                       <div classname="lista">
                         <br />
                         <p>
@@ -101,7 +103,7 @@ const SectionSeven = () => {
                       <div classname="titulo">Paquete Oro</div>
                       <div classname="subtitulo">(Anunciar Gratis)</div>
                       <div classname="precio">$2,500 MXN</div>
-                      <div classname="subtitulo">(Hasta 10 propiedades destacadas)</div>
+                      <div classname="subtitulo">(Hasta 10 propiedades destacadas) <br /> (vigencia de 30 dias) </div>
                       <div classname="lista">
                         <br />
                         <p>

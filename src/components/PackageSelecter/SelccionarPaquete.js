@@ -176,7 +176,7 @@ const SelccionarPaquete = () => {
                       <div className="titulo">Paquete Básico</div>
                       <div className="subtitulo">(Anunciar Gratis)</div>
                       <div className="precio">$1,500 MXN</div>
-                      <div className="subtitulo">(3 Propiedades destacadas)</div>
+                      <div className="subtitulo">(3 Propiedades destacadas)<br /> (Vigencia de 30 días) </div>
                       <div className="lista">
                         <br />
                         <p>
@@ -267,7 +267,7 @@ const SelccionarPaquete = () => {
                       <div className="titulo">Paquete Plata</div>
                       <div className="subtitulo">(Anunciar Gratis)</div>
                       <div className="precio">$1,990 MXN</div>
-                      <div className="subtitulo">(5 Propiedades destacadas)</div>
+                      <div className="subtitulo">(5 Propiedades destacadas)<br /> (Vigencia de 30 días) </div>
                       <div className="lista">
                         <br />
                         <p>
@@ -321,7 +321,7 @@ const SelccionarPaquete = () => {
                       <div className="titulo">Paquete Oro</div>
                       <div className="subtitulo">(Anunciar Gratis)</div>
                       <div className="precio">$2,500 MXN</div>
-                      <div className="subtitulo">(Hasta 10 propiedades destacadas)</div>
+                      <div className="subtitulo">(10 propiedades destacadas) <br /> (Vigencia de 30 días) </div>
                       <div className="lista">
                         <br />
                         <p>
