@@ -125,19 +125,19 @@ body,
 .triangulo-1 {
   position: absolute;
   z-index: 1;
-  top: 74vh;
+  top: 69.5vh;
   left: 100%;
 }
 .triangulo-2 {
   position: absolute;
   z-index: 2;
-  top: 73vh;
+  top: 69vh;
   left: 100%;
 }
 .triangulo-3 {
   position: absolute;
   z-index: 3;
-  top: 71.5vh;
+  top: 68vh;
   left: 100%;
 }
 
@@ -2310,7 +2310,6 @@ body .no-padding {
   }
 }
 
-
 @media (min-height: 1110px) and (max-height: 2250px) {
   /*2do view*/
   .izq-1,
@@ -2334,26 +2333,97 @@ body .no-padding {
     height: 40vh;
   }
 
-
-
-  .carddisplay{
+  .carddisplay {
     height: 16.5vh;
   }
 
-
-  .textbanner{
+  .textbanner {
     line-height: 4vh;
   }
-  .bannerbajo{
+  .bannerbajo {
     height: 18vh;
   }
 
-
-  .titulo, .subtitulo, .precio, .lista, .btnplanes{
+  .titulo,
+  .subtitulo,
+  .precio,
+  .lista,
+  .btnplanes {
     font-size: 100%;
   }
-  .BannerTitle7{
+  .BannerTitle7 {
     font-size: 5.5vh !important;
   }
 }
 
+@media (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape){
+  .customcople1{
+    left: 0vh;
+  }
+  .customcople2{
+    left: 0vh;
+    padding-top: 3vh !important;
+    padding-bottom: 3vh !important;
+  }
+  .customcople3{
+    left: 0vh;
+  }
+
+  .BannerTitle{
+    margin-left: 0;
+    margin-top: 2vh;
+    margin-bottom: 0 !important;
+    font-size: 8vw !important;
+    line-height: 12vh !important;
+  }
+
+  .customview1{
+    height: 121vh;
+  }
+  .custombtnindex{
+    margin-left: 0;
+  }
+
+  .triangulo-1, .triangulo-2, .triangulo-3{
+    display: none;
+  }
+  .first {
+    width: 45vw;
+    top: -16vw;
+    margin: 0;
+    right: 0;
+    left: 72vh;
+  }
+  .second {
+    width: 46vw;
+    margin: 0;
+    right: 0;
+    top: -17vw;
+    left: 74vh;
+  }
+  .third {
+    width: 55vw;
+    margin: 0;
+    right: 0;
+    top: -25vw;
+    left: 35vw;
+    
+  }
+
+
+
+  .card1, .card2, .card3{
+    width: 40vh;
+  }
+  .subwrite{
+    top: 32vh;
+  }
+  .sign{
+    width: 35vh;
+  }
+
+
+  .textbanner{
+    font-size: 6vh;
+  }
+}
