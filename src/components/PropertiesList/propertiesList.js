@@ -317,10 +317,6 @@ export const PropertiesList = (props) => {
   const propertyType = props.match.params.propertyType;
   const area1 = props.match.params.administrative_area_level_1;
 
-  console.log(area1,'componente abuelo que ');
-
-
-
   return (
     <Fragment>
       <Head title={createTitle()} description={createTitle()} />

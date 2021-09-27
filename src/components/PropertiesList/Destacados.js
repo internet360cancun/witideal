@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Destacados = ({ allDestacados, action, propertyType, area1 }) => {
   const classes = useStyles();
-  console.log(area1,'Componente padre')
 
   return (
     <Grid
