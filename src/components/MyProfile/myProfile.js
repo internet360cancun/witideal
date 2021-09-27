@@ -1,5 +1,5 @@
 /* eslint-disable no-lone-blocks */
-import React, { useContext, useEffect, useState, Fragment } from 'react';
+import React, { useContext, useEffect, useState, Fragment } from "react";
 import {
   Grid,
   Box,
@@ -9,57 +9,58 @@ import {
   Button,
   Hidden,
   useMediaQuery,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import thirdSec from '../../assets/balanceBackground.png';
-import EmailIcon from '../../assets/emailIcon.png';
-import PhoneIcon from '../../assets/phoneIcon.png';
-import CompanyIcon from '../../assets/CompanyIcon.png';
-import witiwalletIcon from '../../assets/witiwalletIcon.svg';
-import SesContext from '../../contexts/sessionContext';
-import useFirebaseTools from '../../Hooks/useFirebaseTools';
-import { Link } from 'react-router-dom';
-import { COMPRARPAQUETES, MYMOVEMENTS } from '../../constants/routes';
-import EditProfile from '../../pages/edit_profile';
-import ModalPromo from './modalPromo';
-import Head from '../head';
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import thirdSec from "../../assets/balanceBackground.png";
+import EmailIcon from "../../assets/emailIcon.png";
+import PhoneIcon from "../../assets/phoneIcon.png";
+import CompanyIcon from "../../assets/CompanyIcon.png";
+import witiwalletIcon from "../../assets/witiwalletIcon.svg";
+import SesContext from "../../contexts/sessionContext";
+import useFirebaseTools from "../../Hooks/useFirebaseTools";
+import { Link } from "react-router-dom";
+import { COMPRARPAQUETES, MYMOVEMENTS } from "../../constants/routes";
+import EditProfile from "../../pages/edit_profile";
+import ModalPromo from "./modalPromo";
+import Head from "../head";
 
-import { useRole } from '../../Hooks/useRole';
+import { useRole } from "../../Hooks/useRole";
+import { risingStar, rockStar, superStar } from "../../constants/subscriptions";
 
 const profilePhoto =
-  'https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40logIn.svg?alt=media&token=b5b57bad-a437-4691-bd6c-194c98514983';
+  "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40logIn.svg?alt=media&token=b5b57bad-a437-4691-bd6c-194c98514983";
 
-const wdRegularBlue = '#3F19F9';
-const wdLightGreen = '#32FFD2';
-const wdDarkBlue = '#1E0E6F';
-const wdLightBlue = '#41B8F9';
-const wdLightGrey = '#F7F6FF';
-const wdRegularGrey = '#E8E5FD';
+const wdRegularBlue = "#3F19F9";
+const wdLightGreen = "#32FFD2";
+const wdDarkBlue = "#1E0E6F";
+const wdLightBlue = "#41B8F9";
+const wdLightGrey = "#F7F6FF";
+const wdRegularGrey = "#E8E5FD";
 
 const useStyle = makeStyles((theme) => ({
   currentBalance: {
     backgroundImage: `url(${thirdSec})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgrounRepeat: 'no-repeat',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgrounRepeat: "no-repeat",
     borderRadius: 10,
     padding: theme.spacing(3),
-    height: '100%',
-    boxSizing: 'border-box',
-    display: 'flex',
-    alignItems: 'center',
+    height: "100%",
+    boxSizing: "border-box",
+    display: "flex",
+    alignItems: "center",
   },
   paperContent: {
     borderRadius: 10,
     padding: theme.spacing(2),
-    height: '100%',
-    boxSizing: 'border-box',
-    wordWrap: 'break-word',
+    height: "100%",
+    boxSizing: "border-box",
+    wordWrap: "break-word",
   },
 
   spacingTop: {
     marginTop: 50,
-    '@media (max-width:600px)': {
+    "@media (max-width:600px)": {
       marginTop: 10,
     },
   },
@@ -73,26 +74,26 @@ const useStyle = makeStyles((theme) => ({
     height: theme.spacing(15),
   },
   boxNextMedals: {
-    border: '1.5px dashed #c2c2d6',
+    border: "1.5px dashed #c2c2d6",
   },
   iconCurrentBalance: {
-    position: 'relative',
+    position: "relative",
     zIndez: 1,
     //bottom: 20,
     width: 50,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 100,
   },
   buttons: {
     backgroundColor: wdRegularBlue,
-    textTransform: 'none',
-    color: 'white',
+    textTransform: "none",
+    color: "white",
     borderRadius: 50,
     marginTop: 10,
-    fontSize: '.8em',
-    fontWeight: 'normal',
-    padding: '6px 0px!important',
-    '&:hover': {
+    fontSize: ".8em",
+    fontWeight: "normal",
+    padding: "6px 0px!important",
+    "&:hover": {
       backgroundColor: wdDarkBlue,
     },
   },
@@ -101,11 +102,11 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: 700,
   },
   textWhite: {
-    color: 'white',
+    color: "white",
   },
   textBlue: {
     color: wdDarkBlue,
-    '& img': {
+    "& img": {
       marginRight: 5,
     },
   },
@@ -114,7 +115,7 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: 700,
   },
   textWhiteB: {
-    color: 'white',
+    color: "white",
     fontWeight: 700,
   },
 
@@ -123,7 +124,7 @@ const useStyle = makeStyles((theme) => ({
     padding: 10,
   },
   backgroundM: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 10,
   },
   backgroundPaperM: {
@@ -135,7 +136,7 @@ const useStyle = makeStyles((theme) => ({
     backgroundColor: wdLightGrey,
     borderRadius: 50,
     fontWeight: 700,
-    textTransform: 'none',
+    textTransform: "none",
   },
 }));
 
@@ -168,7 +169,7 @@ export const MyProfile = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const ButtonActions = (
     <Grid item xs={12}>
@@ -182,7 +183,7 @@ export const MyProfile = () => {
         >
           {context.isPromoter && (
             <Grid item xs={12} sm={4}>
-              <Link to={MYMOVEMENTS} style={{ textDecoration: 'none' }}>
+              <Link to={MYMOVEMENTS} style={{ textDecoration: "none" }}>
                 <Button
                   className={classes.outlinedButton}
                   fullWidth
@@ -195,7 +196,7 @@ export const MyProfile = () => {
           )}
           {context.isPromoter && (
             <Grid item xs={12} sm={4}>
-              <Link to="/mis-pagos" style={{ textDecoration: 'none' }}>
+              <Link to="/mis-pagos" style={{ textDecoration: "none" }}>
                 <Button
                   className={classes.outlinedButton}
                   fullWidth
@@ -207,7 +208,7 @@ export const MyProfile = () => {
             </Grid>
           )}
           <Grid item xs={12} sm={4}>
-            <Link to="/mis-favoritos" style={{ textDecoration: 'none' }}>
+            <Link to="/mis-favoritos" style={{ textDecoration: "none" }}>
               <Button
                 className={classes.outlinedButton}
                 fullWidth
@@ -242,7 +243,7 @@ export const MyProfile = () => {
             </Typography>
             <Typography
               style={{
-                color: wallet.witicoins && wallet.witicoins < 0 ? 'red' : '',
+                color: wallet.witicoins && wallet.witicoins < 0 ? "red" : "",
               }}
               className={classes.textWhiteB}
               variant="h2"
@@ -257,7 +258,7 @@ export const MyProfile = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} lg={5}>
-            <Link to={COMPRARPAQUETES} style={{ textDecoration: 'none' }}>
+            <Link to={COMPRARPAQUETES} style={{ textDecoration: "none" }}>
               <Button fullWidth className={classes.buttons}>
                 Agregar paquete
               </Button>
@@ -294,34 +295,34 @@ export const MyProfile = () => {
                   <Typography
                     className={classes.textBlue}
                     gutterBottom
-                    variant={isMobile ? 'h5' : 'h4'}
-                    align={isMobile ? 'center' : 'left'}
+                    variant={isMobile ? "h5" : "h4"}
+                    align={isMobile ? "center" : "left"}
                   >
                     ¡Hola!
                     <br />
-                    {subscription && subscription.role == 'risingStar'
-                      ? 'Plan RisingStar'
-                      : ''}
-                    {subscription && subscription.role == 'rockStar'
-                      ? 'Plan RockStar'
-                      : ''}
-                    {subscription && subscription.role == 'superStar'
-                      ? 'Plan Super Star'
-                      : ''}
+                    {subscription && subscription.role == risingStar
+                      ? "Plan RisingStar"
+                      : ""}
+                    {subscription && subscription.role == rockStar
+                      ? "Plan RockStar"
+                      : ""}
+                    {subscription && subscription.role == superStar
+                      ? "Plan Super Star"
+                      : ""}
                   </Typography>
                   <Typography
                     className={classes.textBlueName}
                     gutterBottom
-                    variant={isMobile ? 'h5' : 'h4'}
-                    align={isMobile ? 'center' : 'left'}
+                    variant={isMobile ? "h5" : "h4"}
+                    align={isMobile ? "center" : "left"}
                   >
-                    {context.Name || 'Promotor Witideal'}{' '}
-                    {context.lastname || ''}{' '}
+                    {context.Name || "Promotor Witideal"}{" "}
+                    {context.lastname || ""}{" "}
                   </Typography>
                   <Typography
                     variant="body2"
-                    style={{ color: 'gray' }}
-                    align={isMobile ? 'center' : 'left'}
+                    style={{ color: "gray" }}
+                    align={isMobile ? "center" : "left"}
                     gutterBottom
                   >
                     UID: {context.uId}
@@ -368,7 +369,7 @@ export const MyProfile = () => {
           )} */}
           </Grid>
         </Box>
-        <Hidden only={['sm', 'md', 'lg', 'xl']}>
+        <Hidden only={["sm", "md", "lg", "xl"]}>
           {context.isPromoter && <Box pt={5}>{promoterbox(true)}</Box>}
           {ButtonActions}
         </Hidden>
@@ -398,7 +399,7 @@ export const MyProfile = () => {
             container
           >
             {userBox}
-            <Hidden only={['xs']}>
+            <Hidden only={["xs"]}>
               {context.isPromoter && promoterbox(false)}
               {ButtonActions}
             </Hidden>

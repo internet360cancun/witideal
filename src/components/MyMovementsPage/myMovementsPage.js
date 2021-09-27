@@ -20,6 +20,7 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { propertyType_es, action_es } from "../../assets/Strings";
 import { useRole } from "../../Hooks/useRole";
 import urlTranslator from "../../helpers/urlTranslator";
+import { risingStar, rockStar, superStar } from "../../constants/subscriptions";
 
 const wdPurpleSubtitle = "#1E0E6F";
 const wdWhiteBackground = "#FFFFFF";
@@ -91,9 +92,7 @@ const MyMovements = () => {
   const classes = useStyles();
   const [destacados, setDestacados] = useState([]);
   const { subscription } = useRole();
-  // const [cancelSubscriptsion, setCancelSubscriptsion] = useState();
-
-  // const today = Date.now();
+  
 
   useEffect(() => {
     const getDest = async (uId) => {
@@ -121,24 +120,7 @@ const MyMovements = () => {
     getDest(context.uId);
   }, [context.uId, db, subscription]);
 
-  // useEffect(() => {
-  //   const getSubscription = (uId) => {
-  //     try {
-  //       const docSnap = db
-  //         .collection(`users/${uId}/subscriptions/`)
-  //         .get()
-  //         .then((snapshot) => {
-  //           snapshot.docs.forEach((doc) => {
-  //             setCancelSubscriptsion(doc.data().current_period_end.seconds);
-  //           });
-  //         });
-  //     } catch (error) {
-  //       console.log(error, "Error en la subscripción");
-  //     }
-  //   };
 
-  //   getSubscription(context.uId);
-  // }, []);
 
   return (
     <Page paddingTop={10}>
@@ -152,8 +134,8 @@ const MyMovements = () => {
 
             {destacados.length > 0 &&
             destacados &&
-            subscription.role === "risingStar"
-              ? destacados.slice(0, 3).map((properties) => (
+            subscription.role === risingStar
+              ? destacados.slice(1, 4).map((properties) => (
                   <div key={properties.id} className="py-3">
                     <Card className={classes.area}>
                       <Grid item className={classes.icon}>
@@ -237,8 +219,8 @@ const MyMovements = () => {
 
             {destacados.length > 0 &&
             destacados &&
-            subscription.role === "rockStar"
-              ? destacados.slice(0, 5).map((properties) => (
+            subscription.role === rockStar
+              ? destacados.slice(1, 6).map((properties) => (
                   <div key={properties._id} className="py-3">
                     <Card className={classes.area}>
                       <Grid item className={classes.icon}>
@@ -315,8 +297,8 @@ const MyMovements = () => {
 
             {destacados.length > 0 &&
             destacados &&
-            subscription.role === "superStar"
-              ? destacados.slice(0, 3).map((properties) => (
+            subscription.role === superStar
+              ? destacados.slice(1, 11).map((properties) => (
                   <div key={properties._id} className="py-3">
                     <Card className={classes.area}>
                       <Grid item className={classes.icon}>
