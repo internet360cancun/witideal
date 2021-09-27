@@ -25,6 +25,7 @@ import Head from "../head";
 import stateNameTranlator from "../../helpers/stateNameTranslator";
 import Destacados from "./Destacados";
 import sessionContext from "../../contexts/sessionContext";
+import stateNameTranslator from "../../helpers/stateNameTranslator";
 
 const Container = styled(Box)({
   backgroundColor: "#F9F7FC",
@@ -102,8 +103,7 @@ export const PropertiesList = (props) => {
   const [height, setHeight] = useState(100);
   const [itemsRendered, setItemsRendered] = useState([]);
   const [allDestacados, setAllDestacados] = useState([]);
-  
-  
+
   const getRandomDest = () => {
     db.collection("destProperties")
       .get()
@@ -313,6 +313,14 @@ export const PropertiesList = (props) => {
     }
   };
 
+  const action = props.match.params.action;
+  const propertyType = props.match.params.propertyType;
+  const area1 = props.match.params.administrative_area_level_1;
+
+  console.log(area1,'componente abuelo que ');
+
+
+
   return (
     <Fragment>
       <Head title={createTitle()} description={createTitle()} />
@@ -334,8 +342,13 @@ export const PropertiesList = (props) => {
         setFilters={setForm}
       />
       <Container h={height}>
-        {allDestacados.length > 0 &&  (
-          <> {<Destacados allDestacados={allDestacados} match={match} />}</>
+        {allDestacados.length > 0 && (
+          <Destacados
+            allDestacados={allDestacados}
+            action={action}
+            propertyType={propertyType}
+            area1={area1}
+          />
         )}
 
         <Grid
