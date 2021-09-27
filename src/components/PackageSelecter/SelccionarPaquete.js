@@ -148,7 +148,7 @@ const SelccionarPaquete = () => {
   return (
     <>
     <div className="container2" id="section7">
-      {!user && userLoading && <h1>Cargando</h1>}
+   
       <section className="mt-5">
         <div className="row">
           <div className="col">
