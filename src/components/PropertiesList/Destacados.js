@@ -10,11 +10,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Destacados = ({ allDestacados,match }) => {
+const Destacados = ({ allDestacados, action, propertyType, area1 }) => {
   const classes = useStyles();
-
-  const [cancelSubscription, setCancelSubscription] = useState(true)
-  console.log("alldestacados", allDestacados);
+  console.log(area1,'Componente padre')
 
   return (
     <Grid
@@ -33,9 +31,12 @@ const Destacados = ({ allDestacados,match }) => {
               alignItems="stretch"
               spacing={2}
             >
-              {!cancelSubscription &&
-              <DestacadosSwipe allDestacados={allDestacados} match={match} />
-              }
+              <DestacadosSwipe
+                allDestacados={allDestacados}
+                action={action}
+                propertyType={propertyType}
+                area1={area1}
+              />
             </Grid>
           </Box>
         </Paper>
