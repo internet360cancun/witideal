@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Typography, Grid, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
 import { makeStyles, MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { fisicas, espacios, seguridad, amenidades, especiales, entorno, tiempo } from '../../assets/Strings';

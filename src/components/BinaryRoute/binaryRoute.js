@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route,Redirect} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 //Protected route must recive 2 components and a validation function that returns
 //some boolean Component will render if allowed, Rcomponent will render if not

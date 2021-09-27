@@ -1,10 +1,9 @@
-import React, { useEffect, Fragment } from 'react';
+import React, {  Fragment } from 'react';
 import { styled} from '@material-ui/core/styles'
-import { Box, Grid, Button, MenuItem, FormControl, Select, TextField, RadioGroup, Radio, FormControlLabel, Typography, Paper } from '@material-ui/core'
+import { Box, Grid, Button, MenuItem, FormControl, Select, TextField, RadioGroup, Radio, FormControlLabel, Typography } from '@material-ui/core'
 import { ArrowBackIos } from '@material-ui/icons';
 import mapObject from '../../helpers/mapObjects'
 import Types from '../../helpers/types'
-import EmptyMessge from '../Empty/empty'
 
 const types = Types('promoter')
 
@@ -49,28 +48,28 @@ const transformNumReverse = (string) => {
 
 
 //styles 
-const Container = styled(Paper)({
-  minHeight: '100vh',
-  position: 'fixed',
-  width: '100%',
-  maxWidth: '420px',
-  zIndex: 1200,
-  background: '#fff',
-  boxSizing: 'border-box',
-})
+// const Container = styled(Paper)({
+//   minHeight: '100vh',
+//   position: 'fixed',
+//   width: '100%',
+//   maxWidth: '420px',
+//   zIndex: 1200,
+//   background: '#fff',
+//   boxSizing: 'border-box',
+// })
 
-const Header = styled(Grid)({
-  background: '#fff'
-})
+// const Header = styled(Grid)({
+//   background: '#fff'
+// })
 
-const BackgroundTransparent = styled('div')({
+// const BackgroundTransparent = styled('div')({
 
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
-  position: "fixed",
-  width: "100%",
-  height: "100%",
-  zIndex: 1200
-})
+//   backgroundColor: "rgba(0, 0, 0, 0.5)",
+//   position: "fixed",
+//   width: "100%",
+//   height: "100%",
+//   zIndex: 1200
+// })
 
 const ButtonHeader = styled(Button)({
   width: '100%',
@@ -182,10 +181,7 @@ const SelectComponet = (props) => (
 const MyPropertyFilter = (props) => {
   const { filter, updateFilter } = props
 
-  const handleClik = () => {
-    props.setFilterActive(false)
-  }
-
+ 
 
   return (
     <Fragment>

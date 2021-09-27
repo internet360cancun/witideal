@@ -25,7 +25,6 @@ import Head from "../head";
 import stateNameTranlator from "../../helpers/stateNameTranslator";
 import Destacados from "./Destacados";
 import sessionContext from "../../contexts/sessionContext";
-import stateNameTranslator from "../../helpers/stateNameTranslator";
 
 const Container = styled(Box)({
   backgroundColor: "#F9F7FC",
@@ -65,11 +64,9 @@ const defaultValues = {
 };
 
 export const PropertiesList = (props) => {
-  const { match } = props;
   const { firebase } = useFirebaseTools();
   const db = firebase.firestore();
   const params = useParams();
-  const { uId } = useContext(sessionContext);
   var paramsFiltered = {};
   Object.keys(params).forEach((keyname) => {
     if (!!params[keyname])

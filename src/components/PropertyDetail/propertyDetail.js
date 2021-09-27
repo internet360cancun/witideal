@@ -197,7 +197,7 @@ export const PropertyDetail = (props) => {
   };
 
   const SkeletonComponent = () => (
-    <Grid container justify="center" alignItems="center">
+    <Grid container justifyContent="center" alignItems="center">
       <Grid item xs={12}>
         <Skeleton variant="rect" height={350} />
       </Grid>
@@ -277,7 +277,7 @@ export const PropertyDetail = (props) => {
       )}
       {!properData && !errorToLoad && <SkeletonComponent />}
       {properData && properData.isEnabled && properData.isActive && (
-        <Grid container justify="center" alignItems="center">
+        <Grid container justifyContent="center" alignItems="center">
           <Hidden smDown>
             <Grid item xs={12} onClick={() => setModalPhotosActive(true)}>
               <Pictures photos={[properData.principalPhotoPath, ...pictures]} />
@@ -293,13 +293,13 @@ export const PropertyDetail = (props) => {
           </Hidden>
           <Grid item xs={12}>
             <Box pt={2}>
-              <Grid container justify="center" alignItems="center">
+              <Grid container justifyContent="center" alignItems="center">
                 <Grid item xs={12} md={11} lg={10}>
                   <Paper elevation={3}>
                     <Box p={5}>
                       <Grid
                         container
-                        justify="center"
+                        justifyContent="center"
                         alignItems="flex-start"
                         spacing={3}
                       >
@@ -307,7 +307,7 @@ export const PropertyDetail = (props) => {
                         <Grid item xs={12} lg={6} xl={7}>
                           <Grid
                             container
-                            justify="center"
+                            justifyContent="center"
                             alignItems="center"
                             spacing={3}
                           >
@@ -465,7 +465,7 @@ export const PropertyDetail = (props) => {
                               <Box p={2}>
                                 <Grid
                                   container
-                                  justify="center"
+                                  justifyContent="center"
                                   alignItems="center"
                                   spacing={1}
                                 >
@@ -510,7 +510,7 @@ export const PropertyDetail = (props) => {
                                         <Box>
                                           <Grid
                                             container
-                                            justify="center"
+                                            justifyContent="center"
                                             alignItems="center"
                                           >
                                             <Grid item sm={4} xs={12}>
@@ -531,7 +531,7 @@ export const PropertyDetail = (props) => {
                                             <Grid item sm={8} xs={12}>
                                               <Grid
                                                 container
-                                                justify="center"
+                                                justifyContent="center"
                                                 alignItems="center"
                                               >
                                                 <Hidden xsDown>
@@ -683,7 +683,7 @@ export const PropertyDetail = (props) => {
                                       <Grid item xs={12}>
                                         <Grid
                                           container
-                                          justify="center"
+                                          justifyContent="center"
                                           alignItems="center"
                                           style={{ position: 'relative' }}
                                         >
@@ -706,7 +706,7 @@ export const PropertyDetail = (props) => {
                                             <Grid item xs={12} lg={12}>
                                               <Grid
                                                 container
-                                                justify="center"
+                                                justifyContent="center"
                                                 alignItems="center"
                                               >
                                                 <Grid item xs={12}>
@@ -768,7 +768,7 @@ export const PropertyDetail = (props) => {
                                             <Grid item xs={12} lg={12}>
                                               <Grid
                                                 container
-                                                justify="center"
+                                                justifyContent="center"
                                                 alignItems="center"
                                               >
                                                 <Grid item xs={12}>
@@ -846,7 +846,7 @@ export const PropertyDetail = (props) => {
       )}
       {(errorToLoad ||
         (properData && (!properData.isEnabled || !properData.isActive))) && (
-        <Grid container justify="center" alignItems="center">
+        <Grid container justifyContent="center" alignItems="center">
           <Grid item xs={11} md={10}>
             <EmptyMessageContainer>
               <Picture src={EmptyProperties} />

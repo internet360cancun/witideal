@@ -14,10 +14,10 @@ const SectionTwo = () => {
       <div className="container2" style={{marginTop: 118}}>
         <section className="mt-5">
           <div className="imgs">
-            <img className="izq-1" src={i1}/>
-            <img className="izq-2" src={i2}/>
-            <img className="der-1" src={d1} />
-            <img className="der-2" src={d2} />
+            <img className="izq-1" src={i1} alt=""/>
+            <img className="izq-2" src={i2} alt=""/>
+            <img className="der-1" src={d1} alt="" />
+            <img className="der-2" src={d2} alt="" />
           </div>
           <div className="row">
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4 text-left">
@@ -29,14 +29,14 @@ const SectionTwo = () => {
               </p>
               <br />
               <div className="gratis">GRATIS</div>
-              <img className="sign" src={free}/>
+              <img className="sign" src={free} alt=""/>
               <br />
               <div className="btnlargo">Publica todos tus inmuebles</div>
             </div>
             {/*CARDS*/}
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6  text-left">
               <div className="card align-content-center card1" style={{backgroundColor: '#e7e7e7'}}>
-                <img src={card1} className="card-img-top"/>
+                <img src={card1} className="card-img-top" alt="" />
                 <div className="card-body text-center">
                   <h5 className="card-title">$100,000</h5>
                   <p className="card-text">Casa para comprar</p>
@@ -45,7 +45,7 @@ const SectionTwo = () => {
                 </div>
               </div>
               <div className="card align-content-center card2" style={{backgroundColor: '#e7e7e7'}}>
-                <img src={card1} className="card-img-top"/>
+                <img src={card1} className="card-img-top" alt=""/>
                 <div className="card-body text-center">
                   <h5 className="card-title">$100,000</h5>
                   <p className="card-text">Casa para comprar</p>
@@ -53,7 +53,7 @@ const SectionTwo = () => {
                 </div>
               </div>
               <div className="card align-content-center card3" style={{backgroundColor: '#e7e7e7'}}>
-                <img src={card1} className="card-img-top"/>
+                <img src={card1} className="card-img-top" alt="" />
                 <div className="card-body text-center">
                   <h5 className="card-title">$100,000</h5>
                   <p className="card-text">Casa para comprar</p>

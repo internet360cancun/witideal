@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { styled } from "@material-ui/core/styles";
-import { makeStyles, Modal, Button } from "@material-ui/core";
+import { makeStyles, Modal } from "@material-ui/core";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { Grid, Paper, Box } from "@material-ui/core";
@@ -180,7 +179,7 @@ const ThirdSection = () => {
               </button>
             </div>
             <div className="col-md-6 mb-4 align-content-start imgtech">
-              <img src={masclientes}/>
+              <img src={masclientes} alt=""/>
             </div>
           </div>
         </section>
@@ -225,15 +224,5 @@ const ThirdSection = () => {
   );
 };
 
-const ButtonStyled = styled(Button)({
-  textDecoration: "none",
-  color: "#fff",
-  marginBottom: "5px",
-  paddingLeft: "90px !important",
-  paddingRight: "90px !important",
-  borderRadius: "68px !important",
-  "@media (max-width:1400px)": {
-    fontSize: ".9em",
-  },
-});
+
 export default ThirdSection;

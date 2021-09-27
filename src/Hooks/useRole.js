@@ -25,7 +25,7 @@ export const useRole = () => {
           });
         });
       });
-  }, []);
+  }, [db,uId]);
 
   return { subscription };
 };

@@ -1,5 +1,4 @@
 import React from 'react'
-import { styled } from '@material-ui/core/styles'
 import { Grid, Box, Paper } from '@material-ui/core'
 
 const Content = (props) => {

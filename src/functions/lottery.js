@@ -1,4 +1,3 @@
-import { propertyType_es } from "../assets/Strings";
 
 export const splitArray = (array, parameter) => {
     let arrayOfArrays = [];

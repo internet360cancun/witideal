@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import firebase from "firebase/compat/app";
+import React from "react";
 import { Grid, Paper, Box, makeStyles } from "@material-ui/core";
 import DestacadosSwipe from "./DestacadosSwipe";
 

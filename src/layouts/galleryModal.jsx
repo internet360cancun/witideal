@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { styled } from '@material-ui/core/styles'
-import { Paper, Box, Button } from '@material-ui/core'
+import {  Button } from '@material-ui/core'
 import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
 

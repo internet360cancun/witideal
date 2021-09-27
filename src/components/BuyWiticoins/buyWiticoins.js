@@ -33,7 +33,6 @@ import FullWidthCentered from '../../layouts/FlexFullWidthCentered'
 import promos from '../../firebase/promo'
 import useFetch from '../../Hooks/useFetch'
 import CardForm from './cardForm'
-import SelccionarPaquete from '../PackageSelecter/SelccionarPaquete';
 
 const errorCardTransform = {
   3001:	'La tarjeta fue rechazada.',

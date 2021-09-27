@@ -57,7 +57,7 @@ export const PropertyDetailSpecificData = props => {
 
   return (
     <React.Fragment>
-      <Grid container justify='center' alignItems='center' spacing={2}>
+      <Grid container justifyContent='center' alignItems='center' spacing={2}>
         <Grid item xs={12}>
           <Typography variant='h5' align='center' gutterBottom className={classes.titleText}>Datos Específicos</Typography>
         </Grid>
@@ -65,7 +65,7 @@ export const PropertyDetailSpecificData = props => {
           <Grid key={item.name} item xs={12}  lg={12} xl={6}>
             <Paper className={classes.card} elevation={0}>
                 <Box p={1}>
-                  <Grid container justify='center' alignItems='center'>
+                  <Grid container justifyContent='center' alignItems='center'>
                     <Grid item xs={6}>
                       <Typography variant='subtitle2' align='left' className={classes.subtitleText}>{features[item.name] ? features[item.name].name : ''}</Typography>
                     </Grid>

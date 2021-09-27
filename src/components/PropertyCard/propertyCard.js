@@ -1,20 +1,19 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Paper, Box } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import { Typography, IconButton, Icon, Button } from "@material-ui/core";
+import { Typography, IconButton} from "@material-ui/core";
 import NumberFormat from "react-number-format";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import { propertyType_es, action_es, dollarValue } from "../../assets/Strings";
+import { propertyType_es, action_es } from "../../assets/Strings";
 import useSession from "../../Hooks/useSession";
 import connect from "../../firebase";
 import urlTranslator from "../../helpers/urlTranslator";
-import stateNameTranslator from "../../helpers/stateNameTranslator";
 
 // import roomIcon from '../../assets/roomIcon.svg';
 // import parkIcon from '../../assets/figC.svg';
@@ -85,35 +84,6 @@ export function PropertyCard(props) {
   const session = useSession();
   const [favoriteReferences, setFavoriteReferences] = React.useState([]);
 
-  const createSlugUrl = () => {
-    try {
-      let url = ``;
-      if (props.properData.sublocality_level_1) {
-        url = `${url}${props.properData.sublocality_level_1.replace(
-          / /g,
-          "-"
-        )}-`;
-      }
-
-      if (props.properData.administrative_area_level_2_3) {
-        url = `${url}${props.properData.administrative_area_level_2_3.replace(
-          / /g,
-          "-"
-        )}-`;
-      }
-
-      if (props.properData.administrative_area_level_1) {
-        url = `${url}${stateNameTranslator(
-          props.properData.administrative_area_level_1
-        ).replace(/ /g, "-")}`;
-      } else {
-        return "path";
-      }
-      return url;
-    } catch (error) {
-      return "path";
-    }
-  };
 
   // getFavoriteReferences
   useEffect(() => {
@@ -136,7 +106,7 @@ export function PropertyCard(props) {
     if (!session.SesState) return false;
     if (isFavorite) {
       const favorites_filtered_ref = favoriteReferences.filter(
-        (ref) => ref.path != props.properData._ref.path
+        (ref) => ref.path !== props.properData._ref.path
       );
       connect.users.updateFavorite(session.uId, favorites_filtered_ref);
     } else {

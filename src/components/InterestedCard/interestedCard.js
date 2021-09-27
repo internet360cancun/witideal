@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState } from 'react'
 import { styled } from '@material-ui/core/styles'
 import { propertyType_es, action_es } from '../../assets/Strings'
 import { Box , Card, Avatar} from '@material-ui/core';

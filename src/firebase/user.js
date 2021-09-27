@@ -74,7 +74,6 @@ export const validateCode = async (code, userId) => {
 export const unlinkPhone = async () => {
   try {
     await firebase.auth().currentUser.unlink('phone')
-    console.log('phone unlinked')
     return true
   } catch (error) {
     console.log('--expected mistake, dont worry--', error)
@@ -129,7 +128,6 @@ export const register = async data => {
     if (isMailRegistered) return { error: true, message: 'El correo ya se encuentra registrado' }
 
     const result = firebase.auth().currentUser && firebase.auth().currentUser.isAnonymous ? await firebase.auth().currentUser.linkWithCredential(firebase.auth.EmailAuthProvider.credential(data.mail, data.password)) : await firebase.auth().createUserWithEmailAndPassword(data.mail, data.password)
-    console.log('register', result)
     await add(result.user.uid, {...data, isPromoter: data.isPromoter || false})
     await new Promise(resolve => setTimeout(resolve, 1000))
     return {
@@ -166,7 +164,6 @@ export const add = async (id, data) => {
 }
 
 export const changeToPromoter = async ({ userId, promoterType, companyName }) => {
-  console.log('props', { userId, promoterType, companyName })
   try {
     await db.doc(`production/Users/${userId}/generalInfo`).update({
       promoterType,

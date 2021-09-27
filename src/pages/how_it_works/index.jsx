@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import useHeaderHeight from "../../Hooks/useHeaderHeight";
 import styled from "styled-components";
 // import Cover from './cover'
@@ -11,7 +11,6 @@ import styled from "styled-components";
 // import HowMuchDoesItCost from './howMuchDoesItCost'
 // import HowToOrderAnnouncements from './HowToOrderAnnouncements'
 // import HowToOrderAnnouncementsMobile from './HowToOrderAnnouncementsMobile'
-import { useMediaQuery } from "@material-ui/core";
 // import Head from '../../components/head'
 import SectionOne from "./SectionOne";
 import SectionTwo from "./SectionTwo";
@@ -19,7 +18,6 @@ import ThirdSection from "./SectionThree";
 import ForthSection from "./SectionFour";
 import FifthSection from "./SectionFive";
 import SectionSix from "./SectionSix";
-import SectionSeven from "./SectionSeven";
 import SectionEight from "./SectionEight";
 import SelccionarPaquete from "../../components/PackageSelecter/SelccionarPaquete";
 
@@ -29,7 +27,6 @@ const Container = styled.div`
 
 const HowItWorks = (props) => {
   const headerHeight = useHeaderHeight();
-  const isMobile = useMediaQuery("(max-width:700px)");
 
   useEffect(() => {
     window.scrollTo(0, 0);

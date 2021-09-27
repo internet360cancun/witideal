@@ -75,20 +75,20 @@ const SectionOne = () => {
                 Ver vídeo
               </div>
               <br />
-              <a className="triangulo-1">
-                <img src={t1} />
-              </a>
-              <a className="triangulo-2">
-                <img src={t2} />
-              </a>
-              <a className="triangulo-3">
-                <img src={t3} />
-              </a>
+              <p className="triangulo-1">
+                <img src={t1} alt="" />
+              </p>
+              <p className="triangulo-2">
+                <img src={t2} alt="" />
+              </p>
+              <p className="triangulo-3">
+                <img src={t3} alt="" />
+              </p>
             </div>
             <div className="col-md-6 mb-4">
-              <img className="first" src={vecw} />
-              <img className="second" src={vecb} />
-              <img className="third" src={mac} />
+              <img className="first" src={vecw} alt="" />
+              <img className="second" src={vecb} alt="" />
+              <img className="third" src={mac} alt="" />
             </div>
           </div>
         </section>

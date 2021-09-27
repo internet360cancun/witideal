@@ -10,8 +10,6 @@ import {
   Chip,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import { Link } from "react-router-dom";
 import urlTranslator from "../../helpers/urlTranslator";
 

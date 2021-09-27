@@ -1,5 +1,5 @@
 import { styled } from '@material-ui/core/styles'
-import { Paper, TextField, Button, OutlinedInput as OutlinedInput_ } from '@material-ui/core'
+import { Paper, TextField, Button } from '@material-ui/core'
 import { Check } from '@material-ui/icons'
 
 export const Close = styled('span')(({ theme }) => ({

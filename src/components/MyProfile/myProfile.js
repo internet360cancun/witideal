@@ -300,13 +300,13 @@ export const MyProfile = () => {
                   >
                     ¡Hola!
                     <br />
-                    {subscription && subscription.role == risingStar
+                    {subscription && subscription.role === risingStar
                       ? "Plan RisingStar"
                       : ""}
-                    {subscription && subscription.role == rockStar
+                    {subscription && subscription.role === rockStar
                       ? "Plan RockStar"
                       : ""}
-                    {subscription && subscription.role == superStar
+                    {subscription && subscription.role === superStar
                       ? "Plan Super Star"
                       : ""}
                   </Typography>

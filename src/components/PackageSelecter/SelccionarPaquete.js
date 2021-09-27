@@ -169,7 +169,7 @@ const SelccionarPaquete = () => {
                   <div className="card cardplanes">
                     <div className="backcard1">
                       <div className="contenidocard">
-                        <img className="imgcrd1" src={cardback} alt={""} />
+                        <img className="imgcrd1" src={cardback} alt="" />
                         <div className="titulo">Paquete Básico</div>
                         <div className="subtitulo">(Anunciar Gratis)</div>
                         <div className="precio">$1,500 MXN</div>
@@ -265,7 +265,7 @@ const SelccionarPaquete = () => {
                   <div className="card cardplanes">
                     <div className="backcard2">
                       <div className="contenidocard">
-                        <img className="imgcrd1" src={cardback} />
+                        <img className="imgcrd1" src={cardback} alt="" />
                         <div className="titulo">Paquete Plata</div>
                         <div className="subtitulo">(Anunciar Gratis)</div>
                         <div className="precio">$1,990 MXN</div>
@@ -325,7 +325,7 @@ const SelccionarPaquete = () => {
                   <div className="card cardplanes">
                     <div className="backcard3">
                       <div className="contenidocard">
-                        <img className="imgcrd1" src={cardback} />
+                        <img className="imgcrd1" src={cardback} alt="" />
                         <div className="titulo">Paquete Oro</div>
                         <div className="subtitulo">(Anunciar Gratis)</div>
                         <div className="precio">$2,500 MXN</div>

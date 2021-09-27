@@ -23,7 +23,7 @@ const MyFavoriteList = () => {
 
   const handleDeleteFavorite = (property_reference) => {
     const favorite_references = state.items.map(item => item._ref)
-    const new_favorites_filtered = favorite_references.filter(item => item != property_reference)
+    const new_favorites_filtered = favorite_references.filter(item => item !== property_reference)
     connect.users.updateFavorite(session.uId, new_favorites_filtered)
   }
 

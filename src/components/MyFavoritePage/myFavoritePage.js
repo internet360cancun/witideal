@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Typography, Grid, Button, Box } from '@material-ui/core'
 import { styled, MuiThemeProvider, createTheme } from "@material-ui/core/styles";
-import MyInterestedList from '../MyInterestedList/myInterestedList'
-import FavoriteList from '../MyFavoritesList/myFavoritesList'
+
 import Head from '../head';
 
 
