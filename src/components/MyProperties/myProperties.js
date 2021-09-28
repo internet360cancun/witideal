@@ -14,6 +14,8 @@ import emptyProperty from '../../assets/specificDataIcons/emptyPropety.svg';
 import Drawer from '@material-ui/core/Drawer';
 import { myProperties as myPropertiesModel } from '../../firebase/property';
 import Head from '../head';
+import { risingStar, rockStar, superStar } from '../../constants/subscriptions';
+import { useRole } from '../../Hooks/useRole';
 
 const ProgresContainer = styled(Box)({
   marginTop: '70px',
@@ -89,6 +91,11 @@ const RenderMyProperties = (props) => {
           <MyPropertyCard
             properData={properData}
             handleDelete={props.handleDelete}
+            subscriptionNumber={props.subscriptionNumber}
+            setDestNumber={props.setDestNumber}
+            destNumber={props.destNumber}
+            isDestAvailable={props.isDestAvailable}
+            setIsDestAvailable={props.setIsDestAvailable}
           />
         </Grid>
       ))}
@@ -110,6 +117,7 @@ export const MyProperties = () => {
   const { delProp } = useFirebaseTools();
   const [isFilterActive, setFilterActive] = useState(false);
   const [onChangeFilters, setOnChangeFilters] = useState(1);
+  const [destNumber, setDestNumber] = useState(0);
   const [myProperties, setMyProperties] = useState({
     items: [],
     loading: true,
@@ -118,6 +126,23 @@ export const MyProperties = () => {
     itemsForPage: 1000,
     filter: initilFilters,
   });
+
+  const { subscription } = useRole();
+  const [subscriptionPlanNumber, setSubscriptionPlanNumber] = useState(0);
+  const [isDestAvailable, setIsDestAvailable] = useState(false);
+
+  const getAvailableNumber = () => {
+    console.log("my", subscription);
+    if (subscription && subscription.role === risingStar) {
+      return 3;
+    } else if (subscription && subscription.role === rockStar) {
+      return 5;
+    } else if (subscription && subscription.role === superStar) {
+      return 10;
+    }
+  };
+
+
 
   const updateFilter = (newFilter) => {
     setMyProperties({ ...myProperties, filter: newFilter });
@@ -309,6 +334,11 @@ export const MyProperties = () => {
                         <RenderMyProperties
                           myProperties={items}
                           handleDelete={handleDelete}
+                          destNumber={destNumber}
+                          setDestNumber={setDestNumber}
+                          isDestAvailable={isDestAvailable}
+                          setIsDestAvailable={setIsDestAvailable}
+                          subscriptionNumber={getAvailableNumber()}
                         />
                       )}
                       {items.length === 0 && loading && renderSkeleton(4)}

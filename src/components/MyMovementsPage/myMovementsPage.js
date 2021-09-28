@@ -93,6 +93,8 @@ const MyMovements = () => {
   const [destacados, setDestacados] = useState([]);
   const { subscription } = useRole();
   
+  const today = Date.now();
+
 
   useEffect(() => {
     const getDest = async (uId) => {
@@ -120,6 +122,7 @@ const MyMovements = () => {
     getDest(context.uId);
   }, [context.uId, db, subscription]);
 
+  subscription && console.log(subscription.current_period_end);
 
 
   return (
@@ -204,9 +207,7 @@ const MyMovements = () => {
                                 </Grid>
                               </Grid>
                               <Grid item xs={12}>
-                                {/* <Typography variant="body1" align="center">
-                                  Título
-                                </Typography> */}
+                   
                               </Grid>
                             </Grid>
                           </CardContent>
@@ -282,9 +283,7 @@ const MyMovements = () => {
                                 </Grid>
                               </Grid>
                               <Grid item xs={12}>
-                                {/* <Typography variant="body1" align="center">
-                                  Título
-                                </Typography> */}
+                     
                               </Grid>
                             </Grid>
                           </CardContent>
@@ -360,9 +359,7 @@ const MyMovements = () => {
                                 </Grid>
                               </Grid>
                               <Grid item xs={12}>
-                                {/* <Typography variant="body1" align="center">
-                                  Título
-                                </Typography> */}
+                       
                               </Grid>
                             </Grid>
                           </CardContent>

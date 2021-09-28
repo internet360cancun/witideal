@@ -101,11 +101,14 @@ export const PropertiesList = (props) => {
   const [itemsRendered, setItemsRendered] = useState([]);
   const [allDestacados, setAllDestacados] = useState([]);
 
-  const getRandomDest = () => {
+   const getRandomDest = () => {
     db.collection("destProperties")
+      .where("current_period_end", ">=", Date.now() / 1000)
       .get()
       .then((querySnapshot) => {
         const documents = querySnapshot.docs.map((doc) => {
+          console.log("la lista que necesito", doc.data());
+          console.log(Date.now() / 1000);
           doc.data().destProperties.forEach((element) => {
             element.get().then((snap) => {
               setAllDestacados((oldArray) => [
@@ -313,6 +316,9 @@ export const PropertiesList = (props) => {
   const action = props.match.params.action;
   const propertyType = props.match.params.propertyType;
   const area1 = props.match.params.administrative_area_level_1;
+  const area2 = props.match.params.administrative_area_level_2_3 ? props.match.params.administrative_area_level_2_3 : 'no hay parámetro'
+  const limiteA2= area2.length
+  const nuevaArea2=area2.split('-',limiteA2)
 
   return (
     <Fragment>
@@ -341,6 +347,8 @@ export const PropertiesList = (props) => {
             action={action}
             propertyType={propertyType}
             area1={area1}
+            area2={area2}
+            nuevaArea2={nuevaArea2}
           />
         )}
 

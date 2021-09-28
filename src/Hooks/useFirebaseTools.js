@@ -577,6 +577,21 @@ function useFirebaseTools() {
     }
   };
 
+  //Enable / disable property
+  const updateDestProperty = async (enabled, propId, uId) => {
+    try {
+      await db
+        .doc(`production/Users/${uId}/properties/ownedProperties/${propId}`)
+        .update({ isDestProperty: enabled });
+      console.log("ocurrio el dest");
+      return { status: "Éxito" };
+    } catch (error) {
+      console.log("error", error);
+      return errorParser(error);
+    }
+  };
+
+
   // const uploadImage = async (file, name, uId, propId, section) => {
   //     console.log('section upload:', section)
   //     console.log('name upload:', name)
@@ -856,7 +871,7 @@ function useFirebaseTools() {
   };
 
   //Obtiene todos los destacados de todos los usuarios
-  const setDest2 = async (pId, gender, action) => {
+  const setDest2 = async (pId, gender, action, subscription) => {
     try {
       const docRef = db.doc(`destProperties/${pId}`);
       const propDocRef = db.doc(
@@ -865,6 +880,7 @@ function useFirebaseTools() {
       return await docRef.set(
         {
           destProperties: firebase.firestore.FieldValue.arrayUnion(propDocRef),
+          current_period_end: subscription.current_period_end,
         },
         { merge: true }
       );
@@ -912,7 +928,7 @@ function useFirebaseTools() {
     }
   };
 
-  const deleteDest = async (pId,gender,action,uId) => {
+  const deleteDest = async (pId, gender, action, uId) => {
     try {
       const docRef = db.doc(`production/Users/${uId}/properties/`);
       const propDocRef = db.doc(
@@ -930,7 +946,7 @@ function useFirebaseTools() {
     }
   };
 
-  const deleteDest2 = async(pId,gender,action) => {
+  const deleteDest2 = async (pId, gender, action) => {
     try {
       const docRef = db.doc(`destProperties/${pId}`);
       const propDocRef = db.doc(
@@ -946,7 +962,7 @@ function useFirebaseTools() {
       console.log("error", error);
       return errorParser(error);
     }
-  }
+  };
 
   //Remove property from fav
   // deprecated do not use
@@ -1248,6 +1264,7 @@ function useFirebaseTools() {
     deleteDest2,
     delFav,
     setProfPic,
+    updateDestProperty,
     delProp,
     getInterested,
     getUserContacts,

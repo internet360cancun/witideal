@@ -152,7 +152,8 @@ export function MyPropertyCard(props) {
   const propsData = props.properData;
   console.log(propsData, "propsdata");
   const classes = useStyles();
-  const { toggleEnable, setDest, setDest2 } = useFirebaseTools();
+  const { toggleEnable, updateDestProperty, setDest, setDest2 } =
+    useFirebaseTools();
   const context = useContext(SesContext);
   const { subscription } = useRole();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -169,9 +170,37 @@ export function MyPropertyCard(props) {
 
   let history = useHistory();
 
-  const handledestacados = (pId, gender, action, uId) => {
+  const handledestacados = (pId, gender, action, uId, subscription) => {
     setDest(pId, gender, action, uId);
-    setDest2(pId, gender, action);
+    setDest2(pId, gender, action, subscription);
+    // handledestacados(pId, uId);
+  };
+
+  const [isDestProperty, setIsDestProperty] = useState(
+    propsData.isDestProperty !== undefined ? propsData.isDestProperty : false
+  );
+  console.log("isDest original", propsData.isDestProperty);
+  // const [isAvailDestProperty, setIsAvailDestProperty] = useState(
+  //   props.destNumber <= props.subscriptionNumber ? true : false
+  // );
+
+  props.setIsDestAvailable(
+    props.destNumber <= props.subscriptionNumber ? true : false
+  );
+
+  const handleToggleDestacados = (pId, uId) => {
+    updateDestProperty(!isDestProperty, pId, uId);
+    console.log("isDest1", isDestProperty);
+    setIsDestProperty(!isDestProperty);
+    console.log("isDest2", isDestProperty);
+    if (!isDestProperty === true) {
+      props.setDestNumber(props.destNumber + 1);
+      console.log("isDest destNumber3", props.destNumber);
+      props.destNumber + 1 <= props.subscriptionNumber
+        ? props.setIsDestAvailable(true)
+        : props.setIsDestAvailable(false);
+      console.log("isDest isAvailDestProperty4", props.isDestAvailable);
+    }
   };
 
   // user decides the value (1 or 0) for isEnabled
@@ -370,17 +399,21 @@ export function MyPropertyCard(props) {
               </Button>
             </Grid>
             {subscription && (
+
               <Grid item xs={6} md={6} lg={3} xl={3}>
                 <Button
                   size="medium"
                   fullWidth
-                  onClick={() =>
-                    handledestacados(
-                      propsData._id,
-                      propsData.propertyType,
-                      propsData.action,
-                      context.uId
-                    )
+                  onClick={
+                    () =>
+                      handledestacados(
+                        propsData._id,
+                        propsData.propertyType,
+                        propsData.action,
+                        context.uId,
+                        subscription
+                      )
+                    // handleToggleDestacados(propsData._id, context.uId)
                   }
                   className={classes.outlineButton}
                 >
@@ -524,7 +557,6 @@ export function MyPropertyCard(props) {
                 ? urlTranslator(propsData.action)
                 : ""
             }/${props.properData._id}`}
-            
           >
             <Grid container className={classes.principal} alignItems="stretch">
               <Grid item xs={12} md={6}>

@@ -9,7 +9,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Destacados = ({ allDestacados, action, propertyType, area1 }) => {
+const Destacados = ({
+  allDestacados,
+  action,
+  propertyType,
+  area1,
+  area2,
+  nuevaArea2,
+}) => {
   const classes = useStyles();
 
   return (
@@ -34,6 +41,8 @@ const Destacados = ({ allDestacados, action, propertyType, area1 }) => {
                 action={action}
                 propertyType={propertyType}
                 area1={area1}
+                area2={area2}
+                nuevaArea2={nuevaArea2}
               />
             </Grid>
           </Box>
