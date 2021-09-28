@@ -101,6 +101,8 @@ const MyMovements = () => {
       try {
         const docSnap = await db
           .doc(`production/Users/${uId}/properties/`)
+          // .where("current_period_end", ">=", Date.now() / 1000)
+          //Se le debe de agregar el current_period_end a los destProperties del usuario
           .get()
           .then((snapshot) => {
             snapshot.data().destProperties.forEach((element) => {
