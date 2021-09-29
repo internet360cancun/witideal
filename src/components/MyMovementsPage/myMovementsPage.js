@@ -92,9 +92,8 @@ const MyMovements = () => {
   const classes = useStyles();
   const [destacados, setDestacados] = useState([]);
   const { subscription } = useRole();
-  
-  const today = Date.now();
 
+  const today = Date.now();
 
   useEffect(() => {
     const getDest = async (uId) => {
@@ -111,6 +110,7 @@ const MyMovements = () => {
                   ...oldArray,
                   { id: snap.id, ...snap.data() },
                 ]);
+                console.log(destacados, "duplicados?1");
               });
             });
           });
@@ -120,12 +120,11 @@ const MyMovements = () => {
         return undefined;
       }
     };
-
+    console.log(destacados, "duplicados?2");
     getDest(context.uId);
   }, [context.uId, db, subscription]);
 
   subscription && console.log(subscription.current_period_end);
-
 
   return (
     <Page paddingTop={10}>
@@ -140,236 +139,258 @@ const MyMovements = () => {
             {destacados.length > 0 &&
             destacados &&
             subscription.role === risingStar
-              ? destacados.slice(1, 4).map((properties) => (
-                  <div key={properties.id} className="py-3">
-                    <Card className={classes.area}>
-                      <Grid item className={classes.icon}>
-                        <IconButton>
-                          <FavoriteBorderIcon className={classes.iconLike} />
-                        </IconButton>
-                      </Grid>
-                      <Link
-                        className={classes.link}
-                        to={`/propiedad/${urlTranslator(
-                          properties.propertyType
-                        )}/${urlTranslator(properties.action)}/${
-                          properties.id
-                        }`}
-                      >
-                        <CardActionArea>
-                          <CardMedia
-                            component="img"
-                            alt="Imagen de la Propiedad"
-                            height="250"
-                            image={properties.principalPhotoPath}
-                            title="Imagen de la Propiedad"
-                          ></CardMedia>
-                          <CardContent>
-                            <Grid
-                              container
-                              justifyContent="center"
-                              alignItems="center"
-                              spacing={2}
-                            >
-                              <Grid item xs={7}>
-                                <Grid
-                                  container
-                                  justifyContent="center"
-                                  alignItems="center"
-                                >
-                                  <Grid item xs={12}>
-                                    <NumberFormat
-                                      value={properties.price}
-                                      displayType={"text"}
-                                      thousandSeparator={true}
-                                      prefix={"$ "}
-                                      suffix={` ${properties.currency}`}
-                                      renderText={(value) => (
-                                        <Typography
-                                          variant="h5"
-                                          gutterBottom
-                                          align="center"
-                                          className={classes.subtitleText}
-                                        >
-                                          {value}{" "}
-                                        </Typography>
-                                      )}
-                                    />
-                                  </Grid>
-                                  <Grid item xs={12}>
-                                    <Typography
-                                      className={classes.subtitleText}
-                                      align="center"
-                                      variant="subtitle1"
-                                    >
-                                      {propertyType_es[properties.propertyType]}{" "}
-                                      para {action_es[properties.action]}
-                                    </Typography>
+              ? destacados
+                  .filter((el, i) => {
+                    return i % 2 === 0;
+                  })
+                  .slice(0, 3)
+                  .map((properties) => (
+                    <div key={properties.id} className="py-3">
+                      {console.log(destacados, "destacados")}
+                      <Card className={classes.area}>
+                        <Grid item className={classes.icon}>
+                          <IconButton>
+                            <FavoriteBorderIcon className={classes.iconLike} />
+                          </IconButton>
+                        </Grid>
+                        <Link
+                          className={classes.link}
+                          to={`/propiedad/${urlTranslator(
+                            properties.propertyType
+                          )}/${urlTranslator(properties.action)}/${
+                            properties.id
+                          }`}
+                        >
+                          <CardActionArea>
+                            <CardMedia
+                              component="img"
+                              alt="Imagen de la Propiedad"
+                              height="250"
+                              image={properties.principalPhotoPath}
+                              title="Imagen de la Propiedad"
+                            ></CardMedia>
+                            <CardContent>
+                              <Grid
+                                container
+                                justifyContent="center"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                <Grid item xs={7}>
+                                  <Grid
+                                    container
+                                    justifyContent="center"
+                                    alignItems="center"
+                                  >
+                                    <Grid item xs={12}>
+                                      <NumberFormat
+                                        value={properties.price}
+                                        displayType={"text"}
+                                        thousandSeparator={true}
+                                        prefix={"$ "}
+                                        suffix={` ${properties.currency}`}
+                                        renderText={(value) => (
+                                          <Typography
+                                            variant="h5"
+                                            gutterBottom
+                                            align="center"
+                                            className={classes.subtitleText}
+                                          >
+                                            {value}{" "}
+                                          </Typography>
+                                        )}
+                                      />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                      <Typography
+                                        className={classes.subtitleText}
+                                        align="center"
+                                        variant="subtitle1"
+                                      >
+                                        {
+                                          propertyType_es[
+                                            properties.propertyType
+                                          ]
+                                        }{" "}
+                                        para {action_es[properties.action]}
+                                      </Typography>
+                                    </Grid>
                                   </Grid>
                                 </Grid>
+                                <Grid item xs={12}></Grid>
                               </Grid>
-                              <Grid item xs={12}>
-                   
-                              </Grid>
-                            </Grid>
-                          </CardContent>
-                        </CardActionArea>
-                      </Link>
-                    </Card>
-                  </div>
-                ))
+                            </CardContent>
+                          </CardActionArea>
+                        </Link>
+                      </Card>
+                    </div>
+                  ))
               : null}
 
             {destacados.length > 0 &&
             destacados &&
             subscription.role === rockStar
-              ? destacados.slice(1, 6).map((properties) => (
-                  <div key={properties._id} className="py-3">
-                    <Card className={classes.area}>
-                      <Grid item className={classes.icon}>
-                        <IconButton>
-                          <FavoriteBorderIcon className={classes.iconLike} />
-                        </IconButton>
-                      </Grid>
-                      <Link className={classes.link} to={`/`}>
-                        <CardActionArea>
-                          <CardMedia
-                            component="img"
-                            alt="Imagen de la Propiedad"
-                            height="250"
-                            image={properties.principalPhotoPath}
-                            title="Imagen de la Propiedad"
-                          ></CardMedia>
-                          <CardContent>
-                            <Grid
-                              container
-                              justifyContent="center"
-                              alignItems="center"
-                              spacing={2}
-                            >
-                              <Grid item xs={7}>
-                                <Grid
-                                  container
-                                  justifyContent="center"
-                                  alignItems="center"
-                                >
-                                  <Grid item xs={12}>
-                                    <NumberFormat
-                                      value={properties.price}
-                                      displayType={"text"}
-                                      thousandSeparator={true}
-                                      prefix={"$ "}
-                                      suffix={` ${properties.currency}`}
-                                      renderText={(value) => (
-                                        <Typography
-                                          variant="h5"
-                                          gutterBottom
-                                          align="center"
-                                          className={classes.subtitleText}
-                                        >
-                                          {value}{" "}
-                                        </Typography>
-                                      )}
-                                    />
-                                  </Grid>
-                                  <Grid item xs={12}>
-                                    <Typography
-                                      className={classes.subtitleText}
-                                      align="center"
-                                      variant="subtitle1"
-                                    >
-                                      {propertyType_es[properties.propertyType]}{" "}
-                                      para {action_es[properties.action]}
-                                    </Typography>
+              ? destacados
+                  .filter((el, i) => {
+                    return i % 2 === 0;
+                  })
+                  .slice(1, 6)
+                  .map((properties) => (
+                    <div key={properties._id} className="py-3">
+                      <Card className={classes.area}>
+                        <Grid item className={classes.icon}>
+                          <IconButton>
+                            <FavoriteBorderIcon className={classes.iconLike} />
+                          </IconButton>
+                        </Grid>
+                        <Link className={classes.link} to={`/`}>
+                          <CardActionArea>
+                            <CardMedia
+                              component="img"
+                              alt="Imagen de la Propiedad"
+                              height="250"
+                              image={properties.principalPhotoPath}
+                              title="Imagen de la Propiedad"
+                            ></CardMedia>
+                            <CardContent>
+                              <Grid
+                                container
+                                justifyContent="center"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                <Grid item xs={7}>
+                                  <Grid
+                                    container
+                                    justifyContent="center"
+                                    alignItems="center"
+                                  >
+                                    <Grid item xs={12}>
+                                      <NumberFormat
+                                        value={properties.price}
+                                        displayType={"text"}
+                                        thousandSeparator={true}
+                                        prefix={"$ "}
+                                        suffix={` ${properties.currency}`}
+                                        renderText={(value) => (
+                                          <Typography
+                                            variant="h5"
+                                            gutterBottom
+                                            align="center"
+                                            className={classes.subtitleText}
+                                          >
+                                            {value}{" "}
+                                          </Typography>
+                                        )}
+                                      />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                      <Typography
+                                        className={classes.subtitleText}
+                                        align="center"
+                                        variant="subtitle1"
+                                      >
+                                        {
+                                          propertyType_es[
+                                            properties.propertyType
+                                          ]
+                                        }{" "}
+                                        para {action_es[properties.action]}
+                                      </Typography>
+                                    </Grid>
                                   </Grid>
                                 </Grid>
+                                <Grid item xs={12}></Grid>
                               </Grid>
-                              <Grid item xs={12}>
-                     
-                              </Grid>
-                            </Grid>
-                          </CardContent>
-                        </CardActionArea>
-                      </Link>
-                    </Card>
-                  </div>
-                ))
+                            </CardContent>
+                          </CardActionArea>
+                        </Link>
+                      </Card>
+                    </div>
+                  ))
               : null}
 
             {destacados.length > 0 &&
             destacados &&
             subscription.role === superStar
-              ? destacados.slice(1, 11).map((properties) => (
-                  <div key={properties._id} className="py-3">
-                    <Card className={classes.area}>
-                      <Grid item className={classes.icon}>
-                        <IconButton>
-                          <FavoriteBorderIcon className={classes.iconLike} />
-                        </IconButton>
-                      </Grid>
-                      <Link className={classes.link} to={`/`}>
-                        <CardActionArea>
-                          <CardMedia
-                            component="img"
-                            alt="Imagen de la Propiedad"
-                            height="250"
-                            image={properties.principalPhotoPath}
-                            title="Imagen de la Propiedad"
-                          ></CardMedia>
-                          <CardContent>
-                            <Grid
-                              container
-                              justifyContent="center"
-                              alignItems="center"
-                              spacing={2}
-                            >
-                              <Grid item xs={7}>
-                                <Grid
-                                  container
-                                  justifyContent="center"
-                                  alignItems="center"
-                                >
-                                  <Grid item xs={12}>
-                                    <NumberFormat
-                                      value={properties.price}
-                                      displayType={"text"}
-                                      thousandSeparator={true}
-                                      prefix={"$ "}
-                                      suffix={` ${properties.currency}`}
-                                      renderText={(value) => (
-                                        <Typography
-                                          variant="h5"
-                                          gutterBottom
-                                          align="center"
-                                          className={classes.subtitleText}
-                                        >
-                                          {value}{" "}
-                                        </Typography>
-                                      )}
-                                    />
-                                  </Grid>
-                                  <Grid item xs={12}>
-                                    <Typography
-                                      className={classes.subtitleText}
-                                      align="center"
-                                      variant="subtitle1"
-                                    >
-                                      {propertyType_es[properties.propertyType]}{" "}
-                                      para {action_es[properties.action]}
-                                    </Typography>
+              ? destacados
+                  .filter((el, i) => {
+                    return i % 2 === 0;
+                  })
+                  .slice(1, 11)
+                  .map((properties) => (
+                    <div key={properties._id} className="py-3">
+                      <Card className={classes.area}>
+                        <Grid item className={classes.icon}>
+                          <IconButton>
+                            <FavoriteBorderIcon className={classes.iconLike} />
+                          </IconButton>
+                        </Grid>
+                        <Link className={classes.link} to={`/`}>
+                          <CardActionArea>
+                            <CardMedia
+                              component="img"
+                              alt="Imagen de la Propiedad"
+                              height="250"
+                              image={properties.principalPhotoPath}
+                              title="Imagen de la Propiedad"
+                            ></CardMedia>
+                            <CardContent>
+                              <Grid
+                                container
+                                justifyContent="center"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                <Grid item xs={7}>
+                                  <Grid
+                                    container
+                                    justifyContent="center"
+                                    alignItems="center"
+                                  >
+                                    <Grid item xs={12}>
+                                      <NumberFormat
+                                        value={properties.price}
+                                        displayType={"text"}
+                                        thousandSeparator={true}
+                                        prefix={"$ "}
+                                        suffix={` ${properties.currency}`}
+                                        renderText={(value) => (
+                                          <Typography
+                                            variant="h5"
+                                            gutterBottom
+                                            align="center"
+                                            className={classes.subtitleText}
+                                          >
+                                            {value}{" "}
+                                          </Typography>
+                                        )}
+                                      />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                      <Typography
+                                        className={classes.subtitleText}
+                                        align="center"
+                                        variant="subtitle1"
+                                      >
+                                        {
+                                          propertyType_es[
+                                            properties.propertyType
+                                          ]
+                                        }{" "}
+                                        para {action_es[properties.action]}
+                                      </Typography>
+                                    </Grid>
                                   </Grid>
                                 </Grid>
+                                <Grid item xs={12}></Grid>
                               </Grid>
-                              <Grid item xs={12}>
-                       
-                              </Grid>
-                            </Grid>
-                          </CardContent>
-                        </CardActionArea>
-                      </Link>
-                    </Card>
-                  </div>
-                ))
+                            </CardContent>
+                          </CardActionArea>
+                        </Link>
+                      </Card>
+                    </div>
+                  ))
               : null}
           </Box>
         </Grid>
