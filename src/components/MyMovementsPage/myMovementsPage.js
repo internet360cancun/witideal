@@ -122,7 +122,6 @@ const MyMovements = () => {
     getDest(context.uId);
   }, [context.uId, db, subscription]);
 
-
   return (
     <Page paddingTop={10}>
       <Head title="Mis Destacados" />
@@ -230,7 +229,7 @@ const MyMovements = () => {
                   .filter((el, i) => {
                     return i % 2 === 0;
                   })
-                  .slice(1, 6)
+                  .slice(0, 5)
                   .map((properties) => (
                     <div key={properties._id} className="py-3">
                       <Card className={classes.area}>
@@ -313,7 +312,7 @@ const MyMovements = () => {
                   .filter((el, i) => {
                     return i % 2 === 0;
                   })
-                  .slice(1, 11)
+                  .slice(0, 10)
                   .map((properties) => (
                     <div key={properties._id} className="py-3">
                       <Card className={classes.area}>

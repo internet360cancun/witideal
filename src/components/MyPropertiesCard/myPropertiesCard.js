@@ -1,4 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import firebase from "firebase/compat/app";
 import { makeStyles, styled } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -20,6 +21,8 @@ import {
 import NumberFormat from "react-number-format";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+
 import { UPLOAD } from "../../constants/routes";
 import useFirebaseTools from "../../Hooks/useFirebaseTools";
 import { Link } from "react-router-dom";
@@ -150,13 +153,14 @@ location: property location
 
 export function MyPropertyCard(props) {
   const propsData = props.properData;
-  console.log(propsData, "propsdata");
+  const db = firebase.firestore();
   const classes = useStyles();
   const { toggleEnable, updateDestProperty, setDest, setDest2 } =
     useFirebaseTools();
   const context = useContext(SesContext);
   const { subscription } = useRole();
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [misDestacados, setMisDestacados] = useState([]);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   let d =
     propsData.uploadDate !== undefined ? propsData.uploadDate.toDate() : "";
@@ -170,16 +174,37 @@ export function MyPropertyCard(props) {
 
   let history = useHistory();
 
-  const handledestacados = (pId, gender, action, uId, subscription) => {
-    setDest(pId, gender, action, uId);
-    setDest2(pId, gender, action, subscription);
-    // handledestacados(pId, uId);
-  };
+  // Trae mis destacados
+  useEffect(() => {
+    const getDest = async (uId) => {
+      try {
+        const docSnap = await db
+          .doc(`production/Users/${uId}/properties/`)
+          // .where("current_period_end", ">=", Date.now() / 1000)
+          //Se le debe de agregar el current_period_end a los destProperties del usuario
+          .get()
+          .then((snapshot) => {
+            snapshot.data().destProperties.forEach((element) => {
+              element.get().then((snap) => {
+                setMisDestacados((oldArray) => [
+                  ...oldArray,
+                  { id: snap.id, ...snap.data() },
+                ]);
+              });
+            });
+          });
+        return docSnap;
+      } catch (error) {
+        console.log("error", error);
+        return undefined;
+      }
+    };
+    getDest(context.uId);
+  }, [context.uId, db, subscription]);
 
   const [isDestProperty, setIsDestProperty] = useState(
     propsData.isDestProperty !== undefined ? propsData.isDestProperty : false
   );
-  console.log("isDest original", propsData.isDestProperty);
   // const [isAvailDestProperty, setIsAvailDestProperty] = useState(
   //   props.destNumber <= props.subscriptionNumber ? true : false
   // );
@@ -188,20 +213,34 @@ export function MyPropertyCard(props) {
     props.destNumber <= props.subscriptionNumber ? true : false
   );
 
-  const handleToggleDestacados = (pId, uId) => {
+  const handleToggleDestacados = (pId, uId, gender, action, subscription) => {
+    //Destaca la propiedad
+
+    setDest(pId, gender, action, uId);
+    setDest2(pId, gender, action, subscription);
+
+    //Cambia estado de la propiedad
     updateDestProperty(!isDestProperty, pId, uId);
-    console.log("isDest1", isDestProperty);
     setIsDestProperty(!isDestProperty);
-    console.log("isDest2", isDestProperty);
     if (!isDestProperty === true) {
       props.setDestNumber(props.destNumber + 1);
-      console.log("isDest destNumber3", props.destNumber);
       props.destNumber + 1 <= props.subscriptionNumber
         ? props.setIsDestAvailable(true)
         : props.setIsDestAvailable(false);
-      console.log("isDest isAvailDestProperty4", props.isDestAvailable);
     }
+
+    //Notificación
+    toast.success("Propiedad destacada con éxito", {
+      duration: 2800,
+      position: "top-center",
+      style: {
+        backgroundColor: "#41b8f9",
+        color: "white",
+      },
+    });
   };
+
+  console.log(props.destNumber, "numero destacado");
 
   // user decides the value (1 or 0) for isEnabled
   const [isEnabled, setIsEnabled] = useState(
@@ -378,6 +417,7 @@ export function MyPropertyCard(props) {
             alignItems="stretch"
             spacing={1}
           >
+            <Toaster />
             <Grid item xs={12} md={12} lg={3} xl={3}>
               <Button
                 size="medium"
@@ -398,29 +438,41 @@ export function MyPropertyCard(props) {
                 Editar
               </Button>
             </Grid>
-            {subscription && (
 
+            {subscription && !isDestProperty &&  props.destNumber < props.subscriptionNumber && (
+                <Grid item xs={6} md={6} lg={3} xl={3}>
+                  <Button
+                    size="medium"
+                    fullWidth
+                    onClick={() =>
+                      handleToggleDestacados(
+                        propsData._id,
+                        context.uId,
+                        propsData.propertyType,
+                        propsData.action,
+                        subscription
+                      )
+                    }
+                    className={classes.outlineButton}
+                  >
+                    Destacar propiedad
+                  </Button>
+                </Grid>
+              )}
+
+            {isDestProperty && (
               <Grid item xs={6} md={6} lg={3} xl={3}>
                 <Button
                   size="medium"
                   fullWidth
-                  onClick={
-                    () =>
-                      handledestacados(
-                        propsData._id,
-                        propsData.propertyType,
-                        propsData.action,
-                        context.uId,
-                        subscription
-                      )
-                    // handleToggleDestacados(propsData._id, context.uId)
-                  }
+                  disabled
                   className={classes.outlineButton}
                 >
-                  Destacar propiedad
+                  Propiedad destacada
                 </Button>
               </Grid>
             )}
+
             <Grid item xs={6} md={6} lg={3} xl={3}>
               <Button
                 onClick={() =>

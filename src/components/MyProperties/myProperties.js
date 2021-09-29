@@ -128,11 +128,9 @@ export const MyProperties = () => {
   });
 
   const { subscription } = useRole();
-  const [subscriptionPlanNumber, setSubscriptionPlanNumber] = useState(0);
   const [isDestAvailable, setIsDestAvailable] = useState(false);
 
   const getAvailableNumber = () => {
-    console.log("my", subscription);
     if (subscription && subscription.role === risingStar) {
       return 3;
     } else if (subscription && subscription.role === rockStar) {
