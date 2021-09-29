@@ -110,7 +110,6 @@ const MyMovements = () => {
                   ...oldArray,
                   { id: snap.id, ...snap.data() },
                 ]);
-                console.log(destacados, "duplicados?1");
               });
             });
           });
@@ -120,11 +119,9 @@ const MyMovements = () => {
         return undefined;
       }
     };
-    console.log(destacados, "duplicados?2");
     getDest(context.uId);
   }, [context.uId, db, subscription]);
 
-  subscription && console.log(subscription.current_period_end);
 
   return (
     <Page paddingTop={10}>
@@ -146,7 +143,6 @@ const MyMovements = () => {
                   .slice(0, 3)
                   .map((properties) => (
                     <div key={properties.id} className="py-3">
-                      {console.log(destacados, "destacados")}
                       <Card className={classes.area}>
                         <Grid item className={classes.icon}>
                           <IconButton>
