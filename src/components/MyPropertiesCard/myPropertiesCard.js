@@ -202,6 +202,9 @@ export function MyPropertyCard(props) {
     getDest(context.uId);
   }, [context.uId, db, subscription]);
 
+  const limite = misDestacados.length / 2;
+  console.log(limite, "límite");
+
   const [isDestProperty, setIsDestProperty] = useState(
     propsData.isDestProperty !== undefined ? propsData.isDestProperty : false
   );
@@ -238,9 +241,13 @@ export function MyPropertyCard(props) {
         color: "white",
       },
     });
-  };
 
-  console.log(props.destNumber, "numero destacado");
+    
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    
+  };
 
   // user decides the value (1 or 0) for isEnabled
   const [isEnabled, setIsEnabled] = useState(
@@ -439,7 +446,9 @@ export function MyPropertyCard(props) {
               </Button>
             </Grid>
 
-            {subscription && !isDestProperty &&  props.destNumber < props.subscriptionNumber && (
+            {subscription &&
+              !isDestProperty &&
+              limite < props.subscriptionNumber && (
                 <Grid item xs={6} md={6} lg={3} xl={3}>
                   <Button
                     size="medium"
