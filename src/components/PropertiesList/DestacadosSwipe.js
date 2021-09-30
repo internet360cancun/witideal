@@ -21,7 +21,9 @@ const DestacadosSwipe = ({ allDestacados, action, propertyType, area1 }) => {
   return (
     <>
       <Swiper
-        spaceBetween={10}
+        
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+      
         breakpoints={{
           320: { width: 300, slidesPerView: 1 },
           360: { width: 360, slidesPerView: 1.5 },
@@ -33,6 +35,8 @@ const DestacadosSwipe = ({ allDestacados, action, propertyType, area1 }) => {
           1200: { width: 1100, slidesPerView: 5 },
           1500: { width: 1400, slidesPerView: 6.5 },
         }}
+        loop
+        spaceBetween={10}
       >
         {random &&
           random

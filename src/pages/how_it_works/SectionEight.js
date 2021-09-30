@@ -18,15 +18,15 @@ const SectionEight = () => {
     <div className="container2" id="section8">
       <div className="BannerTitle8">Nuestros Aliados</div>
       <Swiper
-        loop
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        centeredSlides
         breakpoints={{
           576: { width: 576, slidesPerView: 2 },
           768: { width: 768, slidesPerView: 2 },
           992: { width: 900, slidesPerView: 3 },
           1200: { width: 1200, slidesPerView: 4 },
         }}
+        centeredSlides
+        loop
       >
         <SwiperSlide>
           <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
