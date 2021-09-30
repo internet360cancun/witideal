@@ -188,12 +188,12 @@ export function Register(props) {
     
     if(isProduction && !Values.promoter) {
       console.log('searcher register traqued by google tag')
-      window.gtag('event', 'conversion', {'send_to': 'AW-625232540/i0BVCNWs1dQBEJyVkaoC'})
+      // window.gtag('event', 'conversion', {'send_to': 'AW-625232540/i0BVCNWs1dQBEJyVkaoC'})
     }
 
     if(isProduction && Values.promoter) {
       console.log('promoter register tracked by google tag')
-      window.gtag('event', 'conversion', {'send_to': 'AW-625232540/g19QCLn129oBEJyVkaoC'})
+      // window.gtag('event', 'conversion', {'send_to': 'AW-625232540/g19QCLn129oBEJyVkaoC'})
     }
   }
 

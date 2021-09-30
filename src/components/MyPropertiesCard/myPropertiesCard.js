@@ -204,7 +204,6 @@ export function MyPropertyCard(props) {
 
   const limite = misDestacados.length / 2;
 
-  
   const [isDestProperty, setIsDestProperty] = useState(
     propsData.isDestProperty !== undefined ? propsData.isDestProperty : false
   );
@@ -242,12 +241,24 @@ export function MyPropertyCard(props) {
       },
     });
 
-    
-      setTimeout(() => {
-        window.location.reload();
-      }, 500);
-    
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   };
+
+  //Ya no es destacado cuando vence la subscripción
+  //No funcionó esta basura
+  // const today = Date.now();
+  // subscription &&
+  //   console.log(subscription.current_period_end, "soy la sub", today/1000);
+
+  // if (subscription) {
+  //   if (today / 1000 > subscription.current_period_end) {
+  //     setIsDestProperty(false)
+  //   } else {
+  //     console.log("Hoy es menor a ");
+  //   }
+  // }
 
   // user decides the value (1 or 0) for isEnabled
   const [isEnabled, setIsEnabled] = useState(

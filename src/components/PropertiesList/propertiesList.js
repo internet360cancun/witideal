@@ -107,7 +107,6 @@ export const PropertiesList = (props) => {
       .get()
       .then((querySnapshot) => {
         const documents = querySnapshot.docs.map((doc) => {
-          console.log("la lista que necesito", doc.data());
           console.log(Date.now() / 1000);
           doc.data().destProperties.forEach((element) => {
             element.get().then((snap) => {
