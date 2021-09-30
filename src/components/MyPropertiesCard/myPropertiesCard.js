@@ -203,8 +203,8 @@ export function MyPropertyCard(props) {
   }, [context.uId, db, subscription]);
 
   const limite = misDestacados.length / 2;
-  console.log(limite, "límite");
 
+  
   const [isDestProperty, setIsDestProperty] = useState(
     propsData.isDestProperty !== undefined ? propsData.isDestProperty : false
   );
@@ -278,7 +278,6 @@ export function MyPropertyCard(props) {
   };
 
   const handleEdit = () => {
-    console.log(propsData);
     return history.push(UPLOAD, {
       properData: { ...propsData, _ref: null },
       pId: props.properData._id,
@@ -286,7 +285,6 @@ export function MyPropertyCard(props) {
   };
 
   const publicWithThisTemplate = () => {
-    console.log(propsData);
     return history.push(UPLOAD, { template: { ...propsData, _ref: null } });
   };
 
