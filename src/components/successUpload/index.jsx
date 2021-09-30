@@ -70,12 +70,12 @@ const SuccessUpload = () => {
             onAction={handleAction}
           />
         )}
-        {isMyFirstProperty && (
+        {/* {isMyFirstProperty && (
           <FirstProperty
             onClose={handleClose}
             onAction={handleAction}
           />
-        )}
+        )} */}
       </>
     </ModalStyled>
   )
