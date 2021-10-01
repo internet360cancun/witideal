@@ -145,6 +145,10 @@ const SelccionarPaquete = () => {
     setOpenRegister(false);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <div className="container2" id="section7">

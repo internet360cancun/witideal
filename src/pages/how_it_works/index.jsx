@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import useHeaderHeight from "../../Hooks/useHeaderHeight";
 import styled from "styled-components";
+
+import useHeaderHeight from "../../Hooks/useHeaderHeight";
 // import Cover from './cover'
 // import WhyToUse from './WhyToUse'
 // import Formula from './formula'
@@ -34,6 +35,7 @@ const HowItWorks = (props) => {
 
   return (
     <Container $top={headerHeight}>
+     
       {/* <Head title='¿hCómo funciona?' description='Conoce la nueva manera de anunciar inmuebles' /> */}
       <SectionOne />
       <SectionTwo />
@@ -41,7 +43,7 @@ const HowItWorks = (props) => {
       <ForthSection />
       <FifthSection />
       <SectionSix />
-    
+
       <SelccionarPaquete />
       <SectionEight />
       <div className="py-5"></div>

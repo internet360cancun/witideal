@@ -56,6 +56,12 @@ export function RestorePassword() {
   const [Email, setEmail] = useState('')
   const [errorModal, setErrorModal] = useState({ open: false })
 
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   const restorePass = async () => {
     setView('loading')
     const result = await isEmailExist(Email)

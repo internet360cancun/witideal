@@ -142,6 +142,11 @@ export const MyProperties = () => {
 
 
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   const updateFilter = (newFilter) => {
     setMyProperties({ ...myProperties, filter: newFilter });
   };

@@ -65,6 +65,13 @@ export const PropertyDetail = (props) => {
   const [currentMargin, setCurrentMargin] = useState(0);
   const [isCredentialsActive, setActiveCredential] = useState(false); // renderCredentials as effect
 
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
   // update margin footer
   useEffect(() => {
     const onSizeChange = () => {

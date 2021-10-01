@@ -122,6 +122,10 @@ const MyMovements = () => {
     getDest(context.uId);
   }, [context.uId, db, subscription]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Page paddingTop={10}>
       <Head title="Mis Destacados" />
