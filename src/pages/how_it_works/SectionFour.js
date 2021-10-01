@@ -1,10 +1,10 @@
 import React from "react";
 import centro from "../../assets/howitworks/centro.png";
+import centro2 from "../../assets/howitworks/centro2.png";
 import izquierda1 from "../../assets/howitworks/izq-1.png";
 import izquierda2 from "../../assets/howitworks/izq-2.png";
 import derecha1 from "../../assets/howitworks/der-1.png";
 import derecha2 from "../../assets/howitworks/der-2.png";
-import vertical from "../../assets/howitworks/vertical-anuncio.png";
 
 const ForthSection = () => {
   return (
@@ -23,7 +23,7 @@ const ForthSection = () => {
               </div>
             </div>
           </div>
-          <div className="row d-flex justify-content-evelyn filafull">
+          <div className="row d-flex justify-content-evelyn filafull ">
             
             <div className="col-lg-4 text-center">
 
@@ -46,9 +46,10 @@ const ForthSection = () => {
             </div>
 
 
-            <div className="col-lg-4">
+            <div className="col-lg-4" >
               <center>
-                <img src={centro}  alt="" />
+                <img src={centro}  alt="" class="d-none d-lg-block" width="70%"/>
+                <img src={centro2}  alt="" class="d-block d-lg-none mt-3 mb-3" width="100%"/>
               </center>
             </div>
 
@@ -76,14 +77,6 @@ const ForthSection = () => {
 
           </div>
 
-
-          <div className="row align-content-md-between">
-            <div className="col align-items-center">
-              <div className="vertical">
-                <img src={vertical} alt=""  width="100%" />
-              </div>
-            </div>
-          </div>
 
         </section>
       </div>
