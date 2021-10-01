@@ -2073,7 +2073,7 @@ body .no-padding {
 @media (min-width: 1020px) and (max-height: 800px) {
   /*PRIMER VIEW*/
   .BannerTitle {
-    font-size: 6.5vw !important;
+    font-size: 5.5vw !important;
     margin-left: 7vh;
     line-height: 6vw !important;
   }
