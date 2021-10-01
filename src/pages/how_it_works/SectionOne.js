@@ -76,15 +76,15 @@ const SectionOne = ({ sectionTwoRef, sectionFourRef, sectionSevenRef }) => {
                 Ver vídeo
               </div>
               <br />
-              <p className="triangulo-1">
+              <div className="triangulo-1">
                 <img src={t1} alt="" />
-              </p>
-              <p className="triangulo-2">
+              </div>
+              <div className="triangulo-2">
                 <img src={t2} alt="" />
-              </p>
-              <p className="triangulo-3">
+              </div>
+              <div className="triangulo-3" style={{cursor: "pointer"}}  onClick={scrollSectionTwo} >
                 <img src={t3} alt="" />
-              </p>
+              </div>
             </div>
             <div className="col-md-6 mb-4">
               <img className="first" src={macX} alt="" />
