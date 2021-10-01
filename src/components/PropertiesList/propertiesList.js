@@ -340,7 +340,7 @@ export const PropertiesList = (props) => {
         setFilters={setForm}
       />
       <Container h={height}>
-        {allDestacados.length > 0 && (
+        {allDestacados.length >0  && (
           <Destacados
             allDestacados={allDestacados}
             action={action}

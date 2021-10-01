@@ -21,9 +21,7 @@ const DestacadosSwipe = ({ allDestacados, action, propertyType, area1 }) => {
   return (
     <>
       <Swiper
-        
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-      
         breakpoints={{
           320: { width: 300, slidesPerView: 1 },
           360: { width: 360, slidesPerView: 1.5 },
@@ -35,7 +33,7 @@ const DestacadosSwipe = ({ allDestacados, action, propertyType, area1 }) => {
           1200: { width: 1100, slidesPerView: 5 },
           1500: { width: 1400, slidesPerView: 6.5 },
         }}
-        loop
+        // loop
         spaceBetween={10}
       >
         {random &&
@@ -51,7 +49,6 @@ const DestacadosSwipe = ({ allDestacados, action, propertyType, area1 }) => {
                 keyword.administrative_area_level_1 === urlTranslator(area1)
               );
             })
-
             .map((destacado) => (
               <Grid key={destacado.id} item xs={12} sm={6} md={4} xl={1}>
                 <SwiperSlide>
