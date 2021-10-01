@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 import useWiticoins from '../../Hooks/useWiticoins'
 import FewWitiucoins from './successWithFewWiticoins'
 import WithoutWiticoins from './sucessWithoutWiticoins'
-import FirstProperty from './firstProperty'
+// import FirstProperty from './firstProperty'
 import useSession from '../../Hooks/useSession'
 const ModalStyled = styled(Modal)`
   display: flex;

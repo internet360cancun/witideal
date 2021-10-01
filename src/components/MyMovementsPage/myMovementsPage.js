@@ -93,7 +93,7 @@ const MyMovements = () => {
   const [destacados, setDestacados] = useState([]);
   const { subscription } = useRole();
 
-  const today = Date.now();
+  // const today = Date.now();
 
   useEffect(() => {
     const getDest = async (uId) => {

@@ -346,16 +346,16 @@ export const PropertiesList = (props) => {
         setFilters={setForm}
       />
       <Container h={height}>
-        {allDestacados.length > 0 && (
-          <Destacados
-            allDestacados={allDestacados}
-            action={action}
-            propertyType={propertyType}
-            area1={area1}
-            area2={area2}
-            nuevaArea2={nuevaArea2}
-          />
-        )}
+        {allDestacados
+          .filter((keyword) => {
+            return keyword.propertyType === urlTranslator(propertyType);
+          })
+          .filter((keyword) => {
+            return keyword.action === urlTranslator(action);
+          })
+          .filter((keyword) => {
+            return keyword.administrative_area_level_1 === urlTranslator(area1);
+          }).length > 0 && <Destacados allDestacados={allDestacados} />}
 
         <Grid
           style={{ width: "100%", margin: "auto" }}
