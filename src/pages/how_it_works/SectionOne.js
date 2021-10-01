@@ -8,7 +8,7 @@ import vecw from "../../assets/howitworks/vecw.png";
 import vecb from "../../assets/howitworks/vecb.png";
 import mac from "../../assets/howitworks/mac.png";
 
-const SectionOne = () => {
+const SectionOne = ({ sectionTwoRef, sectionFourRef, sectionSevenRef }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClose = () => {
@@ -16,6 +16,16 @@ const SectionOne = () => {
   };
   const onOpen = () => {
     setIsOpen(true);
+  };
+
+  const scrollSectionTwo = () => {
+    sectionTwoRef.current.scrollIntoView();
+  };
+  const scrollSectionFour = () => {
+    sectionFourRef.current.scrollIntoView();
+  };
+  const scrollSectionSeven = () => {
+    sectionSevenRef.current.scrollIntoView();
   };
 
   return (
@@ -33,28 +43,25 @@ const SectionOne = () => {
         <section className="mt-5">
           <div className="row text-center">
             <div className="col col-sm-3 col-md-4">
-              <a
-                href="/como-funciona#section2"
+              <p
+                onClick={scrollSectionTwo}
                 className="btn custombtn customcople1 waves-effect waves-light"
               >
                 ¿Por qué utilizar Witideal?
-              </a>
+              </p>
             </div>
             <div className="col col-sm-3 col-md-4">
-              <a
-                href="/como-funciona#section4"
-                className="btn custombtn customcople2 waves-effect waves-light"
-              >
+              <p onClick={scrollSectionFour} className="btn custombtn customcople2 waves-effect waves-light">
                 ¿Cuanto cuesta?
-              </a>
+              </p>
             </div>
             <div className="col col-sm-4 col-md-4">
-              <a
-                href="/como-funciona#section7"
+              <p
+              onClick={scrollSectionSeven}
                 className="btn custombtn customcople3 waves-effect waves-light"
               >
                 ¿Cómo se ordenan los anuncios?
-              </a>
+              </p>
             </div>
           </div>
           <div className="row d-flex justify-content-left">

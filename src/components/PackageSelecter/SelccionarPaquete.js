@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SelccionarPaquete = () => {
+const SelccionarPaquete = ({ sectionSevenRef }) => {
   const classes = useStyles();
 
   const [user, userLoading] = useAuthState(firebase.auth());
@@ -151,7 +151,7 @@ const SelccionarPaquete = () => {
 
   return (
     <>
-      <div className="container2" id="section7">
+      <div className="container2" ref={sectionSevenRef}>
         <section className="mt-5">
           <div className="row">
             <div className="col">

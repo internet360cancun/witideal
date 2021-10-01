@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import useHeaderHeight from "../../Hooks/useHeaderHeight";
@@ -33,18 +33,25 @@ const HowItWorks = (props) => {
     window.scrollTo(0, 0);
   }, []);
 
+  const sectionTwoRef = useRef(null);
+  const sectionFourRef = useRef(null);
+  const sectionSevenRef = useRef(null);
+
   return (
     <Container $top={headerHeight}>
-     
       {/* <Head title='¿hCómo funciona?' description='Conoce la nueva manera de anunciar inmuebles' /> */}
-      <SectionOne />
-      <SectionTwo />
+      <SectionOne
+        sectionTwoRef={sectionTwoRef}
+        sectionFourRef={sectionFourRef}
+        sectionSevenRef={sectionSevenRef}
+      />
+      <SectionTwo sectionTwoRef={sectionTwoRef} />
       <ThirdSection />
-      <ForthSection />
+      <ForthSection sectionFourRef={sectionFourRef} />
       <FifthSection />
       <SectionSix />
 
-      <SelccionarPaquete />
+      <SelccionarPaquete sectionSevenRef={sectionSevenRef} />
       <SectionEight />
       <div className="py-5"></div>
       {/* <Cover /> */}

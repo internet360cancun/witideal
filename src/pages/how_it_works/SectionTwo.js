@@ -7,15 +7,23 @@ import d2 from "../../assets/howitworks/d-2.png";
 
 import free from "../../assets/howitworks/free.png";
 
-const SectionTwo = () => {
+const SectionTwo = ({ sectionTwoRef }) => {
   return (
-    <div className="view viewstyle2" id="section2" style={{backgroundColor: '#ffffff', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+    <div
+      className="view viewstyle2"
+      ref={sectionTwoRef}
+      style={{
+        backgroundColor: "#ffffff",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       {/* Content */}
-      <div className="container2" style={{marginTop: 118}}>
+      <div className="container2" style={{ marginTop: 118 }}>
         <section className="mt-5">
           <div className="imgs">
-            <img className="izq-1" src={i1} alt=""/>
-            <img className="izq-2" src={i2} alt=""/>
+            <img className="izq-1" src={i1} alt="" />
+            <img className="izq-2" src={i2} alt="" />
             <img className="der-1" src={d1} alt="" />
             <img className="der-2" src={d2} alt="" />
           </div>
@@ -29,30 +37,41 @@ const SectionTwo = () => {
               </p>
               <br />
               <div className="gratis">GRATIS</div>
-              <img className="sign" src={free} alt=""/>
+              <img className="sign" src={free} alt="" />
               <br />
               <div className="btnlargo">Publica todos tus inmuebles</div>
             </div>
             {/*CARDS*/}
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6  text-left">
-              <div className="card align-content-center card1" style={{backgroundColor: '#e7e7e7'}}>
+              <div
+                className="card align-content-center card1"
+                style={{ backgroundColor: "#e7e7e7" }}
+              >
                 <img src={card1} className="card-img-top" alt="" />
                 <div className="card-body text-center">
                   <h5 className="card-title">$100,000</h5>
                   <p className="card-text">Casa para comprar</p>
                   <br />
-                  <a href="#" className="cardbtn">CONTACTAR AHORA</a>
+                  <a href="#" className="cardbtn">
+                    CONTACTAR AHORA
+                  </a>
                 </div>
               </div>
-              <div className="card align-content-center card2" style={{backgroundColor: '#e7e7e7'}}>
-                <img src={card1} className="card-img-top" alt=""/>
+              <div
+                className="card align-content-center card2"
+                style={{ backgroundColor: "#e7e7e7" }}
+              >
+                <img src={card1} className="card-img-top" alt="" />
                 <div className="card-body text-center">
                   <h5 className="card-title">$100,000</h5>
                   <p className="card-text">Casa para comprar</p>
                   <br />
                 </div>
               </div>
-              <div className="card align-content-center card3" style={{backgroundColor: '#e7e7e7'}}>
+              <div
+                className="card align-content-center card3"
+                style={{ backgroundColor: "#e7e7e7" }}
+              >
                 <img src={card1} className="card-img-top" alt="" />
                 <div className="card-body text-center">
                   <h5 className="card-title">$100,000</h5>
