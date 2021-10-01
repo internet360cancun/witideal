@@ -133,17 +133,11 @@ const SelccionarPaquete = ({ sectionSevenRef }) => {
 
   window.register = () => setOpenRegister(true);
 
-  const changeToLogIn = () => {
-    setOpenRegister(false);
-  };
+  const changeToLogIn = () => setOpenRegister(false);
 
-  const handleToggleRegister = () => {
-    setOpenRegister(!openRegister);
-  };
+  const handleToggleRegister = () => setOpenRegister(!openRegister);
 
-  const handleCloseRegister = () => {
-    setOpenRegister(false);
-  };
+  const handleCloseRegister = () => setOpenRegister(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);

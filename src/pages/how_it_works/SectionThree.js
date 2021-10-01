@@ -126,47 +126,64 @@ const ThirdSection = () => {
 
   window.register = () => setOpenRegister(true);
 
-  const changeToLogIn = () => {
-    setOpenRegister(false);
-  };
+  const changeToLogIn = () => setOpenRegister(false);
 
-  const handleToggleRegister = () => {
-    setOpenRegister(!openRegister);
-  };
+  const handleToggleRegister = () => setOpenRegister(!openRegister);
 
-  const handleCloseRegister = () => {
-    setOpenRegister(false);
-  };
+  const handleCloseRegister = () => setOpenRegister(false);
 
   return (
-    <div className="view viewstyle" id="section3" style={{background: 'linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '0px 298px'}}>
-      <div className="container2" style={{marginTop: 118}}>
+    <div
+      className="view viewstyle"
+      id="section3"
+      style={{
+        background: "linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        borderRadius: "0px 298px",
+      }}
+    >
+      <div className="container2" style={{ marginTop: 118 }}>
         <section className="mt-1">
           <div className="row align-items-center mt-5 mb-5">
             <div className="col-sm-6 col-md-12 col-lg-6 mb-5">
               <h1 className="BannerTitle3 text-right">Más clientes</h1>
-              <p className="text-right subview3" style={{color: '#ffffff', fontSize: 26}}>
-                <strong style={{color: 'aqua'}}> + </strong> leads
-                <strong style={{color: 'aqua'}}> + </strong> prospectos
-                <strong style={{color: 'aqua'}}> + </strong> amigos
+              <p
+                className="text-right subview3"
+                style={{ color: "#ffffff", fontSize: 26 }}
+              >
+                <strong style={{ color: "aqua" }}> + </strong> leads
+                <strong style={{ color: "aqua" }}> + </strong> prospectos
+                <strong style={{ color: "aqua" }}> + </strong> amigos
               </p>
               <br />
               <br />
-              <ul className="listview3 text-left" style={{listStyle: 'none', padding: 0, margin: 0, fontSize: 32, fontWeight: 500, color: '#ffffff'}}>
+              <ul
+                className="listview3 text-left"
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  fontSize: 32,
+                  fontWeight: 500,
+                  color: "#ffffff",
+                }}
+              >
                 <li>
-                  <strong style={{color: 'aqua'}}> + </strong> Anuncios gratis
+                  <strong style={{ color: "aqua" }}> + </strong> Anuncios gratis
                 </li>
                 <li>
-                  <strong style={{color: 'aqua'}}> + </strong> Campañas en Facebook
+                  <strong style={{ color: "aqua" }}> + </strong> Campañas en
+                  Facebook
                 </li>
                 <li>
-                  <strong style={{color: 'aqua'}}> + </strong> Instagram
+                  <strong style={{ color: "aqua" }}> + </strong> Instagram
                 </li>
                 <li>
-                  <strong style={{color: 'aqua'}}> + </strong> Redes y grupos
+                  <strong style={{ color: "aqua" }}> + </strong> Redes y grupos
                 </li>
                 <li>
-                  <strong style={{color: 'aqua'}}> + </strong> Medios
+                  <strong style={{ color: "aqua" }}> + </strong> Medios
                 </li>
               </ul>
               <br />
@@ -179,7 +196,7 @@ const ThirdSection = () => {
               </button>
             </div>
             <div className="col-md-6 mb-4 align-content-start imgtech">
-              <img src={masclientes} alt=""/>
+              <img src={masclientes} alt="" />
             </div>
           </div>
         </section>
@@ -220,9 +237,7 @@ const ThirdSection = () => {
         </Fade>
       </Modal>
     </div>
-
   );
 };
-
 
 export default ThirdSection;

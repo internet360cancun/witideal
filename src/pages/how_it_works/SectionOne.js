@@ -11,22 +11,15 @@ import mac from "../../assets/howitworks/mac.png";
 const SectionOne = ({ sectionTwoRef, sectionFourRef, sectionSevenRef }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onClose = () => {
-    setIsOpen(false);
-  };
-  const onOpen = () => {
-    setIsOpen(true);
-  };
+  const onClose = () => setIsOpen(false);
 
-  const scrollSectionTwo = () => {
-    sectionTwoRef.current.scrollIntoView();
-  };
-  const scrollSectionFour = () => {
-    sectionFourRef.current.scrollIntoView();
-  };
-  const scrollSectionSeven = () => {
-    sectionSevenRef.current.scrollIntoView();
-  };
+  const onOpen = () => setIsOpen(true);
+
+  const scrollSectionTwo = () => sectionTwoRef.current.scrollIntoView();
+
+  const scrollSectionFour = () => sectionFourRef.current.scrollIntoView();
+
+  const scrollSectionSeven = () => sectionSevenRef.current.scrollIntoView();
 
   return (
     <div
@@ -51,13 +44,16 @@ const SectionOne = ({ sectionTwoRef, sectionFourRef, sectionSevenRef }) => {
               </p>
             </div>
             <div className="col col-sm-3 col-md-4">
-              <p onClick={scrollSectionFour} className="btn custombtn customcople2 waves-effect waves-light">
+              <p
+                onClick={scrollSectionFour}
+                className="btn custombtn customcople2 waves-effect waves-light"
+              >
                 ¿Cuanto cuesta?
               </p>
             </div>
             <div className="col col-sm-4 col-md-4">
               <p
-              onClick={scrollSectionSeven}
+                onClick={scrollSectionSeven}
                 className="btn custombtn customcople3 waves-effect waves-light"
               >
                 ¿Cómo se ordenan los anuncios?
