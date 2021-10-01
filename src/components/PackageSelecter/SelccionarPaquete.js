@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import firebase from "firebase/compat/app";
 import { useAuthState } from "react-firebase-hooks/auth";
 import cardback from "../../assets/howitworks/card-back.png";
