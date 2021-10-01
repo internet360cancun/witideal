@@ -102,6 +102,11 @@ export function Landing() {
   }, [currentText])
 
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   return (
       <Container container justifyContent='center' alignItems='flex-start'>
         <Head title='Buscar inmuebles' />

@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { Box, Grid, Paper, Typography, TextField, makeStyles, Button, CircularProgress, styled } from '@material-ui/core';
 import Background from '../../assets/background_landing.png';
 import firebase from 'firebase/compat/app';
@@ -55,6 +55,12 @@ export function RestorePassword() {
   const [view, setView] = useState('form')
   const [Email, setEmail] = useState('')
   const [errorModal, setErrorModal] = useState({ open: false })
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   const restorePass = async () => {
     setView('loading')

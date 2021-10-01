@@ -93,7 +93,7 @@ const MyMovements = () => {
   const [destacados, setDestacados] = useState([]);
   const { subscription } = useRole();
 
-  const today = Date.now();
+  // const today = Date.now();
 
   useEffect(() => {
     const getDest = async (uId) => {
@@ -121,6 +121,10 @@ const MyMovements = () => {
     };
     getDest(context.uId);
   }, [context.uId, db, subscription]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Page paddingTop={10}>

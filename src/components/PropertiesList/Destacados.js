@@ -9,14 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Destacados = ({
-  allDestacados,
-  action,
-  propertyType,
-  area1,
-  area2,
-  nuevaArea2,
-}) => {
+const Destacados = ({ allDestacados }) => {
   const classes = useStyles();
 
   return (
@@ -36,14 +29,7 @@ const Destacados = ({
               alignItems="stretch"
               spacing={2}
             >
-              <DestacadosSwipe
-                allDestacados={allDestacados}
-                action={action}
-                propertyType={propertyType}
-                area1={area1}
-                area2={area2}
-                nuevaArea2={nuevaArea2}
-              />
+              <DestacadosSwipe allDestacados={allDestacados} />
             </Grid>
           </Box>
         </Paper>

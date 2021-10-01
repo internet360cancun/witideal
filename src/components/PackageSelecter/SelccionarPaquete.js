@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import firebase from "firebase/compat/app";
 import { useAuthState } from "react-firebase-hooks/auth";
 import cardback from "../../assets/howitworks/card-back.png";
@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SelccionarPaquete = () => {
+const SelccionarPaquete = ({ sectionSevenRef }) => {
   const classes = useStyles();
 
   const [user, userLoading] = useAuthState(firebase.auth());
@@ -133,21 +133,19 @@ const SelccionarPaquete = () => {
 
   window.register = () => setOpenRegister(true);
 
-  const changeToLogIn = () => {
-    setOpenRegister(false);
-  };
+  const changeToLogIn = () => setOpenRegister(false);
 
-  const handleToggleRegister = () => {
-    setOpenRegister(!openRegister);
-  };
+  const handleToggleRegister = () => setOpenRegister(!openRegister);
 
-  const handleCloseRegister = () => {
-    setOpenRegister(false);
-  };
+  const handleCloseRegister = () => setOpenRegister(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
-      <div className="container2" id="section7">
+      <div className="container2" ref={sectionSevenRef}>
         <section className="mt-5">
           <div className="row">
             <div className="col">
