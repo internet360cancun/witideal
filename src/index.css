@@ -1,6 +1,6 @@
 html,
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   scroll-behavior: smooth;
 }
 
@@ -101,25 +101,11 @@ body,
 }
 
 .first {
+  box-sizing: border-box;
   position: absolute;
-  left: 30%;
-  top: -40px;
-  z-index: 1 !important;
-  width: 100%;
-}
-.second {
-  position: absolute !important;
-  left: 27%;
-  top: -46px;
-  z-index: 2 !important;
-  width: 100%;
-}
-.third {
-  position: absolute !important;
-  left: 1.5%;
-  top: -180px;
-  z-index: 3 !important;
-  width: 125%;
+  top: -10vh;
+  right: 0vh;
+  width: 130%;
 }
 
 .triangulo-1 {
@@ -530,24 +516,7 @@ body .no-padding {
     line-height: 10vw;
   }
 
-  .first {
-    width: 60vw;
-    top: -10vw;
-    left: 36vw;
-    overflow: hidden;
-  }
-  .second {
-    width: 60vw;
-    top: -11vw;
-    left: 37vw;
-    overflow: hidden;
-  }
-  .third {
-    width: 75vw;
-    top: -19vw;
-    left: 23vw;
-    overflow: hidden;
-  }
+
   .triangulo-1,
   .triangulo-2,
   .triangulo-3 {
@@ -743,26 +712,10 @@ body .no-padding {
     padding: 1% !important;
     padding-right: 5% !important;
   }
-  /*mac*/
-  .third {
-    position: relative;
-    width: 100%;
-    top: -10vh;
-    left: 1%;
-  }
-  /*blue*/
-  .second {
-    position: relative;
-    width: 85%;
-    top: -5vh;
-    left: 16%;
-  }
+  
   /*white*/
   .first {
-    position: relative;
-    width: 88%;
-    top: -3vh;
-    left: 17%;
+    right: 13vh;
   }
 
   /*SEGUNDO VIEW*/
@@ -1064,26 +1017,10 @@ body .no-padding {
     padding: 1% !important;
     padding-right: 5% !important;
   }
-  /*mac*/
-  .third {
-    position: relative;
-    width: 100%;
-    top: -5vh;
-    left: 1%;
-  }
-  /*blue*/
-  .second {
-    position: relative;
-    width: 85%;
-    margin-top: -14%;
-    left: 16%;
-  }
+ 
   /*white*/
   .first {
-    position: relative;
-    width: 88%;
-    margin-top: -13%;
-    left: 17%;
+    right: 12vh;
   }
 
   /*SEGUNDO VIEW*/
@@ -1351,19 +1288,11 @@ body .no-padding {
 
 @media (max-height: 900px) {
   /*PRIMER VIEW*/
-  /*mac*/
-  .third {
-    margin-top: 0vh;
-  }
+ 
+  /* .first {
+    right: 0vh;
+  } */
 
-  /*blue*/
-  .second {
-    margin-top: 4vh;
-  }
-  /*white*/
-  .first {
-    margin-top: 4vh;
-  }
   .BannerTitle {
     position: relative;
     font-size: 5vh !important;
@@ -1422,11 +1351,7 @@ body .no-padding {
 
 @media (max-height: 820px) {
   /*PRIMER VIEW*/
-  /*mac*/
-  .third {
-    margin-top: 0vh;
-  }
-
+  
   /*SEGUNDO VIEW*/
   .gratis {
     font-size: 6.5vh;
@@ -1485,18 +1410,6 @@ body .no-padding {
 
 @media (max-height: 740px) {
   /*PRIMER VIEW*/
-  /*mac*/
-  .third {
-    top: -15vh;
-  }
-  /*blue*/
-  .second {
-    margin-top: -6vh;
-  }
-  /*white*/
-  .first {
-    margin-top: -6vh;
-  }
   .custombtnindex {
     top: 22vh !important;
   }
@@ -1680,7 +1593,7 @@ body .no-padding {
   }
   .BannerTitle {
     position: relative;
-    font-size: 32px !important;
+    font-size: 6vh !important;
     line-height: 40px !important;
     padding-top: 10px;
   }
@@ -1689,30 +1602,15 @@ body .no-padding {
     top: 55% !important;
     font-size: 80% !important;
     margin-left: 5%;
-    margin-top: 6vh;
+    margin-top: 10vh;
     padding: 1% !important;
     padding-right: 5% !important;
   }
-  /*mac*/
-  .third {
-    position: relative;
-    width: 100%;
-    top: -10vh;
-    left: 1%;
-  }
-  /*blue*/
-  .second {
-    position: relative;
-    width: 85%;
-    top: 0vh;
-    left: 16%;
-  }
+  
   /*white*/
   .first {
-    position: relative;
-    width: 88%;
-    top: 1vh;
-    left: 17%;
+    top: -8vh;
+    right: 10vh;
   }
   .customview1 {
     width: auto;
@@ -1948,28 +1846,14 @@ body .no-padding {
   }
   .custombtnindex {
     position: absolute;
-    top: 30vh !important;
+    top: 25vh !important;
   }
-  /*mac*/
-  .third {
-    position: relative;
-    width: 65%;
-    top: 20vh;
-    left: 35vw;
-  }
-  /*blue*/
-  .second {
-    position: relative;
-    width: 54%;
-    top: 30vh;
-    left: 48vw;
-  }
+ 
   /*white*/
   .first {
-    position: relative;
-    width: 58%;
-    top: 30vh;
-    left: 45vw;
+    top: 10vh;
+    right: -8vh;
+    width: 95%;
   }
   .customview1 {
     width: auto;
@@ -2280,7 +2164,7 @@ body .no-padding {
   }
 }
 
-@media (min-width: 1220px) {
+@media (min-width: 1220px) and (max-width: 1380px) {
   .customcople2 {
     left: -8vw;
   }
@@ -2288,6 +2172,15 @@ body .no-padding {
     left: -15vw;
   }
 }
+@media (min-width: 1381px) {
+  .customcople2 {
+    left: -8vw;
+  }
+  .customcople3 {
+    left: -15vw;
+  }
+}
+
 
 @media (min-width: 576px) {
   .imgcontainer {
@@ -2301,12 +2194,29 @@ body .no-padding {
     width: 250px !important;
     margin-left: 40px;
   }
+  .first{
+    right: -10vh;
+    width: 200%;
+  }
 }
 
 @media (min-width: 992px) {
   .imgcontainer {
     width: 175px !important;
     margin-left: -50px;
+  }
+  .first{
+    top: -5vh;
+    right: 5vh;
+    width: 110%;
+  }
+}
+
+@media (min-width: 1520px) {
+  .first{
+    width: 130%;
+    top: -10vh;
+    right: -0vh;
   }
 }
 
@@ -2388,27 +2298,11 @@ body .no-padding {
     display: none;
   }
   .first {
-    width: 45vw;
-    top: -16vw;
-    margin: 0;
-    right: 0;
-    left: 72vh;
+    top: -40vh;
+    right: -52vh;
+    width: 150%;
   }
-  .second {
-    width: 46vw;
-    margin: 0;
-    right: 0;
-    top: -17vw;
-    left: 74vh;
-  }
-  .third {
-    width: 55vw;
-    margin: 0;
-    right: 0;
-    top: -25vw;
-    left: 35vw;
-    
-  }
+ 
 
 
 
@@ -2425,5 +2319,11 @@ body .no-padding {
 
   .textbanner{
     font-size: 6vh;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 480px) and (min-height: 850px){
+  .first{
+    right: 9vh;
   }
 }

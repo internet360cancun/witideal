@@ -4,9 +4,7 @@ import ModalVideo from "react-modal-video";
 import t1 from "../../assets/howitworks/t1.png";
 import t2 from "../../assets/howitworks/t2.png";
 import t3 from "../../assets/howitworks/t3.png";
-import vecw from "../../assets/howitworks/vecw.png";
-import vecb from "../../assets/howitworks/vecb.png";
-import mac from "../../assets/howitworks/mac.png";
+import macX from "../../assets/howitworks/mac-index.png";
 
 const SectionOne = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,9 +84,7 @@ const SectionOne = () => {
               </p>
             </div>
             <div className="col-md-6 mb-4">
-              <img className="first" src={vecw} alt="" />
-              <img className="second" src={vecb} alt="" />
-              <img className="third" src={mac} alt="" />
+              <img className="first" src={macX} alt="" />
             </div>
           </div>
         </section>
