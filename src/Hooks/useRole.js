@@ -16,6 +16,7 @@ export const useRole = () => {
       .then((snapshot) => {
         snapshot.forEach((subscription) => {
           setSubscription({
+            id: subscription.id,
             role: subscription.data().items[0].price.product.metadata
               .firebaseRole,
             current_period_start:

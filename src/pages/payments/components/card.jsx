@@ -1,91 +1,69 @@
-import React from 'react'
-import { styled } from '@material-ui/core/styles'
-import { Paper, Box } from '@material-ui/core'
+import React from "react";
+import { styled } from "@material-ui/core/styles";
+import { Paper, Box } from "@material-ui/core";
 
-const calculateBoder = ({method}) => {
-  if (method === 'store') return '5px solid #3f19f9'
-  if (method === 'bank_account') return '5px solid rgb(30, 14, 111)'
-  if (method === 'Paypal') return '5px solid #1597d1'
-  return '5px solid rgb(50, 255, 210)'
-}
+const calculateBoder = () => {
+  
+  return "5px solid rgb(50, 255, 210)";
+};
 
 const Content = styled(Paper)({
   borderLeft: calculateBoder,
-  minHeight: '100px'
-})
+  minHeight: "100px",
+});
 
-const Row = styled('div')({
-  textAlign: "left", 
-  display: 'flex'
-})
-
-const Description = styled('div')({
-  width: '130px', 
-  marginRight: '10px',
-  fontWeight: 'bold'
-})
-
-const Value = styled('span')(({theme}) => ({
-  color: theme.wdPurpleSubtitle,
-}))
-
-const Data = styled('div')({
-  color: 'gray', 
+const Row = styled("div")({
   textAlign: "left",
-})
+  display: "flex",
+});
+
+const Description = styled("div")({
+  width: "130px",
+  marginRight: "10px",
+  fontWeight: "bold",
+});
+
+const Value = styled("span")(({ theme }) => ({
+  color: theme.wdPurpleSubtitle,
+}));
 
 
-const formatter = (string) => {
-  let stringParsed = string
-  const formatter = new Intl.NumberFormat('en-US', {
-    minimumFractionDigits: 2,
-    maximumSignificantDigits: 9
-  })
-  stringParsed = formatter.format(stringParsed)
-  return `$ ${stringParsed}`
-}
 
-const Card = (props) => {
-  
-  console.log(props)
-  
-  let amount = props.amount ? props.amount : props.transaction ? props.transaction.amount : props.resource.amount.value
-  let method = props.method ? props.method : props.transaction ? props.transaction.method : 'Paypal'
+const Card = ({ subscription }) => {
+  const formatDate = (fecha) => {
+    let d = new Date(fecha),
+      month = "" + (d.getMonth() + 1),
+      day = "" + d.getDate(),
+      year = d.getFullYear();
 
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
 
-  amount = formatter(amount)
+    return [day, month, year].join("/");
+  };
 
-  const order_id = props.order_id ? props.order_id : props.transaction ? props.transaction.order_id : props.resource.custom_id
-
-  let methodPay
-  if (method === "store") methodPay = 'Tienda'
-  if (method === "bank_account") methodPay = 'SPEI'
-  if (method === "card") methodPay = 'Tarjeta'
-  if (!methodPay) methodPay = method
-
-
-  const dateParsed = new Date(props.chargeDate.toDate()).toLocaleDateString();
-
-  
   return (
-    <Content elevation={3} method={method}>
+    <Content elevation={3}>
       <Box p={2}>
-        <Data>{dateParsed}</Data>
         <Row>
-          <Description>Método de pago</Description>
-          <Value>{methodPay}</Value>
+          <Description>Inicio:</Description>
+          <Value>{formatDate(subscription.current_period_start * 1000)}</Value>
         </Row>
         <Row>
-          <Description>Orden de pago</Description>
-          <Value>{order_id}</Value>
+          <Description>Fin:</Description>
+          <Value>{formatDate(subscription.current_period_end * 1000)}</Value>
         </Row>
         <Row>
-          <Description>Cantidad</Description>
-          <Value>{amount}</Value>
+          <Description>Orden de pago:</Description>
+          <Value>{subscription.id}</Value>
+        </Row>
+        <Row>
+          <Description>Cantidad:</Description>
+          <Value>${subscription.price.unit_amount / 100} MXN</Value>
         </Row>
       </Box>
     </Content>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
