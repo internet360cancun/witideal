@@ -154,7 +154,6 @@ const firebaseObject = {
   },
   users: {
     getPayments: async (userId, startAfter, limit) => {
-      console.log('userId, startAfter, limit', userId, startAfter, limit);
       try {
         let query = db
           .collection(`production/Users/${userId}/payments/charges`)

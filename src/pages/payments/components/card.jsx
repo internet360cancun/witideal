@@ -1,9 +1,8 @@
 import React from "react";
 import { styled } from "@material-ui/core/styles";
-import { Paper, Box } from "@material-ui/core";
+import { Paper, Box, useMediaQuery } from "@material-ui/core";
 
 const calculateBoder = () => {
-  
   return "5px solid rgb(50, 255, 210)";
 };
 
@@ -18,7 +17,6 @@ const Row = styled("div")({
 });
 
 const Description = styled("div")({
-  width: "130px",
   marginRight: "10px",
   fontWeight: "bold",
 });
@@ -26,8 +24,6 @@ const Description = styled("div")({
 const Value = styled("span")(({ theme }) => ({
   color: theme.wdPurpleSubtitle,
 }));
-
-
 
 const Card = ({ subscription }) => {
   const formatDate = (fecha) => {
@@ -42,25 +38,52 @@ const Card = ({ subscription }) => {
     return [day, month, year].join("/");
   };
 
+  const isMobile = useMediaQuery("(max-width:486px)");
+
   return (
     <Content elevation={3}>
       <Box p={2}>
-        <Row>
-          <Description>Inicio:</Description>
-          <Value>{formatDate(subscription.current_period_start * 1000)}</Value>
-        </Row>
-        <Row>
-          <Description>Fin:</Description>
-          <Value>{formatDate(subscription.current_period_end * 1000)}</Value>
-        </Row>
-        <Row>
-          <Description>Orden de pago:</Description>
-          <Value>{subscription.id}</Value>
-        </Row>
-        <Row>
-          <Description>Cantidad:</Description>
-          <Value>${subscription.price.unit_amount / 100} MXN</Value>
-        </Row>
+        {isMobile ? (
+          <>
+            <Description>Inicio:</Description>
+            <Value>
+              {formatDate(subscription.current_period_start * 1000)}
+            </Value>
+
+            <Description>Fin:</Description>
+            <Value>{formatDate(subscription.current_period_end * 1000)}</Value>
+
+            <Description>Orden de pago:</Description>
+            <Value>{subscription.id}</Value>
+
+            <Description>Cantidad:</Description>
+            <Value>${subscription.price.unit_amount / 100} MXN</Value>
+          </>
+        ) : (
+          <>
+            <Row>
+              <Description>Inicio:</Description>
+              <Value>
+                {formatDate(subscription.current_period_start * 1000)}
+              </Value>
+            </Row>
+            <Row>
+              <Description>Fin:</Description>
+              <Value>
+                {formatDate(subscription.current_period_end * 1000)}
+              </Value>
+            </Row>
+            <Row>
+              <Description>Orden de pago:</Description>
+              <Value>{subscription.id}</Value>
+            </Row>
+
+            <Row>
+              <Description>Cantidad:</Description>
+              <Value>${subscription.price.unit_amount / 100} MXN</Value>
+            </Row>
+          </>
+        )}
       </Box>
     </Content>
   );

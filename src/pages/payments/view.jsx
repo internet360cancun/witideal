@@ -2,17 +2,12 @@ import React from "react";
 import Container from "../../layouts/container";
 import Content from "../../layouts/content";
 import Title from "../../layouts/title";
-import { Grid, CircularProgress } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { styled } from "@material-ui/core/styles";
-import Skeleton from "./components/skeleton";
 import Card from "./components/card";
 import { Payment } from "@material-ui/icons";
 import Head from "../../components/head";
 import { useRole } from "../../Hooks/useRole";
-
-const ProgressContainer = styled("div")({
-  margin: "30px 0px",
-});
 
 const MinHeight = styled("div")({
   minHeight: "70vh",
@@ -33,9 +28,8 @@ const PaymentStyled = styled(Payment)({
   marginBottom: "50px",
 });
 
-const View = (props) => {
+const View = () => {
   const { subscription } = useRole();
-  console.log(subscription, "asdf");
 
   return (
     <Container>
@@ -49,10 +43,8 @@ const View = (props) => {
               <Grid container justifyContent="center" alignItems="center">
                 <Grid item xs={12} md={10}>
                   <MinHeight>
-                    <Grid container alignItems="flex-start" spacing={3}>
-                      <Grid item xs={12} sm={6}>
-                        <Card subscription={subscription} />
-                      </Grid>
+                    <Grid container justifyContent="center" spacing={3}>
+                      <Card subscription={subscription} />
                     </Grid>
                   </MinHeight>
                 </Grid>

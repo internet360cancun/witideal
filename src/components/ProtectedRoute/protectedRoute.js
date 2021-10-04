@@ -4,7 +4,6 @@ import {Route,Redirect} from 'react-router-dom';
 
 export function ProtectedRoute({component: Component,...routeProps}){
   let allowed = routeProps.allow();
-  console.log('allowed',allowed)
   return (
         <Route
           {...routeProps}

@@ -3,7 +3,7 @@ import { Grid, Box, Paper } from '@material-ui/core'
 
 const Content = (props) => {
   return (
-    <Grid container justify='center' alignItems='center'>
+    <Grid container justifyContent='center' alignItems='center'>
       <Grid item xs={12} lg={10}>
         <Paper elevtion={3} >
           <Box p={3}>
