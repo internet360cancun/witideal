@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useContext, useRef } from 'react';
-import useFirebaseTools from '../../Hooks/useFirebaseTools';
+import React, { useState, useEffect, useContext, useRef } from "react";
+import firebase from "firebase/compat/app";
+import useFirebaseTools from "../../Hooks/useFirebaseTools";
 import {
   Grid,
   Typography,
@@ -10,45 +11,45 @@ import {
   Avatar,
   Hidden,
   useMediaQuery,
-} from '@material-ui/core';
-import Skeleton from '@material-ui/lab/Skeleton';
-import NumberFormat from 'react-number-format';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { StaticGoogleMap, Path, Marker } from 'react-static-google-map';
-import { SpecificDataIcons } from '../SpecificDataIcons/specificDataIcons';
-import { propertyType_es, action_es } from '../../assets/Strings';
-import SesState from '../../contexts/sessionContext';
-import Photos from '../../layouts/galleryModal';
-import Pictures from './pictures';
-import { PropertyDetailSpecificData } from '../PropertyDetailSpecificData/propertyDetailSpecificData';
-import logIn from '../../assets/specificDataIcons/logIn.svg';
-import useStyles, { MoreVert } from './styles';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Report from './report';
-import { styled } from '@material-ui/core/styles';
-import EmptyProperties from '../../assets/specificDataIcons/emptyPropety.svg';
-import formatNumber from '../../helpers/formatNumber';
-import Swipe from './swype';
-import Register from './register';
-import ModalRegister from './registerModal';
-import analytics from 'react-ga';
-import { isProduction } from '../../constants/globalConstraints';
-import urlTranslator from '../../helpers/urlTranslator';
-import Head from '../head';
+} from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
+import NumberFormat from "react-number-format";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { StaticGoogleMap, Path, Marker } from "react-static-google-map";
+import { SpecificDataIcons } from "../SpecificDataIcons/specificDataIcons";
+import { propertyType_es, action_es } from "../../assets/Strings";
+import SesState from "../../contexts/sessionContext";
+import Photos from "../../layouts/galleryModal";
+import Pictures from "./pictures";
+import { PropertyDetailSpecificData } from "../PropertyDetailSpecificData/propertyDetailSpecificData";
+import logIn from "../../assets/specificDataIcons/logIn.svg";
+import useStyles, { MoreVert } from "./styles";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Report from "./report";
+import { styled } from "@material-ui/core/styles";
+import EmptyProperties from "../../assets/specificDataIcons/emptyPropety.svg";
+import formatNumber from "../../helpers/formatNumber";
+import Swipe from "./swype";
+import Register from "./register";
+import ModalRegister from "./registerModal";
+import analytics from "react-ga";
+import { isProduction } from "../../constants/globalConstraints";
+import urlTranslator from "../../helpers/urlTranslator";
+import Head from "../head";
 
-const Br = styled('div')({
-  color: '#fff',
+const Br = styled("div")({
+  color: "#fff",
 });
 
-const BankSaleContent = styled('div')({
-  background: '#f7f6ff',
-  color: '#1e0e6f',
-  fontWeight: 'bold',
+const BankSaleContent = styled("div")({
+  background: "#f7f6ff",
+  color: "#1e0e6f",
+  fontWeight: "bold",
 });
 
 export const PropertyDetail = (props) => {
-  const Medium = useMediaQuery('(max-width:1280px)');
+  const Medium = useMediaQuery("(max-width:1280px)");
   const domRef = useRef({});
   const params = props.match.params;
   const [errorToLoad, setErrorToload] = useState(null);
@@ -64,20 +65,21 @@ export const PropertyDetail = (props) => {
   const [isModalReportingActive, setIsModalReportingActive] = useState(false);
   const [currentMargin, setCurrentMargin] = useState(0);
   const [isCredentialsActive, setActiveCredential] = useState(false); // renderCredentials as effect
+  const [ownerInfo, setOwnerInfo] = useState(null);
+  const [showOnerInfo, setShowOnerInfo] = useState(false);
 
 
+  //Scroll to top
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-
 
   // update margin footer
   useEffect(() => {
     const onSizeChange = () => {
       setTimeout(() => {
         try {
-          if (window.matchMedia('(max-width:1279px)').matches)
+          if (window.matchMedia("(max-width:1279px)").matches)
             setCurrentMargin(domRef.current.clientHeight);
           else setCurrentMargin(0);
         } catch (error) {
@@ -86,8 +88,8 @@ export const PropertyDetail = (props) => {
       }, 50);
     };
     onSizeChange();
-    window.addEventListener('resize', onSizeChange);
-    return (event) => window.removeEventListener('resize', onSizeChange);
+    window.addEventListener("resize", onSizeChange);
+    return (event) => window.removeEventListener("resize", onSizeChange);
   }, []);
 
   const GMapCircle = (lat, lng, rad, detail = 10) => {
@@ -127,10 +129,12 @@ export const PropertyDetail = (props) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isCardFixed]);
 
+
+  //Trae la información de una propiedad en específico
   useEffect(() => {
     getSpecificSearchProperty(
       urlTranslator(params.action),
@@ -139,17 +143,31 @@ export const PropertyDetail = (props) => {
     )
       .then((doc) => {
         if (doc.exists) {
-          console.log('doc', doc.data());
           setProperData(doc.data());
         } else {
           setErrorToload(true);
-          console.log('No existe el documento');
+          console.log("No existe el documento");
         }
       })
       .catch((error) => {
-        console.log('Error en obtener el documento:', error);
+        console.log("Error en obtener el documento:", error);
       });
   }, []);
+
+  //No se debería usar var optimizar luego
+  if (properData) {
+    var userId = properData.uId;
+  }
+
+  //Renderiza la información del dueño de la propiedad
+  useEffect(() => {
+    const db = firebase.firestore();
+    db.doc(`production/Users/${userId}/generalInfo`)
+      .get()
+      .then((snapshot) => {
+        setOwnerInfo(snapshot.data());
+      });
+  }, [properData]);
 
   const pictures =
     properData && properData.photos ? properData.photos.extras : [];
@@ -158,13 +176,9 @@ export const PropertyDetail = (props) => {
     ...pictures,
   ];
 
-  const onReportClick = (event) => {
-    setIsModalReportingActive(true);
-  };
+  const onReportClick = () => setIsModalReportingActive(true);
 
-  const handleModalClose = (event) => {
-    setIsModalReportingActive(false);
-  };
+  const handleModalClose = () => setIsModalReportingActive(false);
 
   const handleCredentialsExchange = () => {
     setLoadingCredentials(true);
@@ -180,7 +194,7 @@ export const PropertyDetail = (props) => {
         phone: session.phone,
         photo:
           session.PhotoURL ||
-          'https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40logIn.svg?alt=media&token=b5b57bad-a437-4691-bd6c-194c98514983',
+          "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40logIn.svg?alt=media&token=b5b57bad-a437-4691-bd6c-194c98514983",
         isPromoter: session.isPromoter,
         extraPhones: session.extraPhones || [],
       },
@@ -189,16 +203,16 @@ export const PropertyDetail = (props) => {
       properData.priceMxn
     )
       .then((res) => {
-        console.log('**************esponse exchange credential ', res);
+        console.log("**************esponse exchange credential ", res);
         if (res.error_code === undefined) {
           setPromoterCredentials(res);
           setLoadingCredentials(false);
         } else {
-          console.log('ERROR************', res);
+          console.log("ERROR************", res);
         }
       })
       .catch((err) => {
-        console.log('err*********', err.data());
+        console.log("err*********", err.data());
         setLoadingCredentials(false);
       });
   };
@@ -222,7 +236,7 @@ export const PropertyDetail = (props) => {
   // render credentials after user logged
   useEffect(() => {
     console.log(
-      'render credentials after user logged session state________',
+      "render credentials after user logged session state________",
       session
     );
     if (
@@ -248,25 +262,29 @@ export const PropertyDetail = (props) => {
     if (Medium) window.modalRegister.open();
     if (isProduction) {
       analytics.event({
-        action: 'exchangeCredentialClick',
-        category: 'null',
-        label: 'click',
+        action: "exchangeCredentialClick",
+        category: "null",
+        label: "click",
       });
     }
+  };
+
+  const handleOwnerInfo = () => {
+    setShowOnerInfo(!showOnerInfo);
   };
 
   return (
     <Box className={classes.mainContainer} pb={3} pt={{ lg: 9, xs: 7 }}>
       <Head
-        title={`${properData ? urlTranslator(properData.action) : ''} ${
-          properData ? urlTranslator(properData.propertyType) : ''
+        title={`${properData ? urlTranslator(properData.action) : ""} ${
+          properData ? urlTranslator(properData.propertyType) : ""
         } en ${urlTranslator(
-          properData ? properData.administrative_area_level_1 : ''
+          properData ? properData.administrative_area_level_1 : ""
         )}`}
         description={
           properData && properData.specificData
             ? properData.specificData.propertyDescription
-            : ''
+            : ""
         }
       />
       <ModalRegister onClose={() => setActiveCredential(false)} />
@@ -362,7 +380,7 @@ export const PropertyDetail = (props) => {
                                       .propertyDescription !== undefined
                                       ? properData.specificData
                                           .propertyDescription
-                                      : ''}
+                                      : ""}
                                   </Typography>
                                 )}
                               </Box>
@@ -400,7 +418,7 @@ export const PropertyDetail = (props) => {
                                 center={
                                   properData.lat === undefined ||
                                   properData.lng === undefined
-                                    ? '19.432608,-99.133209'
+                                    ? "19.432608,-99.133209"
                                     : `${properData.lat},${properData.lng}`
                                 }
                                 zoom="17"
@@ -412,7 +430,7 @@ export const PropertyDetail = (props) => {
                                     location={
                                       properData.lat === undefined ||
                                       properData.lng === undefined
-                                        ? '19.432608,-99.133209'
+                                        ? "19.432608,-99.133209"
                                         : `${properData.lat},${properData.lng}`
                                     }
                                   /> //Poner bandera en la vista para saber si es exacto o no
@@ -438,20 +456,14 @@ export const PropertyDetail = (props) => {
                           </Grid>
                         </Grid>
 
+                        {/* right side */}
                         <Grid
                           item
                           xs={12}
                           lg={6}
                           xl={5}
-                          style={{ position: 'sticky', top: '70px' }}
+                          style={{ position: "sticky", top: "70px" }}
                         >
-                          {!promoterCredentials &&
-                            isCredentialsActive &&
-                            !loadingCredentials && (
-                              <Hidden mdDown>
-                                <Register />
-                              </Hidden>
-                            )}
                           {(!isCredentialsActive ||
                             loadingCredentials ||
                             promoterCredentials) && (
@@ -476,215 +488,104 @@ export const PropertyDetail = (props) => {
                                   alignItems="center"
                                   spacing={1}
                                 >
-                                  {!promoterCredentials && loadingCredentials && (
+                                  {showOnerInfo && (
                                     <Grid item xs={12}>
-                                      <Box p={8}>
-                                        <CircularProgress />
-                                      </Box>
-                                    </Grid>
-                                  )}
-                                  {!!promoterCredentials &&
-                                    promoterCredentials.sendTo ===
-                                      'ownedProperty' && (
-                                      <Grid item xs={12}>
-                                        <Typography
-                                          align="center"
-                                          className={classes.subtitleText}
-                                          variant="subtitle1"
+                                      <Box>
+                                        <Grid
+                                          container
+                                          justifyContent="center"
+                                          alignItems="center"
                                         >
-                                          Al parecer este inmueble pertenece a
-                                          tu inmobiliaria
-                                        </Typography>
-                                      </Grid>
-                                    )}
-                                  {!!promoterCredentials &&
-                                    promoterCredentials.sendTo ===
-                                      'notShared' && (
-                                      <Grid item xs={12}>
-                                        <Typography
-                                          align="center"
-                                          className={classes.subtitleText}
-                                          variant="subtitle1"
-                                        >
-                                          Lo sentimos, pero este promotor no
-                                          comparte comisión.
-                                        </Typography>
-                                      </Grid>
-                                    )}
-                                  {!!promoterCredentials &&
-                                    !promoterCredentials.sendTo && (
-                                      <Grid item xs={12}>
-                                        <Box>
-                                          <Grid
-                                            container
-                                            justifyContent="center"
-                                            alignItems="center"
-                                          >
-                                            <Grid item sm={4} xs={12}>
+                                          <Grid item sm={4} xs={12}>
+                                            <Hidden xsDown>
+                                              <Avatar
+                                                className={
+                                                  classes.promoterImgWrapper
+                                                }
+                                                src={ownerInfo.photo || logIn}
+                                                alt="promoters, photo"
+                                                width={150}
+                                              />
+                                            </Hidden>
+                                          </Grid>
+                                          <Grid item sm={8} xs={12}>
+                                            <Grid
+                                              container
+                                              justifyContent="center"
+                                              alignItems="center"
+                                            >
                                               <Hidden xsDown>
-                                                <Avatar
-                                                  className={
-                                                    classes.promoterImgWrapper
-                                                  }
-                                                  src={
-                                                    promoterCredentials.photo ||
-                                                    logIn
-                                                  }
-                                                  alt="promoters, photo"
-                                                  width={150}
-                                                />
+                                                <Grid item xs={12}>
+                                                  <Typography
+                                                    variant="h6"
+                                                    align="left"
+                                                    className={
+                                                      classes.subtitleText
+                                                    }
+                                                  >
+                                                    {ownerInfo.name}{" "}
+                                                    {ownerInfo.lastname}
+                                                  </Typography>
+                                                </Grid>
                                               </Hidden>
-                                            </Grid>
-                                            <Grid item sm={8} xs={12}>
-                                              <Grid
-                                                container
-                                                justifyContent="center"
-                                                alignItems="center"
-                                              >
-                                                <Hidden xsDown>
-                                                  <Grid item xs={12}>
-                                                    <Typography
-                                                      variant="h6"
-                                                      align="left"
-                                                      className={
-                                                        classes.subtitleText
-                                                      }
-                                                    >
-                                                      {promoterCredentials.name}{' '}
-                                                      {
-                                                        promoterCredentials.lastname
-                                                      }
-                                                    </Typography>
-                                                  </Grid>
-                                                </Hidden>
-                                                <Hidden smUp>
-                                                  <Grid item xs={4}>
-                                                    <Avatar
-                                                      className={
-                                                        classes.promoterImgWrapper
-                                                      }
-                                                      src={
-                                                        promoterCredentials.photo ||
-                                                        logIn
-                                                      }
-                                                      alt="promoters, photo"
-                                                      width={150}
-                                                    />
-                                                  </Grid>
-                                                  <Grid item xs={8}>
-                                                    <Typography
-                                                      variant="h6"
-                                                      align="left"
-                                                      className={
-                                                        classes.subtitleText
-                                                      }
-                                                    >
-                                                      {promoterCredentials.name}{' '}
-                                                      {
-                                                        promoterCredentials.lastname
-                                                      }
-                                                    </Typography>
-                                                  </Grid>
-                                                  <Br> space </Br>
-                                                </Hidden>
-                                                <Grid item xs={12}>
+                                              <Hidden smUp>
+                                                <Grid item xs={4}>
+                                                  <Avatar
+                                                    className={
+                                                      classes.promoterImgWrapper
+                                                    }
+                                                    src={
+                                                      ownerInfo.photo || logIn
+                                                    }
+                                                    alt="promoters, photo"
+                                                    width={150}
+                                                  />
+                                                </Grid>
+                                                <Grid item xs={8}>
                                                   <Typography
-                                                    variant="subtitle1"
+                                                    variant="h6"
                                                     align="left"
                                                     className={
-                                                      classes.subtitleText2
+                                                      classes.subtitleText
                                                     }
                                                   >
-                                                    {!(
-                                                      promoterCredentials.isPromoter &&
-                                                      promoterCredentials.showMainPhone ===
-                                                        false &&
-                                                      promoterCredentials.extraPhones &&
-                                                      !!promoterCredentials
-                                                        .extraPhones.length
-                                                    ) &&
-                                                      `tel: ${formatNumber(
-                                                        promoterCredentials.phone
-                                                      )}`}
-                                                  </Typography>
-                                                  {!!promoterCredentials.extraPhones &&
-                                                    !!promoterCredentials
-                                                      .extraPhones.length && (
-                                                      <>
-                                                        {promoterCredentials.extraPhones.map(
-                                                          (phone) => (
-                                                            <Typography
-                                                              variant="subtitle1"
-                                                              align="left"
-                                                              className={
-                                                                classes.subtitleText2
-                                                              }
-                                                              key={phone}
-                                                            >
-                                                              tel:{' '}
-                                                              {formatNumber(
-                                                                phone
-                                                              )}
-                                                            </Typography>
-                                                          )
-                                                        )}
-                                                      </>
-                                                    )}
-                                                </Grid>
-                                                <Grid item xs={12}>
-                                                  <Typography
-                                                    variant="subtitle1"
-                                                    align="left"
-                                                    className={
-                                                      classes.subtitleText2
-                                                    }
-                                                  >
-                                                    {promoterCredentials.mail}
+                                                    {ownerInfo.name}{" "}
+                                                    {ownerInfo.lastname}
                                                   </Typography>
                                                 </Grid>
+                                                <Br> space </Br>
+                                              </Hidden>
+                                              <Grid item xs={12}>
+                                                <Typography
+                                                  variant="subtitle1"
+                                                  align="left"
+                                                  className={
+                                                    classes.subtitleText2
+                                                  }
+                                                >
+                                                  tel:{" "}
+                                                  {formatNumber(
+                                                    ownerInfo.phone
+                                                  )}
+                                                </Typography>
                                               </Grid>
                                               <Grid item xs={12}>
                                                 <Typography
                                                   variant="subtitle1"
                                                   align="left"
                                                   className={
-                                                    classes.subtitleText
+                                                    classes.subtitleText2
                                                   }
                                                 >
-                                                  {action_es[properData.action]}{' '}
-                                                  {
-                                                    propertyType_es[
-                                                      properData.propertyType
-                                                    ]
-                                                  }
+                                                  {ownerInfo.mail}
                                                 </Typography>
-                                              </Grid>
-
-                                              <Grid item xs={12}>
-                                                <NumberFormat
-                                                  value={properData.price}
-                                                  displayType={'text'}
-                                                  thousandSeparator={true}
-                                                  prefix={'$'}
-                                                  suffix={` ${properData.currency}`}
-                                                  renderText={(value) => (
-                                                    <Typography
-                                                      variant="h6"
-                                                      align="left"
-                                                      className={
-                                                        classes.subtitleText2
-                                                      }
-                                                    >
-                                                      {value}{' '}
-                                                    </Typography>
-                                                  )}
-                                                />
                                               </Grid>
                                             </Grid>
                                           </Grid>
-                                        </Box>
-                                      </Grid>
-                                    )}
+                                        </Grid>
+                                      </Box>
+                                    </Grid>
+                                  )}
                                   {!promoterCredentials && !loadingCredentials && (
                                     <>
                                       <Grid item xs={12}>
@@ -692,7 +593,7 @@ export const PropertyDetail = (props) => {
                                           container
                                           justifyContent="center"
                                           alignItems="center"
-                                          style={{ position: 'relative' }}
+                                          style={{ position: "relative" }}
                                         >
                                           <Menu
                                             anchorEl={menu}
@@ -752,11 +653,11 @@ export const PropertyDetail = (props) => {
                                               <NumberFormat
                                                 value={properData.price}
                                                 suffix={
-                                                  ' ' + properData.currency
+                                                  " " + properData.currency
                                                 }
-                                                displayType={'text'}
+                                                displayType={"text"}
                                                 thousandSeparator={true}
-                                                prefix={'$'}
+                                                prefix={"$"}
                                                 renderText={(value) => (
                                                   <Typography
                                                     variant="h4"
@@ -765,7 +666,7 @@ export const PropertyDetail = (props) => {
                                                       classes.subtitleText2
                                                     }
                                                   >
-                                                    {value}{' '}
+                                                    {value}{" "}
                                                   </Typography>
                                                 )}
                                               />
@@ -790,7 +691,7 @@ export const PropertyDetail = (props) => {
                                                       action_es[
                                                         properData.action
                                                       ]
-                                                    }{' '}
+                                                    }{" "}
                                                     {
                                                       propertyType_es[
                                                         properData.propertyType
@@ -804,11 +705,11 @@ export const PropertyDetail = (props) => {
                                               <NumberFormat
                                                 value={properData.price}
                                                 suffix={
-                                                  ' ' + properData.currency
+                                                  " " + properData.currency
                                                 }
-                                                displayType={'text'}
+                                                displayType={"text"}
                                                 thousandSeparator={true}
-                                                prefix={'$'}
+                                                prefix={"$"}
                                                 renderText={(value) => (
                                                   <Typography
                                                     variant="h6"
@@ -817,7 +718,7 @@ export const PropertyDetail = (props) => {
                                                       classes.subtitleText2
                                                     }
                                                   >
-                                                    {value}{' '}
+                                                    {value}{" "}
                                                   </Typography>
                                                 )}
                                               />
@@ -825,18 +726,30 @@ export const PropertyDetail = (props) => {
                                           </Hidden>
                                         </Grid>
                                       </Grid>
-                                      <Grid item xs={12}>
-                                        <Button
-                                          className={classes.button}
-                                          variant="contained"
-                                          size="large"
-                                          onClick={onExchangeCredentialClick}
-                                        >
-                                          Ver información del Promotor
-                                        </Button>
-                                      </Grid>
                                     </>
                                   )}
+                                  <Grid item xs={12}>
+                                    {!showOnerInfo && (
+                                      <Button
+                                        className={classes.button}
+                                        variant="contained"
+                                        size="large"
+                                        onClick={handleOwnerInfo}
+                                      >
+                                        Ver información del Promotor
+                                      </Button>
+                                    )}
+                                    {showOnerInfo && (
+                                      <Button
+                                        className={classes.button}
+                                        variant="contained"
+                                        size="large"
+                                        onClick={handleOwnerInfo}
+                                      >
+                                        Ocultar información del Promotor
+                                      </Button>
+                                    )}
+                                  </Grid>
                                 </Grid>
                               </Box>
                             </Paper>
@@ -851,6 +764,7 @@ export const PropertyDetail = (props) => {
           </Grid>
         </Grid>
       )}
+
       {(errorToLoad ||
         (properData && (!properData.isEnabled || !properData.isActive))) && (
         <Grid container justifyContent="center" alignItems="center">
@@ -867,20 +781,20 @@ export const PropertyDetail = (props) => {
 };
 
 const EmptyMessageContainer = styled(Paper)({
-  padding: '20px',
-  marginTop: '50px',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  minHeight: '90vh',
-  color: '#e2ddfe',
-  fontWeight: 'bold',
-  fontSize: '1.1em',
-  background: '#fff',
+  padding: "20px",
+  marginTop: "50px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  minHeight: "90vh",
+  color: "#e2ddfe",
+  fontWeight: "bold",
+  fontSize: "1.1em",
+  background: "#fff",
 });
 
-const Picture = styled('img')({
-  width: '110px',
-  marginBottom: '50px',
+const Picture = styled("img")({
+  width: "110px",
+  marginBottom: "50px",
 });

@@ -33,7 +33,6 @@ export const PropertyDetailSpecificData = props => {
   const {m2Build, room, bath, parkingSlots, propertyDescription, ...specificData} = props.specificData
   var array_of_specific_data = mapObject(specificData, (keyname, value) => ({name: keyname, value}))
   array_of_specific_data = array_of_specific_data.filter(item => item.value !== 0)
-  console.log('array_of_specific_data', array_of_specific_data)
   
   
 

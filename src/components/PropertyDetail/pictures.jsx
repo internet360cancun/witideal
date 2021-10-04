@@ -8,9 +8,7 @@ const Pictures = (props) => {
   const [renderBackdrop, setBackdrop] = useState(false)
   const photos = props.photos.map(url => url.replace(' ', '+'))
 
-  console.log('photos', photos)
 
-  console.log('renderBackdrop', renderBackdrop)
   
   return (
     <Container onMouseLeave={() => setBackdrop(false)} onMouseEnter={() => setBackdrop(true)}>
