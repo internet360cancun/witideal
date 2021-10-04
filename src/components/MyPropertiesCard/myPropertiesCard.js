@@ -281,12 +281,10 @@ export function MyPropertyCard(props) {
     setAnchorEl(null);
   };
 
-  const handleClick = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleClick = (e) =>  setAnchorEl(e.currentTarget);
+  
+  const handleClose = () =>  setAnchorEl(null);
+ 
 
   const handleEdit = () => {
     return history.push(UPLOAD, {
@@ -341,7 +339,7 @@ export function MyPropertyCard(props) {
           <Grid
             container
             direction="row"
-            justify="center"
+            justifyContent="center"
             alignItems="stretch"
             spacing={1}
           >
@@ -385,7 +383,7 @@ export function MyPropertyCard(props) {
           <Grid
             container
             direction="row"
-            justify="center"
+            justifyContent="center"
             alignItems="stretch"
             spacing={1}
           >
@@ -429,7 +427,7 @@ export function MyPropertyCard(props) {
           <Grid
             container
             direction="row"
-            justify="center"
+            justifyContent="center"
             alignItems="stretch"
             spacing={1}
           >
@@ -599,7 +597,7 @@ export function MyPropertyCard(props) {
         </div>
         <Grid
           container
-          justify="center"
+          justifyContent="center"
           alignItems="center"
           style={{ height: 45 }}
         >

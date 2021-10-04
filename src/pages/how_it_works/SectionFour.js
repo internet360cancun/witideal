@@ -55,13 +55,13 @@ const ForthSection = ({ sectionFourRef }) => {
                 <img
                   src={centro}
                   alt=""
-                  class="d-none d-lg-block"
+                  className="d-none d-lg-block"
                   width="70%"
                 />
                 <img
                   src={centro2}
                   alt=""
-                  class="d-block d-lg-none mt-3 mb-3"
+                  className="d-block d-lg-none mt-3 mb-3"
                   width="100%"
                 />
               </center>

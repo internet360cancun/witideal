@@ -46,9 +46,9 @@ const MyFavoritePage = () => {
       <Title align="center" variant="h4">
         Mis Favoritos
       </Title>
-      <Grid container justify="center" alignItems="stretch" spacing={2}>
+      <Grid container justifyContent="center" alignItems="stretch" spacing={2}>
         <Grid item xs={12}>
-          <Grid container spacing={2} justify="center">
+          <Grid container spacing={2} justifyContent="center">
             {/* <Grid item xs={6} md={4}>
               <MuiThemeProvider theme={theme}>
                 <ButtonStyle

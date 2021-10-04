@@ -220,13 +220,11 @@ export const UserForm = () => {
     })
   }
 
-  const handleAdvanceFilters = () => {
-    setRenderAdvanceFilters(!renderAdvanceFilters);
-  }
+  const handleAdvanceFilters = () => setRenderAdvanceFilters(!renderAdvanceFilters);
+  
 
-  function handleTop() {
-    window.scrollTo(0, 0);
-  }
+  const handleTop=()=>  window.scrollTo(0, 0);
+  
 
   const handleWarning = () => {
     setWarning({
@@ -268,7 +266,6 @@ export const UserForm = () => {
 
 
 
-  console.dir(searchPropertyObject)
   return (
     <React.Fragment>
 

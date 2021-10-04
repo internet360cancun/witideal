@@ -1,42 +1,42 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useContext, useEffect, Fragment } from 'react';
-import { Skeleton } from '@material-ui/lab';
-import { Grid, Typography, Box, Paper, Button } from '@material-ui/core';
-import { makeStyles, styled } from '@material-ui/core/styles';
-import useFirebaseTools from '../../Hooks/useFirebaseTools';
-import SesContext from '../../contexts/sessionContext';
-import { CircularProgress } from '@material-ui/core';
-import { MyPropertyCard } from '../MyPropertiesCard/myPropertiesCard';
-import { setAlert } from '../Alert/alert';
-import snapshotParser from '../../helpers/snapshotParser';
-import MyPropertiesFilter from '../MyPropertyFilter/myPropertyFilter';
-import emptyProperty from '../../assets/specificDataIcons/emptyPropety.svg';
-import Drawer from '@material-ui/core/Drawer';
-import { myProperties as myPropertiesModel } from '../../firebase/property';
-import Head from '../head';
-import { risingStar, rockStar, superStar } from '../../constants/subscriptions';
-import { useRole } from '../../Hooks/useRole';
+import React, { useState, useContext, useEffect, Fragment } from "react";
+import { Skeleton } from "@material-ui/lab";
+import { Grid, Typography, Box, Paper, Button } from "@material-ui/core";
+import { makeStyles, styled } from "@material-ui/core/styles";
+import useFirebaseTools from "../../Hooks/useFirebaseTools";
+import SesContext from "../../contexts/sessionContext";
+import { CircularProgress } from "@material-ui/core";
+import { MyPropertyCard } from "../MyPropertiesCard/myPropertiesCard";
+import { setAlert } from "../Alert/alert";
+import snapshotParser from "../../helpers/snapshotParser";
+import MyPropertiesFilter from "../MyPropertyFilter/myPropertyFilter";
+import emptyProperty from "../../assets/specificDataIcons/emptyPropety.svg";
+import Drawer from "@material-ui/core/Drawer";
+import { myProperties as myPropertiesModel } from "../../firebase/property";
+import Head from "../head";
+import { risingStar, rockStar, superStar } from "../../constants/subscriptions";
+import { useRole } from "../../Hooks/useRole";
 
 const ProgresContainer = styled(Box)({
-  marginTop: '70px',
-  marginBottom: '30px',
+  marginTop: "70px",
+  marginBottom: "30px",
 });
 
 const ButtonFilter = styled(Button)(({ theme }) => ({
-  margin: '20px 0px',
+  margin: "20px 0px",
   borderColor: theme.wdLightBlue,
-  textTransform: 'none',
-  color: '#3F19F9',
+  textTransform: "none",
+  color: "#3F19F9",
   fontSize: 17,
 }));
-const wdRegularBlue = '#1E0E6F';
+const wdRegularBlue = "#1E0E6F";
 
 const useStyle = makeStyles((theme) => ({
   spacing: {
     marginTop: 100,
   },
   maincontainer: {
-    backgroundColor: '#F9F7FC',
+    backgroundColor: "#F9F7FC",
   },
   generalText: {
     color: wdRegularBlue,
@@ -44,24 +44,24 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const Icon = styled('img')({
-  width: '100px',
-  marginBottom: '30px',
+const Icon = styled("img")({
+  width: "100px",
+  marginBottom: "30px",
 });
 
-const Message = styled('p')({
-  maxWidth: '600px',
-  color: '#e7e2fe',
-  fontSize: '1.2rem',
-  lineHeight: '1.5em',
+const Message = styled("p")({
+  maxWidth: "600px",
+  color: "#e7e2fe",
+  fontSize: "1.2rem",
+  lineHeight: "1.5em",
 });
 
 const EmptyMessage = styled(Grid)({
-  minHeight: '60vh',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexDirection: 'column',
+  minHeight: "60vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
 });
 
 const skeleton = (
@@ -85,7 +85,7 @@ const renderSkeleton = (numSkaleton) => {
 
 const RenderMyProperties = (props) => {
   return (
-    <Grid container justify="center" alignItems="stretch" spacing={3}>
+    <Grid container justifyContent="center" alignItems="stretch" spacing={3}>
       {props.myProperties.map((properData) => (
         <Grid key={properData._id} item x={12} md={6}>
           <MyPropertyCard
@@ -140,12 +140,9 @@ export const MyProperties = () => {
     }
   };
 
-
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
 
   const updateFilter = (newFilter) => {
     setMyProperties({ ...myProperties, filter: newFilter });
@@ -197,16 +194,16 @@ export const MyProperties = () => {
       setMyProperties({ ...myProperties, items: newItems });
       setAlert(
         null,
-        'Éxito',
-        'El inmueble se ha eliminado correctamente',
-        'information'
+        "Éxito",
+        "El inmueble se ha eliminado correctamente",
+        "information"
       );
     } else {
       setAlert(
         null,
-        'Error',
-        'Ha ocurrido un error, intentalo de nuevo mas tarde',
-        'error'
+        "Error",
+        "Ha ocurrido un error, intentalo de nuevo mas tarde",
+        "error"
       );
       setMyProperties({
         ...myProperties,
@@ -225,8 +222,8 @@ export const MyProperties = () => {
       () => {
         deleteProperty(idToDelete);
       },
-      'Eliminar Anuncio',
-      'No podrás recuperar la información una vez realizada esta acción'
+      "Eliminar Anuncio",
+      "No podrás recuperar la información una vez realizada esta acción"
     );
   };
 
@@ -236,8 +233,8 @@ export const MyProperties = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [loading, latestItem, myProperties.filter]);
 
   const handleFetch = async () => {
@@ -263,14 +260,13 @@ export const MyProperties = () => {
     if (noMore) return false;
     const scrolled = window.scrollY;
     const viewportHeight = window.innerHeight;
-    const fullHeight = document.getElementById('root').clientHeight;
+    const fullHeight = document.getElementById("root").clientHeight;
     if (scrolled + viewportHeight + 500 < fullHeight) return false;
     handleFetch();
   }
 
-  const onCloseDrawer = () => {
-    setFilterActive(false);
-  };
+  const onCloseDrawer = () =>  setFilterActive(false);
+ 
 
   return (
     <Fragment>
@@ -280,7 +276,7 @@ export const MyProperties = () => {
         onClose={onCloseDrawer}
         style={{ zIndex: 1300 }}
       >
-        <div style={{ zIndex: '1300' }}>
+        <div style={{ zIndex: "1300" }}>
           <MyPropertiesFilter
             updateFilter={updateFilter}
             filter={myProperties.filter}
@@ -292,11 +288,11 @@ export const MyProperties = () => {
       </Drawer>
 
       <Box className={classes.maincontainer} id="listener">
-        <Grid container justify="center" alignItems="center">
+        <Grid container justifyContent="center" alignItems="center">
           <Grid item lg={10}>
             <Paper>
               <Box p={{ xs: 3, md: 5, xl: 4, lg: 4 }}>
-                <Grid container justify="center" alignContent="center">
+                <Grid container justifyContent="center" alignContent="center">
                   <Grid item xs={12} md={12}>
                     <Typography
                       align="center"
@@ -321,8 +317,8 @@ export const MyProperties = () => {
                       <Message>
                         {JSON.stringify(myProperties.filter) ===
                         JSON.stringify(initilFilters)
-                          ? 'No has cargado aún algún inmueble, carga uno y comienza tu experiencia Witideal.'
-                          : 'No tienes inmuebles con estas características.'}
+                          ? "No has cargado aún algún inmueble, carga uno y comienza tu experiencia Witideal."
+                          : "No tienes inmuebles con estas características."}
                       </Message>
                     </EmptyMessage>
                   )}
@@ -330,7 +326,7 @@ export const MyProperties = () => {
                     <Grid
                       container
                       spacing={2}
-                      justify="center"
+                      justifyContent="center"
                       alignItems="stretch"
                     >
                       {items.length > 0 && (
