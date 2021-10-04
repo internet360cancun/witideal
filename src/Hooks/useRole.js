@@ -22,6 +22,7 @@ export const useRole = () => {
               subscription.data().current_period_start.seconds,
 
             current_period_end: subscription.data().current_period_end.seconds,
+            price: subscription.data().items[0].price
           });
         });
       });

@@ -8,6 +8,7 @@ import Skeleton from './components/skeleton'
 import Card from './components/card'
 import { Payment } from '@material-ui/icons'
 import Head from '../../components/head'
+import { useRole } from '../../Hooks/useRole'
 
 const ProgressContainer = styled('div')({
   margin: '30px 0px',
@@ -33,6 +34,10 @@ const PaymentStyled = styled(Payment)({
 })
 
 const View = (props) => {
+
+const {subscription} = useRole()
+console.log(subscription,'subscripción mis pagos')
+
   return (
     <Container>
       <Head title='Mis pagos' />
