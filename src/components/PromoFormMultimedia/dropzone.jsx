@@ -41,7 +41,6 @@ function DropZoneComp(props) {
         limitedFiles[i].preview = URL.createObjectURL(limitedFiles[i])
       }
     }
-    console.log('limitedFiles', limitedFiles)
     limitedFiles = limitedFiles.map(file => {
       file.customName = `${getRandomInt(1,999999)}_${file.name}`
       return file

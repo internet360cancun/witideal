@@ -38,7 +38,6 @@ const Header = (props) => {
       if (headerHeight !== clientHeight) {
         setHeaderHeight(clientHeight)
         props.setHeight(clientHeight)
-        console.log('updated header height')
       }
     }
 

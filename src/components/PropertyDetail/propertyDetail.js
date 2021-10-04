@@ -68,7 +68,6 @@ export const PropertyDetail = (props) => {
   const [ownerInfo, setOwnerInfo] = useState(null);
   const [showOnerInfo, setShowOnerInfo] = useState(false);
 
-
   //Scroll to top
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -132,7 +131,6 @@ export const PropertyDetail = (props) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isCardFixed]);
-
 
   //Trae la información de una propiedad en específico
   useEffect(() => {
@@ -203,7 +201,6 @@ export const PropertyDetail = (props) => {
       properData.priceMxn
     )
       .then((res) => {
-        console.log("**************esponse exchange credential ", res);
         if (res.error_code === undefined) {
           setPromoterCredentials(res);
           setLoadingCredentials(false);
@@ -235,10 +232,6 @@ export const PropertyDetail = (props) => {
 
   // render credentials after user logged
   useEffect(() => {
-    console.log(
-      "render credentials after user logged session state________",
-      session
-    );
     if (
       session.Name &&
       isCredentialsActive &&

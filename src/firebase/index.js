@@ -1,8 +1,8 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-import 'firebase/compat/storage';
-import snapshotParser from '../helpers/snapshotParser';
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import "firebase/compat/storage";
+import snapshotParser from "../helpers/snapshotParser";
 // import api from '../api'
 
 export const db = firebase.firestore();
@@ -32,7 +32,6 @@ const firebaseObject = {
       @return: id property created || false 
     */
     upload: async (property_data, user_id, property_id) => {
-      console.log('data set into db', property_data);
       const { _id, _ref, loading, ...property_data_to_save } = property_data;
       try {
         // update property
@@ -52,7 +51,7 @@ const firebaseObject = {
           .add(property_data_to_save);
         return snapshot.id;
       } catch (error) {
-        console.log('error_descript:', error);
+        console.log("error_descript:", error);
         return false;
       }
     },
@@ -67,7 +66,7 @@ const firebaseObject = {
           const task = storageRef
             .child(`witideal/${user_id}/${property_id}/extras/${file_name}`)
             .put(file);
-          task.on('state_changed', null, null, () => {
+          task.on("state_changed", null, null, () => {
             const base_url_with_bucket = `${base_storage_url}${task.snapshot.metadata.bucket}/o/`;
             const photo_path_encoded = encodeURIComponent(
               `witideal/${user_id}/${property_id}/extras/thumb@1100_${file_name}`
@@ -77,7 +76,7 @@ const firebaseObject = {
             db.doc(
               `production/Users/${user_id}/properties/ownedProperties/${property_id}`
             ).update({
-              'photos.extras':
+              "photos.extras":
                 firebase.firestore.FieldValue.arrayUnion(full_path_new_photo),
             });
             onCunterUploadChange(uploaded_counter);
@@ -90,7 +89,7 @@ const firebaseObject = {
       db.doc(
         `production/Users/${user_id}/properties/ownedProperties/${property_id}`
       ).update({
-        'photos.extras': url_ordered_pictures,
+        "photos.extras": url_ordered_pictures,
       });
     },
     uploadPrincipalPhotoPath: async (user_id, property_id, file) => {
@@ -122,32 +121,28 @@ const firebaseObject = {
     deletePhoto: async (user_id, property_id, url_file) => {
       try {
         var storageRef = firebase.storage().ref();
-        console.log('deleting old photos ...');
         let name_old_photo = decodeURIComponent(url_file);
-        name_old_photo = name_old_photo.split('/');
+        name_old_photo = name_old_photo.split("/");
         name_old_photo = name_old_photo[name_old_photo.length - 1];
-        name_old_photo = name_old_photo.split('?')[0];
+        name_old_photo = name_old_photo.split("?")[0];
         const path_to_delete = `witideal/${user_id}/${property_id}/extras/${name_old_photo}`;
-        console.log('path_to_delete:', path_to_delete);
         await storageRef.child(path_to_delete).delete();
       } catch (error) {
-        console.error('errorDescription:', error);
+        console.error("errorDescription:", error);
         return false;
       }
     },
     deletePrincipalPhotoPath: async (user_id, property_id, url_file) => {
       try {
         var storageRef = firebase.storage().ref();
-        console.log('deleting old principal photo path ...');
         let name_old_photo = decodeURIComponent(url_file);
-        name_old_photo = name_old_photo.split('/');
+        name_old_photo = name_old_photo.split("/");
         name_old_photo = name_old_photo[name_old_photo.length - 1];
-        name_old_photo = name_old_photo.split('?')[0];
+        name_old_photo = name_old_photo.split("?")[0];
         const path_to_delete = `witideal/${user_id}/${property_id}/${name_old_photo}`;
-        console.log('path_to_delete:', path_to_delete);
         await storageRef.child(path_to_delete).delete();
       } catch (error) {
-        console.error('errorDescription:', error);
+        console.error("errorDescription:", error);
         return false;
       }
     },
@@ -157,7 +152,7 @@ const firebaseObject = {
       try {
         let query = db
           .collection(`production/Users/${userId}/payments/charges`)
-          .orderBy('chargeDate', 'desc');
+          .orderBy("chargeDate", "desc");
         if (startAfter) query = query.startAfter(startAfter);
         if (limit) query = query.limit(limit);
 
@@ -176,7 +171,6 @@ const firebaseObject = {
           delete data.new_password;
           delete data.re_new_password;
 
-          console.log('updating photo ...');
           const photo_name = `picture_${Math.floor(Math.random() * 1000)}.png`;
           var storageRef = firebase.storage().ref();
           const response = await storageRef
@@ -190,22 +184,20 @@ const firebaseObject = {
           const full_path_new_photo = `${base_url_with_bucket}${photo_path_encoded}?alt=media`;
           data.photo = full_path_new_photo;
         }
-        console.log('updating general info');
         await db.doc(`production/Users/${userId}/generalInfo`).update(data);
         // deleting old photo
         if (oldPhoto && newPhoto) {
-          console.log('deleting old photo ...');
           let name_old_photo = decodeURIComponent(oldPhoto);
-          name_old_photo = name_old_photo.split('/');
+          name_old_photo = name_old_photo.split("/");
           name_old_photo = name_old_photo[name_old_photo.length - 1];
-          name_old_photo = name_old_photo.split('?')[0];
+          name_old_photo = name_old_photo.split("?")[0];
           await storageRef
             .child(`witideal/${userId}/${name_old_photo}`)
             .delete();
         }
         return true;
       } catch (error) {
-        console.error('____error_____:', error);
+        console.error("____error_____:", error);
         return true;
       }
     },
@@ -215,7 +207,7 @@ const firebaseObject = {
         await db.doc(`production/Users/${user_id}/generalInfo`).update(data);
         return true;
       } catch (error) {
-        console.error('error', error);
+        console.error("error", error);
         return false;
       }
     },
@@ -223,7 +215,7 @@ const firebaseObject = {
       const unsubscribe = db
         .doc(`production/Users/${user_id}/properties/`)
         .onSnapshot(async (snapshot) => {
-          const favoriteReferences = snapshot.get('favProperties') || [];
+          const favoriteReferences = snapshot.get("favProperties") || [];
           const favoriteSnapshots = await Promise.all(
             favoriteReferences.map((reference) => reference.get())
           );
@@ -258,7 +250,7 @@ const firebaseObject = {
         const unsubscribe = db
           .doc(`production/Users/${user_id}/properties/`)
           .onSnapshot((snapshot) => {
-            const favorites_reference = snapshot.get('favProperties') || [];
+            const favorites_reference = snapshot.get("favProperties") || [];
             handler(favorites_reference);
           });
         return unsubscribe;
@@ -272,7 +264,7 @@ const firebaseObject = {
         const unsubscribe = db
           .doc(`production/Users/${user_id}/properties/`)
           .onSnapshot((snapshot) => {
-            const dest_reference = snapshot.get('destProperties') || [];
+            const dest_reference = snapshot.get("destProperties") || [];
             handler(dest_reference);
           });
         return unsubscribe;
@@ -287,18 +279,16 @@ const firebaseObject = {
       const unsubscribe = db
         .doc(`/production/Users/${user_id}/properties`)
         .onSnapshot((snapshot) => {
-          const counter = snapshot.get('intUsrCount');
+          const counter = snapshot.get("intUsrCount");
           handler(counter);
         });
       return unsubscribe;
     },
     getList: async (user_id, startAfter, limit) => {
-      console.log('fetching notification...');
-
       try {
         let query = db
           .collection(`/production/Users/${user_id}/properties/InterestedUsers`)
-          .orderBy('date', 'desc');
+          .orderBy("date", "desc");
         if (startAfter) query = query.startAfter(startAfter);
         if (limit) query = query.limit(limit);
         const snapshot = await query.get();
@@ -306,7 +296,7 @@ const firebaseObject = {
         const latest_item = snapshot.docs[snapshot.docs.length - 1];
         return { items, latest_item };
       } catch (error) {
-        console.error('Error_description:   ', error);
+        console.error("Error_description:   ", error);
         return {};
       }
     },
@@ -329,7 +319,7 @@ const firebaseObject = {
           });
         return true;
       } catch (error) {
-        console.error('error', error);
+        console.error("error", error);
       }
     },
   },

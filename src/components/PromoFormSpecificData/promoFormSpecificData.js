@@ -184,7 +184,6 @@ export function PromoFormSpecificData(props) {
   const onUnselect = name => {
     const newSpecificData = { ...props.properData.specificData }
     delete newSpecificData[name]
-    console.log(newSpecificData)
     props.setProperData({
       ...props.properData,
       specificData: newSpecificData

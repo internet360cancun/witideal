@@ -32,7 +32,6 @@ const MyPayments = () => {
     const { items, latestItem } = await connect.users.getPayments(session.uId, state.latestItem, state.limit)
     const noMore = items.length < state.limit
     setState({...state, items: [...state.items, ...items], latestItem, loading: false, noMore})
-    console.log('fetchFinished')
   }
 
   function handleScroll () {
@@ -42,7 +41,6 @@ const MyPayments = () => {
     const viewportHeight = window.innerHeight;
     const fullHeight = document.getElementById('root').clientHeight;
     if ((scrolled + viewportHeight + 500) < fullHeight) return false;
-    console.log('fetching data')
     handleFetch()
   }
 

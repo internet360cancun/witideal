@@ -8,7 +8,6 @@ const db = firebase.firestore();
 export const myProperties = async (userId, lastDoc, filterObj, limit) => {
   const { isEnabled, action, propertyType, priceMxnMax, priceMxnMin } =
     filterObj;
-  console.log(filterObj);
   try {
     let query = db.collection(
       `production/Users/${userId}/properties/ownedProperties`
@@ -104,7 +103,6 @@ export const isMyFirstProperty = async (userId) => {
       .collection(`/production/Users/${userId}/properties/ownedProperties`)
       .limit(1)
       .get();
-    console.log('result.size', result.size);
     if (result.size > 0) return false;
     return true;
   } catch (error) {
@@ -116,7 +114,6 @@ export const isMyFirstProperty = async (userId) => {
 export const destProperties = async (userId, lastDoc, filterObj, limit) => {
   const { isEnabled, action, propertyType, priceMxnMax, priceMxnMin } =
     filterObj;
-  console.log(filterObj);
   try {
     let query = db.collection(
       `production/Users/${userId}/properties/ownedProperties`

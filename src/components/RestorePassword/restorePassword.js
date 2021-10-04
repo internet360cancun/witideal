@@ -72,7 +72,6 @@ export function RestorePassword() {
     } else {
       firebase.auth().sendPasswordResetEmail(Email).then(function () {
         setView('success')
-        console.log('Enviado')
       }).catch(function (error) {
         setView('form')
         setErrorModal({open: true, alarmText: 'Intentalo de nuevo mas tarde'})

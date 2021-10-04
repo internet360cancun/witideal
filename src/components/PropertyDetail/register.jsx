@@ -81,7 +81,6 @@ const Register = (props) => {
   const [userId, setUserId] = useState(false); // user id to complete profile
   const session = useSession();
   // const [showpass, setShowpass] = useState(false);
-  console.log("sessionsession", session);
 
   const onTermChange = (event) => {
     setTerms(event.target.checked);
@@ -91,7 +90,6 @@ const Register = (props) => {
     setLoading(true);
     try {
       const responseGoogle = await registerOrLoginWidthGoogle();
-      console.log("responseGoogle", responseGoogle);
       const {
         isComplete = false,
         phoneNumber = "",
@@ -158,7 +156,6 @@ const Register = (props) => {
       });
     }
     if (isProduction) {
-      console.log("searcher register traqued by google tag");
       window.gtag("event", "conversion", {
         send_to: "AW-625232540/i0BVCNWs1dQBEJyVkaoC",
       });

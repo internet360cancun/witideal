@@ -77,7 +77,6 @@ const MyFavoriteList = () => {
     const viewportHeight = window.innerHeight;
     const fullHeight = document.getElementById('root').clientHeight;
     if ((scrolled + viewportHeight + 500) < fullHeight) return false;
-    console.log('fetch ')
     handleFetch()
   }
 

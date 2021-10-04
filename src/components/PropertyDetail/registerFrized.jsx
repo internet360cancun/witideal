@@ -70,7 +70,6 @@ const Register = props => {
   const [onlyCompleting, setOnlyCompleting] = useState(false)
   const session = useSession()
   const [showpass, setShowpass ] = useState(false)
-  console.log('sessionsession', session)
 
   const onTermChange = event => {
     setTerms(event.target.checked)
@@ -80,7 +79,6 @@ const Register = props => {
     setLoading(true)
     try {
       const responseGoogle = await registerOrLoginWidthGoogle()
-      console.log('responseGoogle', responseGoogle)
       const { isComplete = false, phoneNumber = '', uid = '', email = '', given_name = '', photoURL = null, family_name } = responseGoogle
     
       if (!isComplete) {

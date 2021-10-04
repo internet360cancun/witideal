@@ -30,7 +30,6 @@ export const multipleUploadPictures = async (path, arrayOfFiles, handler) => {
 
   const concurrency = async () => {
     if (nexToUpload < numToUpload) { 
-      console.log('current upload', nexToUpload)
       const currentPromise = uploadPicture(path, arrayOfFiles[nexToUpload])
       nexToUpload = nexToUpload + 1
       const url = await currentPromise

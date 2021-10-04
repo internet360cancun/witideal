@@ -49,7 +49,6 @@ function PromoForm(props) {
   const [propertyTypeError, setPropertyTypeError] = useState(false);
   const [witicoins, setWiticoins] = useState(0);
 
-  console.log('propertyTypeError', propertyTypeError);
 
   const initial_property_data = {
     action: action_array[0],
@@ -92,7 +91,6 @@ function PromoForm(props) {
     delete location.state.template._ref;
     location.state.template.isActive = true;
     location.state.template.isEnabled = true;
-    console.log('location.state.template', location.state.template);
   }
 
   // set initial data for template or properdata
@@ -127,7 +125,6 @@ function PromoForm(props) {
     properData.currency === 'USD'
       ? properData.price * dollarValue
       : properData.price;
-  console.log('priceCalculated', priceCalculated);
 
   //create a array of pictures for gallery modal
   var photos_src_transformed = [];

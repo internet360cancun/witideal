@@ -109,9 +109,7 @@ export function Currency(props) {
   });
 
   const handleChange = name => event => {
-    console.log('numero de elementos en price:', event.target.value.length)
     if (event.target.value.length <= 9) {
-      console.log('estas cambiando el precio')
       setValues({
         ...values,
         [name]: event.target.value,

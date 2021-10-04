@@ -98,7 +98,6 @@ const ContactsList = () => {
   };
 
   if (notificationid && Array.isArray(items) && items.length > 0) {
-    console.log("entered here");
     var reOrderedElements = reOrderElements(items);
   } else {
     var reOrderedElements = items;

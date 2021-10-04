@@ -13,7 +13,6 @@ const Title = styled(Typography)({
 export function PromoFormMultimedia(props) {
 
   const setPrincipalPhotoPath = (files) => {
-    console.log('files. files', files)
     props.setPrincipalPhotoPath(files[0])
   }
 

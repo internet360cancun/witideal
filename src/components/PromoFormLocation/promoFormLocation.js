@@ -62,7 +62,6 @@ export function PromoFormLocation(props) {
 
   const getAddress = (addressData) => {
 
-    console.log('addressData____', addressData)
 
     let newKeys = Object.keys(addressData),
       oldKeys = Object.keys(props.properData),
@@ -78,7 +77,6 @@ export function PromoFormLocation(props) {
 
     let mergedObj = { ...props.properData, ...addressData }
     if (mergedObj.location !== undefined) delete mergedObj.location;
-    console.log('addresData: ', mergedObj)
     props.setProperData(mergedObj)
   }
 
@@ -114,8 +112,7 @@ export function PromoFormLocation(props) {
     setMapData({ ...MapData, location: latLng })
   }
 
-  console.log('loader', loader);
-  console.log('isLoading', isLoading);
+
 
   return (
     <React.Fragment>
@@ -133,7 +130,6 @@ export function PromoFormLocation(props) {
 
           {(props.properData.sublocality_level_1 || props.properData.administrative_area_level_1) && !isLoading ?
               <React.Fragment>
-                {console.log('renderea formulario')}
                 <Grid item xs={12} >
                   <Grid container justify='flex-end'>
                     <MuiThemeProvider theme={theme}>

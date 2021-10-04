@@ -57,7 +57,6 @@ const ListImageDragable = (props) => {
   
   const handleDelete = (item_to_delete) => {
     const new_pictures = props.orderedPictures.filter(item => {
-      console.log('item:', item, 'item_to_delete:', item_to_delete)
       return item !== item_to_delete
     })
     props.setOrderedPictures(new_pictures)

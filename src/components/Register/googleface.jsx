@@ -7,7 +7,6 @@ import useStyles from './styles'
 const GoogleFace = (props) => {
   const session = useSession()
   const classes = useStyles()
-  console.log('session.SesState,', session.SesState)
 
   if (props.federated) return null
   

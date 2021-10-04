@@ -52,7 +52,6 @@ const EditProfile = (props) => {
   useFetch(async () => {
     const providers = await getProviders()
     setExistPAssword(providers.includes('password'))
-    console.log(providers)
   }, [])
 
   const onCheckboxChange = event => {

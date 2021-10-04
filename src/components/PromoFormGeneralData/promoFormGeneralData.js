@@ -97,7 +97,6 @@ export function PromoFormGeneralData(props) {
   }
 
   const setLanduse = (selectedLandUse, firstDefaultValue) => {
-    console.log('el tipo de propiedad es', firstDefaultValue)
     const {specificData, ...propertyData} = props.properData //delete spesific data
     props.setProperData({
       ...propertyData,
@@ -135,7 +134,6 @@ export function PromoFormGeneralData(props) {
                             </Typography>
             </Grid>
             <Grid item xs={12}>
-              {console.log('esComercial', props.properData.isCommercial)}
               <DropdownWithButtons
                 buttons={["Habitacional", "Comercial"]}
                 dataA={habitational_es_array}

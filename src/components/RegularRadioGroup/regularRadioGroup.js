@@ -35,7 +35,6 @@ export function RegularRadioGroup(props) {
   const value = props.defaultValue
 
   function handleChange(event) {
-    console.log(event.target)
     props.handler(event)
   }
 

@@ -108,17 +108,13 @@ export const DropdownWithButtons = (props) => {
     if (props.exact) {
       if (event.target.id === props.buttons[1]) {
         props.secondSetter(true, null);
-        console.log("props.dataB[0]", props.dataB[0]);
       } else {
-        console.log("props.dataA[0]", props.dataA[0]);
         props.secondSetter(false, null);
       }
     } else {
       if (event.target.id === props.buttons[1]) {
         props.secondSetter(true, props.dataB[0]);
-        console.log("props.dataB[0]", props.dataB[0]);
       } else {
-        console.log("props.dataA[0]", props.dataA[0]);
         props.secondSetter(false, props.dataA[0]);
       }
     }

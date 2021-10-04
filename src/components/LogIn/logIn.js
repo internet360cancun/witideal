@@ -160,7 +160,6 @@ export function LogIn(props) {
     logIn();
   };
 
-  console.log("loading...", isLoading);
 
   const logIn = async (e) => {
     if (Object.keys(Errors).length === 0) {
@@ -206,7 +205,6 @@ export function LogIn(props) {
   const handleLogInG = async () => {
     props.setFederated(true);
     let res = await registerOrLoginWidthGoogle();
-    console.log("resresresres", res);
     if (res.success && res.isComplete) {
       props.dismissModal();
     } else if (res.success && !res.isComplete) {
@@ -227,7 +225,6 @@ export function LogIn(props) {
   const handleLogInF = async () => {
     props.setFederated(true);
     let res = await fLog();
-    console.log("res", res);
     if (res.error_code === undefined) {
       if (res.isRegisterComplete) {
         props.dismissModal();
@@ -235,7 +232,6 @@ export function LogIn(props) {
         props.changeToRegister();
       }
     } else {
-      console.log(`${res.description}`);
       setErrorModal({
         ...errorModal,
         open: true,

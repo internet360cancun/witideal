@@ -66,12 +66,9 @@ export const Searchbar = props => {
     }
     try {
       let addressData = {}
-      console.log('addressData', addressData)
       let zoom = 14
       if (suggest !== undefined) {
         props.setIsLoading(false)
-        console.log('suggest', suggest)
-        console.log("datosDir", suggest.gmaps.address_components)
         suggest.gmaps.address_components.forEach(element => {
           if (element.types.includes('street_number')) {
             addressData.street_number = element.short_name;
@@ -107,7 +104,6 @@ export const Searchbar = props => {
             } else {
               //console.log('no admin no subloca')
               let resp = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${suggest.location.lat},${suggest.location.lng}&result_type=sublocality_level_1&language=ES&key=AIzaSyAd22YBCutdzEZePBY2wbS2OawTZ1_H7-s`)
-              console.log('resp1', resp)
               if (resp.data) {
                 if (resp.data.results.length>0) {
                   resp.data.results[0].address_components.forEach(element => {
@@ -125,7 +121,6 @@ export const Searchbar = props => {
               if (addressData.administrative_area_level_2_3 === undefined) {
                 //console.log('still no admin')
                 let resp = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${suggest.location.lat},${suggest.location.lng}&result_type=administrative_area_level_2|administrative_area_level_3&language=ES&key=AIzaSyAd22YBCutdzEZePBY2wbS2OawTZ1_H7-s`)
-                console.log('resp', resp)
                 if (resp.data) {
                   if (resp.data.results.length>0) {
                     resp.data.results[0].address_components.forEach(element => {

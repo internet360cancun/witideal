@@ -124,7 +124,6 @@ function useFirebaseTools() {
         .collection(firebase.auth().currentUser.uid)
         .doc("generalInfo")
         .get();
-      console.log("Snapshot.data()", Snapshot.data());
       if (Snapshot.exists) {
         if (Snapshot.data().isRegisterComplete) {
           return { isRegisterComplete: true };
@@ -147,7 +146,6 @@ function useFirebaseTools() {
       .signOut()
       .then(function () {
         // Sign-out successful.
-        console.log("loggedOut");
       })
       .catch(function (error) {
         // An error happened.
@@ -172,13 +170,11 @@ function useFirebaseTools() {
 
   const linkPhone = (phonenoprefix) => {
     let phone = `+52${phonenoprefix}`;
-    console.log("recaptchaVerifier", recaptchaVerifier);
     if (recaptchaVerifier === undefined) {
       let captchaVerifier = new firebase.auth.RecaptchaVerifier("capcha", {
         size: "invisible",
         callback: function (response) {
           // reCAPTCHA solved, allow signInWithPhoneNumber.
-          console.log("response", response);
           setrecaptchaVerifier(captchaVerifier);
         },
       });
@@ -234,12 +230,10 @@ function useFirebaseTools() {
       let urlep = `https://us-central1-witideal-${
         enviroment === "production" ? "b1f99" : "develop"
       }.cloudfunctions.net/chargeUpdate`;
-      console.log("oldPropertyData", oldPropertyData);
       //transform oldPropertyData into the new one by merging the new photo fields
       delete oldPropertyData.photos;
       oldPropertyData.photos = {}; //hard reset
       let avoidPFP = false;
-      console.log("cleanformatedProperData", oldPropertyData);
       //get the section arrays into the old data
       Object.keys(remainingImages).forEach((key) => {
         if (key === "principalPhotoPath") {
@@ -257,13 +251,11 @@ function useFirebaseTools() {
       setObjUpd(() => true);
       //charge for the update?
       if (!oldPropertyData.isPaid) {
-        console.log("charge the update");
         axios
           .post(urlep, obj)
           .then((res) => {
             //do we upload principal foto?
             if (avoidPFP) {
-              console.log("Avoided PFP");
               if (Object.keys(photoSections).length > 0) {
                 uploadSecondaryImages(photoSections, propId, uId);
               } else {
@@ -273,11 +265,8 @@ function useFirebaseTools() {
               let photoArray = Object.entries(
                 photoSections["principalPhotoPath"]
               );
-              console.log("photoArray", photoArray);
               let photoname = photoArray[0][0];
-              console.log("photoname", photoname);
               let photo = photoSections["principalPhotoPath"][photoname];
-              console.log("photo", photo);
               let path = `witideal/${uId}/${propId}/${photoname}`,
                 uploadTask = storageRef.child(path).put(photo);
               //observer
@@ -332,7 +321,6 @@ function useFirebaseTools() {
       } else {
         //do we upload principal foto?
         if (avoidPFP) {
-          console.log("Avoided PFP");
           if (Object.keys(photoSections).length > 0) {
             uploadSecondaryImages(photoSections, propId, uId);
           } else {
@@ -340,11 +328,8 @@ function useFirebaseTools() {
           }
         } else {
           let photoArray = Object.entries(photoSections["principalPhotoPath"]);
-          console.log("photoArray", photoArray);
           let photoname = photoArray[0][0];
-          console.log("photoname", photoname);
           let photo = photoSections["principalPhotoPath"][photoname];
-          console.log("photo", photo);
           let path = `witideal/${uId}/${propId}/${photoname}`,
             uploadTask = storageRef.child(path).put(photo);
           //observer
@@ -415,11 +400,8 @@ function useFirebaseTools() {
 
       //uploading principal photo
       let photoArray = Object.entries(photoSections["principalPhotoPath"]);
-      console.log("photoArray", photoArray);
       let photoname = photoArray[0][0];
-      console.log("photoname", photoname);
       let photo = photoSections["principalPhotoPath"][photoname];
-      console.log("photo", photo);
       let path = `witideal/${uId}/${propId}/${photoname}`,
         uploadTask = storageRef.child(path).put(photo);
       //observer
@@ -611,17 +593,7 @@ function useFirebaseTools() {
     action,
     priceMxn
   ) => {
-    console.log(
-      "params exchange credemtial *******",
-      uId,
-      promoter,
-      propId,
-      promId,
-      userObj,
-      gender,
-      action,
-      priceMxn
-    );
+   
     await new Promise((resolve) => setTimeout(resolve, 2000));
     try {
       if (uId === promId) {
@@ -656,7 +628,6 @@ function useFirebaseTools() {
           label: "get credentials",
           value: constExchangeCredentials(priceMxn, action),
         });
-        console.log(constExchangeCredentials(priceMxn, action));
       }
       return promoDoc.data();
     } catch (error) {
@@ -671,7 +642,6 @@ function useFirebaseTools() {
       let properties = await db
         .collection(`production/Users/${uId}/properties/ownedProperties`)
         .get();
-      console.log("properties", properties);
       return properties;
     } catch (error) {
       console.log("error", error);
@@ -716,7 +686,6 @@ function useFirebaseTools() {
 
       query = query.orderBy("priceMxn", "desc");
       query = query.orderBy("uploadDate", "desc");
-      console.log("query:", query);
 
       if (lastDoc !== null || lastDoc !== undefined) {
         query = query.startAfter(lastDoc);
@@ -724,7 +693,6 @@ function useFirebaseTools() {
 
       query = query.limit(limit);
       let properties = await query.get();
-      console.log("properties", properties);
       let newLastDoc = properties.docs[properties.docs.length - 1];
       return { properties: properties.docs, lastDoc: newLastDoc };
     } catch (error) {
@@ -740,29 +708,23 @@ function useFirebaseTools() {
     filterObj,
     limit
   ) => {
-    console.log(limit);
     // if (filterObj.priceMxnMin === null) filterObj = {...filterObj, priceMxnMin: 0}
-    console.log("uId,lastDoc,filterObj,limit", uId, lastDoc, filterObj, limit);
     try {
       //Adding Filters
       let query = db.collection(
         `production/Users/${uId}/properties/ownedProperties`
       );
       if (filterObj.action) {
-        console.log("action");
         query = query.where("action", "==", filterObj.action);
       }
       if (filterObj.propertyType) {
         query = query.where("propertyType", "==", filterObj.propertyType);
-        console.log("propertuType");
       }
       if (filterObj.isEnabled !== null && filterObj.isEnabled !== undefined) {
         query = query.where("isEnabled", "==", filterObj.isEnabled);
-        console.log("isenable");
       }
       if (filterObj.isPaid !== null && filterObj.isPaid !== undefined) {
         query = query.where("isPaid", "==", filterObj.isPaid);
-        console.log("isPaid");
       }
       // if (filterObj.priceMxnMax) {
       //     query = query.where('priceMxn', '<=', filterObj.priceMxnMax)
@@ -776,38 +738,30 @@ function useFirebaseTools() {
 
       if (filterObj.priceMxnMin) {
         query = query.where("priceMxn", ">=", filterObj.priceMxnMin);
-        console.log("Entre en if price");
       }
       if (filterObj.priceMxnMax) {
-        console.log("Entre en if maxprice");
         if (filterObj.priceMxnMin) {
-          console.log("entre en el if max min");
           if (filterObj.priceMxnMax > filterObj.priceMxnMin) {
-            console.log("entre en el if max mayor que min");
             query = query.where("priceMxn", "<=", filterObj.priceMxnMax);
           }
         } else {
-          console.log("entre en el if max sin min");
           query = query.where("priceMxn", "<=", filterObj.priceMxnMax);
         }
       }
 
       if (lastDoc !== null && lastDoc !== undefined) {
-        console.log("entre en el if last doc");
         query = query
           .orderBy("priceMxn", "desc")
           .orderBy("uploadDate", "desc")
           .limit(limit)
           .startAfter(lastDoc);
       } else {
-        console.log("entre en el else last doc");
         query = query
           .orderBy("priceMxn", "desc")
           .orderBy("uploadDate", "desc")
           .limit(limit);
       }
 
-      console.log("----------", query);
       let properties = await query.get();
       let newLastDoc = properties.docs[properties.docs.length - 1];
       return { properties: properties, lastDoc: newLastDoc };
@@ -829,7 +783,6 @@ function useFirebaseTools() {
       }
       query = query.limit(limit);
       let contacts = await query.get();
-      console.log("contacts", contacts);
       let newLastDoc = contacts.docs[contacts.docs.length - 1];
       return { contacts: contacts.docs, lastDoc: newLastDoc };
     } catch (error) {
@@ -844,7 +797,6 @@ function useFirebaseTools() {
       let contacts = await db
         .collection(`production/Users/${uId}/properties/InterestedUsers`)
         .get();
-      console.log("contacts", contacts);
       return contacts;
     } catch (error) {
       console.log("error", error);
@@ -1040,7 +992,6 @@ function useFirebaseTools() {
         adminarea1,
         notBankSale
       );
-      console.log("query de búsqueda", query);
       let result = await query.get();
       if (result.size === 0) {
         query = setQuery(
