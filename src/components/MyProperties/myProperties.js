@@ -123,7 +123,7 @@ export const MyProperties = () => {
     loading: true,
     latestItem: null,
     noMore: true,
-    itemsForPage: 1000,
+    itemsForPage: 6,
     filter: initilFilters,
   });
 

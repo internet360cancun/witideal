@@ -259,7 +259,7 @@ export const PropertiesList = (props) => {
 
   // paginate results
   const next = useMemo(() => {
-    return paginate(propertiesSortedByLottery, 1000);
+    return paginate(propertiesSortedByLottery, 12);
   }, [propertiesSortedByLottery]);
   useEffect(() => {
     if (!propertiesSortedByLottery) return setItemsRendered([]);
