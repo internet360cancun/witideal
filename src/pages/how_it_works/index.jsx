@@ -10,6 +10,7 @@ import FifthSection from "./SectionFive";
 import SectionSix from "./SectionSix";
 import SectionEight from "./SectionEight";
 import SelccionarPaquete from "../../components/PackageSelecter/SelccionarPaquete";
+import Head from "../../components/head";
 
 const Container = styled.div`
   margin-top: ${(props) => `${props.$top}px`};
@@ -17,10 +18,6 @@ const Container = styled.div`
 
 const HowItWorks = (props) => {
   const headerHeight = useHeaderHeight();
-
-  useEffect(() => {
-    document.title = "Witideal | ¿Cómo funciona?";
-  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,6 +29,7 @@ const HowItWorks = (props) => {
 
   return (
     <Container $top={headerHeight}>
+      <Head title="¿Cómo funciona?"/>
       <SectionOne
         sectionTwoRef={sectionTwoRef}
         sectionFourRef={sectionFourRef}
