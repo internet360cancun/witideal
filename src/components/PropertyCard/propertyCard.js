@@ -5,7 +5,7 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import { Typography, IconButton} from "@material-ui/core";
+import { Typography, IconButton } from "@material-ui/core";
 import NumberFormat from "react-number-format";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
@@ -14,6 +14,7 @@ import { propertyType_es, action_es } from "../../assets/Strings";
 import useSession from "../../Hooks/useSession";
 import connect from "../../firebase";
 import urlTranslator from "../../helpers/urlTranslator";
+import stateNameTranslator from "../../helpers/stateNameTranslator";
 
 // import roomIcon from '../../assets/roomIcon.svg';
 // import parkIcon from '../../assets/figC.svg';
@@ -84,7 +85,6 @@ export function PropertyCard(props) {
   const session = useSession();
   const [favoriteReferences, setFavoriteReferences] = React.useState([]);
 
-
   // getFavoriteReferences
   useEffect(() => {
     if (session.SesState) {
@@ -117,6 +117,36 @@ export function PropertyCard(props) {
     }
   };
 
+  const createSlugUrl = () => {
+    try {
+      let url = ``;
+      if (props.properData.sublocality_level_1) {
+        url = `${url}${props.properData.sublocality_level_1.replace(
+          / /g,
+          "-"
+        )}-`;
+      }
+
+      if (props.properData.administrative_area_level_2_3) {
+        url = `${url}${props.properData.administrative_area_level_2_3.replace(
+          / /g,
+          "-"
+        )}-`;
+      }
+
+      if (props.properData.administrative_area_level_1) {
+        url = `${url}${stateNameTranslator(
+          props.properData.administrative_area_level_1
+        ).replace(/ /g, "-")}`;
+      } else {
+        return "path";
+      }
+      return url;
+    } catch (error) {
+      return "path";
+    }
+  };
+
   return (
     <Card className={classes.area}>
       <CardActionArea className="h-100">
@@ -133,7 +163,7 @@ export function PropertyCard(props) {
           className={classes.link}
           to={`/propiedad/${urlTranslator(props.propertyType)}/${urlTranslator(
             props.action
-          )}/${props.properData.pId}`}
+          )}/${createSlugUrl()}/${props.properData.pId}`}
         >
           <CardMedia
             component="img"
