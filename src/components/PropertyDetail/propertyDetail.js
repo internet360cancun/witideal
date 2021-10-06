@@ -276,12 +276,8 @@ export const PropertyDetail = (props) => {
         } en ${urlTranslator(
           properData ? properData.administrative_area_level_1 : ""
         )}`}
-        description={
-          properData && properData.specificData
-            ? properData.specificData.propertyDescription
-            : ""
-        }
-        img={properData ? properData.principalPhotoPath : ""}
+        description={properData && properData.specificData.propertyDescription}
+        img={properData && properData.principalPhotoPath}
       />
       <ModalRegister onClose={() => setActiveCredential(false)} />
       <Report
