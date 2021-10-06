@@ -266,6 +266,8 @@ export const PropertyDetail = (props) => {
     setShowOnerInfo(!showOnerInfo);
   };
 
+  console.log(properData, "properData");
+
   return (
     <Box className={classes.mainContainer} pb={3} pt={{ lg: 9, xs: 7 }}>
       <Head
@@ -279,6 +281,7 @@ export const PropertyDetail = (props) => {
             ? properData.specificData.propertyDescription
             : ""
         }
+        img={properData ? properData.principalPhotoPath : ""}
       />
       <ModalRegister onClose={() => setActiveCredential(false)} />
       <Report

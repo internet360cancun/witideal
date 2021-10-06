@@ -3,6 +3,9 @@ import { Helmet } from "react-helmet";
 import propTypes from "prop-types";
 
 const Head = (props) => {
+
+// console.log(props.img, window.location.href,props.title)
+
   return (
     <Helmet>
       <title>{props.title ? `Witideal | ${props.title}` : "Witideal"}</title>
@@ -19,7 +22,7 @@ const Head = (props) => {
       />
       <link rel="canonical" href={window.location.href} />
 
-      <meta property="og:title" content={`Witideal | ${props.title}`} />
+      <meta property="og:title" content={props.title ? `Witideal | ${props.title}` : "Witideal"} />
       <meta
         property="og:description"
         content={
