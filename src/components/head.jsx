@@ -3,10 +3,6 @@ import { Helmet } from "react-helmet";
 import propTypes from "prop-types";
 
 const Head = (props) => {
-  // console.log(props.img, window.location.href,props.title)
-
-  console.log(props.description);
-
   return (
     <Helmet>
       <title>{props.title ? `Witideal | ${props.title}` : "Witideal"}</title>
@@ -29,7 +25,10 @@ const Head = (props) => {
       />
       <meta
         property="og:description"
-        content={props.description}
+        content={
+          props.description ||
+          "Sitio de promoción de inmuebles en renta y venta. Encuentra el espacio que buscas en menos tiempo; comparte tu espacio al mejor precio."
+        }
       />
       <meta
         property="og:image"
