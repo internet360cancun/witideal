@@ -14,7 +14,7 @@ import {
 } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
 import NumberFormat from "react-number-format";
-import CircularProgress from "@material-ui/core/CircularProgress";
+// import CircularProgress from "@material-ui/core/CircularProgress";
 import { StaticGoogleMap, Path, Marker } from "react-static-google-map";
 import { SpecificDataIcons } from "../SpecificDataIcons/specificDataIcons";
 import { propertyType_es, action_es } from "../../assets/Strings";
@@ -31,7 +31,7 @@ import { styled } from "@material-ui/core/styles";
 import EmptyProperties from "../../assets/specificDataIcons/emptyPropety.svg";
 import formatNumber from "../../helpers/formatNumber";
 import Swipe from "./swype";
-import Register from "./register";
+// import Register from "./register";
 import ModalRegister from "./registerModal";
 import analytics from "react-ga";
 import { isProduction } from "../../constants/globalConstraints";
@@ -271,11 +271,14 @@ export const PropertyDetail = (props) => {
   return (
     <Box className={classes.mainContainer} pb={3} pt={{ lg: 9, xs: 7 }}>
       <Head
-        title={`${properData ? urlTranslator(properData.action) : ""} ${
+        title={
+          properData && properData.specificData.propertyTitle  ||
+          `${properData ? urlTranslator(properData.action) : ""} ${
           properData ? urlTranslator(properData.propertyType) : ""
         } en ${urlTranslator(
           properData ? properData.administrative_area_level_1 : ""
-        )}`}
+        )}`
+      }
         description={properData && properData.specificData.propertyDescription}
         img={properData && properData.principalPhotoPath}
       />
@@ -353,6 +356,28 @@ export const PropertyDetail = (props) => {
                             </Grid>
                             {/* Property Description Text */}
                             <Grid item xs={12}>
+                              <Typography
+                                variant="h5"
+                                gutterBottom
+                                align="center"
+                                className={classes.subtitleText}
+                              >
+                                Título del inmueble
+                              </Typography>
+
+                              <Box p={1}>
+                                {!!properData.specificData && (
+                                  <Typography
+                                    variant="subtitle1"
+                                    align="center"
+                                  >
+                                    {properData.specificData.propertyTitle !==
+                                    undefined
+                                      ? properData.specificData.propertyTitle
+                                      : ""}
+                                  </Typography>
+                                )}
+                              </Box>
                               <Typography
                                 variant="h5"
                                 gutterBottom
