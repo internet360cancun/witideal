@@ -34,7 +34,7 @@ const SectionOne = () => {
           <div className="row text-center">
             <div className="col col-sm-3 col-md-4">
               <a
-                href="#section2"
+                href="/como-funciona#section2"
                 className="btn custombtn customcople1 waves-effect waves-light"
               >
                 ¿Por qué utilizar Witideal?
@@ -42,7 +42,7 @@ const SectionOne = () => {
             </div>
             <div className="col col-sm-3 col-md-4">
               <a
-                href="#section4"
+                href="/como-funciona#section4"
                 className="btn custombtn customcople2 waves-effect waves-light"
               >
                 ¿Cuanto cuesta?
@@ -50,7 +50,7 @@ const SectionOne = () => {
             </div>
             <div className="col col-sm-4 col-md-4">
               <a
-                href="#section7"
+                href="/como-funciona#section7"
                 className="btn custombtn customcople3 waves-effect waves-light"
               >
                 ¿Cómo se ordenan los anuncios?
