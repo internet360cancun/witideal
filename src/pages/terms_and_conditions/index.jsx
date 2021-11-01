@@ -165,53 +165,48 @@ const TermsAndConditions = () => {
               <li>Política de comisiones, cobros y devoluciones</li>
 
               <OlThird>
-                <p>COMISIONES. Witideal ofrece 45 paquetes.</p>
+                <p>Witideal ofrece 3 planes</p>
                 <li>
-                  Paquete Básico con un costo de $570.00 más IVA, equivalente a
-                  600 Witicoins; 30 witicoins gratis
+                  Paquete Rising Star / 3 propiedades destacadas (vigencia 30
+                  dias) / Campaña de Facebook / Instagram Ads en la fanpage de
+                  Witideal
                 </li>
                 <li>
-                  Paquete Plata con un costo de $1,710.00.00 más IVA,
-                  equivalente a 1800 Witicoins; 90 witicoins gratis
+                  Paquete Rockstar / 5 propiedades destacada (vigencia 30 dias)
+                  / Campaña de Facebook / Instagram Ads en la fanpage de
+                  Witideal + Post en redes sociales Luis Ramirez y rematecasas
                 </li>
                 <li>
-                  Paquete Oro con un costo de $3,420.00 más IVA, equivalente a
-                  3600 Witicoins; 180 witicoins gratis
+                  Paquete Superstar / 10 propiedades destacada (vigencia 30
+                  dias) / Campaña de Facebook / Instagram Ads en la fanpage de
+                  Witideal + Post en redes sociales Luis Ramirez y rematecasas +
+                  Mención en el programa de mundo inmobiliario de Luis Ramirez
                 </li>
-                <li>
-                  Paquete Platino con un costo de $5,130.00 más IVA, equivalente
-                  a 5400 Witicoins; 270 witicoins gratis
-                </li>
+                <p>
+                  Devoluciones. Como regla general, Witideal no hará devolución
+                  de recursos que correspondan a servicios (i) efectivamente
+                  prestados al usuario y (i) que no hayan sido debidamente
+                  desacreditados por el usuario en los términos del párrafo
+                  siguiente.
+                </p>
+                <p>
+                  Witideal informará al usuario de forma mensual y a través de
+                  la plataforma, el estado de movimientos y cargos de su cuenta.
+                  El usuario podrá presentar sus reclamaciones dentro de los
+                  primeros 5 días hábiles del mes siguiente a aquel al que
+                  correspondan los movimientos, a través de un correo
+                  electrónico dirigido a Witideal para tal efecto. En su caso,
+                  el usuario deberá incluir en el correo cualquier argumento,
+                  documento o soporte que permitan fundamentar su reclamación.
+                  Witideal contará con un plazo de 10 días hábiles para
+                  responder lo que a su derecho convenga y para determinar la
+                  procedencia o improcedencia de la reclamación. La falta de
+                  presentación de una reclamación dentro del plazo antes
+                  referido se entenderá como una aceptación irrevocable a los
+                  movimientos realizados en su cuenta.
+                </p>
               </OlThird>
-              <p>
-                1 witicoin, equivale a 1.00 (un peso). Todos los precios están
-                expresados en moneda nacional.
-              </p>
-              <p>
-                <Link to="/como-funciona">Cobros</Link>
-              </p>
-              <p>
-                Devoluciones. Como regla general, Witideal no hará devolución de
-                recursos que correspondan a servicios (i) efectivamente
-                prestados al usuario y (i) que no hayan sido debidamente
-                desacreditados por el usuario en los términos del párrafo
-                siguiente.
-              </p>
-              <p>
-                Witideal informará al usuario de forma mensual y a través de la
-                plataforma, el estado de movimientos y cargos de su cuenta. El
-                usuario podrá presentar sus reclamaciones dentro de los primeros
-                5 días hábiles del mes siguiente a aquel al que correspondan los
-                movimientos, a través de un correo electrónico dirigido a
-                Witideal para tal efecto. En su caso, el usuario deberá incluir
-                en el correo cualquier argumento, documento o soporte que
-                permitan fundamentar su reclamación. Witideal contará con un
-                plazo de 10 días hábiles para responder lo que a su derecho
-                convenga y para determinar la procedencia o improcedencia de la
-                reclamación. La falta de presentación de una reclamación dentro
-                del plazo antes referido se entenderá como una aceptación
-                irrevocable a los movimientos realizados en su cuenta.
-              </p>
+
               <li>Actualización de la Aplicación</li>
               <p>
                 Witideal podrá, en cualquier momento, realizar actualizaciones
@@ -264,8 +259,8 @@ const TermsAndConditions = () => {
               </p>
               <p>Correo Electrónico: {contact.email}</p>
               <p>
-                Domicilio: Celestún 300-3, Jardines del Ajusco, Tlalpan, C.P.
-                14200, CDMX, México.
+                Cerro de las Campanas No.3 Despacho 304, piso 3 Torre A, San
+                Andrés Atenco, 54050 Tlalnepantla, México. Cd de México
               </p>
               <li>Leyes Aplicables</li>
               <p>

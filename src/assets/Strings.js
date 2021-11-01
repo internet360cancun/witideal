@@ -4,7 +4,7 @@ export const minimumSell = 20000
 
 export const currentVersion = "1.0.27"
 export const contact = {
-    number: ['55 3418 2227 (soporte)', '55 4731 8243 (ventas)'],
+    number: ['55 1971 3247 (soporte)', '33 1527 6156 (ventas)'],
     email: 'contacto@witideal.com'
 }
 
