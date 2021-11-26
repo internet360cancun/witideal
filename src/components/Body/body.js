@@ -27,6 +27,7 @@ import NoticeOfPrivacy from "../../pages/notice_of_privacy";
 import HowItWorks from "../../pages/how_it_works";
 
 import SelccionarPaquete from "../PackageSelecter/SelccionarPaquete";
+import gracias from "../../pages/gracias";
 
 export const Body = (props) => {
   const context = useContext(SesContext);
@@ -48,6 +49,7 @@ export const Body = (props) => {
       />
 
       <Route path={ROUTES.FORGOT} component={RestorePassword} />
+      <Route path={"/gracias"} component={gracias} />
       <Route path={ROUTES.VALIDATE} component={MailValidation} />
       <Route
         path="/propiedades/:propertyType?/:action?/:country?/:administrative_area_level_1?/:administrative_area_level_2_3?/:sublocality_level_1?/:route?/:street_number?"

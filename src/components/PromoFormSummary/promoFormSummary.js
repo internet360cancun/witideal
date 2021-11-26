@@ -63,6 +63,10 @@ export const PromoFormSummary = (props) => {
     return (event) => window.removeEventListener("resize", onSizeChange);
   }, [domRef.current.clientHeight]);
 
+  const gracias = () => {
+    const history = useHistory();
+    history.push("/gracias");
+  };
   // set fixed card
   useEffect(() => {
     window.onscroll = () => {
@@ -477,6 +481,7 @@ export const PromoFormSummary = (props) => {
                 </Grid>
                 <Grid item xs={12}>
                   <Button
+                    onClick={gracias}
                     variant="contained"
                     size="large"
                     className={classes.confirm}
