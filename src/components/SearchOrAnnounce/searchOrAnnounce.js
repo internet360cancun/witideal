@@ -39,8 +39,8 @@ export const SearchOrAnnounce = (props) => {
   */
 
   const promotor = () => {
-    props.setPromoter;
-    gtag("event", "conversion", {
+    props.setPromoter();
+    window.gtag("event", "conversion", {
       send_to: "AW-307620621/5IkJCKbbioADEI3W15IB",
     });
   };

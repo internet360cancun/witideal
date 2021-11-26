@@ -1,33 +1,46 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react'
-import useStyles from './styles'
-import { Grid, TextField, Button, Checkbox, FormControlLabel, MuiThemeProvider,  useMediaQuery } from '@material-ui/core'
-import { theme, ExtraNumberContent } from './styles'
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import IconButton from '@material-ui/core/IconButton';
-import { Delete } from '@material-ui/icons'
-import GoogleFace from './googleface';
-import styled from 'styled-components';
-import { promoterType } from '../../constants';
-
+import React from "react";
+import useStyles from "./styles";
+import {
+  Grid,
+  TextField,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  MuiThemeProvider,
+  useMediaQuery,
+} from "@material-ui/core";
+import { theme, ExtraNumberContent } from "./styles";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import IconButton from "@material-ui/core/IconButton";
+import { Delete } from "@material-ui/icons";
+import GoogleFace from "./googleface";
+import styled from "styled-components";
+import { promoterType } from "../../constants";
 
 const FormControlLabelStyled = styled(FormControlLabel)`
   .gray {
     color: #4e4e4ebf;
     font-weight: bold;
-    font-size: .8em;
+    font-size: 0.8em;
     font-style: italic;
   }
-`
-const ResgisterPromoter = props => {
-  const classes = useStyles()
-  const isMobile = useMediaQuery('(max-width:800px)')
-  
+`;
+const ResgisterPromoter = (props) => {
+  const classes = useStyles();
+  const isMobile = useMediaQuery("(max-width:800px)");
+
+  const handleRegister = () => {
+    props.handleClickCreate();
+    window.gtag("event", "conversion", {
+      send_to: "AW-307620621/_PLOCNfqt4ADEI3W15IB",
+    });
+  };
+
   return (
-    <> 
-      
+    <>
       {/* {props.values.promoter && (
         <Box pt={2} pb={2}>
           <Typography style={{ fontWeight: 'bold' }} align='center' variant={isMobile ? 'h6' : 'h5'}>Ingresa tus datos</Typography>
@@ -37,10 +50,10 @@ const ResgisterPromoter = props => {
       )} */}
       <GoogleFace
         federated={props.federated}
-        handleLogInG = {props.handleLogInG}
+        handleLogInG={props.handleLogInG}
       />
-      
-      <Grid item  xs={10} md={8} >
+
+      <Grid item xs={10} md={8}>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -48,7 +61,7 @@ const ResgisterPromoter = props => {
               id="user-name"
               label="Nombre"
               onChange={props.onChange}
-              value={props.values.name !== undefined ? props.values.name : ''}
+              value={props.values.name !== undefined ? props.values.name : ""}
               type="text"
               name="name"
               margin="dense"
@@ -56,13 +69,16 @@ const ResgisterPromoter = props => {
               fullWidth={true}
               onBlur={props.onBlur}
               error={props.errors.name !== undefined}
-              helperText={props.errors.name !== undefined ? props.errors.name : ''}
+              helperText={
+                props.errors.name !== undefined ? props.errors.name : ""
+              }
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              
-              value={props.values.lastname !== undefined ? props.values.lastname : ''}
+              value={
+                props.values.lastname !== undefined ? props.values.lastname : ""
+              }
               onChange={props.onChange}
               id="user-lastname"
               label="Apellido"
@@ -74,27 +90,30 @@ const ResgisterPromoter = props => {
               fullWidth={true}
               onBlur={props.onBlur}
               error={props.errors.lastname !== undefined}
-              helperText={props.errors.lastname !== undefined ? props.errors.lastname : ''}
+              helperText={
+                props.errors.lastname !== undefined ? props.errors.lastname : ""
+              }
             />
           </Grid>
-        
         </Grid>
 
         <TextField
           className={classes.textField}
-          
           onChange={props.onChangePhone}
-          value={props.values.phone || ''}
+          value={props.values.phone || ""}
           id="user-cellphone"
           label="Celular"
-          
           name="phone"
           margin="dense"
           variant="outlined"
           fullWidth={true}
           onBlur={props.onBlur}
           error={props.errors.phone !== undefined}
-          helperText={props.errors.phone !== undefined ? props.errors.phone : 'Teléfono principal'}
+          helperText={
+            props.errors.phone !== undefined
+              ? props.errors.phone
+              : "Teléfono principal"
+          }
         />
         {props.extraPhones.map((phone, index) => (
           <ExtraNumberContent key={index}>
@@ -115,7 +134,20 @@ const ResgisterPromoter = props => {
           </ExtraNumberContent>
         ))}
         {props.extraPhones.length < 2 && (
-          <Button onClick={props.addExtraPhones} style={{ display: 'block', margin: 'auto', textTransform: 'none', fontWeight: 'bold' }} size='small' variant='text' color='primary'>Agregar más números</Button>
+          <Button
+            onClick={props.addExtraPhones}
+            style={{
+              display: "block",
+              margin: "auto",
+              textTransform: "none",
+              fontWeight: "bold",
+            }}
+            size="small"
+            variant="text"
+            color="primary"
+          >
+            Agregar más números
+          </Button>
         )}
         {props.federated && (
           <TextField
@@ -123,7 +155,7 @@ const ResgisterPromoter = props => {
             onChange={props.onChange}
             id="user-email"
             label="Correo Electrónico"
-            value={props.values.email !== undefined ? props.values.email : ''}
+            value={props.values.email !== undefined ? props.values.email : ""}
             disabled={true}
             type="email"
             name="email"
@@ -133,8 +165,9 @@ const ResgisterPromoter = props => {
             fullWidth={true}
             onBlur={props.onBlur}
             error={props.errors.email !== undefined}
-            helperText={props.errors.email !== undefined ? props.errors.email : ''}
-            
+            helperText={
+              props.errors.email !== undefined ? props.errors.email : ""
+            }
           />
         )}
         {!props.federated && (
@@ -144,7 +177,7 @@ const ResgisterPromoter = props => {
               onChange={props.onChange}
               id="user-email"
               label="Correo Electrónico"
-              value={props.values.email !== undefined ? props.values.email : ''}
+              value={props.values.email !== undefined ? props.values.email : ""}
               disabled={false}
               type="email"
               name="email"
@@ -154,16 +187,19 @@ const ResgisterPromoter = props => {
               fullWidth={true}
               onBlur={props.onBlur}
               error={props.errors.email !== undefined}
-              helperText={props.errors.email !== undefined ? props.errors.email : ''}
-              
+              helperText={
+                props.errors.email !== undefined ? props.errors.email : ""
+              }
             />
             <TextField
               className={classes.textField}
-              onChange={event => props.onRemailChange(event.target.value)}
+              onChange={(event) => props.onRemailChange(event.target.value)}
               id="re_user-email"
               label="Confirmar Correo Electrónico"
               value={props.remail}
-              onPaste={event => setTimeout(() => props.onRemailChange(''), 10)}
+              onPaste={(event) =>
+                setTimeout(() => props.onRemailChange(""), 10)
+              }
               disabled={false}
               type="email"
               name="email"
@@ -173,23 +209,25 @@ const ResgisterPromoter = props => {
               fullWidth={true}
               onBlur={() => props.onErrorRemail(false)}
               error={props.errorReMail}
-              
             />
             <TextField
               className={classes.textField}
               onChange={props.onChange}
               onBlur={props.onBlur}
-              value={props.values.password !== undefined ? props.values.password : ''}
+              value={
+                props.values.password !== undefined ? props.values.password : ""
+              }
               error={props.errors.password !== undefined}
-              helperText={props.errors.password !== undefined ? props.errors.password : ""}
+              helperText={
+                props.errors.password !== undefined ? props.errors.password : ""
+              }
               id="user-password"
               variant="outlined"
-              type={props.ShowPass ? 'text' : 'password'}
+              type={props.ShowPass ? "text" : "password"}
               label="Contraseña"
-              name='password'
+              name="password"
               margin="dense"
               fullWidth={true}
-              
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -197,7 +235,8 @@ const ResgisterPromoter = props => {
                       edge="end"
                       aria-label="toggle password visibility"
                       onClick={props.handleClickShowPassword}
-                      onMouseDown={props.handleMouseDownPassword} >
+                      onMouseDown={props.handleMouseDownPassword}
+                    >
                       {props.ShowPass ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
@@ -208,14 +247,22 @@ const ResgisterPromoter = props => {
               className={classes.textField}
               onChange={props.onChange}
               onBlur={props.onBlur}
-              value={props.values.cpassword !== undefined ? props.values.cpassword : ''}
+              value={
+                props.values.cpassword !== undefined
+                  ? props.values.cpassword
+                  : ""
+              }
               error={props.errors.cpassword !== undefined}
-              helperText={props.errors.cpassword !== undefined ? props.errors.cpassword : ""}
+              helperText={
+                props.errors.cpassword !== undefined
+                  ? props.errors.cpassword
+                  : ""
+              }
               id="user-confirm-password"
               variant="outlined"
-              type={props.ShowCPass ? 'text' : 'password'}
+              type={props.ShowCPass ? "text" : "password"}
               label="Confirmar Contraseña"
-              name='cpassword'
+              name="cpassword"
               margin="dense"
               fullWidth={true}
               InputProps={{
@@ -241,7 +288,10 @@ const ResgisterPromoter = props => {
             label="Nombre Inmobiliaria"
             className={classes.textField}
             onChange={props.onChange}
-            value={props.values.companyName || promoterType[props.values.promoterType]}
+            value={
+              props.values.companyName ||
+              promoterType[props.values.promoterType]
+            }
             type="text"
             name="companyName"
             margin="dense"
@@ -263,12 +313,16 @@ const ResgisterPromoter = props => {
                       className={classes.borderColorRadioAndCheck}
                       checked={props.showMainPhone}
                       onChange={props.onChangeShowMainPhone}
-                      name='mainphone'
+                      name="mainphone"
                       color="primary"
                     />
                   }
                   className={classes.checkBox}
-                  label={<span className='gray'>Mostrar teléfono principal como dato de contacto</span>}
+                  label={
+                    <span className="gray">
+                      Mostrar teléfono principal como dato de contacto
+                    </span>
+                  }
                 />
               </MuiThemeProvider>
             </Grid>
@@ -282,12 +336,16 @@ const ResgisterPromoter = props => {
                     className={classes.borderColorRadioAndCheck}
                     checked={props.values.notify}
                     onChange={props.onChange}
-                    name='notify'
+                    name="notify"
                     color="primary"
                   />
                 }
                 className={classes.checkBox}
-                label={<span className='gray'>Recibir correos y notificaciones.</span>}
+                label={
+                  <span className="gray">
+                    Recibir correos y notificaciones.
+                  </span>
+                }
               />
             </MuiThemeProvider>
           </Grid>
@@ -300,35 +358,39 @@ const ResgisterPromoter = props => {
                     className={classes.borderColorRadioAndCheck}
                     checked={props.values.termsNconditions}
                     onChange={props.onChange}
-                    name='termsNconditions'
+                    name="termsNconditions"
                     color="primary"
                   />
                 }
                 className={classes.checkBox}
-                label={<span className='gray'>Acepto términos y condiciones</span>}
+                label={
+                  <span className="gray">Acepto términos y condiciones</span>
+                }
               />
             </MuiThemeProvider>
           </Grid>
         </Grid>
-      </Grid >
+      </Grid>
 
       <Grid item xs={12}>
         <Grid container>
           <Grid item xs={12}>
             <Button
               fullWidth
-              id='btn_create'
-              onClick={props.handleClickCreate}
+              id="btn_create"
+              onClick={handleRegister}
               className={classes.buttonLogIn}
-              variant='contained'
+              variant="contained"
               disabled={!props.values.termsNconditions}
-              size={isMobile ? 'medium' : 'large'}>Crear Cuenta
+              size={isMobile ? "medium" : "large"}
+            >
+              Crear Cuenta
             </Button>
           </Grid>
         </Grid>
       </Grid>
     </>
-  )
-}
+  );
+};
 
-export default ResgisterPromoter
+export default ResgisterPromoter;

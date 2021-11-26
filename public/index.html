@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <!-- Google Tag Manager -->
-    <script>
+    <!-- <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({
@@ -16,7 +16,26 @@
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-WF8GV5C");
+    </script> -->
+    <!-- <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GTM-WF8GV5C"
+    ></script> -->
+    <!-- Global site tag (gtag.js) - Google Ads: 307620621 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-307620621"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-307620621");
     </script>
+
     <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png" />
@@ -36,9 +55,6 @@
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd22YBCutdzEZePBY2wbS2OawTZ1_H7-s&libraries=places&language=es"
     ></script>
-    <!-- Bootstrap CDN
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
-    <!-- Roboto CDN-->
 
     <!-- Openpay -->
     <script
@@ -64,14 +80,26 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Witideal</title>
-    <meta  property="og:image" content="https://i.imgur.com/m3HW0Xo_d.webp?maxwidth=760&fidelity=grand"  data-react-helmet="true" />
+    <meta
+      property="og:image"
+      content="https://i.imgur.com/m3HW0Xo_d.webp?maxwidth=760&fidelity=grand"
+      data-react-helmet="true"
+    />
     <meta
       property="og:description"
       content="Sitio de promoción de inmuebles en renta y venta. Encuentra el espacio que buscas en menos tiempo; comparte tu espacio al mejor precio."
       data-react-helmet="true"
     />
-    <meta property="og:site_name" content="Witideal | Portal Inmobiliario"  data-react-helmet="true" />
-    <meta property="og:url" content="https://www.witideal.com/"  data-react-helmet="true" />
+    <meta
+      property="og:site_name"
+      content="Witideal | Portal Inmobiliario"
+      data-react-helmet="true"
+    />
+    <meta
+      property="og:url"
+      content="https://www.witideal.com/"
+      data-react-helmet="true"
+    />
 
     <base href="/" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -79,38 +107,24 @@
 
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript
+    <!-- <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-WF8GV5C"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
       ></iframe
-    ></noscript>
+    ></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" 
-integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" 
-crossorigin="anonymous"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" 
-integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" 
-crossorigin="anonymous"></script> -->
+    <!-- Event snippet for Website traffic conversion page -->
+    <script>
+      gtag("event", "conversion", {
+        send_to: "AW-307620621/c9JICP3w3vICEI3W15IB",
+      });
+    </script>
 
     <link
       rel="stylesheet"

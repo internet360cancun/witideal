@@ -49,7 +49,6 @@ export const Body = (props) => {
       />
 
       <Route path={ROUTES.FORGOT} component={RestorePassword} />
-      <Route path={"/gracias"} component={gracias} />
       <Route path={ROUTES.VALIDATE} component={MailValidation} />
       <Route
         path="/propiedades/:propertyType?/:action?/:country?/:administrative_area_level_1?/:administrative_area_level_2_3?/:sublocality_level_1?/:route?/:street_number?"

@@ -259,6 +259,11 @@ export const UserForm = () => {
       return false;
     }
     handleTop();
+
+    window.gtag("event", "conversion", {
+      send_to: "AW-307620621/WegeCLLSioADEI3W15IB",
+    });
+
     const url = makeUrl(searchPropertyObject);
     history.push(`/propiedades/${url}`, searchPropertyObject);
 
