@@ -516,7 +516,6 @@ body .no-padding {
     line-height: 10vw;
   }
 
-
   .triangulo-1,
   .triangulo-2,
   .triangulo-3 {
@@ -712,7 +711,7 @@ body .no-padding {
     padding: 1% !important;
     padding-right: 5% !important;
   }
-  
+
   /*white*/
   .first {
     right: 13vh;
@@ -1017,7 +1016,7 @@ body .no-padding {
     padding: 1% !important;
     padding-right: 5% !important;
   }
- 
+
   /*white*/
   .first {
     right: 12vh;
@@ -1288,7 +1287,7 @@ body .no-padding {
 
 @media (max-height: 900px) {
   /*PRIMER VIEW*/
- 
+
   /* .first {
     right: 0vh;
   } */
@@ -1351,7 +1350,7 @@ body .no-padding {
 
 @media (max-height: 820px) {
   /*PRIMER VIEW*/
-  
+
   /*SEGUNDO VIEW*/
   .gratis {
     font-size: 6.5vh;
@@ -1606,7 +1605,7 @@ body .no-padding {
     padding: 1% !important;
     padding-right: 5% !important;
   }
-  
+
   /*white*/
   .first {
     top: -8vh;
@@ -1848,7 +1847,7 @@ body .no-padding {
     position: absolute;
     top: 25vh !important;
   }
- 
+
   /*white*/
   .first {
     top: 10vh;
@@ -2092,13 +2091,13 @@ body .no-padding {
     margin-left: 9vh;
   }
 
-  .triangulo-1{
+  .triangulo-1 {
     top: 55vh;
   }
-  .triangulo-2{
+  .triangulo-2 {
     top: 54.5vh;
   }
-  .triangulo-3{
+  .triangulo-3 {
     top: 53.5vh;
   }
 
@@ -2174,7 +2173,7 @@ body .no-padding {
   }
 }
 
-@media (min-width: 1220px){
+@media (min-width: 1220px) {
   .customcople2 {
     left: -8vw;
   }
@@ -2183,11 +2182,9 @@ body .no-padding {
   }
 }
 
-
 /* @media (min-width: 1201px) and (max-width: 1480px) and (min-height: 801px) and (max-height: 900px){
   
 } */
-
 
 @media (min-width: 576px) {
   .imgcontainer {
@@ -2201,7 +2198,7 @@ body .no-padding {
     width: 250px !important;
     margin-left: 40px;
   }
-  .first{
+  .first {
     right: -10vh;
     width: 200%;
   }
@@ -2212,7 +2209,7 @@ body .no-padding {
     width: 175px !important;
     margin-left: -50px;
   }
-  .first{
+  .first {
     top: -5vh;
     right: 5vh;
     width: 110%;
@@ -2220,7 +2217,7 @@ body .no-padding {
 }
 
 @media (min-width: 1520px) {
-  .first{
+  .first {
     width: 130%;
     top: -10vh;
     right: -0vh;
@@ -2273,20 +2270,20 @@ body .no-padding {
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape){
-  .customcople1{
+@media (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape) {
+  .customcople1 {
     left: 0vh;
   }
-  .customcople2{
+  .customcople2 {
     left: 0vh;
     padding-top: 3vh !important;
     padding-bottom: 3vh !important;
   }
-  .customcople3{
+  .customcople3 {
     left: 0vh;
   }
 
-  .BannerTitle{
+  .BannerTitle {
     margin-left: 0;
     margin-top: 2vh;
     margin-bottom: 0 !important;
@@ -2294,14 +2291,16 @@ body .no-padding {
     line-height: 12vh !important;
   }
 
-  .customview1{
+  .customview1 {
     height: 121vh;
   }
-  .custombtnindex{
+  .custombtnindex {
     margin-left: 0;
   }
 
-  .triangulo-1, .triangulo-2, .triangulo-3{
+  .triangulo-1,
+  .triangulo-2,
+  .triangulo-3 {
     display: none;
   }
   .first {
@@ -2309,28 +2308,38 @@ body .no-padding {
     right: -52vh;
     width: 150%;
   }
- 
 
-
-
-  .card1, .card2, .card3{
+  .card1,
+  .card2,
+  .card3 {
     width: 40vh;
   }
-  .subwrite{
+  .subwrite {
     top: 32vh;
   }
-  .sign{
+  .sign {
     width: 35vh;
   }
 
-
-  .textbanner{
+  .textbanner {
     font-size: 6vh;
   }
 }
 
-@media (min-width: 360px) and (max-width: 480px) and (min-height: 850px){
-  .first{
+@media (min-width: 360px) and (max-width: 480px) and (min-height: 850px) {
+  .first {
     right: 9vh;
   }
 }
+
+/*Homepage*/
+
+.title {
+  color: #3f19f9;
+  font-weight: 700;
+}
+.title-2{
+  color: #fff;
+  font-weight: 700;
+}
+

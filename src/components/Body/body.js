@@ -27,7 +27,7 @@ import NoticeOfPrivacy from "../../pages/notice_of_privacy";
 import HowItWorks from "../../pages/how_it_works";
 
 import SelccionarPaquete from "../PackageSelecter/SelccionarPaquete";
-import gracias from "../../pages/gracias";
+import HomePage from "../../pages/home/HomePage";
 
 export const Body = (props) => {
   const context = useContext(SesContext);
@@ -45,7 +45,7 @@ export const Body = (props) => {
         exact
         component={MyProfile}
         allow={promoFormAcces}
-        rComponent={Landing}
+        rComponent={HomePage}
       />
 
       <Route path={ROUTES.FORGOT} component={RestorePassword} />
