@@ -2338,8 +2338,150 @@ body .no-padding {
   color: #3f19f9;
   font-weight: 700;
 }
-.title-2{
+.title-2 {
   color: #fff;
   font-weight: 700;
 }
 
+.title-3 {
+  font-size: 65px;
+  font-weight: 700;
+  color: #32ffd2;
+}
+
+.subtitle {
+  color: #3f19f9;
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.subtitle-2 {
+  font-size: 33px;
+  color: #32ffd2;
+  font-weight: 700;
+}
+.subtitle-3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.text {
+  color: #515151;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.text-app {
+  font-size: 25px;
+  font-weight: 600;
+}
+.card-number {
+  color: #32ffd2;
+  font-size: 76px;
+  font-weight: 700;
+}
+.text-witideal {
+  font-weight: 700;
+  font-size: 23px;
+  color: #868686;
+}
+
+.witideal {
+  color: #41b8f9;
+}
+
+.background-anunciar {
+  width: 549px;
+  height: 255px;
+  background: linear-gradient(256.67deg, #3f19f9 -12.9%, #41b8f9 109.8%);
+  border-radius: 19.6542px;
+}
+
+@media (max-width: 529px) {
+  .background-anunciar {
+    height: 345px;
+  }
+}
+
+.chica {
+  width: 900px;
+}
+
+@media (max-width: 1500px) {
+  .chica {
+    width: 700px;
+  }
+  .title-3 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .chica {
+    width: 650px;
+  }
+}
+@media (max-width: 1100px) {
+  .chica {
+    width: 600px;
+  }
+}
+@media (max-width: 1000px) {
+  .chica {
+    width: 550px;
+  }
+}
+@media (max-width: 550px) {
+  .chica {
+    width: 450px;
+  }
+}
+@media (max-width: 400px) {
+  .chica {
+    width: 400px;
+  }
+}
+@media (max-width: 320px) {
+  .chica {
+    width: 340px;
+  }
+}
+
+.playstore {
+  width: 406px;
+}
+
+@media (max-width: 991px) {
+  .title-3 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 750px) {
+  .title-3 {
+    font-size: 45px;
+  }
+  .text-app {
+    font-size: 20px;
+  }
+
+  .playstore {
+    width: 300px;
+  }
+
+  .phone-app {
+    width: 300px;
+  }
+}
+
+@media (max-width: 415px) {
+  .title-3 {
+    font-size: 32px;
+  }
+  .text-app {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+  .playstore {
+    width: 250px;
+  }
+}
