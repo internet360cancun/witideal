@@ -9,7 +9,7 @@ const InfoWitideal = () => {
   const tablet = useMediaQuery("(min-width:991px)");
 
   return (
-    <Container>
+    <Container className="py-5">
       {tablet ? (
         <Row>
           <Col md={6} className="text-left">

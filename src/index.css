@@ -2432,17 +2432,17 @@ body .no-padding {
 }
 @media (max-width: 550px) {
   .chica {
-    width: 450px;
+    width: 400px;
   }
 }
 @media (max-width: 400px) {
   .chica {
-    width: 400px;
+    width: 320px;
   }
 }
 @media (max-width: 320px) {
   .chica {
-    width: 340px;
+    width: 310px;
   }
 }
 
@@ -2484,4 +2484,95 @@ body .no-padding {
   .playstore {
     width: 250px;
   }
+}
+
+.price {
+  font-size: 25;
+  color: #41b8f9;
+  font-weight: 700;
+}
+
+.action {
+  font-size: 17;
+  color: #3f19f9;
+  font-weight: 700;
+}
+
+.text-destacado {
+  font-size: 16px;
+  color: #515151;
+  font-weight: 400;
+}
+
+.card-direcciones {
+  width: 426px;
+  height: 458px;
+  background: linear-gradient(
+    254.35deg,
+    rgba(63, 25, 249, 0.9) 8.47%,
+    rgba(65, 184, 249, 0.9) 94.38%
+  );
+  border-radius: 19.65px;
+}
+
+@media (max-width: 1300px) {
+  .card-direcciones {
+    width: 370px;
+  }
+}
+@media (max-width: 1200px) {
+  .card-direcciones {
+    width: 300px;
+  }
+}
+.list-item {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .card-direcciones {
+    width: 230px;
+  }
+  .list-item {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-direcciones {
+    width: 500px;
+  }
+  .list-item {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 520px) {
+  .card-direcciones {
+    width: 350px;
+  }
+}
+@media (max-width: 360px) {
+  .card-direcciones {
+    width: 300px;
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 331px;
+  background: linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%);
+  background-blend-mode: multiply;
+  border-radius: 0px;
+}
+
+.separator-title {
+  font-weight: 700;
+  font-size: 48px;
+}
+.separator-witideal {
+  font-weight: 700;
+  font-size: 52px;
+  color: #32ffd2;
 }

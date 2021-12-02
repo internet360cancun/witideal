@@ -35,7 +35,7 @@ const Publica = () => {
 
   return (
     <div className="mb-5">
-      <h1 className="title">Publica tus propiedades</h1>
+      <h1 className="title pt-5">Publica tus propiedades</h1>
       <p className="text-witideal">
         En <span className="witideal"> Witideal</span> es fácil y ágil
         anunciarse
