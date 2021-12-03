@@ -2657,10 +2657,10 @@ body {
 
 @media (max-width: 1600px) {
   .familia {
-    position: absolute;
+    position: relative;
     left: 50%;
     width: 950px;
-    transform: translate(-75%, 10px);
+    transform: translate(-30%, 10px);
   }
 }
 
@@ -2668,20 +2668,20 @@ body {
   .familia {
     left: 50%;
     width: 850px;
-    transform: translate(-70%, 55px);
+    transform: translate(-40%, 55px);
   }
 }
 
 @media (max-width: 1100px) {
   .familia {
     width: 700px;
-    transform: translate(-75%, 51px);
+    transform: translate(-40%, 51px);
   }
 }
 @media (max-width: 1048px) {
   .familia {
     width: 700px;
-    transform: translate(-75%, 160px);
+    transform: translate(-55%, 160px);
   }
 }
 
