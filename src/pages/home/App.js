@@ -17,6 +17,11 @@ const bannerAppRespo =
 const App = () => {
   const tablet = useMediaQuery("(min-width:992px)");
 
+  const witidealApp = () => {
+    window.location.href =
+      "https://play.google.com/store/apps/details?id=com.ard.witideal&hl=es_MX&gl=US";
+  };
+
   return (
     <>
       {tablet ? (
@@ -49,6 +54,8 @@ const App = () => {
                   </ul>
                   <div className="d-flex justify-content-center">
                     <img
+                      className="card-hover"
+                      onClick={witidealApp}
                       src={playstore}
                       alt="descarga nuestra app en playstore"
                     />
@@ -95,7 +102,8 @@ const App = () => {
                   </ul>
                   <div className="d-flex justify-content-center">
                     <img
-                      className="playstore"
+                      className="playstore card-hover"
+                      onClick={witidealApp}
                       src={playstore}
                       alt="descarga nuestra app en playstore"
                     />

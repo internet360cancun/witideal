@@ -8,7 +8,7 @@ const Direcciones = () => {
         <Col md={4} className="d-flex justify-content-center">
           <div>
             <p className="subtitle py-3">Ubicaciones principales</p>
-            <div className="card-direcciones">
+            <div className="card-direcciones card-hover">
               <div className="py-5 text-white text-left px-4 list-item">
                 <li>Casa en del Valle</li>
                 <li>Casa en Condesa</li>
@@ -21,8 +21,8 @@ const Direcciones = () => {
         </Col>
         <Col md={4} className="d-flex justify-content-center">
           <div>
-            <p className="subtitle py-3">propiedades en renta</p>
-            <div className="card-direcciones">
+            <p className="subtitle py-3">Propiedades en renta</p>
+            <div className="card-direcciones card-hover">
               <div className="py-5 text-white text-left px-4 list-item">
                 <li>Iztacalco CDMX</li>
                 <li>Colonia del Valle</li>
@@ -36,8 +36,8 @@ const Direcciones = () => {
         </Col>
         <Col md={4} className="d-flex justify-content-center">
           <div>
-            <p className="subtitle py-3">propiedades en venta</p>
-            <div className="card-direcciones">
+            <p className="subtitle py-3">Propiedades en venta</p>
+            <div className="card-direcciones card-hover">
               <div className="py-5 text-white text-left px-4 list-item">
                 <li>Iztacalco CDMX</li>
                 <li>Colonia del Valle</li>

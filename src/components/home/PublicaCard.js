@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 
 const PublicaCard = ({ id, img, title, desc }) => {
   return (
-    <Card style={{ width: "18rem" }} className="my-3">
+    <Card style={{ width: "18rem" }} className="my-3 card-hover">
       <Card.Body>
         <div className="d-flex justify-content-around">
           <div>

@@ -58,9 +58,9 @@ const Publica = () => {
             </Col>
           ))}
         </Row>
-        <div className="mt-5">
+        <div className="mt-5 ">
           <div className="d-flex justify-content-center">
-            <div className="background-anunciar pt-4">
+            <div className="background-anunciar pt-4 card-hover">
               <img src={img} alt="anuncia ahora" />
               <p className="subtitle-2">Publica tus propiedades ahora</p>
               <p className="subtitle-3 text-white">

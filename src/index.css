@@ -2365,6 +2365,12 @@ body .no-padding {
   font-weight: 600;
 }
 
+@media (max-width: 407px) {
+  .subtitle-3 {
+    font-size: 17px;
+  }
+}
+
 .text {
   color: #515151;
   font-size: 18px;
@@ -2562,9 +2568,29 @@ body .no-padding {
 .separator {
   width: 100%;
   height: 331px;
-  background: linear-gradient(180deg, #3f19f9 0%, #2c0cc5 100%);
+  background-image: linear-gradient(
+      180deg,
+      rgba(63, 25, 249, 1),
+      rgba(44, 12, 197, 1)
+    ),
+    url("https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Fthumb%40banner2.png?alt=media&token=0c77451b-c468-46c0-ad78-6227c361d37e");
   background-blend-mode: multiply;
   border-radius: 0px;
+  background-position: center;
+}
+.separator-2 {
+  width: 100%;
+  height: 331px;
+  background-image: linear-gradient(
+      180deg,
+      rgba(63, 25, 249, 1),
+      rgba(44, 12, 197, 1)
+    ),
+    url("https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Fthumb%40banner.png?alt=media&token=366ec7f5-9e6b-4953-8edf-93db0ccc7460");
+  background-blend-mode: multiply;
+  border-radius: 0px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .separator-title {
@@ -2573,6 +2599,45 @@ body .no-padding {
 }
 .separator-witideal {
   font-weight: 700;
-  font-size: 52px;
+  font-size: 48px;
   color: #32ffd2;
+}
+
+@media (max-width: 992px) {
+  .separator-title {
+    font-weight: 700;
+    font-size: 35px;
+  }
+  .separator-witideal {
+    font-weight: 700;
+    font-size: 35px;
+    color: #32ffd2;
+  }
+}
+
+@media (max-width: 768px) {
+  .separator-title {
+    font-weight: 700;
+    font-size: 30px;
+  }
+  .separator-witideal {
+    font-weight: 700;
+    font-size: 30px;
+    color: #32ffd2;
+  }
+}
+
+@media (max-width: 517px) {
+  .separator-2 {
+    height: 555px;
+  }
+}
+
+.card-hover {
+  transition: ease 300ms;
+}
+
+.card-hover:hover {
+  transition: ease 300ms;
+  transform: translateY(-10px);
 }

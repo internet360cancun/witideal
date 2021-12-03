@@ -82,7 +82,7 @@ const Destacados = () => {
               key={destacado.id}
               className="d-flex justify-content-center py-2"
             >
-              <Card style={{ width: "426px" }}>
+              <Card className="card-hover" style={{ width: "426px" }}>
                 <Card.Img
                   variant="top"
                   src={card}
