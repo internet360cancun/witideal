@@ -2641,3 +2641,72 @@ body .no-padding {
   transition: ease 300ms;
   transform: translateY(-10px);
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.familia {
+  margin-top: -100px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1600px) {
+  .familia {
+    position: absolute;
+    left: 50%;
+    width: 950px;
+    transform: translate(-75%, 10px);
+  }
+}
+
+@media (max-width: 1280px) {
+  .familia {
+    left: 50%;
+    width: 850px;
+    transform: translate(-70%, 55px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .familia {
+    width: 700px;
+    transform: translate(-75%, 51px);
+  }
+}
+@media (max-width: 1048px) {
+  .familia {
+    width: 700px;
+    transform: translate(-75%, 160px);
+  }
+}
+
+@media (max-width: 960px) {
+  .familia-2 {
+    position: relative;
+    transform: translate(-25%);
+  }
+}
+@media (max-width: 767px) {
+  .familia-2 {
+    position: relative;
+    transform: translate(-30%);
+  }
+}
+@media (max-width: 539px) {
+  .familia-2 {
+    position: relative;
+    transform: translate(-38%);
+  }
+}
+
+@media (max-width: 435px) {
+  .familia-2 {
+    position: relative;
+    transform: translate(-42%);
+  }
+}

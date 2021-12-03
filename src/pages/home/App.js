@@ -54,7 +54,7 @@ const App = () => {
                   </ul>
                   <div className="d-flex justify-content-center">
                     <img
-                      className="card-hover"
+                      className="card-hover pointer"
                       onClick={witidealApp}
                       src={playstore}
                       alt="descarga nuestra app en playstore"
@@ -102,7 +102,7 @@ const App = () => {
                   </ul>
                   <div className="d-flex justify-content-center">
                     <img
-                      className="playstore card-hover"
+                      className="playstore card-hover pointer"
                       onClick={witidealApp}
                       src={playstore}
                       alt="descarga nuestra app en playstore"

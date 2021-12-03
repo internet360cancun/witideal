@@ -88,7 +88,14 @@ const useStyles = makeStyles((theme) => ({
   },
   formPaper: {
     borderRadius: 30,
-    marginTop: 0,
+    position: "relative",
+    "@media (max-width:1279px)": {
+      marginTop: 70,
+      marginBottom: 80,
+    },
+    "@media (max-width:960px)": {
+      marginBottom: -30,
+    },
   },
   formContainerColor: {
     padding: theme.spacing(0, 3, 3, 3),

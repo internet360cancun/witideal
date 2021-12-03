@@ -63,14 +63,14 @@ const Categorias = () => {
               key={categoria.id}
               md={4}
               xs={6}
-              className="d-flex justify-content-center py-2"
+              className="d-flex justify-content-center py-3"
             >
               <div
-                className="card-hover"
+                className="card-hover pointer"
                 style={{
                   backgroundImage: `linear-gradient(69.69deg, rgba(50, 255, 210, 0.9), rgba(65, 184, 249, 0.9)), url("${categoria.background}")`,
                   backgroundPosition: "center",
-                  width: "425.6px",
+                  width: "480px",
                   height: "238.15px",
                   borderRadius: "19.6542px",
                 }}
