@@ -93,7 +93,7 @@ const Categorias = () => {
                     backgroundImage: `linear-gradient(69.69deg, rgba(50, 255, 210, 0.9), rgba(65, 184, 249, 0.9)), url("${categoria.background}")`,
                     backgroundPosition: "center",
                     width: "480px",
-                    height: "238.15px",
+                    height: "130px",
                     borderRadius: "19.6542px",
                   }}
                 >
@@ -101,9 +101,9 @@ const Categorias = () => {
                     style={{ height: "100%" }}
                     className="d-flex justify-content-center align-items-center"
                   >
-                    <p className="text-white subtitle-4 px-3">
+                    <div className="text-white subtitle-4 px-3">
                       {categoria.title}
-                    </p>
+                    </div>
                   </div>
                 </div>
               )}

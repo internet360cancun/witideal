@@ -83,7 +83,7 @@ const App = () => {
           <Container>
             <Row>
               <Col>
-                <div>
+                <div className="px-4">
                   <br />
                   <p className="title-3">Descarga nuestra App</p>
                   <h3 className="text-white text-left py-1">

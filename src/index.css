@@ -2366,8 +2366,7 @@ body .no-padding {
 }
 
 .subtitle-4 {
-  font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @media (max-width: 407px) {
