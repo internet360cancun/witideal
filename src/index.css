@@ -2700,3 +2700,12 @@ body .no-padding {
     transform: translate(-42%);
   }
 }
+
+.right-hover {
+  transition: 0.3s;
+}
+
+.right-hover:hover {
+  transform: translate(10px, 0);
+  transition: 0.3s;
+}
