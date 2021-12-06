@@ -1,4 +1,5 @@
 import React from "react";
+import { useMediaQuery } from "@material-ui/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
@@ -10,10 +11,12 @@ import crediconsulting from "../../assets/howitworks/slides/crediconsulting.png"
 import lgc from "../../assets/howitworks/slides/lgc.png";
 import lgcres from "../../assets/howitworks/slides/lgcres.png";
 import remate from "../../assets/howitworks/slides/remate.png";
-
+import tukasa from "../../assets/howitworks/slides/tukasa-en-linea.png";
 SwiperCore.use([Autoplay]);
 
 const SectionEight = () => {
+  const tablet = useMediaQuery("(min-width:600px)");
+
   return (
     <div className="container2" id="section8">
       <div className="BannerTitle8">Nuestros Aliados</div>
@@ -124,14 +127,15 @@ const SectionEight = () => {
               rel="noopener noreferrer"
             >
               <img
-                className="imgcontainer"
-                src="https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Fthumb%40tucasa.png?alt=media&token=a547db7d-145c-4a35-bff2-d7d19ff9bb98"
+                style={{ width: "120px" }}
+                src={tukasa}
                 alt="Tu Kasa en Línea"
               />
             </a>
           </div>
         </SwiperSlide>
       </Swiper>
+      {tablet ? <div className="degradado"></div> : null}
     </div>
   );
 };

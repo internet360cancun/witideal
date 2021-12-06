@@ -10,34 +10,34 @@ const Direcciones = () => {
       dir: [
         {
           id: 1,
-          dir: "Casa en del Valle",
+          dir: "Casa en renta en del Valle",
           link: "propiedades/Casa/Rentar/MX/CDMX/Benito-Juárez/Col-del-Valle-Centro",
         },
         {
           id: 2,
-          dir: "Casa en Condesa",
+          dir: "Casa en renta en Condesa",
           link: "propiedades/Casa/Rentar/MX/CDMX/Cuauhtémoc/Colonia-Condesa",
         },
         {
           id: 3,
-          dir: "Departamento en Condesa",
+          dir: "Departamento en renta en Condesa",
           link: "propiedades/Departamento/Rentar/MX/CDMX/Cuauhtémoc/Colonia-Condesa",
         },
         {
           id: 4,
-          dir: "Casa en Polanco",
+          dir: "Casa en renta en Polanco",
           link: "propiedades/Casa/Rentar/MX/CDMX/Miguel-Hidalgo/Polanco-I-Secc",
         },
         {
           id: 5,
-          dir: "Departamento en Polanco",
+          dir: "Departamento en renta en Polanco",
           link: "propiedades/Departamento/Rentar/MX/CDMX/Miguel-Hidalgo/Polanco-I-Secc",
         },
       ],
     },
     {
       id: 2,
-      title: "Propiedades en renta",
+      title: "Casas en renta",
       dir: [
         {
           id: 1,
@@ -73,7 +73,7 @@ const Direcciones = () => {
     },
     {
       id: 3,
-      title: "Propiedades en venta",
+      title: "Casas en venta",
       dir: [
         {
           id: 1,

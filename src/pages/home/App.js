@@ -45,11 +45,12 @@ const App = () => {
                   <ul className="text-app text-white text-left">
                     <li>
                       <span style={{ color: "#32ffd2" }}>Encuentra</span> casas,
-                      departamentos, oficinas, terreno y más
+                      departamentos, oficinas, <br /> terreno y más
                     </li>
                     <li>
-                      <span style={{ color: "#32ffd2" }}>Administra</span>
-                      tus propiedades y recibe notificaciones desde tu celular
+                      <span style={{ color: "#32ffd2" }}>Administra </span>
+                      tus propiedades y recibe <br /> notificaciones desde tu
+                      celular
                     </li>
                   </ul>
                   <div className="d-flex justify-content-center">
@@ -96,7 +97,7 @@ const App = () => {
                       departamentos, oficinas, terreno y más
                     </li>
                     <li>
-                      <span style={{ color: "#32ffd2" }}>Administra</span>
+                      <span style={{ color: "#32ffd2" }}>Administra </span>
                       tus propiedades y recibe notificaciones desde tu celular
                     </li>
                   </ul>

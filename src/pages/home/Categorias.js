@@ -30,21 +30,21 @@ const Categorias = () => {
     },
     {
       id: 4,
-      title: "Propiedades comerciales en renta",
-      link: "",
+      title: "Locales en renta",
+      link: "propiedades/Local/Rentar/MX/CDMX",
       background:
         "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40propiedad-comercial.png?alt=media&token=5e0bac0b-8bba-4e1f-b763-a0f5dcb1eafc",
     },
     {
       id: 5,
-      title: "Departamentos",
+      title: "Departamentos en renta",
       link: "propiedades/Departamento/Rentar/MX/CDMX",
       background:
         "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40departamento-renta.png?alt=media&token=4a2e74a1-1743-48eb-954c-bd84f4413f46",
     },
     {
       id: 6,
-      title: "Terrenos",
+      title: "Terrenos en venta",
       link: "propiedades/Terreno/Comprar/MX/CDMX",
       background:
         "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40terrenos.png?alt=media&token=822e8cd8-611a-41d4-be6e-92e588a5840e",
