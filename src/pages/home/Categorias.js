@@ -43,6 +43,7 @@ const Categorias = () => {
   ];
 
   const tablet = useMediaQuery("(min-width:1200px)");
+  const mobile = useMediaQuery("(min-width:500px)");
 
   return (
     <div
@@ -65,22 +66,47 @@ const Categorias = () => {
               xs={6}
               className="d-flex justify-content-center py-3"
             >
-              <div
-                className="card-hover pointer"
-                style={{
-                  backgroundImage: `linear-gradient(69.69deg, rgba(50, 255, 210, 0.9), rgba(65, 184, 249, 0.9)), url("${categoria.background}")`,
-                  backgroundPosition: "center",
-                  width: "480px",
-                  height: "238.15px",
-                  borderRadius: "19.6542px",
-                }}
-              >
-                <div className="d-flex justify-content-center">
-                  <p className={`text-white subtitle-3     pt-5 mt-5`}>
-                    {categoria.title}
-                  </p>
+              {mobile ? (
+                <div
+                  className="card-hover pointer"
+                  style={{
+                    backgroundImage: `linear-gradient(69.69deg, rgba(50, 255, 210, 0.9), rgba(65, 184, 249, 0.9)), url("${categoria.background}")`,
+                    backgroundPosition: "center",
+                    width: "480px",
+                    height: "238.15px",
+                    borderRadius: "19.6542px",
+                  }}
+                >
+                  <div
+                    style={{ height: "100%" }}
+                    className="d-flex justify-content-center align-items-center"
+                  >
+                    <p className="text-white subtitle-3 px-3">
+                      {categoria.title}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div
+                  className="card-hover pointer"
+                  style={{
+                    backgroundImage: `linear-gradient(69.69deg, rgba(50, 255, 210, 0.9), rgba(65, 184, 249, 0.9)), url("${categoria.background}")`,
+                    backgroundPosition: "center",
+                    width: "480px",
+                    height: "238.15px",
+                    borderRadius: "19.6542px",
+                  }}
+                >
+                  <div
+                    style={{ height: "100%" }}
+                    className="d-flex justify-content-center align-items-center"
+                  >
+                    <p className="text-white subtitle-4 px-3">
+                      {categoria.title}
+                    </p>
+                  </div>
+                </div>
+              )}
             </Col>
           ))}
         </Row>

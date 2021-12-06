@@ -12,6 +12,7 @@ const Container = styled(Grid)({
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed",
+  position: "relative",
   overflowX: "hidden",
 });
 
