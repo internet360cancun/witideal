@@ -9,22 +9,21 @@ const InfoWitideal = () => {
   const tablet = useMediaQuery("(min-width:991px)");
 
   return (
-    <Container className="py-5">
+    <Container className="pt-5">
       {tablet ? (
         <Row>
           <Col md={6} className="text-left">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            {tablet ? (
+              <>
+                <br />
+                <br />
+              </>
+            ) : null}
 
             <h1 className="title">
               ¿Por qué usar <br /> Witideal?
             </h1>
+            <br />
             <p className="text">
               En Witideal tenemos una gran variedad de <br /> propiedades,
               departamentos, casas, renta y venta <br /> de local comercial y
@@ -51,7 +50,7 @@ const InfoWitideal = () => {
         </Row>
       ) : (
         <Row>
-          <Col className="text-left">
+          <Col xs={12} className="text-left">
             <h1 className="title text-center">
               ¿Por qué usar <br /> Witideal?
             </h1>
@@ -63,7 +62,7 @@ const InfoWitideal = () => {
               />
             </div>
           </Col>
-          <Col>
+          <Col xs={12}>
             <div>
               <p className="text text-justify">
                 En Witideal tenemos una gran variedad de propiedades,
