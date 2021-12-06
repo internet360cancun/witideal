@@ -187,6 +187,8 @@ export function Footer() {
                 <vr style={{ border: "solid 1px #41B8F9", height: "150px" }} />
               )}
               <Left>
+                <br />
+                <br />
                 <Contact>contacto@witideal.com</Contact>
                 <Contact>55 1971 3247(soporte)</Contact>
                 <Contact>33 1527 6156 (ventas)</Contact>
