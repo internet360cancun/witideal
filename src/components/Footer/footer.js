@@ -1,22 +1,145 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@material-ui/core/styles";
-import { Button, Grid } from "@material-ui/core";
+import { Button, useMediaQuery } from "@material-ui/core";
+import { Grid, Paper, Box } from "@material-ui/core";
+import { makeStyles, Modal } from "@material-ui/core";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import facebook from "../../assets/facebook.svg";
 import instagram from "../../assets/instagram.svg";
 import youtube from "../../assets/youtube.svg";
 import playstore from "../../assets/playstore.png";
-// import appstore from "../../assets/appstore.png";
 import linkedin from "../../assets/linkedin.svg";
 import { currentVersion } from "../../assets/Strings";
-import tucasasrc from "../../assets/tucasa.png";
-import creditosrc from "../../assets/credito.png";
-import useSession from "../../Hooks/useSession";
-import fotoespacioSrc from "../../assets/fotoespacio.png";
+import CloseModal from "../../layouts/closeModal";
+import { Register } from "../../components/Register/register";
+
+const wdLightBlue = "#41B8F9";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    borderRadius: 5,
+    "& img": {
+      width: 200,
+    },
+    [theme.breakpoints.down("xs")]: {
+      "& img": {
+        width: 120,
+      },
+    },
+  },
+
+  title: {
+    flexGrow: 1,
+  },
+  btnItemContained: {
+    fontWeight: 700,
+    marginLeft: 10,
+    borderRadius: 50,
+    textTransform: "none",
+    fontSize: 15,
+    "&:hover": {
+      backgroundColor: "#1E0E6F",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "14px",
+    },
+  },
+  btnItem: {
+    fontWeight: 700,
+    marginLeft: 10,
+    borderRadius: 50,
+    textTransform: "none",
+    fontSize: 15,
+    borderColor: wdLightBlue,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "14px",
+    },
+  },
+
+  navBgColor: {
+    backgroundColor: "white",
+  },
+  linkDecoration: {
+    textDecoration: "none",
+    color: "black",
+  },
+  avatarColor: {
+    color: "#fff",
+    backgroundColor: "#E8E5FD",
+    width: "30px",
+    height: "30px",
+  },
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paperLogin: {
+    paddingTop: "60px",
+    backgroundColor: theme.palette.background.paper,
+    border: "0px solid #000",
+    outline: "none",
+    position: "relative",
+    boxShadow: theme.shadows[5],
+    maxHeight: "85vh",
+    overflow: "scroll",
+    "&::-webkit-scrollbar": {
+      width: 0,
+    },
+    [theme.breakpoints.up("xs")]: {
+      width: "90%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "80%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "70%",
+    },
+    [theme.breakpoints.up("xl")]: {
+      width: "50%",
+    },
+  },
+  paper: {
+    paddingTop: "60px",
+    backgroundColor: theme.palette.background.paper,
+    border: "0px solid #000",
+    outline: "none",
+    position: "relative",
+    boxShadow: theme.shadows[5],
+    maxHeight: "85vh",
+    overflow: "scroll",
+    "&::-webkit-scrollbar": {
+      width: 0,
+    },
+    width: "750px",
+    "@media (max-width:800px)": {
+      width: "96%",
+    },
+  },
+}));
 
 export function Footer() {
-  const { isPromoter = false } = useSession();
+  const classes = useStyles();
+  const [openRegister, setOpenRegister] = useState(false);
+  const [federated, setFederated] = useState(false); // state to hold if user comes from fb/gugulu
+  const [comesFromLogin, setComesFromLogin] = useState(false);
+
+  const tablet = useMediaQuery("(min-width:901px)");
+
+  window.register = () => setOpenRegister(true);
+
+  const changeToLogIn = () => setOpenRegister(false);
+
+  const handleToggleRegister = () => setOpenRegister(!openRegister);
+
+  const handleCloseRegister = () => setOpenRegister(false);
 
   return (
     <div className="master_footer">
@@ -27,42 +150,46 @@ export function Footer() {
               <Right>
                 <LogoImg src={Logo} />
                 <Title>Descubre tu lugar</Title>
-                {/* <Text>NOSOTROS</Text> */}
-                <LinkStyled to="/como-funciona">Quiero Anunciar</LinkStyled>
+                <div className="text-white">
+                  En Witideal encuentra tu lugar ideal
+                </div>
               </Right>
-              <Center href="https://bit.ly/3q3rTri" target="_blank">
-                <LogoImg src={tucasasrc} alt="Tu Kasa en linea logo" />
-                <Title>Tu Kasa en línea</Title>
-                <ButtonStyled>Servicio de Mudanzas</ButtonStyled>
-              </Center>
 
-              {isPromoter && (
-                <Center href="https://bit.ly/3hXM8E7" target="_blank">
-                  <LogoImg src={fotoespacioSrc} alt="Tu Kasa en linea logo" />
-                  <Title>Foto Espacios</Title>
-                  <ButtonStyled >
-                    Arquitectura {"&"} Inmobiliaria <br />
-                    Fotografía{" "}
-                  </ButtonStyled>
-                </Center>
+              {!tablet ? null : (
+                <vr style={{ border: "solid 1px #41B8F9", height: "150px" }} />
               )}
 
-              <Center
-                href="https://bit.ly/36sDCbz"
-                target="_blank"
-                style={{ textAlign: "center" }}
-              >
-                <LogoImg src={creditosrc} alt="Tu Kasa en linea logo" />
-                <Title>
-                  Créditos <br />
-                  Hipotecarios
-                </Title>
-                {/* <LinkStyled>Servicio de Mudanzas</LinkStyled> */}
+              <Center>
+                <Title>Nuestras oficinas</Title>
+                <Contact>
+                  Cerro de las Campanas No. 3, Despacho 304, <br /> Piso 3 Torre
+                  A, San Andrés Atenco, 54050,
+                  <br /> Tlalnepantla, México. Cd de México
+                </Contact>
               </Center>
+
+              {!tablet ? null : (
+                <vr style={{ border: "solid 1px #41B8F9", height: "150px" }} />
+              )}
+
+              <Center style={{ textAlign: "center" }}>
+                <Title>Quiero anunciar</Title>
+                <ButtonStyled onClick={handleToggleRegister}>
+                  Registrarme
+                </ButtonStyled>
+                <br />
+                <ButtonStyled onClick={handleToggleRegister}>
+                  Iniciar sesión
+                </ButtonStyled>
+              </Center>
+
+              {!tablet ? null : (
+                <vr style={{ border: "solid 1px #41B8F9", height: "150px" }} />
+              )}
               <Left>
                 <Contact>contacto@witideal.com</Contact>
                 <Contact>55 1971 3247(soporte)</Contact>
-                <Contact>33 1527 6156 (ventas)</Contact>  
+                <Contact>33 1527 6156 (ventas)</Contact>
                 <SocialContainer>
                   <a
                     href="https://www.facebook.com/Witideal-100558841331747/"
@@ -114,16 +241,12 @@ export function Footer() {
             <LegalBody>
               <LegalLeft>
                 <div>
-                  Cerro de las Campanas No.3 Despacho 304, piso 3 Torre A, San
-                  Andrés Atenco, 54050 Tlalnepantla, México. Cd de México
-                </div>
-                <div>
                   ®{new Date().getFullYear()}, Derechos Reservados |
                   Desarrolladora de Tecnologías ARD, S.A. de C.V.
                 </div>
                 <div>Versión {currentVersion}</div>
               </LegalLeft>
-              
+
               <LegalRight>
                 <LegalLink to="/terminos-y-condiciones">
                   Términos y condiciones
@@ -137,6 +260,42 @@ export function Footer() {
           </Grid>
         </Grid>
       </LegalContainer>
+
+      <Modal
+        aria-labelledby="register-modal"
+        aria-describedby="register-form"
+        className={classes.modal}
+        open={openRegister}
+        onClose={handleCloseRegister}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={openRegister}>
+          <div className={classes.paper}>
+            <CloseModal onClick={() => setOpenRegister(false)} />
+
+            <Paper elevation={0}>
+              <Box p={{ md: 5, xs: 1 }}>
+                <Grid container justifyContent="center" alignItems="center">
+                  <Grid item xs={12} sm={10} lg={10}>
+                    <Register
+                      setComesFromLogin={setComesFromLogin}
+                      comesFromLogin={comesFromLogin}
+                      dismissModal={handleCloseRegister}
+                      changeToLogIn={changeToLogIn}
+                      federated={federated}
+                      setFederated={setFederated}
+                    />
+                  </Grid>
+                </Grid>
+              </Box>
+            </Paper>
+          </div>
+        </Fade>
+      </Modal>
     </div>
   );
 }
@@ -157,15 +316,6 @@ const SocialContainer = styled("div")({
 const Contact = styled("div")({
   color: "#fff",
   marginBottom: "5px",
-});
-
-const LinkStyled = styled(Link)({
-  textDecoration: "none",
-  color: "#fff",
-  marginBottom: "5px",
-  "@media (max-width:1400px)": {
-    fontSize: ".9em",
-  },
 });
 
 const ButtonStyled = styled(Button)({
@@ -207,13 +357,11 @@ const Body = styled("div")({
 });
 
 const Right = styled("div")({
-  // width: '33%',
   textAlign: "left",
   "@media (max-width:900px)": { width: "100%", textAlign: "center" },
 });
 
 const Left = styled("div")({
-  // width: '33%',
   textAlign: "right",
   "@media (max-width:900px)": {
     width: "100%",
@@ -233,9 +381,7 @@ const Center = styled("a")({
     marginTop: "25px",
     marginBottom: "25px",
   },
-  cursor: "pointer",
 });
-// -----------
 
 const LegalContainer = styled("div")({
   background: "#2a11a0",

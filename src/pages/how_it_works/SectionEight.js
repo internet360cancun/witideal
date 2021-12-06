@@ -116,6 +116,21 @@ const SectionEight = () => {
             </a>
           </div>
         </SwiperSlide>
+        <SwiperSlide>
+          <div className="col-xs-3 col-sm-3 col-md-3 mt-5 mb-3">
+            <a
+              href="https://tukasaenlinea.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="imgcontainer"
+                src="https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Fthumb%40tucasa.png?alt=media&token=a547db7d-145c-4a35-bff2-d7d19ff9bb98"
+                alt="Tu Kasa en Línea"
+              />
+            </a>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
