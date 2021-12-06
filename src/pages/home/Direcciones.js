@@ -11,11 +11,46 @@ const Direcciones = () => {
             <p className="subtitle py-3">Ubicaciones principales</p>
             <div className="card-direcciones card-hover">
               <div className="py-5 text-white text-left px-4 list-item">
-                <li>Casa en del Valle</li>
-                <li>Casa en Condesa</li>
-                <li>Departamento en Condesa</li>
-                <li>Casa en Polanco</li>
-                <li>Departamento en Polanco</li>
+                <li>
+                  <Link
+                    className="text-white"
+                    to="propiedades/Casa/Rentar/MX/CDMX/Benito-Juárez/Col-del-Valle-Centro"
+                  >
+                    Casa en del Valle
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-white"
+                    to="propiedades/Casa/Rentar/MX/CDMX/Cuauhtémoc/Colonia-Condesa"
+                  >
+                    Casa en Condesa
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-white"
+                    to="propiedades/Departamento/Rentar/MX/CDMX/Cuauhtémoc/Colonia-Condesa"
+                  >
+                    Departamento en Condesa
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-white"
+                    to="propiedades/Casa/Rentar/MX/CDMX/Miguel-Hidalgo/Polanco-I-Secc"
+                  >
+                    Casa en Polanco
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-white"
+                    to="propiedades/Departamento/Rentar/MX/CDMX/Miguel-Hidalgo/Polanco-I-Secc"
+                  >
+                    Departamento en Polanco
+                  </Link>
+                </li>
               </div>
             </div>
           </div>

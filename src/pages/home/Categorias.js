@@ -84,6 +84,7 @@ const Categorias = () => {
                   style={{
                     backgroundImage: `linear-gradient(69.69deg, rgba(50, 255, 210, 0.9), rgba(65, 184, 249, 0.9)), url("${categoria.background}")`,
                     backgroundPosition: "center",
+                    backgroundSize: "cover",
                     width: "480px",
                     height: "238.15px",
                     borderRadius: "19.6542px",
