@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Direcciones = () => {
   return (
@@ -24,12 +25,54 @@ const Direcciones = () => {
             <p className="subtitle py-3">Propiedades en renta</p>
             <div className="card-direcciones card-hover">
               <div className="py-5 text-white text-left px-4 list-item">
-                <li>Iztacalco CDMX</li>
-                <li>Colonia del Valle</li>
-                <li>Santa Fe</li>
-                <li>Jardines del Pedregal</li>
-                <li>Tlalpuente</li>
-                <li>Bosques del Pedregal</li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Rentar/MX/CDMX/Iztacalco"
+                    className="text-white"
+                  >
+                    Iztacalco CDMX
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Rentar/MX/CDMX/Benito-Juárez/Col-del-Valle-Centro"
+                    className="text-white"
+                  >
+                    Colonia del Valle
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Rentar/MX/CDMX/Álvaro-Obregón/Santa-Fe"
+                    className="text-white"
+                  >
+                    Santa Fe
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Rentar/MX/CDMX/Álvaro-Obregón/Jardines-del-Pedregal"
+                    className="text-white"
+                  >
+                    Jardines del Pedregal
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Rentar/MX/CDMX/Tlalpan/San-Andrés-Totoltepec"
+                    className="text-white"
+                  >
+                    Tlalpuente
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Rentar/MX/CDMX/Tlalpan/Bosques-del-Pedregal"
+                    className="text-white"
+                  >
+                    Bosques del Pedregal
+                  </Link>
+                </li>
               </div>
             </div>
           </div>
@@ -39,12 +82,54 @@ const Direcciones = () => {
             <p className="subtitle py-3">Propiedades en venta</p>
             <div className="card-direcciones card-hover">
               <div className="py-5 text-white text-left px-4 list-item">
-                <li>Iztacalco CDMX</li>
-                <li>Colonia del Valle</li>
-                <li>Santa Fe</li>
-                <li>Jardines del Pedregal</li>
-                <li>Tlalpuente</li>
-                <li>Bosques del Pedregal</li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Comprar/MX/CDMX/Iztacalco"
+                    className="text-white"
+                  >
+                    Iztacalco CDMX
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Comprar/MX/CDMX/Benito-Juárez/Col-del-Valle-Centro"
+                    className="text-white"
+                  >
+                    Colonia del Valle
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Comprar/MX/CDMX/Álvaro-Obregón/Santa-Fe"
+                    className="text-white"
+                  >
+                    Santa Fe
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Comprar/MX/CDMX/Álvaro-Obregón/Jardines-del-Pedregal"
+                    className="text-white"
+                  >
+                    Jardines del Pedregal
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Comprar/MX/CDMX/Tlalpan/San-Andrés-Totoltepec"
+                    className="text-white"
+                  >
+                    Tlalpuente
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="propiedades/Casa/Comprar/MX/CDMX/Tlalpan/Bosques-del-Pedregal"
+                    className="text-white"
+                  >
+                    Bosques del Pedregal
+                  </Link>
+                </li>
               </div>
             </div>
           </div>
