@@ -11,49 +11,41 @@ const Categorias = () => {
       id: 1,
       title: "Inmuebles en venta",
       link: "propiedades/Casa/Comprar/MX/CDMX",
-      background:
-        "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40inmuebles-ventas.png?alt=media&token=ec4b5d9f-e0e8-401e-acf5-e6cd038c1e25",
+      icon: "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40inmuebles-ventas.png?alt=media&token=ec4b5d9f-e0e8-401e-acf5-e6cd038c1e25",
     },
     {
       id: 2,
       title: "Inmuebles en renta",
       link: "propiedades/Casa/Rentar/MX/CDMX",
-      background:
-        "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40inmuebles-renta.png?alt=media&token=1f15eed7-9f5b-41a5-8f09-4208b370b954",
+      icon: "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40inmuebles-rentas.png?alt=media&token=f7c53053-1291-4c51-a069-726f6a6c6cd3",
     },
     {
       id: 3,
       title: "Oficinas en renta",
       link: "propiedades/Oficina/Rentar/MX/CDMX",
-      background:
-        "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40oficinas-renta.png?alt=media&token=5678533a-49c8-49d8-9d35-29368cfcff40",
+      icon: "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40work-space.png?alt=media&token=31261db9-bd02-447c-abd0-fa4911b2b71a",
     },
     {
       id: 4,
       title: "Locales en renta",
       link: "propiedades/Local/Rentar/MX/CDMX",
-      background:
-        "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40propiedad-comercial.png?alt=media&token=5e0bac0b-8bba-4e1f-b763-a0f5dcb1eafc",
+      icon: "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40locales.png?alt=media&token=ee0ea600-fe60-4d3f-a1fe-9d777cc7d7ba",
     },
     {
       id: 5,
       title: "Departamentos en renta",
       link: "propiedades/Departamento/Rentar/MX/CDMX",
-      background:
-        "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40departamento-renta.png?alt=media&token=4a2e74a1-1743-48eb-954c-bd84f4413f46",
+      icon: "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40office-building.png?alt=media&token=0b7728ea-940c-4d95-9cb3-8994fa42e782",
     },
     {
       id: 6,
       title: "Terrenos en venta",
       link: "propiedades/Terreno/Comprar/MX/CDMX",
-      background:
-        "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40terrenos.png?alt=media&token=822e8cd8-611a-41d4-be6e-92e588a5840e",
+      icon: "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40terrenos.png?alt=media&token=822e8cd8-611a-41d4-be6e-92e588a5840e",
     },
   ];
-
   const tablet = useMediaQuery("(min-width:1200px)");
-  const mobile = useMediaQuery("(min-width:500px)");
-
+  const isTablet = useMediaQuery("(min-width:768px)");
   const handleToSearch = (link) => history.push(link);
 
   return (
@@ -72,54 +64,33 @@ const Categorias = () => {
         <Row className="pb-5">
           {categorias.map((categoria) => (
             <Col
-              key={categoria.id}
+              xs={12}
+              sm={12}
               md={4}
-              xs={6}
-              className="d-flex justify-content-center py-3"
+              lg={2}
+              key={categoria.id}
+              className="my-2"
             >
-              {mobile ? (
+              {isTablet ? (
                 <div
                   onClick={() => handleToSearch(categoria.link)}
-                  className="card-hover pointer"
-                  style={{
-                    backgroundImage: `linear-gradient(69.69deg, rgba(50, 255, 210, 0.9), rgba(65, 184, 249, 0.9)), url("${categoria.background}")`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    width: "480px",
-                    height: "238.15px",
-                    borderRadius: "19.6542px",
-                  }}
+                  className="pointer border-hover category-text"
                 >
-                  <div
-                    style={{ height: "100%" }}
-                    className="d-flex justify-content-center align-items-center"
-                  >
-                    <p className="text-white subtitle-3 px-3">
-                      {categoria.title}
-                    </p>
-                  </div>
+                  <img src={categoria.icon} alt={categoria.title} />
+                  <div className="subtitle-3 px-3 py-2">{categoria.title}</div>
                 </div>
               ) : (
-                <div
+                <Row
                   onClick={() => handleToSearch(categoria.link)}
-                  className="card-hover pointer"
-                  style={{
-                    backgroundImage: `linear-gradient(69.69deg, rgba(50, 255, 210, 0.9), rgba(65, 184, 249, 0.9)), url("${categoria.background}")`,
-                    backgroundPosition: "center",
-                    width: "480px",
-                    height: "130px",
-                    borderRadius: "19.6542px",
-                  }}
+                  className="d-flex align-items-center"
                 >
-                  <div
-                    style={{ height: "100%" }}
-                    className="d-flex justify-content-center align-items-center"
-                  >
-                    <div className="text-white subtitle-4 px-3">
-                      {categoria.title}
-                    </div>
-                  </div>
-                </div>
+                  <Col xs={5} sm={5}>
+                    <img src={categoria.icon} alt={categoria.title} />
+                  </Col>
+                  <Col xs={7} sm={6}>
+                    <div className="category-text-m">{categoria.title}</div>
+                  </Col>
+                </Row>
               )}
             </Col>
           ))}

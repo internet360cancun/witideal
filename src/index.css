@@ -2378,6 +2378,11 @@ body .no-padding {
   font-size: 22px;
   font-weight: 600;
 }
+@media (max-width: 1200px) {
+  .subtitle-3 {
+    font-size: 18px;
+  }
+}
 
 .subtitle-4 {
   font-weight: 600;
@@ -2738,4 +2743,34 @@ body .no-padding {
   position: relative;
   transform: translateY(-150px);
   z-index: 12;
+}
+
+.border-hover {
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 19.6542px;
+  height: 100%;
+}
+
+.border-hover:hover {
+  outline: 3px solid #32ffd2;
+}
+
+.category-text {
+  padding-top: 10px;
+  color: white;
+}
+
+.category-text:hover {
+  color: #32ffd2;
+}
+
+.category-text-m {
+  color: white;
+  font-size: 22px;
+  height: 100%;
+  font-weight: 700;
+}
+.category-text-m:hover {
+  color: #32ffd2;
 }
