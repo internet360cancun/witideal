@@ -88,7 +88,9 @@ const Categorias = () => {
                     <img src={categoria.icon} alt={categoria.title} />
                   </Col>
                   <Col xs={7} sm={6}>
-                    <div className="category-text-m">{categoria.title}</div>
+                    <div className="category-text-m text-left">
+                      {categoria.title}
+                    </div>
                   </Col>
                 </Row>
               )}
