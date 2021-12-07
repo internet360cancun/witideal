@@ -72,12 +72,19 @@ const Categorias = () => {
               className="my-2"
             >
               {isTablet ? (
-                <div
-                  onClick={() => handleToSearch(categoria.link)}
-                  className="pointer border-hover category-text"
-                >
-                  <img src={categoria.icon} alt={categoria.title} />
-                  <div className="subtitle-3 px-3 py-2">{categoria.title}</div>
+                <div>
+                  <div
+                    onClick={() => handleToSearch(categoria.link)}
+                    className="pointer border-hover category-text"
+                  >
+                    <img src={categoria.icon} alt={categoria.title} />
+                    <div className="subtitle-3 px-3 py-2">
+                      {categoria.title}
+                    </div>
+                  </div>
+
+                  <br />
+                  <br />
                 </div>
               ) : (
                 <Row
