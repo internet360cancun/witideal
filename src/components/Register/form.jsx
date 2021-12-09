@@ -32,12 +32,7 @@ const ResgisterPromoter = (props) => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(max-width:800px)");
 
-  const handleRegister = () => {
-    props.handleClickCreate();
-    window.gtag("event", "conversion", {
-      send_to: "AW-307620621/_PLOCNfqt4ADEI3W15IB",
-    });
-  };
+  const handleRegister = () => props.handleClickCreate();
 
   return (
     <>

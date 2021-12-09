@@ -45,6 +45,13 @@ export const SearchOrAnnounce = (props) => {
     });
   };
 
+  const buscador = () => {
+    props.setClient();
+    window.gtag("event", "conversion", {
+      send_to: "AW-307620621/_PLOCNfqt4ADEI3W15IB",
+    });
+  };
+
   const classes = useStyles();
 
   return (
@@ -119,7 +126,7 @@ export const SearchOrAnnounce = (props) => {
                     <Button
                       size="small"
                       style={{ borderRadius: "50px", textTransform: "none" }}
-                      onClick={props.setClient}
+                      onClick={buscador}
                       fullWidth
                       variant="contained"
                       color="primary"
