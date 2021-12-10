@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Landing } from "../Landing/landing";
 import { LandingPromoter } from "../LandingPromoter/landingPromoter";
 // import { LogIn } from "../LogIn/logIn";
 // import { Register } from "../Register/register";
@@ -28,9 +27,8 @@ import HowItWorks from "../../pages/how_it_works";
 
 import SelccionarPaquete from "../PackageSelecter/SelccionarPaquete";
 import HomePage from "../../pages/home/HomePage";
-import { OldLanding } from "../Landing/oldLanding";
 
-export const Body = (props) => {
+export const Body = () => {
   const context = useContext(SesContext);
 
   const promoFormAcces = () =>
@@ -46,7 +44,7 @@ export const Body = (props) => {
         exact
         component={MyProfile}
         allow={promoFormAcces}
-        rComponent={OldLanding}
+        rComponent={HomePage}
       />
 
       <Route path={ROUTES.FORGOT} component={RestorePassword} />
@@ -56,7 +54,7 @@ export const Body = (props) => {
         component={PropertiesList}
       />
       <Route path={ROUTES.HOWITWORKS} component={HowItWorks} />
-      <Route path={ROUTES.SEARCH} component={OldLanding} />
+      <Route path={ROUTES.SEARCH} component={HomePage} />
 
       <Route
         exact
