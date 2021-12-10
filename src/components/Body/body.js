@@ -28,6 +28,7 @@ import HowItWorks from "../../pages/how_it_works";
 
 import SelccionarPaquete from "../PackageSelecter/SelccionarPaquete";
 import HomePage from "../../pages/home/HomePage";
+import { OldLanding } from "../Landing/oldLanding";
 
 export const Body = (props) => {
   const context = useContext(SesContext);
@@ -45,7 +46,7 @@ export const Body = (props) => {
         exact
         component={MyProfile}
         allow={promoFormAcces}
-        rComponent={HomePage}
+        rComponent={OldLanding}
       />
 
       <Route path={ROUTES.FORGOT} component={RestorePassword} />
@@ -55,7 +56,7 @@ export const Body = (props) => {
         component={PropertiesList}
       />
       <Route path={ROUTES.HOWITWORKS} component={HowItWorks} />
-      <Route path={ROUTES.SEARCH} component={Landing} />
+      <Route path={ROUTES.SEARCH} component={OldLanding} />
 
       <Route
         exact
