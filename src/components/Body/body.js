@@ -102,11 +102,11 @@ export const Body = () => {
         allow={promoFormAcces}
         component={SelccionarPaquete}
       />
-      <ProtectedRoute
+      {/* <ProtectedRoute
         path={ROUTES.BUYWITICOINS}
         allow={promoFormAcces}
         component={BuyWiticoins}
-      />
+      /> */}
       <ProtectedRoute
         path={ROUTES.MYPROPERTIES}
         allow={promoFormAcces}

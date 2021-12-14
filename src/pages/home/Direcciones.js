@@ -120,7 +120,7 @@ const Direcciones = () => {
           >
             <div>
               <p className="subtitle py-3">{direccion.title}</p>
-              <div className="card-direcciones card-hover">
+              <div className={"card-direcciones card-hover"}>
                 <div className="py-5 text-white text-left px-4 list-item">
                   {direccion.dir.map((dire) => (
                     <li key={dire.id} className="right-hover">
