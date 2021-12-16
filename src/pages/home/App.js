@@ -55,7 +55,7 @@ const App = () => {
                   </ul>
                   <div className="d-flex justify-content-center">
                     <img
-                      className="card-hover pointer"
+                      className="card-hover pointer playstore"
                       onClick={witidealApp}
                       src={playstore}
                       alt="descarga nuestra app en playstore"
