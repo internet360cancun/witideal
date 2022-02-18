@@ -2698,26 +2698,27 @@ body .no-padding {
 @media (max-width: 960px) {
   .familia-2 {
     position: relative;
-    transform: translate(-25%);
+    transform: translate(-15%);
   }
 }
 @media (max-width: 767px) {
   .familia-2 {
     position: relative;
-    transform: translate(-30%);
+    transform: translate(-23%);
   }
 }
 @media (max-width: 539px) {
   .familia-2 {
     position: relative;
-    transform: translate(-38%);
+    transform: translate(-28%);
   }
 }
 
 @media (max-width: 435px) {
   .familia-2 {
     position: relative;
-    transform: translate(-42%);
+    transform: translate(-30%);
+    width: 1000px;
   }
 }
 

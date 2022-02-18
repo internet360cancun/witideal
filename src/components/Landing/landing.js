@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { UserForm } from "../UserForm/userForm";
 import { Grid, Typography, Box, useMediaQuery } from "@material-ui/core";
 import { styled } from "@material-ui/core/styles";
@@ -66,7 +66,7 @@ const Span = styled(Grid)({
 });
 
 const familia =
-  "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Fthumb%40familia.png?alt=media&token=cf65766a-8291-402d-bc66-e35889ded86a";
+  "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Fthumb%40familia-2.png?alt=media&token=4322c49f-bc11-4eaf-9ffa-6a9cf007bf55";
 
 export function Landing() {
   useEffect(() => {

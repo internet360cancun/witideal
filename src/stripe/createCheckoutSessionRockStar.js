@@ -1,14 +1,14 @@
-import firebase from 'firebase/compat/app';
-import { loadStripe } from '@stripe/stripe-js';
+import firebase from "firebase/compat/app";
+import { loadStripe } from "@stripe/stripe-js";
 
 export const createCheckoutSessionRockStar = async (uid) => {
   const firestore = firebase.firestore();
   const docRef = await firestore
-    .collection('users')
+    .collection("users")
     .doc(uid)
-    .collection('checkout_sessions')
+    .collection("checkout_sessions")
     .add({
-      price: 'price_1JbcaHJpPaML8RxiBbbWf35K',
+      price: "price_1JbcaHJpPaML8RxiBbbWf35K",
       success_url: window.location.origin,
       cancel_url: window.location.origin,
     });
@@ -23,7 +23,7 @@ export const createCheckoutSessionRockStar = async (uid) => {
     if (sessionId) {
       // We have a Stripe Checkout URL, let's redirect.
       const stripe = await loadStripe(
-        'pk_live_51Ja6PiJpPaML8Rxi0JndAK0EKei9nQMTnZLdpJgDu5CdYkI2QypECjL7qkuas6xZARVyqb5jZjvUjosjgb4ij9qN00BV1oZUj8'
+        "pk_live_51Ja6PiJpPaML8Rxi0JndAK0EKei9nQMTnZLdpJgDu5CdYkI2QypECjL7qkuas6xZARVyqb5jZjvUjosjgb4ij9qN00BV1oZUj8"
       );
       stripe.redirectToCheckout({ sessionId });
     }
