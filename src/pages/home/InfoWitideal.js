@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useMediaQuery } from "@material-ui/core";
 
 const chica =
-  "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40chica.png?alt=media&token=779116d9-82b4-4372-be24-db14418f0e6f";
+  "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Ficons%2Fthumb%40chica2.png?alt=media&token=ce90ed38-d193-4c0c-9bf3-32d531958650";
 
 const InfoWitideal = () => {
   const tablet = useMediaQuery("(min-width:991px)");
@@ -20,17 +20,17 @@ const InfoWitideal = () => {
               </>
             ) : null}
 
-            <h1 className="title">
+            <h1 className="title ml-5">
               ¿Por qué usar <br /> Witideal?
             </h1>
             <br />
-            <p className="text">
+            <p className="text ml-5">
               En Witideal tenemos una gran variedad de <br /> propiedades,
               departamentos, casas, renta y venta <br /> de local comercial y
               terrenos encuentra la propiedad <br /> que se ajusta a tus
               necesidades con un clic.
             </p>
-            <p className="text">
+            <p className="text ml-5">
               Si necesitas vender o rentar, sube tus propiedades, <br /> es
               Gratis con Witideal registra todas tus propiedades <br /> y vende
               o renta más rápido, podrás administrar tus <br /> propiedades

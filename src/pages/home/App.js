@@ -38,16 +38,16 @@ const App = () => {
                   <br />
                   <br />
                   <p className="title-3">Descarga nuestra App</p>
-                  <h2 className="text-white text-left">
+                  <h2 className="text-white text-left ml-5">
                     Realiza tus publicaciones o búsquedas de la forma más
                     sencilla
                   </h2>
                   <ul className="text-app text-white text-left">
-                    <li>
+                    <li className="ml-5">
                       <span style={{ color: "#32ffd2" }}>Encuentra</span> casas,
                       departamentos, oficinas, <br /> terreno y más
                     </li>
-                    <li>
+                    <li className="ml-5">
                       <span style={{ color: "#32ffd2" }}>Administra </span>
                       tus propiedades y recibe <br /> notificaciones desde tu
                       celular
