@@ -38,22 +38,21 @@ const App = () => {
                   <br />
                   <br />
                   <p className="title-3">Descarga nuestra App</p>
-                  <h2 className="text-white text-left ml-5">
+                  <h2 className="text-white text-left ml-5 pl-2">
                     Realiza tus publicaciones o búsquedas de la forma más
                     sencilla
                   </h2>
                   <ul className="text-app text-white text-left">
-                    <li className="ml-5">
+                    <li className="ml-5 pl-2">
                       <span style={{ color: "#32ffd2" }}>Encuentra</span> casas,
-                      departamentos, oficinas, <br /> terreno y más
+                      departamentos, oficinas, terreno y más
                     </li>
-                    <li className="ml-5">
+                    <li className="ml-5 pl-2">
                       <span style={{ color: "#32ffd2" }}>Administra </span>
-                      tus propiedades y recibe <br /> notificaciones desde tu
-                      celular
+                      tus propiedades y recibe notificaciones desde tu celular
                     </li>
                   </ul>
-                  <div className="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center py-5">
                     <img
                       className="card-hover pointer playstore"
                       onClick={witidealApp}
@@ -63,9 +62,16 @@ const App = () => {
                   </div>
                 </div>
               </Col>
-              <Col md={6}>
-                <div className="d-flex justify-content-center align-items-end">
-                  <img src={img} alt="descarga nuestra pp" />
+              <Col
+                md={6}
+                //  className="p-0 m-0"
+              >
+                <div className="d-flex justify-content-center align-items-end img-container">
+                  <img
+                    className="flexMano"
+                    src={img}
+                    alt="descarga nuestra pp"
+                  />
                 </div>
               </Col>
             </Row>

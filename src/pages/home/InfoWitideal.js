@@ -13,30 +13,25 @@ const InfoWitideal = () => {
       {tablet ? (
         <Row>
           <Col md={6} className="text-left">
-            {tablet ? (
-              <>
-                <br />
-                <br />
-              </>
-            ) : null}
-
-            <h1 className="title ml-5">
-              ¿Por qué usar <br /> Witideal?
-            </h1>
-            <br />
-            <p className="text ml-5">
-              En Witideal tenemos una gran variedad de <br /> propiedades,
-              departamentos, casas, renta y venta <br /> de local comercial y
-              terrenos encuentra la propiedad <br /> que se ajusta a tus
-              necesidades con un clic.
-            </p>
-            <p className="text ml-5">
-              Si necesitas vender o rentar, sube tus propiedades, <br /> es
-              Gratis con Witideal registra todas tus propiedades <br /> y vende
-              o renta más rápido, podrás administrar tus <br /> propiedades
-              facilmente desde nuestra plataforma via web <br /> o con nuestra
-              App.
-            </p>
+            {tablet ? <></> : null}
+            <div className="center-vertical">
+              <h1 className="title ml-3">
+                ¿Por qué usar <br /> Witideal?
+              </h1>
+              <br />
+              <p className="text ml-3">
+                En Witideal tenemos una gran variedad de propiedades,
+                departamentos, casas, renta y venta de local comercial y
+                terrenos encuentra la propiedad que se ajusta a tus necesidades
+                con un clic.
+              </p>
+              <p className="text ml-3">
+                Si necesitas vender o rentar, sube tus propiedades, es Gratis
+                con Witideal registra todas tus propiedades y vende o renta más
+                rápido, podrás administrar tus propiedades facilmente desde
+                nuestra plataforma via web o con nuestra App.
+              </p>
+            </div>
           </Col>
           <Col md={6}>
             <div className="d-flex justify-content-center">

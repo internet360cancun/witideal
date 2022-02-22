@@ -2348,7 +2348,11 @@ body .no-padding {
   font-weight: 700;
   color: #32ffd2;
 }
-
+.center-vertical {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .subtitle {
   color: #3f19f9;
   font-size: 29px;
@@ -2478,6 +2482,36 @@ body .no-padding {
 
 .playstore {
   width: 406px;
+}
+
+/*----------AJUSTE DE MANO--------------*/
+/* .img-container {
+  overflow: hidden;
+}
+.flexMano {
+  position: relative;
+  transform: translate(130px, 0);
+}
+@media (max-width: 1200px) {
+  .img-container {
+    overflow: visible;
+  }
+  .flexMano {
+    transform: translate(0px, 34px);
+  }
+} */
+/*----------AJUSTE DE MANO--------------*/
+
+@media (max-width: 1400px) {
+  .playstore {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .flexMano {
+    margin-top: 35px;
+  }
 }
 
 @media (max-width: 991px) {
