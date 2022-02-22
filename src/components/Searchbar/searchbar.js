@@ -59,9 +59,9 @@ export const Searchbar = (props) => {
   const [addressData, setAddressData] = useState({});
 
   const onSuggestSelect = async (suggest) => {
-    if (props.setIsLoading !== undefined) {
-      props.setIsLoading(true);
-    }
+    // if (props.setIsLoading !== undefined) {
+    //   props.setIsLoading(true);
+    // }
     try {
       let zoom = 14;
       if (suggest !== undefined) {
@@ -95,72 +95,72 @@ export const Searchbar = (props) => {
         });
         if (addressData.sublocality_level_1 === undefined) {
           if (addressData.administrative_area_level_2_3 === undefined) {
-            if (
-              forbidenPoints.includes(
-                `${suggest.location.lat},${suggest.location.lng}`
-              )
-            ) {
-              //console.log('forbiden loc')
-              setAddressData(addressData);
-            } else {
-              //console.log('no admin no subloca')
-              let resp = await axios.get(
-                `https://maps.googleapis.com/maps/api/geocode/json?latlng=${suggest.location.lat},${suggest.location.lng}&result_type=sublocality_level_1&language=ES&key=AIzaSyAd22YBCutdzEZePBY2wbS2OawTZ1_H7-s`
-              );
-              if (resp.data) {
-                if (resp.data.results.length > 0) {
-                  resp.data.results[0].address_components.forEach((element) => {
-                    if (element.types.includes("sublocality_level_1")) {
-                      addressData.sublocality_level_1 = element.short_name;
-                    } else if (
-                      element.types.includes("administrative_area_level_3")
-                    ) {
-                      addressData.administrative_area_level_2_3 =
-                        element.short_name;
-                    } else if (
-                      element.types.includes("administrative_area_level_2")
-                    ) {
-                      addressData.administrative_area_level_2_3 =
-                        element.short_name;
-                    }
-                  });
-                }
-              }
-              if (addressData.administrative_area_level_2_3 === undefined) {
-                //console.log('still no admin')
-                let resp = await axios.get(
-                  `https://maps.googleapis.com/maps/api/geocode/json?latlng=${suggest.location.lat},${suggest.location.lng}&result_type=administrative_area_level_2|administrative_area_level_3&language=ES&key=AIzaSyAd22YBCutdzEZePBY2wbS2OawTZ1_H7-s`
-                );
-                if (resp.data) {
-                  if (resp.data.results.length > 0) {
-                    resp.data.results[0].address_components.forEach(
-                      (element) => {
-                        if (element.types.includes("sublocality_level_1")) {
-                          addressData.sublocality_level_1 = element.short_name;
-                        } else if (
-                          element.types.includes("administrative_area_level_3")
-                        ) {
-                          addressData.administrative_area_level_2_3 =
-                            element.short_name;
-                        } else if (
-                          element.types.includes("administrative_area_level_2")
-                        ) {
-                          addressData.administrative_area_level_2_3 =
-                            element.short_name;
-                        }
-                      }
-                    );
-                  }
-                }
-              }
-              // addressData.latLng={lat:suggest.location.lat,lng:suggest.location.lng}
-              addressData.lat = suggest.location.lat;
-              addressData.lng = suggest.location.lng;
-              setAddressData(addressData);
-            }
+            // if (
+            //   forbidenPoints.includes(
+            //     `${suggest.location.lat},${suggest.location.lng}`
+            //   )
+            // ) {
+            //   //console.log('forbiden loc')
+            //   setAddressData(addressData);
+            // } else {
+            //   //console.log('no admin no subloca')
+            //   let resp = await axios.get(
+            //     `https://maps.googleapis.com/maps/api/geocode/json?latlng=${suggest.location.lat},${suggest.location.lng}&result_type=sublocality_level_1&language=ES&key=AIzaSyAd22YBCutdzEZePBY2wbS2OawTZ1_H7-s`
+            //   );
+            //   if (resp.data) {
+            //     if (resp.data.results.length > 0) {
+            //       resp.data.results[0].address_components.forEach((element) => {
+            //         if (element.types.includes("sublocality_level_1")) {
+            //           addressData.sublocality_level_1 = element.short_name;
+            //         } else if (
+            //           element.types.includes("administrative_area_level_3")
+            //         ) {
+            //           addressData.administrative_area_level_2_3 =
+            //             element.short_name;
+            //         } else if (
+            //           element.types.includes("administrative_area_level_2")
+            //         ) {
+            //           addressData.administrative_area_level_2_3 =
+            //             element.short_name;
+            //         }
+            //       });
+            //     }
+            //   }
+            //   if (addressData.administrative_area_level_2_3 === undefined) {
+            //     //console.log('still no admin')
+            //     let resp = await axios.get(
+            //       `https://maps.googleapis.com/maps/api/geocode/json?latlng=${suggest.location.lat},${suggest.location.lng}&result_type=administrative_area_level_2|administrative_area_level_3&language=ES&key=AIzaSyAd22YBCutdzEZePBY2wbS2OawTZ1_H7-s`
+            //     );
+            //     if (resp.data) {
+            //       if (resp.data.results.length > 0) {
+            //         resp.data.results[0].address_components.forEach(
+            //           (element) => {
+            //             if (element.types.includes("sublocality_level_1")) {
+            //               addressData.sublocality_level_1 = element.short_name;
+            //             } else if (
+            //               element.types.includes("administrative_area_level_3")
+            //             ) {
+            //               addressData.administrative_area_level_2_3 =
+            //                 element.short_name;
+            //             } else if (
+            //               element.types.includes("administrative_area_level_2")
+            //             ) {
+            //               addressData.administrative_area_level_2_3 =
+            //                 element.short_name;
+            //             }
+            //           }
+            //         );
+            //       }
+            //     }
+            //   }
+            //   // addressData.latLng={lat:suggest.location.lat,lng:suggest.location.lng}
+            //   addressData.lat = suggest.location.lat;
+            //   addressData.lng = suggest.location.lng;
+            //   setAddressData(addressData);
+            // }
           } else {
-            //console.log('no subloca has admin 1-3')
-            setAddressData(addressData);
+            // //console.log('no subloca has admin 1-3')
+            // setAddressData(addressData);
           }
         } else {
           //console.log('has subloca')
