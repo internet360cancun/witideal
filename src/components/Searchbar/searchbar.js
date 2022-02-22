@@ -59,9 +59,9 @@ export const Searchbar = (props) => {
   const [addressData, setAddressData] = useState({});
 
   const onSuggestSelect = async (suggest) => {
-    if (props.setIsLoading !== undefined) {
-      props.setIsLoading(true);
-    }
+    // if (props.setIsLoading !== undefined) {
+    //   props.setIsLoading(true);
+    // }
     try {
       let zoom = 14;
       if (suggest !== undefined) {
@@ -205,10 +205,9 @@ export const Searchbar = (props) => {
           country="mx"
           types={["geocode"]}
           placeDetailFields={["address_components"]}
-          queryDelay="730"
+          queryDelay={730}
           minLength={4}
           inputClassName="form-control"
-          id="exampleInputEmail1"
           onSuggestSelect={onSuggestSelect}
           placeholder="Ubicación"
           autoComplete="off"
