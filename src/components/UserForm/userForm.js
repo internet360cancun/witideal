@@ -371,10 +371,7 @@ export const UserForm = () => {
               <Describre>¿Dónde te gustaría buscar?</Describre>
             </Grid>
             <Grid item xs={12}>
-              <Searchbar
-                setIsLoading={() => false}
-                getAddress={setAddress}
-              ></Searchbar>
+              <Searchbar setIsLoading={() => false} getAddress={setAddress} />
             </Grid>
             {!isBankSaleHidden && (
               <Grid item xs={12}>

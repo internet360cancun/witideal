@@ -56,13 +56,13 @@ const forbidenPoints = [
 ];
 
 export const Searchbar = (props) => {
-  const [addressData, setAddressData] = useState({});
-
+  const [AddressData, setAddressData] = useState({});
   const onSuggestSelect = async (suggest) => {
-    // if (props.setIsLoading !== undefined) {
-    //   props.setIsLoading(true);
-    // }
+    if (props.setIsLoading !== undefined) {
+      props.setIsLoading(true);
+    }
     try {
+      let addressData = {};
       let zoom = 14;
       if (suggest !== undefined) {
         props.setIsLoading(false);
@@ -126,6 +126,7 @@ export const Searchbar = (props) => {
                   });
                 }
               }
+
               if (addressData.administrative_area_level_2_3 === undefined) {
                 //console.log('still no admin')
                 let resp = await axios.get(
@@ -156,10 +157,11 @@ export const Searchbar = (props) => {
               // addressData.latLng={lat:suggest.location.lat,lng:suggest.location.lng}
               addressData.lat = suggest.location.lat;
               addressData.lng = suggest.location.lng;
+
               setAddressData(addressData);
             }
           } else {
-            console.log("no subloca has admin 1-3");
+            //console.log('no subloca has admin 1-3')
             setAddressData(addressData);
           }
         } else {
@@ -205,9 +207,10 @@ export const Searchbar = (props) => {
           country="mx"
           types={["geocode"]}
           placeDetailFields={["address_components"]}
-          queryDelay={730}
+          queryDelay="730"
           minLength={4}
           inputClassName="form-control"
+          id="exampleInputEmail1"
           onSuggestSelect={onSuggestSelect}
           placeholder="Ubicación"
           autoComplete="off"

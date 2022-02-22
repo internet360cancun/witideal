@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { LandingPromoter } from "../LandingPromoter/landingPromoter";
 // import { LogIn } from "../LogIn/logIn";
 // import { Register } from "../Register/register";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import { RestorePassword } from "../RestorePassword/restorePassword";
 import { MailValidation } from "../MailValidation/mailValidation";
 import { NotFound } from "../404/404";
@@ -36,6 +36,21 @@ export const Body = () => {
   const isAuthenticated = () => {
     return context.SesState !== undefined ? context.SesState : false;
   };
+  const history = useHistory();
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (history.location.pathname === "/") {
+        history.push("/buscar");
+      }
+    }, 500);
+
+    setTimeout(() => {
+      if (history.location.pathname === "/buscar") {
+        history.push("/");
+      }
+    }, 500);
+  }, []);
 
   return (
     <Switch>
