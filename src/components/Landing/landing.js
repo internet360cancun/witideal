@@ -66,7 +66,7 @@ const Span = styled(Grid)({
 });
 
 const familia =
-  "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Fthumb%40familia-2.png?alt=media&token=4322c49f-bc11-4eaf-9ffa-6a9cf007bf55";
+  "https://firebasestorage.googleapis.com/v0/b/witideal-b1f99.appspot.com/o/assets%2Fthumb%40familia-2-privamera.png?alt=media&token=3088b0f4-0a09-4b45-b9e7-db1de8131706";
 
 export function Landing() {
   useEffect(() => {
