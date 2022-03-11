@@ -82,13 +82,14 @@ export function Landing() {
         <Container container justifyContent="center" alignItems="flex-start">
           <TextContainer item xs={11} md={6}>
             <MainTitle align="left" variant="h2">
-              Una nueva forma <br /> de conectar con <br />
-              <Span>tu casa ideal</Span>
+              La primavera llegó a <br /> Witideal y con ella
+              <Span>
+                tu hogar ideal<span style={{ color: "white" }}>.</span>
+              </Span>
             </MainTitle>
-
             <MainSubtitle align="left" variant="h5">
-              Encuentra tu hogar ideal en <br /> Witideal, regístrate y conoce{" "}
-              <br /> todas las propiedades que <br /> tenemos para ti.
+              Estás a un clic de encontrar tu <br /> nuevo hogar, encuentra
+              casas, <br /> departamentos, estudios en <br /> todo México.
             </MainSubtitle>
             <div className="body-2">
               <img src={familia} alt="familia-witideal" className="familia" />
@@ -106,14 +107,16 @@ export function Landing() {
           <br />
           <br />
           <MainTitle align="center" variant="h2">
-            Una nueva forma de conectar con
-            <Span>tu casa ideal</Span>
+            La primavera llegó a Witideal y con ella
+            <Span>
+              tu hogar ideal <span style={{ color: "white" }}>.</span>{" "}
+            </Span>
           </MainTitle>
           <MainSubtitle align="center" variant="h5">
-            Encuentra tu hogar ideal en Witideal, regístrate y conoce todas las
-            propiedades que <br /> tenemos para ti.
+            Estás a un clic de encontrar tu nuevo hogar, encuentra casas,
+            departamentos, estudios en todo México
           </MainSubtitle>
-          <div className="container d-flex justify-content-center py-5">
+          <div className="container d-flex justify-content-center">
             <UserForm />
           </div>
           <img src={familia} alt="familia-witideal" className="familia-2" />
